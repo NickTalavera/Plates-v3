@@ -16,7 +16,7 @@ var app = AppData()
 class PublicClasses {
     ////    weak var delegate:MainDelegate?
     //
-    //    class func switchUnitsToWrap(_ unit: String, weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton?, platesLabel: UITextView, platesView: UIView?, GoButton: UIButton?, overwriteValues: Bool? = true) {
+        class func switchUnitsToWrap(_ unit: String, weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton?, platesLabel: UITextView, platesView: UIView?, GoButton: UIButton?, overwriteValues: Bool? = true) {
     //        PublicClasses.switchUnitsTo(unit, overwriteValues: overwriteValues)
     //        GlobalVariables.sharedInstance.convertedUnitsOn = false
     //        GlobalVariables.sharedInstance.percentageModeActive = false
@@ -55,9 +55,10 @@ class PublicClasses {
     //        //        if overwriteValues == true || GlobalVariables.sharedInstance.currentPlatesInUse.count == 0  {
     //        //            PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, titleLabel: titleLabel)
     //        //        }
-    //}
-    //
-    //    class func switchUnitsTo(_ unit: String, overwriteValues: Bool? = true) {
+    }
+    
+            
+        class func switchUnitsTo(_ unit: String, overwriteValues: Bool? = true) {
     //        let previousUnitsBool: Bool = GlobalVariables.sharedInstance.units == unit
     //        var barbellsNew: [String: Double] = [String: Double]()
     //        var collarsNew: [String: Double] = [String: Double]()
@@ -116,244 +117,34 @@ class PublicClasses {
     //        GlobalVariables.sharedInstance.currentCollarWeight = GlobalVariables.sharedInstance.currentCollarSet[GlobalVariables.sharedInstance.currentCollarName]!
     //        GlobalVariables.sharedInstance.weightToLift = max(PublicClasses.reduceCurrentPlatesInUse(currentPlatesInUseInput: GlobalVariables.sharedInstance.currentPlatesInUse) + GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight, GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight)
     //        GlobalVariables.sharedInstance.currentInventorySet = GlobalVariables.sharedInstance.currentInventoryList[GlobalVariables.sharedInstance.currentInventoryName]!
-    //    }
-    //
-    //    class func roundWeightAndPlatesInUse(_ weightEntryTextField: PlatesTextField, titleLabel: TitleLabelVar?, platesLabel: PlatesLabelVar?, platesView: View?) {
-    //        GlobalVariables.sharedInstance.currentPlatesInUse = PublicClasses.sortCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
-    //        let sum: Double = PublicClasses.reduceCurrentPlatesInUse(currentPlatesInUseInput: GlobalVariables.sharedInstance.currentPlatesInUse) + GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
-    //        let origWeight = GlobalVariables.sharedInstance.weightToLift
-    //        GlobalVariables.sharedInstance.weightToLift = sum
-    //        let titleLabelTemp = String(format: NSLocalizedString("Rounded from %@", comment: ""), PublicClasses.massFormatter.string(fromValue: origWeight, unit: GlobalVariables.sharedInstance.unitsFormatter))
-    //        let labelTextTemp = PublicClasses.massFormatter.string(fromValue: GlobalVariables.sharedInstance.weightToLift, unit: GlobalVariables.sharedInstance.unitsFormatter)
-    //        let platesLabelText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
-    //        #if os(iOS) || os(tvOS) || os(OSX)
-    //        PublicClasses.drawPlates(platesView!)
-    //        #endif
-    //        #if os(iOS) || os(tvOS)
-    //        platesLabel?.text = platesLabelText
-    //        weightEntryTextField.text = labelTextTemp
-    //        #endif
-    //        #if os(iOS)
-    //        weightEntryTextField.title = titleLabelTemp
-    //        #elseif os(tvOS)
-    //        titleLabel?.text = titleLabelTemp
-    //        #elseif os(OSX)
-    //        platesLabel?.string = platesLabelText
-    //        titleLabel!.stringValue = titleLabelTemp
-    //        weightEntryTextField.stringValue = labelTextTemp
-    //        #elseif os(watchOS)
-    //        titleLabel!.setText(titleLabelTemp)
-    //        weightEntryTextField.setText(labelTextTemp)
-    //        #endif
-    //    }
-    //
-    //
-    //    class func enableCertainPlateButtons(_ switchVal: Int, TF: Bool, FiftyFiveLbsButton: Button?, FortyFiveLbsButton: Button?, ThirtyFiveLbsButton: Button?, TwentyFiveLbsButton: Button?, FifteenLbsButton: Button?, TenLbsButton: Button?, FiveLbsButton: Button?, TwoPointFiveLbsButton: Button?, OnePointTwoFiveLbsButton: Button?) {
-    //        let alphaVal: CGFloat = 0.8
-    //        switch switchVal {
-    //        case 0:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            FiftyFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                FiftyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                FiftyFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                FiftyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                FiftyFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            FiftyFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                FiftyFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                FiftyFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //
-    //        case 1:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            FortyFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                FortyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                FortyFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                FortyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                FortyFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            FortyFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                FortyFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                FortyFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 2:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            ThirtyFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                ThirtyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                ThirtyFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                ThirtyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                ThirtyFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            ThirtyFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                ThirtyFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                ThirtyFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 3:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            TwentyFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                TwentyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                TwentyFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                TwentyFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                TwentyFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            TwentyFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                TwentyFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                TwentyFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 4:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            FifteenLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                FifteenLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                FifteenLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                FifteenLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                FifteenLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            FifteenLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                FifteenLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                FifteenLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 5:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            TenLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                TenLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                TenLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                TenLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                TenLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            TenLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                TenLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                TenLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 6:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            FiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                FiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                FiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                FiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                FiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            FiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                FiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                FiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 7:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            TwoPointFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                TwoPointFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                TwoPointFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                TwoPointFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                TwoPointFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            TwoPointFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                TwoPointFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                TwoPointFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        case 8:
-    //            #if os(iOS) || os(OSX) || (tvOS)
-    //            OnePointTwoFiveLbsButton!.isEnabled = TF
-    //            #endif
-    //            #if os(tvOS)
-    //            if TF == false {
-    //                OnePointTwoFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //                OnePointTwoFiveLbsButton?.backgroundColor = GlobalVariables.sharedInstance.textPadColorDisabled
-    //            }
-    //            else {
-    //                OnePointTwoFiveLbsButton?.superview?.backgroundColor = GlobalVariables.sharedInstance.textPadColor
-    //                OnePointTwoFiveLbsButton?.backgroundColor = UIColor.clear
-    //            }
-    //            #elseif os(watchOS)
-    //            OnePointTwoFiveLbsButton!.setEnabled(TF)
-    //            if TF == false {
-    //                OnePointTwoFiveLbsButton?.setAlpha(alphaVal)
-    //            }
-    //            else {
-    //                OnePointTwoFiveLbsButton?.setAlpha(1)
-    //            }
-    //            #endif
-    //        default: break
-    //        }
-    //    }
-    //
+        }
+
+
+    
+        class func enableCertainPlateButtons(_ switchVal: Int, TF: Bool, FiftyFiveLbsButton: UIButton?, FortyFiveLbsButton: UIButton?, ThirtyFiveLbsButton: UIButton?, TwentyFiveLbsButton: UIButton?, FifteenLbsButton: UIButton?, TenLbsButton: UIButton?, FiveLbsButton: UIButton?, TwoPointFiveLbsButton: UIButton?, OnePointTwoFiveLbsButton: UIButton?) {
+            switch switchVal {
+            case 0:
+                FiftyFiveLbsButton!.isEnabled = TF
+            case 1:
+                FortyFiveLbsButton!.isEnabled = TF
+            case 2:
+                ThirtyFiveLbsButton!.isEnabled = TF
+            case 3:
+                TwentyFiveLbsButton!.isEnabled = TF
+            case 4:
+                FifteenLbsButton!.isEnabled = TF
+            case 5:
+                TenLbsButton!.isEnabled = TF
+            case 6:
+                FiveLbsButton!.isEnabled = TF
+            case 7:
+                TwoPointFiveLbsButton!.isEnabled = TF
+            case 8:
+                OnePointTwoFiveLbsButton!.isEnabled = TF
+            default: break
+            }
+        }
+    
     
     //    class func updatePage(_ weightEntryTextField: UITextField, platesView: UIView, platesLabel: PlatesLabelVar) {
     //        UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0,
@@ -367,18 +158,18 @@ class PublicClasses {
     //        }
     //    }
     //
-    //    class func platesInUseFinder(_ labelOutputTextOutput: [String: Int]) {
-    //        if GlobalVariables.sharedInstance.keyPadUsedNow == true && GlobalVariables.sharedInstance.errorState == false {
-    //            if labelOutputTextOutput.count > 0 {
-    //                let keys = Array(labelOutputTextOutput.keys).sorted()
-    //                for i in 0...keys.count-1 {
-    //                    for _ in 1...labelOutputTextOutput[keys[i]]! {
-    //                        GlobalVariables.sharedInstance.currentPlatesInUse += [keys[i]]
-    //                    }
-    //                }
-    //            }
-    //        }
-    //    }
+//        class func platesInUseFinder(_ labelOutputTextOutput: [String: Int]) {
+//            if GlobalVariables.sharedInstance.keyPadUsedNow == true && GlobalVariables.sharedInstance.errorState == false {
+//                if labelOutputTextOutput.count > 0 {
+//                    let keys = Array(labelOutputTextOutput.keys).sorted()
+//                    for i in 0...keys.count-1 {
+//                        for _ in 1...labelOutputTextOutput[keys[i]]! {
+//                            GlobalVariables.sharedInstance.currentPlatesInUse += [keys[i]]
+//                        }
+//                    }
+//                }
+//            }
+//        }
     //
     //
     //

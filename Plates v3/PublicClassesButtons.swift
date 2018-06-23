@@ -168,7 +168,7 @@ extension PublicClasses {
     //                    }
     //
     //                    if weightTest.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces) != GlobalVariables.sharedInstance.weightToLift.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces) {
-    //            PublicClasses.roundWeightAndPlatesInUse(weightEntryTextField, titleLabel: titleLabel, platesLabel: platesLabel, platesView: platesView)
+
     //                    }
     //                }
     //                if weightEntryTextField.text!.characters.count > 0 {
@@ -361,15 +361,14 @@ extension PublicClasses {
         app.status.percentageModeActive = false
         //            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
         //            PublicClasses.updateTextViewFont(platesLabel, maxTextSize: GlobalVariables.sharedInstance.currentMaxFont)
-        //        PublicClasses.drawPlates(platesView!)
-        weightEntryTextField.isHighlighted = true
+                PublicClasses.drawPlates(platesView)
+        weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
         //                        weightEntryTextField.errorMessage = ""
-        //        weightEntryTextField.text = PublicClasses.numberFormatterDecimal.string(from: app.calc.weightToLift as NSNumber)!
+        weightEntryTextField.isHighlighted = true
         weightEntryTextField.resignFirstResponder()
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
             GoButton.setTitle(NSLocalizedString("Optimize", comment: ""), for: .normal)
         }, completion: nil)
-        weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
     }
     
 }

@@ -86,10 +86,10 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 //        NotificationCenter.default.addObserver(self, selector: #selector(iCloudFirstTime), name: NSNotification.Name(rawValue: "iCloudFirstTime"), object: nil)
 //        self.hideKeyboardWhenTappedAround()
 //        PublicClasses.switchUnitsToWrap(GlobalVariables.sharedInstance.units, weightEntryTextField: weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil, overwriteValues: false)
-//        barTextInput.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
-//        GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
-//        barTextInput.clipsToBounds = true
-//        GoButton.clipsToBounds = true
+        barTextInput.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
+        GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
+        barTextInput.clipsToBounds = true
+        GoButton.clipsToBounds = true
 //        let gradColor = UIColor.flatWatermelonDark
 //        GlobalVariables.sharedInstance.gradientColor1 = gradColor.lighten(byPercentage: 0.07)! as UIColor
 //        GlobalVariables.sharedInstance.gradientColor2 = gradColor.darken(byPercentage: 0)! as UIColor
@@ -221,12 +221,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     @IBAction func PercentButtonAction(_ sender: AnyObject) {
 //        PublicClasses.percentButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil)
     }
-//
-    func setToWeightTextField() {
-//        weightEntryTextField.floatingLabel.attributedText = NSLocalizedString("Total weight", comment: "")
-        weightEntryTextField.placeholder = app.calc.weightToLiftString
-        weightEntryTextField.keyboardType = .decimalPad
-    }
+
 
     @IBAction func GoButtonAction(_ sender: AnyObject) {
 //        PublicClasses.goButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil)
@@ -557,7 +552,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 //        weightEntryTextField.errorColor = app.visuals.errorColor
         weightEntryTextField.delegate = self
         weightEntryTextField.tag = 1
-        setToWeightTextField()
+        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         weightEntryTextField.font =  app.visuals.fontStandard
 //        weightEntryTextField.placeholderFont =  app.visuals.fontStandard
         //        weightEntryTextField.iconFont =  app.visuals.fontStandard

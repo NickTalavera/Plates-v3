@@ -133,8 +133,6 @@ extension KeyPadViewController {
     @IBAction func FiftyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 0
-        //        app.profile.chosenUnit
-        //        app.profile.plateCollection
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
