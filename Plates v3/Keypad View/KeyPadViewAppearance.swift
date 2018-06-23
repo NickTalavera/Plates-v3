@@ -69,14 +69,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     //    let managedObjectContext = DataAccess.sharedInstance.managedObjectContext
     var weightEntryTextFieldHeight: NSLayoutConstraint = NSLayoutConstraint()
     var horizonalLeftContraints: NSLayoutConstraint = NSLayoutConstraint()
-    let gradientLayer: CAGradientLayer = CAGradientLayer() //CHECK?
-    
-    //CHECK
-    //    let keyPadViewIdentifier: String = "keyPadIdentifier" //CHECK?
-    //    var titleLabel: UILabel = UILabel() //CHECK?
-    //    var saveFile : NSManagedObject! //CHECK?
-    //    var percentageModeActive: Bool = false //CHECK?
-    
+    let gradientLayer: CAGradientLayer = CAGradientLayer()
     
     func setupInitialViews() {
         //KEYBOARD SETUP
@@ -105,8 +98,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.platesLabel.font = app.visuals.fontStandard
         self.platesLabel.textColor = app.visuals.secondaryTextColor
         self.platesLabel.isUserInteractionEnabled = false
-
-
+        
+        
         
         //WEGIHT ENTRY TEXT FIELD
         self.view.addSubview(weightEntryTextField)
@@ -127,8 +120,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         //        //        weightEntryTextField.titleFadeInDuration = GlobalVariables.sharedInstance.animationTime
         //        //        weightEntryTextField.titleFadeOutDuration = GlobalVariables.sharedInstance.animationTime
         //        //        weightEntryTextField.errorColor = app.visuals.errorColor
-        self.weightEntryTextField.backgroundColor=UIColor.green
-        self.weightEntryTextField.floatingLabelYPadding = -24 //FIX
+        self.weightEntryTextField.floatingLabelYPadding = -22 //FIX
         
         //VIEW ORDER
         self.barTextInput.superview?.bringSubview(toFront: barTextInput)
@@ -149,6 +141,9 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.platesLabel.translatesAutoresizingMaskIntoConstraints = false
         self.weightEntryTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([weightEntryTextFieldHeight,platesLabelTextField,goButtonBottomContraints,horizonalLeftContraints, horizonalRightContraints,weightEntryTextFieldBottom])
+        
+        
+        maximizeLabelFonts()
         self.view.layoutIfNeeded()
     }
     
@@ -186,9 +181,9 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
             element?.setTitleColor(app.visuals.defaultTextColor, for: UIControlState.normal)
             element?.setTitleColor(app.visuals.placeholderColor, for: UIControlState.disabled)
         }
+        self.BarbellButton.setTitle(NSLocalizedString("Bar", comment: ""), for: .normal) //FIX
         self.PercentButton.setTitle(PublicClasses.numberFormatterDecimal.percentSymbol, for: .normal)
         self.ClearButton.setTitle(NSLocalizedString("Clear", comment: ""), for: .normal)
-        self.BarbellButton.setTitle(NSLocalizedString("Bar", comment: ""), for: .normal)
         self.CollarsButton.setTitle(NSLocalizedString("Collar", comment: ""), for: .normal)
         self.InventoryButton.setTitle(NSLocalizedString("Gym", comment: ""), for: .normal)
         
@@ -207,9 +202,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.GoButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
     }
     func navBarSetup() {
-        //        self.navigationController?.hidesNavigationBarHairline = true
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(app.visuals.titleVerticalAdjustment, for: .default)
-        let titleLabelView: UILabel = UILabel()//CHECK
+        let titleLabelView: UILabel = UILabel() //CHECK
         titleLabelView.text = NSLocalizedString("Plates", comment: "")
         titleLabelView.backgroundColor = UIColor.clear
         titleLabelView.textColor = app.visuals.secondaryColor
@@ -217,15 +211,15 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         titleLabelView.adjustsFontSizeToFitWidth = true
         titleLabelView.sizeToFit()
         self.navigationItem.titleView = titleLabelView
-        //        //                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: GlobalVariables.sharedInstance.secondaryColor, NSFontAttributeName: GlobalVariables.sharedInstance.fontTitle!]
-        //        navigationController!.navigationBar.barTintColor = app.visuals.textPadColor
-        //        keyPadBackgroundView.backgroundColor = app.visuals.keyPadBackgroundViewColor
-        //        navBarButton.setImage(tintedImage, for: UIControlState.normal)
-        //        navBarButton.tintColor =  app.visuals.secondaryColor
-        //        //        navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside)
-        //        navBarButton.frame = CGRect(x:0, y: 0,width: 31, height: 31)
-        //        navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        //        navBarButton.setTitle("", for: .normal)
+        //                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: GlobalVariables.sharedInstance.secondaryColor, NSFontAttributeName: GlobalVariables.sharedInstance.fontTitle!] //CHECK
+        //                navBarButton.setImage(tintedImage, for: UIControlState.normal) //CHECK
+        //                navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside) //CHECK
+        navigationController!.navigationBar.barTintColor = app.visuals.textPadColor
+        keyPadBackgroundView.backgroundColor = app.visuals.keyPadBackgroundViewColor
+        navBarButton.tintColor =  app.visuals.secondaryColor
+        navBarButton.frame = CGRect(x:0, y: 0,width: 31, height: 31)
+        navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        navBarButton.setTitle("", for: .normal)
     }
     
     
@@ -244,16 +238,16 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     
     
     func maximizeLabelFonts() {
-        var pointSizeTotal: CGFloat = app.visuals.defaultFontSize
+        let pointSizeTotal: CGFloat = app.visuals.defaultFontSize
         let GoButtonTemp: UIButton = GoButton
-        if NSLocalizedString("Optimize", comment: "").characters.count >  NSLocalizedString("Calculate", comment: "").characters.count {
+        if NSLocalizedString("Optimize", comment: "").count >  NSLocalizedString("Calculate", comment: "").count {
             GoButtonTemp.setTitle(NSLocalizedString("Optimize", comment: ""), for: .normal)
         }
         else {
             GoButtonTemp.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         }
         
-        var viewsToMaximizeBottomFour: [UIButton] = [InventoryButton, BarbellButton, CollarsButton, ClearButton]
+        let viewsToMaximizeBottomFour: [UIButton] = [InventoryButton, BarbellButton, CollarsButton, ClearButton]
         var pointSizesFour: [CGFloat] = [app.visuals.defaultFontSize,app.visuals.defaultFontSize,app.visuals.defaultFontSize,app.visuals.defaultFontSize]
         for viewToMaximize in viewsToMaximizeBottomFour {
             let frameToUse = CGRect(x: viewToMaximize.frame.minX, y: viewToMaximize.frame.minY, width: self.view.frame.width/4-10, height: min(viewToMaximize.frame.height,44))
@@ -273,16 +267,15 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         }
         weightEntryTextField.font = app.visuals.fontStandard
         weightEntryTextField.floatingLabelFont = app.visuals.fontTextFieldRiser
-        hiddenHeightKeepingLabel.titleLabel?.font = app.visuals.fontStandard
-        print(hiddenHeightKeepingLabel.frame.size)
+        hiddenHeightKeepingLabel.titleLabel?.font = app.visuals.fontStandard //CHECK
         
         let textViewSize = self.weightEntryTextField.frame.size;
         let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: textViewSize.width, height: CGFloat(MAXFLOAT)));
-        //        weightEntryTextFieldHeight.constant = expectSize.height+8
+        weightEntryTextFieldHeight.constant = expectSize.height+8
         self.view.layoutIfNeeded()
         let expectSizeGoButton = GoButtonTemp.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: GoButtonTemp.frame.size.height));
         goButtonWidthConstraint.constant = min(max(expectSizeGoButton.width + 20, UIScreen.main.bounds.width/4),UIScreen.main.bounds.width/2-20)
-        //                horizonalLeftContraints.constant = 0.5 * GoButton.bounds.size.height
+                        horizonalLeftContraints.constant = 0.5 * GoButton.bounds.size.height
         weightEntryTextFinder()
         barTextInput.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
         GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height

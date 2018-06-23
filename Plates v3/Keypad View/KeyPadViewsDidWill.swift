@@ -28,7 +28,6 @@ extension KeyPadViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        maximizeLabelFonts()
 //
 //        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard]
 //        //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])

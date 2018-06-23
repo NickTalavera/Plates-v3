@@ -33,8 +33,8 @@ class Plates_v3UITests: XCTestCase {
         app = XCUIApplication()
         app.launch()
         
-        let button = XCUIApplication()/*@START_MENU_TOKEN@*/.buttons["55 lbs"]/*[[".images.buttons[\"55 lbs\"]",".buttons[\"55 lbs\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        button.tap()
+//        let button = XCUIApplication()/*@START_MENU_TOKEN@*/.buttons["55 lbs"]/*[[".images.buttons[\"55 lbs\"]",".buttons[\"55 lbs\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+//        button.tap()
         
     }
     
