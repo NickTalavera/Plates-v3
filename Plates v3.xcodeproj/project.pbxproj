@@ -16,6 +16,13 @@
 		C39ABD2E20DDFBD100DA5BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */; };
 		C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD3820DDFBD100DA5BC8 /* Plates_v3Tests.swift */; };
 		C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */; };
+		C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
+		C39ABD5620DE016000DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
+		C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
+		C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */; };
+		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
+		C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
+		C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,12 @@
 		C39ABD3F20DDFBD100DA5BC8 /* Plates v3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plates v3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plates_v3UITests.swift; sourceTree = "<group>"; };
 		C39ABD4520DDFBD100DA5BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C39ABD5320DDFE8600DA5BC8 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		C39ABD5520DE016000DA5BC8 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = KeyPadViewController.swift; path = Views/KeyPadViewController.swift; sourceTree = "<group>"; };
+		C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadDumpingGround.swift; sourceTree = "<group>"; };
+		C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddFunctions.swift; sourceTree = "<group>"; };
+		C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +118,13 @@
 				C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */,
 				C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */,
 				C39ABD2520DDFBCF00DA5BC8 /* Document.swift */,
+				C39ABD5520DE016000DA5BC8 /* Structs.swift */,
+				C39ABD5320DDFE8600DA5BC8 /* Globals.swift */,
 				C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */,
+				C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */,
+				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
+				C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */,
+				C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */,
 				C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */,
 				C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */,
 				C39ABD2F20DDFBD100DA5BC8 /* Info.plist */,
@@ -262,10 +281,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39ABD5620DE016000DA5BC8 /* Structs.swift in Sources */,
 				C39ABD2620DDFBCF00DA5BC8 /* Document.swift in Sources */,
 				C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */,
 				C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */,
+				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
+				C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */,
+				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
+				C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */,
 				C39ABD2020DDFBCF00DA5BC8 /* AppDelegate.swift in Sources */,
+				C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */,
 				C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

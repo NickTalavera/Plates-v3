@@ -21,9 +21,22 @@ class Plates_v3Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testUnitOfWeight() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let lbUnit = UnitOfWeight(unit: UnitOfWeight.unitType.lb)
+        XCTAssert(lbUnit.formatter == MassFormatter.Unit.pound)
+        XCTAssert(lbUnit.decimalPlaces == 1)
+        let kgUnit = UnitOfWeight(unit: UnitOfWeight.unitType.kg)
+        XCTAssert(kgUnit.formatter == MassFormatter.Unit.kilogram)
+        XCTAssert(kgUnit.decimalPlaces == 2)
+    }
+
+    func testAppProfile() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let appProfile = AppProfile()
+        XCTAssert(1==1)
     }
     
     func testPerformanceExample() {
