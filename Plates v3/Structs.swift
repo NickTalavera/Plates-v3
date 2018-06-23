@@ -41,6 +41,8 @@ struct UnitOfWeight {
     }
 }
 
+
+
 class AppData {
     struct Barbell {
         let name: String
@@ -67,6 +69,10 @@ class AppData {
         let weight: Double
         let unitType: UnitOfWeight.unitType
         var positionOnBar: Int?
+        
+        func getDimensions(){
+            
+        }
     }
     
     public struct Plates {
@@ -285,9 +291,11 @@ class AppData {
     class Calcs {
         var weightToLift: Double
         var currentPlatesInUse: Plates
+        var weightToLiftString: String
         init() {
             weightToLift = 0
             currentPlatesInUse = Plates.init(name: "Active", list: [])
+            weightToLiftString = ""
         }
     }
     
@@ -341,6 +349,7 @@ class AppData {
     
     func updateWeightToLift(){
         self.calc.weightToLift = self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum()
+        self.calc.weightToLiftString = PublicClasses.massFormatter.string(fromValue: self.calc.weightToLift, unit: self.profile.chosenUnit.formatter)
     }
     
     

@@ -7,50 +7,32 @@
 //
 
 
-//import CoreData
-//import Foundation
-//#if os(iOS)
-//import CloudKit
-//import UIKit
-//#elseif os(watchOS)
-//import WatchKit
-//#elseif os(OSX)
-//import CloudKit
-//import AppKit
-//import Cocoa
-//#elseif os(tvOS)
-//import UIKit
-//import CloudKit
-//#endif
-//open class DataAccess: NSObject {
-//
-//    var succeededSave: Bool
-//    var tryCount: Int
-//    #if os(iOS) || os(tvOS) || os(OSX)
-//    let appDataID = CKRecordID(recordName: "User0")
-//    let container: CKContainer
-//    let publicDatabase: CKDatabase
-//    let privateDatabase: CKDatabase
-//    #endif
-//    #if os(iOS) || os(tvOS)
+import CoreData
+import Foundation
+import CloudKit
+import UIKit
+
+
+open class DataAccess: NSObject {
+
+    var succeededSave: Bool
+    var tryCount: Int
+    let appDataID = CKRecordID(recordName: "User0")
+    let container: CKContainer
+    let publicDatabase: CKDatabase
+    let privateDatabase: CKDatabase
 //    weak var delegate:MainDelegate?
-//    #endif
-//
-//
-//    static let sharedInstance = DataAccess()
-//
-//    override init() {
-//        self.succeededSave = false
-//        self.tryCount = 0
-//        #if os(iOS) || os(tvOS) || os(OSX)
+    static let sharedInstance = DataAccess()
+    override init() {
+        self.succeededSave = false
+        self.tryCount = 0
 //        //            self.container = CKContainer.defaultContainer()
-//        self.container = CKContainer(identifier: "iCloud.GibbsFFT.Bar---Barbell-Plate-Weight-Calculator")
-//        self.publicDatabase = container.publicCloudDatabase
-//        self.privateDatabase = container.privateCloudDatabase
-//        #endif
-//    }
+        self.container = CKContainer(identifier: "iCloud.GibbsFFT.Bar---Barbell-Plate-Weight-Calculator")
+        self.publicDatabase = container.publicCloudDatabase
+        self.privateDatabase = container.privateCloudDatabase
+    }
 //
-//    open func saveEverything() {
+    open func saveEverything() {
 //        let fetchRequest: NSFetchRequest<AppData> = NSFetchRequest(entityName: "AppData")
 //        do {
 //            let fetchedEntitiesTest = try self.managedObjectContext.fetch(fetchRequest)
@@ -103,7 +85,7 @@
 //        catch {
 //            // Do something in response to error condition
 //        }
-//    }
+    }
 //
 //    #if os(iOS) || os(tvOS) || os(OSX)
 //    open func iCloudSave() {
@@ -559,7 +541,6 @@
 //        return NSManagedObjectModel(contentsOf: modelURL)!
 //    }()
 //
-//    #if os(iOS)
 //    func deleteAllData(_ entity: String)
 //    {
 //        //    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -579,9 +560,7 @@
 //            //            print("Detele all data in \(entity) error : \(error) \(error.userInfo)")
 //        }
 //    }
-//    #endif
 //
-//    #if os(iOS) || os(watchOS) || os(tvOS)
 //    // MARK: - Core Data stack
 //
 //    open lazy var applicationDocumentsDirectory: URL = {
@@ -602,12 +581,6 @@
 //
 //        let sqlitePath = NSString(format: "%@/%@", containerPath!, "Bar___Barbell_Plate_Weight_Calculator")
 //        var url = URL(fileURLWithPath: sqlitePath as String)
-//
-//        #if os(tvOS)
-//        //            url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
-//        //FIX THIS
-//        //            url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("group.BarbellPro.documents")
-//        #endif
 //
 //
 //        var coordinator: NSPersistentStoreCoordinator? = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
@@ -667,153 +640,5 @@
 //            }
 //        }
 //    }
-//    #elseif os(OSX)
-//
-//    // MARK: - Core Data stack
-//
-//    lazy var applicationDocumentsDirectory: NSURL = {
-//        // The directory the application uses to store the Core Data store file. This code uses a directory named "GibbsFFT.Plates" in the user's Application Support directory.
-//        let urls = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
-//        let appSupportURL = urls[urls.count - 1]
-//        return appSupportURL.appendingPathComponent("GibbsFFT.Plates") as NSURL
-//    }()
-//
-//    lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
-//        // The persistent store coordinator for the application. This implementation creates and returns a coordinator, having added the store for the application to it. (The directory for the store is created, if necessary.) This property is optional since there are legitimate error conditions that could cause the creation of the store to fail.
-//        let fileManager = FileManager.default
-//        var failError: NSError? = nil
-//        var shouldFail = false
-//        var failureReason = "There was an error creating or loading the application's saved data."
-//
-//        // Make sure the application files directory is there
-//        do {
-//            let properties = try self.applicationDocumentsDirectory.resourceValues(forKeys: [URLResourceKey.isDirectoryKey])
-//            if !(properties[URLResourceKey.isDirectoryKey]! as AnyObject).boolValue {
-//                failureReason = "Expected a folder to store application data, found a file \(self.applicationDocumentsDirectory.path)."
-//                shouldFail = true
-//            }
-//        } catch  {
-//            #if os(OSX)
-//            let nserror = error as NSError
-//            #else
-//            let nserror = error as NSError
-//            #endif
-//            if nserror.code == NSFileReadNoSuchFileError {
-//                do {
-//                    try fileManager.createDirectory(atPath: self.applicationDocumentsDirectory.path!, withIntermediateDirectories: true, attributes: nil)
-//                } catch {
-//                    failError = nserror
-//                }
-//            } else {
-//                failError = nserror
-//            }
-//        }
-//
-//        // Create the coordinator and store
-//        var coordinator: NSPersistentStoreCoordinator? = nil
-//        if failError == nil {
-//            coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
-//            let url = self.applicationDocumentsDirectory.appendingPathComponent("CocoaAppCD.storedata")
-//
-//
-//
-//
-//            do{
-//                try FileManager.default.removeItem(at: url!)
-//            } catch{
-//                print("Could not delete file")
-//            }
-//
-//
-//
-//
-//            do {
-//                try coordinator!.addPersistentStore(ofType: NSXMLStoreType, configurationName: nil, at: url, options: nil)
-//            } catch {
-//                #if os(OSX)
-//                failError = error as NSError
-//                #else
-//                failError = error as NSError
-//                #endif
-//            }
-//        }
-//
-//        if shouldFail || (failError != nil) {
-//            // Report any error we got.
-//            var dict = [String: AnyObject]()
-//            dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data" as AnyObject?
-//            dict[NSLocalizedFailureReasonErrorKey] = failureReason as AnyObject?
-//            if failError != nil {
-//                dict[NSUnderlyingErrorKey] = failError
-//            }
-//            let error = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
-//            NSApplication.shared().presentError(error)
-//            abort()
-//        } else {
-//            return coordinator!
-//        }
-//    }()
-//
-//
-//    @IBAction func saveAction(sender: AnyObject!) {
-//        // Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
-//        if !managedObjectContext.commitEditing() {
-//            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing before saving")
-//        }
-//        if managedObjectContext.hasChanges {
-//            do {
-//                try managedObjectContext.save()
-//            } catch {
-//                let nserror = error as NSError
-//                NSApplication.shared().presentError(nserror)
-//            }
-//        }
-//    }
-//
-//    public func windowWillReturnUndoManager(window: NSWindow) -> UndoManager? {
-//        // Returns the NSUndoManager for the application. In this case, the manager returned is that of the managed object context for the application.
-//        return managedObjectContext.undoManager
-//    }
-//
-//    public func applicationShouldTerminate(sender: NSApplication) -> NSApplicationTerminateReply {
-//        // Save changes in the application's managed object context before the application terminates.
-//
-//        if !managedObjectContext.commitEditing() {
-//            NSLog("\(NSStringFromClass(type(of: self))) unable to commit editing to terminate")
-//            return .terminateCancel
-//        }
-//
-//        if !managedObjectContext.hasChanges {
-//            return .terminateNow
-//        }
-//
-//        do {
-//            try managedObjectContext.save()
-//        } catch {
-//            let nserror = error as NSError
-//            // Customize this code block to include application-specific recovery steps.
-//            let result = sender.presentError(nserror)
-//            if (result) {
-//                return .terminateCancel
-//            }
-//
-//            let question = NSLocalizedString("Could not save changes while quitting. Quit anyway?", comment: "Quit without saves error question message")
-//            let info = NSLocalizedString("Quitting now will lose any changes you have made since the last successful save", comment: "Quit without saves error question info");
-//            let quitButton = NSLocalizedString("Quit anyway", comment: "Quit anyway button title")
-//            let cancelButton = NSLocalizedString("Cancel", comment: "Cancel button title")
-//            let alert = NSAlert()
-//            alert.messageText = question
-//            alert.informativeText = info
-//            alert.addButton(withTitle: quitButton)
-//            alert.addButton(withTitle: cancelButton)
-//
-//            let answer = alert.runModal()
-//            if answer == NSAlertFirstButtonReturn {
-//                return .terminateCancel
-//            }
-//        }
-//        // If we got here, it is time to quit.
-//        return .terminateNow
-//    }
-//    #endif
-//}
+
+}

@@ -277,28 +277,27 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 
 
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        var placeholderText: String = textField.text!
-//        placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
-//        if placeholderText.characters.count > 0 {
-//            if GlobalVariables.sharedInstance.percentageModeActive == true {
-//                textField.text = PublicClasses.numberFormatterPercent.string(from: (PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue/100).roundToPlaces(2) as NSNumber)
-//            }
-//            else {
+        var placeholderText: String = textField.text!
+        placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
+        if placeholderText.characters.count > 0 {
+            if app.status.percentageModeActive == true {
+//                textField.text = PublicClasses.numberFormatterDecimal.string(from: (PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue/100).roundToPlaces(2) as NSNumber)
+            }
+            else {
 //                textField.text = PublicClasses.massFormatter.string(fromValue: PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces), unit: GlobalVariables.sharedInstance.unitsFormatter)
-//            }
-//        }
-//        else {
-//            weightEntryTextField.placeholder = GlobalVariables.sharedInstance.weightToLiftString
+            }
+        }
+        else {
+            weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
 //            weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (Bool) in
 //                PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: self.platesView)
 //            })
-//        }
+        }
     }
-//
+
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        let placeholderText: String = textField.text!
 //        weightEntryTextField.setTitleVisible(true, animated: true)
-//        textField.text = PublicClasses.removeUnitsFromText(placeholderText)
+        textField.text = PublicClasses.numberFormatterDecimal.string(from: app.calc.weightToLift as NSNumber)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change
@@ -326,15 +325,15 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 
             app.status.errorState = false
 //            self.weightEntryTextField.errorMessage = ""
-//                        PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+                        PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
         }
         return result
     }
 
-    func switchUnitsToDelegate(_ unit: String) {
-//        PublicClasses.switchUnitsTo(unit, weightEntryTextField: weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil)
+    func switchUnitsToDelegate() {
+        PublicClasses.switchUnitsTo(app.profile.chosenUnit.unit, weightEntryTextField: weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton)
     }
-//
+
     func setupGradientLayer() {
         gradientLayer.removeFromSuperlayer()
         let topColor = app.visuals.gradientColor1.cgColor as CGColor
@@ -344,7 +343,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         gradientLayer.colors = [topColor, bottomColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.2)
-        //        gradientLayer.backgroundColor = GlobalVariables.sharedInstance.gradientColor1.CGColor
+        gradientLayer.backgroundColor = app.visuals.gradientColor1.cgColor
         self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
@@ -354,6 +353,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     func setupInitialViews() {
         self.setupGradientLayer()
         self.view.backgroundColor = app.visuals.gradientColor1
+        weightEntryTextField.alwaysShowFloatingLabel = true
 //        PublicClasses.updateTextViewFont(platesLabel,maxTextSize: GlobalVariables.sharedInstance.currentMaxFont)
         self.view.backgroundColor=app.visuals.mainColor
         var titleFontName = "Helvetica"
@@ -643,7 +643,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 
         let textViewSize = self.weightEntryTextField.frame.size;
         let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: textViewSize.width, height: CGFloat(MAXFLOAT)));
-        weightEntryTextFieldHeight.constant = expectSize.height+8
+//        weightEntryTextFieldHeight.constant = expectSize.height+8
         self.view.layoutIfNeeded()
         let expectSizeGoButton = GoButtonTemp.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: GoButtonTemp.frame.size.height));
         goButtonWidthConstraint.constant = min(max(expectSizeGoButton.width + 20, UIScreen.main.bounds.width/4),UIScreen.main.bounds.width/2-20)

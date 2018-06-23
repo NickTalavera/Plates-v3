@@ -294,7 +294,11 @@ extension PublicClasses {
     }
     
     
-    class func plateButtonPressed(_ buttonSpot: Int, platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton) {
+    class func plateButtonPressed( buttonSpot: Int, platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton) {
+        var buttonSpot = buttonSpot
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+            buttonSpot += 9
+        }
         GoButton.isEnabled = true
         if weightEntryTextField.text!.characters.count == 0 || app.calc.weightToLift == app.profile.currentBarbell.weight + app.profile.currentCollar.weight {
             platesLabel.alpha = 0

@@ -23,9 +23,9 @@ class PublicClasses {
         PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
         if app.calc.currentPlatesInUse.countPlates() > 0 || (weightEntryTextField.text?.characters.count)! > 0 {
             app.updateWeightToLift()
-            weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
+            weightEntryTextField.text = app.calc.weightToLiftString
         }
-//        weightEntryTextField.backgroundColor = UIColor.clear
+        //        weightEntryTextField.backgroundColor = UIColor.clear
         var offsetForUnits = 0
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             offsetForUnits = 9
@@ -76,30 +76,31 @@ class PublicClasses {
     }
     
     
-    //    class func updatePage(_ weightEntryTextField: UITextField, platesView: UIView, platesLabel: : UITextView) {
-    //        UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0,
-    //                       options: [],
-    //                       animations: {
-    //                        weightEntryTextField.alpha = 1
-    //        }, completion: nil)
-    //        weightEntryTextField.text! = PublicClasses.massFormatter.string(fromValue: GlobalVariables.sharedInstance.weightToLift, unit: app.profile.chosenUnit.formatter)
-    //        if GlobalVariables.sharedInstance.alwaysSort == true {
-    //            PublicClasses.drawPlates(platesView)
-    //        }
-    //    }
-    //
-    //        class func platesInUseFinder(_ labelOutputTextOutput: [String: Int]) {
-    //            if GlobalVariables.sharedInstance.keyPadUsedNow == true && GlobalVariables.sharedInstance.errorState == false {
-    //                if labelOutputTextOutput.count > 0 {
-    //                    let keys = Array(labelOutputTextOutput.keys).sorted()
-    //                    for i in 0...keys.count-1 {
-    //                        for _ in 1...labelOutputTextOutput[keys[i]]! {
-    //                            app.profile.currentPlateSet.listInUse += [keys[i]]
-    //                        }
-    //                    }
-    //                }
-    //            }
-    //        }
+    class func updatePage(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, platesLabel: UITextView) {
+        //        UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0,
+        //                       options: [],
+        //                       animations: {
+        weightEntryTextField.alpha = 1
+        //        }, completion: nil)
+        app.updateWeightToLift()
+        weightEntryTextField.text! = app.calc.weightToLiftString
+        if app.status.alwaysSort == true {
+            PublicClasses.drawPlates(platesView)
+        }
+        //    }
+        //
+        //        class func platesInUseFinder(_ labelOutputTextOutput: [String: Int]) {
+        //            if GlobalVariables.sharedInstance.keyPadUsedNow == true && GlobalVariables.sharedInstance.errorState == false {
+        //                if labelOutputTextOutput.count > 0 {
+        //                    let keys = Array(labelOutputTextOutput.keys).sorted()
+        //                    for i in 0...keys.count-1 {
+        //                        for _ in 1...labelOutputTextOutput[keys[i]]! {
+        //                            app.profile.currentPlateSet.listInUse += [keys[i]]
+        //                        }
+        //                    }
+        //                }
+        //            }
+    }
     //
     //
     //
@@ -137,9 +138,9 @@ class PublicClasses {
     
     
     class func drawPlates(_ platesView: UIView) {
-        //                if app.status.alwaysSort == true {
-        //                    app.profile.currentPlateSet.listInUse = PublicClasses.sortCurrentPlatesInUse(app.profile.currentPlateSet.listInUse)
-        //                }
+        if app.status.alwaysSort == true {
+            app.calc.currentPlatesInUse.sortPlates()
+        }
         for view in platesView.subviews {
             if view.isKind(of: UIImageView.self) {
                 view.removeFromSuperview()
@@ -149,14 +150,14 @@ class PublicClasses {
         if platesInUse.countPlates() > 0 {
             //                    var currentPlatesWithUnits = app.profile.currentPlateSet.list[0...8].map({String($0) + " Kg"})
             //                    currentPlatesWithUnits += app.profile.currentPlateSet.list[9...17].map({String($0) + " lbs"})
-            //                    var xPos = platesView.bounds.maxX
-            //                    var totalPlateWidth: CGFloat = 0
+            var xPos = platesView.bounds.maxX
+            var totalPlateWidth: CGFloat = 0
             //                    for i in 0...platesInUse.countPlates()-1 {
             //                        totalPlateWidth += CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
         }
-        //                    totalPlateWidth += 30
-        //                    totalPlateWidth = max(totalPlateWidth, 415)
-        //                    print(platesView.frame.width)
+//        totalPlateWidth += 30
+//        totalPlateWidth = max(totalPlateWidth, 415)
+//        print(platesView.frame.width)
         //                    var newWidthTotal: CGFloat = 0
         //                    for i in 0...platesInUse.countPlates()-1 {
         //                        var heightNotNormalized: CGFloat = 78
@@ -195,23 +196,8 @@ class PublicClasses {
         //                            plateColor = GlobalVariables.sharedInstance.plateColors[currentPlatesWithUnits.index(of: platesInUse[i])!]
         //                        }
         //                        plateImageView.backgroundColor = plateColor
-        //                        #if os(iOS)
         //                        plateImageView.borderWidth = 0.5
-        //                        #elseif os(tvOS)
-        //                        plateImageView.borderWidth = 1
-        //                        #endif
         //                        plateImageView.borderColor = GlobalVariables.sharedInstance.borderColor
-        //                        #elseif os(OSX)
-        //                        plateImageView.wantsLayer = true
-        //                        var colorNow: Color = GlobalVariables.sharedInstance.keyPadBackgroundViewColor
-        //                        if i != -2 && i != -1 {
-        //                            colorNow = GlobalVariables.sharedInstance.currentPlateColors[currentPlatesWithUnits.index(of: platesInUse[i])!]
-        //                        }
-        //                        plateImageView.layer?.cornerRadius = 5/292*plateImageView.frame.height
-        //                        plateImageView.layer?.backgroundColor = colorNow.cgColor
-        //                        plateImageView.layer?.borderColor = GlobalVariables.sharedInstance.borderColor.cgColor
-        //                        plateImageView.layer?.borderWidth = 0.5
-        //                        #endif
         //                        platesView.addSubview(plateImageView)
         //                    }
         //                }
@@ -224,26 +210,35 @@ class PublicClasses {
     
     
     class func resetEverything(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton, animate: Bool = false) {
-        GoButton.isEnabled = false
         weightEntryTextField.resignFirstResponder()
-        weightEntryTextField.alpha = 1
-        platesLabel.alpha = 1
-        platesView.alpha = 1
+        GoButton.isEnabled = false
+        app.status.errorState=false
+        app.status.keyPadUsedNow = false
+        weightEntryTextField.alpha = min(1,weightEntryTextField.alpha)
+        platesLabel.alpha = min(1,platesLabel.alpha)
+        platesView.alpha = min(1,platesView.alpha)
         app.calc.currentPlatesInUse.list = []
         app.switchUnits()
-        //        GlobalVariables.sharedInstance.errorState=false
-        app.status.keyPadUsedNow = false
-        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.updateWeightToLift()
-        weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
+        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
+        
+        PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
         //        weightEntryTextField.errorMessage = ""
         //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
-        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
-        //        })
-        platesLabel.text = ""
+        //                PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+        //        //        })
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
+            weightEntryTextField.alpha = 0
+            platesLabel.alpha = 0
+            platesView.alpha = 0
+        }, completion: { (finished: Bool) -> () in
+            weightEntryTextField.placeholder = " "
             weightEntryTextField.text = ""
-        }, completion: nil)
-        PublicClasses.drawPlates(platesView)
+            platesLabel.text = ""
+            PublicClasses.drawPlates(platesView)
+            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+            
+        })
+        
     }
 }
