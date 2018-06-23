@@ -133,9 +133,9 @@ extension KeyPadViewController {
     @IBAction func FiftyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 0
-        //        appProfile.chosenUnit
-        //        AppProfile.plateCollection
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        //        app.profile.chosenUnit
+        //        app.profile.plateCollection
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -149,7 +149,7 @@ extension KeyPadViewController {
     @IBAction func FortyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 1
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -157,7 +157,7 @@ extension KeyPadViewController {
     @IBAction func ThirtyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 2
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -166,7 +166,7 @@ extension KeyPadViewController {
     @IBAction func TwentyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 3
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -175,7 +175,7 @@ extension KeyPadViewController {
     @IBAction func FifteenLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 4
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -184,7 +184,7 @@ extension KeyPadViewController {
     @IBAction func TenLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 5
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -193,7 +193,7 @@ extension KeyPadViewController {
     @IBAction func FiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 6
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -203,7 +203,7 @@ extension KeyPadViewController {
     @IBAction func TwoPointFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 7
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -213,7 +213,7 @@ extension KeyPadViewController {
     @IBAction func OnePointTwoFiveLbsButton(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 8
-        if appProfile.chosenUnit.unit == UnitOfWeight.unitType.lb {
+        if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }
         PublicClasses.plateButtonPressed(button, platesLabel: platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)

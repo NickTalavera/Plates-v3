@@ -540,7 +540,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarbellPro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-NG-fPi">
-                                <rect key="frame" x="0.0" y="96" width="0.0" height="35"/>
+                                <rect key="frame" x="20" y="96" width="0.0" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="irk-ym-Zko"/>
                                     <constraint firstAttribute="height" constant="35" id="ntg-R0-vYl"/>
@@ -886,7 +886,6 @@
                             <constraint firstItem="fzk-5H-fHd" firstAttribute="leading" secondItem="UAK-Tp-g5K" secondAttribute="trailing" constant="1" id="Rde-n6-D4g"/>
                             <constraint firstItem="oyk-g0-dAD" firstAttribute="leading" secondItem="mq5-0H-Zwb" secondAttribute="leading" id="S8u-Dl-H5e"/>
                             <constraint firstItem="tgk-9m-gme" firstAttribute="centerX" secondItem="6te-Lj-pA8" secondAttribute="centerX" id="SDu-7a-KLn"/>
-                            <constraint firstItem="6Gd-Mg-edq" firstAttribute="leading" secondItem="Mei-NG-fPi" secondAttribute="trailing" constant="20" id="SVB-a1-HVc"/>
                             <constraint firstItem="fd6-aq-LpD" firstAttribute="top" secondItem="g7h-Bt-Ezh" secondAttribute="bottom" constant="1" id="SXL-ha-SaJ"/>
                             <constraint firstItem="fzk-5H-fHd" firstAttribute="top" secondItem="Ql7-ev-OHD" secondAttribute="bottom" constant="1" id="TR1-qY-1cv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HYo-bK-exe" secondAttribute="trailing" constant="15" id="V1W-Ct-BGS"/>

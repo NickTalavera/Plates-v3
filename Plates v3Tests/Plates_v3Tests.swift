@@ -35,8 +35,31 @@ class Plates_v3Tests: XCTestCase {
     func testAppProfile() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        let appProfile = AppProfile()
-        XCTAssert(1==1)
+        var app = AppData()
+//        app.calc.currentPlatesInUse = []
+//        print(app.calc.currentPlatesInUse)
+//        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() == 0)
+//        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 0)
+        app.calc.currentPlatesInUse = app.profile.currentPlateSet
+        print(app.calc.currentPlatesInUse)
+        print(app.calc.currentPlatesInUse.sumOfPlates())
+        print(app.calc.currentPlatesInUse.countPlates())
+        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() > 0)
+        XCTAssert(app.calc.currentPlatesInUse.countPlates() > 0)
+    }
+    
+    func testWeightToLiftSum() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var app = AppData()
+//        app.calc.currentPlatesInUse = []
+//        print(app.calc.weightToLift)
+//        XCTAssert(app.calc.weightToLift == 0)
+//        app.calc.currentPlatesInUse = app.profile.currentPlateSet
+//        print(app.calc.weightToLift)
+//        app.updateWeightToLift()
+//        print(app.calc.weightToLift)
+//        XCTAssert(app.calc.weightToLift != 0)
     }
     
     func testPerformanceExample() {

@@ -28,6 +28,7 @@
 		C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
 		C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
 		C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
+		C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -320,6 +321,7 @@
 				C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */,
 				C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */,
 				C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */,
+				C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */,
 				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,

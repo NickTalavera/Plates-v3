@@ -12,8 +12,8 @@ import UIKit
 import JVFloatLabeledText
 
 extension PublicClasses {
-//    class func removeUnitsFromText(_ placeholderText: String) -> String {
-//        var text: String = placeholderText
+    class func removeUnitsFromText(_ placeholderText: String) -> String {
+        var text: String = placeholderText
 //                text = text.replace(PublicClasses.massFormatter.unitString(fromValue: GlobalVariables.sharedInstance.weightToLift, unit: GlobalVariables.sharedInstance.unitsFormatter), withString: "")
 //                text = text.replace(PublicClasses.massFormatter.unitString(fromValue: 0, unit: GlobalVariables.sharedInstance.unitsFormatter), withString: "")
 //                let decimalSeperator: String = PublicClasses.numberFormatterDecimal.decimalSeparator
@@ -25,8 +25,8 @@ extension PublicClasses {
 //                } catch {
 //                    print("Cant convert")
 //                }
-//                return text
-//    }
+                return text
+    }
 //
 //    #if os(iOS) || os(tvOS) || os(OSX)
 //    class func textFieldDecimalVerification(_ textField: TextField, range: NSRange, string: String, GoButton: Button=Button(), maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=GlobalVariables.sharedInstance.unitsFormatter, percentageMode: Bool) -> Bool {
