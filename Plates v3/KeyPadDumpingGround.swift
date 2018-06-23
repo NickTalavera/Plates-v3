@@ -17,13 +17,13 @@ extension KeyPadViewController {
     }
     
     @IBAction func ClearButtonAction(_ sender: AnyObject) {
-                PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, animate: true)
+        PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, animate: true)
         //        DataAccess.sharedInstance.saveEverything()
     }
     
     @IBAction func UnitsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
-        //        PublicClasses.unitsButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton)
+        PublicClasses.unitsButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton)
         //        DataAccess.sharedInstance.saveEverything()
     }
     
@@ -56,7 +56,7 @@ extension KeyPadViewController {
     
     @IBAction func CollarsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
-        //        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         //        let vc = storyboard.instantiateViewController(withIdentifier: "CollarsPopover") as! CollarQuickSelectTableView
         //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
         //        vc.delegate = self
@@ -69,8 +69,8 @@ extension KeyPadViewController {
     
     @IBAction func BarbellButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
-        //        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "BarbellPopover") as! BarbellQuickSelectTableView
+        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        //                let vc = storyboard.instantiateViewController(withIdentifier: "BarbellPopover") as! BarbellQuickSelectTableView
         //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
         //        vc.delegate = self
         //        vc.popoverPresentationController?.sourceView = barbellButtonAnchor
@@ -115,26 +115,24 @@ extension KeyPadViewController {
     
     func presentCollarAdvancedSettingsPopover() {
         self.view.endEditing(true)
-        //        let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "CollarAdvancedSettings"))! as! CollarAdvancedSettings
-        //        popoverContent.delegate = self
-        //        let nav = UINavigationController(rootViewController: popoverContent)
-        //        nav.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        let popover = nav.popoverPresentationController
-        //        popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
-        //        popover!.delegate = self
-        //        popover!.sourceView = self.view
-        //        popover?.backgroundColor = UIColor.white
-        //        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-        //        popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
-        //        self.present(nav, animated: true, completion: nil)
+        //                let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "CollarAdvancedSettings"))! as! CollarAdvancedSettings
+        //                popoverContent.delegate = self
+        //                let nav = UINavigationController(rootViewController: popoverContent)
+        //                nav.modalPresentationStyle = UIModalPresentationStyle.popover
+        //                let popover = nav.popoverPresentationController
+        //                popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
+        //                popover!.delegate = self
+        //                popover!.sourceView = self.view
+        //                popover?.backgroundColor = UIColor.white
+        //                popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+        //                popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
+        //                self.present(nav, animated: true, completion: nil)
     }
     
     
     @IBAction func FiftyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 0
-        //        appProfile.chosenUnit
-        //        AppProfile.plateCollection
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }

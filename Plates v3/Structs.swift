@@ -19,22 +19,24 @@ struct UnitOfWeight {
         if unit == unitType.lb {
             return MassFormatter.Unit.pound
         }
-        else if unit == unitType.kg {
-            return MassFormatter.Unit.kilogram
-        }
         else {
-            return MassFormatter.Unit.pound
+            return MassFormatter.Unit.kilogram
         }
     }
     var decimalPlaces: Int {
         if unit == unitType.lb {
-            return 1
-        }
-        else if unit == unitType.kg {
             return 2
         }
         else {
-            return 1
+            return 2
+        }
+    }
+    var opposite: unitType {
+        if unit == unitType.lb {
+            return unitType.kg
+        }
+        else {
+            return unitType.lb
         }
     }
 }
@@ -71,13 +73,7 @@ class AppData {
         var name: String
         var list: [Plate]
         
-        func sumOfPlates() -> Double {
-            var sum: Double = 0
-            for (index, element) in self.list.enumerated() {
-                sum += Double(element.count!) * element.weight
-            }
-            return sum
-        }
+        
         func countPlates() -> Int {
             var count: Int = 0
             for (index, element) in self.list.enumerated() {
@@ -106,7 +102,11 @@ class AppData {
     }
     
     
+    
+    
     class Profile {
+        
+        
         var chosenUnit: UnitOfWeight
         var barbellCollection: BarbellCollection
         var collarCollection: CollarCollection
@@ -114,9 +114,7 @@ class AppData {
         var currentBarbell: Barbell
         var currentCollar: Collar
         var currentPlateSet: Plates
-        var currentBarbellAndCollarSum: Double {
-            return currentBarbell.weight + currentCollar.weight
-        }
+        
         init() {
             chosenUnit = UnitOfWeight(unit: UnitOfWeight.unitType.lb)
             barbellCollection = BarbellCollection( list: [
@@ -232,7 +230,7 @@ class AppData {
         var secondaryColorBlend: UIColor
         var platesFadeDuration: Double
         var titleVerticalAdjustment: CGFloat
-        
+         var defaultFontSize: CGFloat
         init() {
             textPadColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
             textPadColorDisabled = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
@@ -259,6 +257,7 @@ class AppData {
             secondaryColorBlend = UIColor(red: 4/255, green: 180/255, blue: 72/255, alpha: 0.86)
             platesFadeDuration = 0.6
             titleVerticalAdjustment = 3.5
+            defaultFontSize = 26
         }
     }
     
@@ -285,11 +284,9 @@ class AppData {
     
     class Calcs {
         var weightToLift: Double
-        var weightToLiftString: String
         var currentPlatesInUse: Plates
         init() {
             weightToLift = 0
-            weightToLiftString = ""
             currentPlatesInUse = Plates.init(name: "Active", list: [])
         }
     }
@@ -315,11 +312,37 @@ class AppData {
         }
     }
     
-    func updateWeightToLift(){
-        self.calc.weightToLift = self.calc.currentPlatesInUse.sumOfPlates() + self.profile.currentBarbellAndCollarSum
+    func convertedWeight(weight: Double, unitOfObject: UnitOfWeight.unitType) -> Double {
+        if self.profile.chosenUnit.unit == unitOfObject {
+            return weight
+        }
+        else if UnitOfWeight.unitType.kg == unitOfObject {
+            return (weight * 2.20462262).rounded(toPlaces: self.profile.chosenUnit.decimalPlaces)
+        }
+        else if UnitOfWeight.unitType.lb == unitOfObject {
+            return (weight / 2.20462262).rounded(toPlaces: self.profile.chosenUnit.decimalPlaces)
+        }
+        else {
+            return 0
+        }
     }
     
-
+    func currentBarbellAndCollarSum() -> Double {
+        return convertedWeight(weight: self.profile.currentBarbell.weight, unitOfObject: self.profile.currentBarbell.unitType) + convertedWeight(weight: self.profile.currentCollar.weight, unitOfObject: self.profile.currentCollar.unitType)
+    }
+    
+    func sumOfCurrentPlatesInUse() -> Double {
+        var sum: Double = 0
+        for (index, element) in self.calc.currentPlatesInUse.list.enumerated() {
+            sum += Double(element.count!) * convertedWeight(weight: element.weight, unitOfObject: element.unitType)
+        }
+        return sum
+    }
+    
+    func updateWeightToLift(){
+        self.calc.weightToLift = self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum()
+    }
+    
     
     func appendCurrentPlate(weight: Double) {
         var maxPositionOnBar = 0
@@ -328,8 +351,8 @@ class AppData {
         }
         let nextBarPosition = maxPositionOnBar + 1
         self.calc.currentPlatesInUse.list += [Plate(count: 1, weight: weight, unitType: self.profile.chosenUnit.unit, positionOnBar: nextBarPosition)]
-//        if app.status.alwaysSort == true {
-//            self.calc.currentPlatesInUse.sortPlates()
-//        }
+        if self.status.alwaysSort == true {
+            self.calc.currentPlatesInUse.sortPlates()
+        }
     }
 }

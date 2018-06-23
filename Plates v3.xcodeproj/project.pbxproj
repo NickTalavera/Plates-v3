@@ -29,6 +29,8 @@
 		C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
 		C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
 		C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
+		C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
+		C3CC031F20DEB63300A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -338,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */,
+				C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */,
 				C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */,
+				C3CC031F20DEB63300A113DF /* OddFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

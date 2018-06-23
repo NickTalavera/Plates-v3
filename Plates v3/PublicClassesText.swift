@@ -243,7 +243,7 @@ extension PublicClasses {
     class func setToWeightTextField(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
         PublicClasses.drawPlates(platesView)
         app.status.percentageModeActive = false
-        weightEntryTextField.placeholder = app.calc.weightToLiftString
+        weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
         weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         weightEntryTextField.keyboardType = .decimalPad
     }
