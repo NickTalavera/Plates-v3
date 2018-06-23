@@ -12,7 +12,6 @@ import CoreData
 
 extension KeyPadViewController {
     
-   
     @objc(adaptivePresentationStyleForPresentationController:) func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }

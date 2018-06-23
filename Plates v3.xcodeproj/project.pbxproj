@@ -19,7 +19,7 @@
 		C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
 		C39ABD5620DE016000DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
 		C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
-		C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */; };
+		C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */; };
 		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
 		C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 		C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
@@ -34,6 +34,11 @@
 		C3CC032120DEF1F700A113DF /* Plates-Imported in Resources */ = {isa = PBXBuildFile; fileRef = C3CC032020DEF1F700A113DF /* Plates-Imported */; };
 		C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */; };
 		C3CC032720DEF2DF00A113DF /* KeyPadPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */; };
+		C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
+		C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */; };
+		C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */; };
+		C3CC032F20DEFCE400A113DF /* KeyPadXXX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */; };
+		C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +90,7 @@
 		C39ABD4520DDFBD100DA5BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C39ABD5320DDFE8600DA5BC8 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		C39ABD5520DE016000DA5BC8 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
-		C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewController.swift; sourceTree = "<group>"; };
+		C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewAppearance.swift; sourceTree = "<group>"; };
 		C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadDumpingGround.swift; sourceTree = "<group>"; };
 		C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddFunctions.swift; sourceTree = "<group>"; };
 		C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
@@ -98,6 +103,11 @@
 		C3CC032020DEF1F700A113DF /* Plates-Imported */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Plates-Imported"; sourceTree = "<group>"; };
 		C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadButtons.swift; sourceTree = "<group>"; };
 		C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadPopovers.swift; sourceTree = "<group>"; };
+		C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadDelegate.swift; sourceTree = "<group>"; };
+		C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadiCloud.swift; sourceTree = "<group>"; };
+		C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadViewsDidWill.swift; sourceTree = "<group>"; };
+		C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadXXX.swift; sourceTree = "<group>"; };
+		C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,10 +212,15 @@
 		C3CC032320DEF28A00A113DF /* Keypad View */ = {
 			isa = PBXGroup;
 			children = (
-				C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */,
-				C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */,
+				C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */,
+				C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */,
+				C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */,
+				C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */,
+				C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */,
+				C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */,
 				C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */,
 				C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */,
+				C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */,
 			);
 			path = "Keypad View";
 			sourceTree = "<group>";
@@ -349,15 +364,20 @@
 				C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */,
 				C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */,
 				C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */,
+				C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */,
 				C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */,
 				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
 				C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */,
-				C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */,
+				C3CC032F20DEFCE400A113DF /* KeyPadXXX.swift in Sources */,
+				C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
 				C3CC032720DEF2DF00A113DF /* KeyPadPopovers.swift in Sources */,
 				C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */,
+				C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */,
+				C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */,
 				C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */,
+				C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */,
 				C39ABD2020DDFBCF00DA5BC8 /* AppDelegate.swift in Sources */,
 				C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */,
 			);

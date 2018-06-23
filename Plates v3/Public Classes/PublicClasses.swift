@@ -237,7 +237,6 @@ class PublicClasses {
             platesLabel.text = ""
             PublicClasses.drawPlates(platesView)
             PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
-            
         })
         
     }

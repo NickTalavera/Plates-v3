@@ -275,7 +275,9 @@ class AppData {
         var percentageModeActive: Bool
         var didLoad: Bool
         var alwaysSort: Bool
+        var keypadMovedUp: Bool
         var currentPageUnit: UnitOfWeight.unitType
+        var keyboardHeight: CGFloat
         init() {
             convertedUnitsOn = false
             platesOutputSelectable = false
@@ -284,7 +286,9 @@ class AppData {
             percentageModeActive = false
             didLoad = false
             alwaysSort = false
+            keypadMovedUp = false
             currentPageUnit = UnitOfWeight.unitType.lb
+            keyboardHeight = 0
         }
     }
     

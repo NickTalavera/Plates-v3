@@ -17,19 +17,19 @@ open class DataAccess: NSObject {
 
     var succeededSave: Bool
     var tryCount: Int
-    let appDataID = CKRecordID(recordName: "User0")
-    let container: CKContainer
-    let publicDatabase: CKDatabase
-    let privateDatabase: CKDatabase
+//    let appDataID = CKRecordID(recordName: "User0")
+//    let container: CKContainer
+//    let publicDatabase: CKDatabase
+//    let privateDatabase: CKDatabase
 //    weak var delegate:MainDelegate?
     static let sharedInstance = DataAccess()
     override init() {
         self.succeededSave = false
         self.tryCount = 0
-//        //            self.container = CKContainer.defaultContainer()
-        self.container = CKContainer(identifier: "iCloud.GibbsFFT.Bar---Barbell-Plate-Weight-Calculator")
-        self.publicDatabase = container.publicCloudDatabase
-        self.privateDatabase = container.privateCloudDatabase
+////        //            self.container = CKContainer.defaultContainer()
+//        self.container = CKContainer(identifier: "iCloud.GibbsFFT.Bar---Barbell-Plate-Weight-Calculator")
+//        self.publicDatabase = container.publicCloudDatabase
+//        self.privateDatabase = container.privateCloudDatabase
     }
 //
     open func saveEverything() {

@@ -181,13 +181,12 @@ extension PublicClasses {
         //            #if os(iOS)
         //            PublicClasses.wcSendAllImportantGlobals()
         //            #endif
-        //    }
-        //        #endif
-        //
-        //        #if os(iOS) || os(OSX) || os(tvOS)
-        //    class func percentButtonAction(_ weightEntryTextField: PlatesTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: View, GoButton: UIButton) {
-        //                    let platesLabelText = platesLabel.text
-        //                    let weightEntryTextFieldText = weightEntryTextField.text
+            }
+
+    
+            class func percentButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
+                            let platesLabelText = platesLabel.text
+                            let weightEntryTextFieldText = weightEntryTextField.text
         
         //                if platesLabelText == "" {
         //                    #if os(iOS) || os(watchOS) || os(tvOS)
