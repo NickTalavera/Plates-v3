@@ -345,14 +345,13 @@ extension PublicClasses {
 //U
     
     class func plateButtonPressed(_ buttonSpot: Int, platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: UITextField, platesView: UIView?=nil, GoButton: UIButton) {
-//            #endif
-//            GoButton!.isEnabled = true
-//            if weightEntryTextField.text!.characters.count == 0 || GlobalVariables.sharedInstance.weightToLift == GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight {
+            GoButton.isEnabled = true
+//            if weightEntryTextField.text!.characters.count == 0 || appProfile.weightToLift == GlobalVariables.sharedInstance.currentBarWeight + appProfile.currentCollarWeight {
 //                platesLabel.alpha = 0
 //                platesView!.alpha = 0
 //                weightEntryTextField.alpha = 0
 //            }
-//            UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0,
+//            UIView.animate(withDuration: appVisuals.platesFadeDuration, delay: 0.0,
 //                           options: [],
 //                           animations: {
 //                            platesLabel.alpha = 1
@@ -363,26 +362,6 @@ extension PublicClasses {
 //            if (placeholderText?.characters.count)! > 0 {
 //                placeholderText = PublicClasses.removeUnitsFromText(placeholderText!)
 //                weightEntryTextField.text = placeholderText
-//            }
-//        #elseif os(OSX)
-//            Armchair.userDidSignificantEvent(false)
-//            if weightEntryTextField.stringValue.characters.count == 0 || GlobalVariables.sharedInstance.weightToLift == GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight {
-//                platesLabel.alphaValue = 0
-//                platesView!.alphaValue = 0
-//                weightEntryTextField.alphaValue = 0
-//            }
-//            NSAnimationContext.runAnimationGroup({ (context) -> Void in
-//                context.duration = GlobalVariables.sharedInstance.animationTime
-//                platesLabel.animator().alphaValue = 1
-//                platesView!.animator().alphaValue = 1
-//                weightEntryTextField.animator().alphaValue = 1
-//                GoButton!.enabled = true
-//                }, completionHandler: { () -> Void in
-//            })
-//            var placeholderText = weightEntryTextField.stringValue
-//            if placeholderText.characters.count > 0 {
-//                placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
-//                weightEntryTextField.stringValue = placeholderText
 //            }
 //        GlobalVariables.sharedInstance.keyPadUsedNow = true
 //        GlobalVariables.sharedInstance.currentPlatesInUse += [String(GlobalVariables.sharedInstance.currentPlates[buttonSpot]) + " " + GlobalVariables.sharedInstance.units]

@@ -233,7 +233,7 @@ class AppVisuals {
     }
 }
 
-class AppStatus {
+class Status {
     var convertedUnitsOn: Bool
     var platesOutputSelectable: Bool
     var errorState: Bool
@@ -254,9 +254,20 @@ class AppStatus {
     }
 }
 
-class AppCalcs {
+class Calcs {
+    var weightToLift: Double
     var weightToLiftString: String
     init() {
+        weightToLift = 0
         weightToLiftString = ""
+    }
+}
+
+class AppData {
+    var calc: Calcs
+    var status: Status
+    init() {
+        calc = Calcs()
+        status = Status()
     }
 }

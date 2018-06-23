@@ -77,7 +77,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appStatus.didLoad = true
+        app.status.didLoad = true
 //        DataAccess.sharedInstance.delegate = self
 //        NotificationCenter.default.addObserver(self, selector: #selector(iCloudOverwroteData), name: NSNotification.Name(rawValue: "iCloudOverwroteData"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(iCloudNewDataFetched), name: NSNotification.Name(rawValue: "iCloudNewDataFetched"), object: nil)
@@ -224,7 +224,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 //
     func setToWeightTextField() {
 //        weightEntryTextField.floatingLabel.attributedText = NSLocalizedString("Total weight", comment: "")
-        weightEntryTextField.placeholder = appCalcs.weightToLiftString
+        weightEntryTextField.placeholder = app.calc.weightToLiftString
         weightEntryTextField.keyboardType = .decimalPad
     }
 
@@ -308,7 +308,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change
         var result: Bool = false
-        if appStatus.percentageModeActive == true {
+        if app.status.percentageModeActive == true {
 //            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: GlobalVariables.sharedInstance.percentageModeActive)
         }
         else {
@@ -329,7 +329,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
                 self.platesLabel.text = ""
             })
 
-            appStatus.errorState = false
+            app.status.errorState = false
 //            self.weightEntryTextField.errorMessage = ""
             //            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
         }

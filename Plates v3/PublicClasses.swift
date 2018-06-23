@@ -12,8 +12,7 @@ import UIKit
 import JVFloatLabeledText
 
 var appVisuals = AppVisuals()
-var appCalcs = AppCalcs()
-var appStatus = AppStatus()
+var app = AppData()
 var appProfile = AppProfile()
 
 class PublicClasses {
