@@ -74,7 +74,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     var weightOutputLabel: UILabel = UILabel()
     var percentageModeActive: Bool = false
     var keyboardHeight: CGFloat = 0
-    var appDetails = AppDetails()
+    var appVisuals = AppVisuals()
+    var appStatus = AppStatus()
     @IBOutlet weak var navigationBar: UINavigationItem!
     
     override func viewDidLoad() {
@@ -148,7 +149,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         super.viewWillAppear(animated)
         maximizeLabelFonts()
 
-        let fontAttributes = [NSAttributedStringKey.font: appDetails.fontStandard]
+        let fontAttributes = [NSAttributedStringKey.font: appVisuals.fontStandard]
 //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
 //        print("myText")
 //        print(myText)
@@ -191,7 +192,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.setupGradientLayer()
 //        let origText: String = platesLabel.text
 //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
-//        let fontAttributes = [NSAttributedStringKey.font: appDetails.fontStandard] // it says name, but a UIFont works
+//        let fontAttributes = [NSAttributedStringKey.font: appVisuals.fontStandard] // it says name, but a UIFont works
 //        let size = (myText as NSString).size(withAttributes: fontAttributes)
 //        if origText == "" {
 //            platesLabel.text = ""
@@ -312,31 +313,31 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change
         var result: Bool = false
-//        if GlobalVariables.sharedInstance.percentageModeActive == true {
+        if appStatus.percentageModeActive == true {
 //            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: GlobalVariables.sharedInstance.percentageModeActive)
-//        }
-//        else {
+        }
+        else {
 //            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: GlobalVariables.sharedInstance.currentDecimalPlaces, maxIntegerPlaces: 4, percentageMode: GlobalVariables.sharedInstance.percentageModeActive)
 //            self.weightEntryTextField.title = NSLocalizedString("Total weight", comment: "")
-//            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
-//            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()
-//            //            PublicClasses.drawPlates(self.platesView)
-//        }
-//        if result == true && self.platesLabel.alpha != 0 {
-//            self.platesLabel.alpha = 1
-//            self.platesView.alpha = 1
-//            UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0, options: [], animations: {
-//                self.platesLabel.alpha = 0
-//                self.platesView.alpha = 0
-//            }, completion: {
-//                (value: Bool) in
-//                self.platesLabel.text = ""
-//            })
-//
-//            GlobalVariables.sharedInstance.errorState=false
+            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
+            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()
+            //            PublicClasses.drawPlates(self.platesView)
+        }
+        if result == true && self.platesLabel.alpha != 0 {
+            self.platesLabel.alpha = 1
+            self.platesView.alpha = 1
+            UIView.animate(withDuration: appVisuals.platesFadeDuration, delay: 0.0, options: [], animations: {
+                self.platesLabel.alpha = 0
+                self.platesView.alpha = 0
+            }, completion: {
+                (value: Bool) in
+                self.platesLabel.text = ""
+            })
+
+            appStatus.errorState = false
 //            self.weightEntryTextField.errorMessage = ""
-//            //            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
-//        }
+            //            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+        }
         return result
     }
 
@@ -345,16 +346,16 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     }
 //
     func setupGradientLayer() {
-//        gradientLayer.removeFromSuperlayer()
-//        let topColor = GlobalVariables.sharedInstance.gradientColor1.cgColor as CGColor
-//        let bottomColor =  GlobalVariables.sharedInstance.gradientColor2.cgColor as CGColor
-//        let deviceScale = UIScreen.main.scale
-//        gradientLayer.frame = CGRectMake(0.0, 0.0, self.view.frame.size.width * deviceScale, self.view.frame.size.height * deviceScale)
-//        gradientLayer.colors = [topColor, bottomColor]
-//        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-//        gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.2)
-//        //        gradientLayer.backgroundColor = GlobalVariables.sharedInstance.gradientColor1.CGColor
-//        self.view.layer.insertSublayer(gradientLayer, at: 0)
+        gradientLayer.removeFromSuperlayer()
+        let topColor = appVisuals.gradientColor1.cgColor as CGColor
+        let bottomColor =  appVisuals.gradientColor2.cgColor as CGColor
+        let deviceScale = UIScreen.main.scale
+        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width * deviceScale, height: self.view.frame.size.height * deviceScale)
+        gradientLayer.colors = [topColor, bottomColor]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.2)
+        //        gradientLayer.backgroundColor = GlobalVariables.sharedInstance.gradientColor1.CGColor
+        self.view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
 
@@ -362,61 +363,60 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 
     func setupInitialViews() {
         self.setupGradientLayer()
-        self.view.backgroundColor = appDetails.gradientColor1
+        self.view.backgroundColor = appVisuals.gradientColor1
 //        PublicClasses.updateTextViewFont(platesLabel,maxTextSize: GlobalVariables.sharedInstance.currentMaxFont)
-        self.view.backgroundColor=appDetails.mainColor
+        self.view.backgroundColor=appVisuals.mainColor
         var titleFontName = "Helvetica"
         print(NSLocale.preferredLanguages as [String])
         let preferredLanguage = NSLocale.preferredLanguages[0] as String
-//        GlobalVariables.sharedInstance.titleVerticalAdjustment = 3.5
-//        if preferredLanguage == "ja" {
-//            GlobalVariables.sharedInstance.titleVerticalAdjustment = -1
+        appVisuals.titleVerticalAdjustment = 3.5
+        if preferredLanguage == "ja" {
+            appVisuals.titleVerticalAdjustment = -1
 //            titleFontName = "HiraginoSans-W6"
-//        }
-//        else if preferredLanguage == "ru" {
-//            GlobalVariables.sharedInstance.titleVerticalAdjustment = 3.5
+        }
+        else if preferredLanguage == "ru" {
+            appVisuals.titleVerticalAdjustment = 3.5
 //            titleFontName = "StampborGrunge"
-//        }
+        }
 //        else if preferredLanguage == "ko" {
 //            titleFontName = "HelveticaNeue-CondensedBold"
 //        }
 //        else if preferredLanguage == "zh-Hans" {
 //            titleFontName = "HelveticaNeue-CondensedBold"
 //        }
-        appDetails.fontTitle = UIFont.init(name: titleFontName, size: 28)!
-
+        appVisuals.fontTitle = UIFont.init(name: titleFontName, size: 28)!
         let bigLabel: UILabel = UILabel()
         bigLabel.text = NSLocalizedString("Plates", comment: "")
         bigLabel.backgroundColor = UIColor.clear
-        bigLabel.textColor = appDetails.secondaryColor
-        bigLabel.font = appDetails.fontTitle
+        bigLabel.textColor = appVisuals.secondaryColor
+        bigLabel.font = appVisuals.fontTitle
         bigLabel.adjustsFontSizeToFitWidth = true
         bigLabel.sizeToFit()
         self.navigationItem.titleView = bigLabel
 
 
 
-//        navigationController?.navigationBar.setTitleVerticalPositionAdjustment(GlobalVariables.sharedInstance.titleVerticalAdjustment, for: .default)
+        navigationController?.navigationBar.setTitleVerticalPositionAdjustment(appVisuals.titleVerticalAdjustment, for: .default)
 //        self.navigationController?.hidesNavigationBarHairline = true
 //        let tintedImage = UIImage(named: "settingsIcon")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
 //        //        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: GlobalVariables.sharedInstance.secondaryColor, NSFontAttributeName: GlobalVariables.sharedInstance.fontTitle!]
-        navigationController!.navigationBar.barTintColor = appDetails.textPadColor
-        One_One_View.backgroundColor = appDetails.textPadColor
-        One_Two_View.backgroundColor = appDetails.textPadColor
-        One_Three_View.backgroundColor = appDetails.textPadColor
-        One_Four_View.backgroundColor = appDetails.textPadColor
-        Two_One_View.backgroundColor = appDetails.textPadColor
-        Two_Two_View.backgroundColor = appDetails.textPadColor
-        Two_Three_View.backgroundColor = appDetails.textPadColor
-        Two_Four_View.backgroundColor = appDetails.textPadColor
-        Three_One_View.backgroundColor = appDetails.textPadColor
-        Three_Two_View.backgroundColor = appDetails.textPadColor
-        Three_Three_View.backgroundColor = appDetails.textPadColor
-        Three_Four_View.backgroundColor = appDetails.textPadColor
-        Four_One_View.backgroundColor = appDetails.textPadColor
-        Four_Two_View.backgroundColor = appDetails.textPadColor
-        Four_Three_View.backgroundColor = appDetails.textPadColor
-        Four_Four_View.backgroundColor = appDetails.textPadColor
+        navigationController!.navigationBar.barTintColor = appVisuals.textPadColor
+        One_One_View.backgroundColor = appVisuals.textPadColor
+        One_Two_View.backgroundColor = appVisuals.textPadColor
+        One_Three_View.backgroundColor = appVisuals.textPadColor
+        One_Four_View.backgroundColor = appVisuals.textPadColor
+        Two_One_View.backgroundColor = appVisuals.textPadColor
+        Two_Two_View.backgroundColor = appVisuals.textPadColor
+        Two_Three_View.backgroundColor = appVisuals.textPadColor
+        Two_Four_View.backgroundColor = appVisuals.textPadColor
+        Three_One_View.backgroundColor = appVisuals.textPadColor
+        Three_Two_View.backgroundColor = appVisuals.textPadColor
+        Three_Three_View.backgroundColor = appVisuals.textPadColor
+        Three_Four_View.backgroundColor = appVisuals.textPadColor
+        Four_One_View.backgroundColor = appVisuals.textPadColor
+        Four_Two_View.backgroundColor = appVisuals.textPadColor
+        Four_Three_View.backgroundColor = appVisuals.textPadColor
+        Four_Four_View.backgroundColor = appVisuals.textPadColor
         FiftyFiveLbsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         FortyFiveLbsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         ThirtyFiveLbsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
@@ -434,182 +434,182 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         InventoryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         UnitsButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         GoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
-//        keyPadBackgroundView.backgroundColor = GlobalVariables.sharedInstance.keyPadBackgroundViewColor
-//        navBarButton.setImage(tintedImage, for: UIControlState.normal)
-//        navBarButton.tintColor =  GlobalVariables.sharedInstance.secondaryColor
-//        navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside)
-//        navBarButton.frame = CGRectMake(0, 0, 31, 31)
-//        navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
-//        navBarButton.setTitle("", for: .normal)
-//        barTextInput.backgroundColor = UIColor.white
-//        platesLabel.text = ""
-//        platesLabel.accessibilityLabel = "Plate calculation output"
-//        platesLabel.accessibilityHint = "Output showing the plates needed on each side"
-//        platesLabel.font = appDetails.fontStandard
-//        platesLabel.textColor = GlobalVariables.sharedInstance.secondaryTextColor
-//        platesLabel.isUserInteractionEnabled = false
-//        hiddenHeightKeepingLabel.titleLabel?.font = appDetails.fontStandard.withSize(GlobalVariables.sharedInstance.currentMaxFont)
-//        //        hiddenHeightKeepingLabel.isHidden = true
-        GoButton.setTitleColor(appDetails.secondaryTextColor, for: UIControlState.normal)
-        GoButton.backgroundColor = appDetails.secondaryColor
+        keyPadBackgroundView.backgroundColor = appVisuals.keyPadBackgroundViewColor
+        navBarButton.setImage(tintedImage, for: UIControlState.normal)
+        navBarButton.tintColor =  appVisuals.secondaryColor
+        navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside)
+        navBarButton.frame = CGRectMake(0, 0, 31, 31)
+        navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
+        navBarButton.setTitle("", for: .normal)
+        barTextInput.backgroundColor = UIColor.white
+        platesLabel.text = ""
+        platesLabel.accessibilityLabel = "Plate calculation output"
+        platesLabel.accessibilityHint = "Output showing the plates needed on each side"
+        platesLabel.font = appVisuals.fontStandard
+        platesLabel.textColor = appVisuals.secondaryTextColor
+        platesLabel.isUserInteractionEnabled = false
+        hiddenHeightKeepingLabel.titleLabel?.font = appVisuals.fontStandard.withSize(GlobalVariables.sharedInstance.currentMaxFont)
+        //        hiddenHeightKeepingLabel.isHidden = true
+        GoButton.setTitleColor(appVisuals.secondaryTextColor, for: UIControlState.normal)
+        GoButton.backgroundColor = appVisuals.secondaryColor
         GoButton.titleLabel?.allowsDefaultTighteningForTruncation = true
         GoButton.titleLabel?.adjustsFontSizeToFitWidth = true
         GoButton.isEnabled = false
         GoButton.titleLabel?.minimumScaleFactor = 0.01
-        GoButton.titleLabel?.font = appDetails.fontStandard
+        GoButton.titleLabel?.font = appVisuals.fontStandard
         GoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         GoButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
-        FiftyFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        FiftyFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         FiftyFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         FiftyFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        FiftyFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        FiftyFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        FortyFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        FiftyFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        FiftyFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        FortyFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         FortyFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         FortyFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        FortyFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        FortyFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        ThirtyFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        FortyFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        FortyFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        ThirtyFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         ThirtyFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         ThirtyFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        ThirtyFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        ThirtyFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        TwentyFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        ThirtyFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        ThirtyFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        TwentyFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         TwentyFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         TwentyFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        TwentyFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        TwentyFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        FifteenLbsButton.titleLabel!.font = appDetails.fontStandard
+        TwentyFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        TwentyFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        FifteenLbsButton.titleLabel!.font = appVisuals.fontStandard
         FifteenLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         FifteenLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        FifteenLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        FifteenLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        TenLbsButton.titleLabel!.font = appDetails.fontStandard
+        FifteenLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        FifteenLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        TenLbsButton.titleLabel!.font = appVisuals.fontStandard
         TenLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         TenLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        TenLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        TenLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        RemoveButton.titleLabel!.font = appDetails.fontStandard
+        TenLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        TenLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        RemoveButton.titleLabel!.font = appVisuals.fontStandard
         RemoveButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         RemoveButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        RemoveButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        RemoveButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        FiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        RemoveButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        RemoveButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        FiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         FiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         FiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        FiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        FiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        TwoPointFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        FiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        FiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        TwoPointFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         TwoPointFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         TwoPointFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        TwoPointFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        TwoPointFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        OnePointTwoFiveLbsButton.titleLabel!.font = appDetails.fontStandard
+        TwoPointFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        TwoPointFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        OnePointTwoFiveLbsButton.titleLabel!.font = appVisuals.fontStandard
         OnePointTwoFiveLbsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         OnePointTwoFiveLbsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        OnePointTwoFiveLbsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        OnePointTwoFiveLbsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
+        OnePointTwoFiveLbsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        OnePointTwoFiveLbsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
 //        PercentButton.setTitle(PublicClasses.numberFormatterDecimal.percentSymbol, for: .normal)
-        PercentButton.titleLabel!.font = appDetails.fontStandard
+        PercentButton.titleLabel!.font = appVisuals.fontStandard
         PercentButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         PercentButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
         PercentButton.contentVerticalAlignment = .center
         PercentButton.contentHorizontalAlignment = .center
-        PercentButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        PercentButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        ClearButton.titleLabel!.font = appDetails.fontStandard
+        PercentButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        PercentButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        ClearButton.titleLabel!.font = appVisuals.fontStandard
         ClearButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         ClearButton.setTitle(NSLocalizedString("Clear", comment: ""), for: .normal)
         ClearButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
         ClearButton.contentVerticalAlignment = .center
         ClearButton.contentHorizontalAlignment = .center
-        ClearButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        ClearButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        BarbellButton.titleLabel!.font = appDetails.fontStandard
+        ClearButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        ClearButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        BarbellButton.titleLabel!.font = appVisuals.fontStandard
         BarbellButton.titleLabel!.adjustsFontSizeToFitWidth = true;
-        BarbellButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        BarbellButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
+        BarbellButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        BarbellButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
         BarbellButton.setTitle(NSLocalizedString("Bar", comment: ""), for: .normal)
         BarbellButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
         BarbellButton.contentVerticalAlignment = .center
         PercentButton.contentHorizontalAlignment = .center
-        CollarsButton.titleLabel!.font = appDetails.fontStandard
+        CollarsButton.titleLabel!.font = appVisuals.fontStandard
         CollarsButton.setTitle(NSLocalizedString("Collar", comment: ""), for: .normal)
         CollarsButton.contentVerticalAlignment = .center
         CollarsButton.contentHorizontalAlignment = .center
         CollarsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         CollarsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        CollarsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        CollarsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        InventoryButton.titleLabel!.font = appDetails.fontStandard
+        CollarsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        CollarsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        InventoryButton.titleLabel!.font = appVisuals.fontStandard
         InventoryButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         InventoryButton.contentVerticalAlignment = .center
         InventoryButton.contentHorizontalAlignment = .center
         InventoryButton.setTitle(NSLocalizedString("Gym", comment: ""), for: .normal)
         InventoryButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        InventoryButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        InventoryButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
-        UnitsButton.titleLabel!.font = appDetails.fontStandard
+        InventoryButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        InventoryButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
+        UnitsButton.titleLabel!.font = appVisuals.fontStandard
         UnitsButton.contentVerticalAlignment = .center
         UnitsButton.contentHorizontalAlignment = .center
         UnitsButton.titleLabel!.adjustsFontSizeToFitWidth = true;
         UnitsButton.titleLabel!.lineBreakMode = NSLineBreakMode.byClipping
-        UnitsButton.setTitleColor(appDetails.defaultTextColor, for: UIControlState.normal)
-        UnitsButton.setTitleColor(appDetails.placeholderColor, for: UIControlState.disabled)
+        UnitsButton.setTitleColor(appVisuals.defaultTextColor, for: UIControlState.normal)
+        UnitsButton.setTitleColor(appVisuals.placeholderColor, for: UIControlState.disabled)
         weightEntryTextField.text = ""
-        weightEntryTextField.textColor = appDetails.secondaryTextColor
-//        weightEntryTextField.errorColor = appDetails.errorColor
+        weightEntryTextField.textColor = appVisuals.secondaryTextColor
+//        weightEntryTextField.errorColor = appVisuals.errorColor
         weightEntryTextField.delegate = self
         weightEntryTextField.tag = 1
-//        setToWeightTextField()
-//        weightEntryTextField.font =  appDetails.fontStandard
-//        weightEntryTextField.placeholderFont =  appDetails.fontStandard
-//        //        weightEntryTextField.iconFont =  appDetails.fontStandard
-//        weightEntryTextField.titleLabel.font = GlobalVariables.sharedInstance.fontTextFieldRiser
-//        //        weightEntryTextField.minimumFontSize = 0.01
+        setToWeightTextField()
+        weightEntryTextField.font =  appVisuals.fontStandard
+//        weightEntryTextField.placeholderFont =  appVisuals.fontStandard
+        //        weightEntryTextField.iconFont =  appVisuals.fontStandard
+//        weightEntryTextField.titleLabel.font = appVisuals.fontTextFieldRiser
+        //        weightEntryTextField.minimumFontSize = 0.01
 //        weightEntryTextField.titleLabel.minimumScaleFactor = 0.01
 //        weightEntryTextField.titleLabel.adjustsFontSizeToFitWidth = true
-//        //        weightEntryTextField.selectedIconColor = appDetails.defaultTextColor
-//        weightEntryTextField.placeholderColor = appDetails.placeholderColor
+        //        weightEntryTextField.selectedIconColor = appVisuals.defaultTextColor
+        weightEntryTextField.placeholderColor = appVisuals.placeholderColor
 //        weightEntryTextField.lineColor = GlobalVariables.sharedInstance.secondaryColor
-//        weightEntryTextField.tintColor = appDetails.placeholderColor
-//        weightEntryTextField.accessibilityLabel = "Weight entry"
-//        weightEntryTextField.accessibilityHint = "Shows the current weight to lift. Tap to type in another weight to calculate. If the percent button is active, type in the percent you want to multiply the current weight to lift by."
+        weightEntryTextField.tintColor = appVisuals.placeholderColor
+        weightEntryTextField.accessibilityLabel = "Weight entry"
+        weightEntryTextField.accessibilityHint = "Shows the current weight to lift. Tap to type in another weight to calculate. If the percent button is active, type in the percent you want to multiply the current weight to lift by."
 //        weightEntryTextField.titleColor = GlobalVariables.sharedInstance.secondaryColor
 //        weightEntryTextField.selectedTitleColor = GlobalVariables.sharedInstance.secondaryColor
 //        weightEntryTextField.selectedLineColor = GlobalVariables.sharedInstance.secondaryTextColor
 //        weightEntryTextField.titleFadeInDuration = GlobalVariables.sharedInstance.animationTime
 //        weightEntryTextField.titleFadeOutDuration = GlobalVariables.sharedInstance.animationTime
-//        weightEntryTextField.keyboardType = .decimalPad
-//
-//        barTextInput.superview?.bringSubview(toFront: barTextInput)
-//        weightEntryTextField.superview?.bringSubview(toFront: weightEntryTextField)
-//        GoButton.superview?.bringSubview(toFront: GoButton)
-//
+        weightEntryTextField.keyboardType = .decimalPad
+
+        barTextInput.superview?.bringSubview(toFront: barTextInput)
+        weightEntryTextField.superview?.bringSubview(toFront: weightEntryTextField)
+        GoButton.superview?.bringSubview(toFront: GoButton)
+
 //        self.platesLabel.addShadow(offset: CGSize(width: 0, height: 0), color: UIColor.black, radius: 4, opacity: 0.4)
 //        self.barTextInput.addShadow(offset: CGSize(width: 0, height: 0), color: UIColor.black, radius: 4, opacity: 0.4)
 //        self.keyPadBackgroundView.addShadow(offset: CGSize(width: 0, height: 0), color: UIColor.black, radius: 4, opacity: 0.4)
 //        self.platesView.addShadow(offset: CGSize(width: 0, height: 0), color: UIColor.black, radius: 4, opacity: 0.4)
-//
-//
-//        self.view.addSubview(weightEntryTextField)
-//
-//        self.view.addSubview(weightOutputLabel)
-//        self.view.bringSubview(toFront: GoButton)
-//        let goButtonBottomContraints = NSLayoutConstraint(item: self.GoButton, attribute: .bottom, relatedBy: .equal, toItem: self.weightEntryTextField, attribute: .bottom, multiplier: 1.0, constant: 3)
-//        horizonalLeftContraints = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .leadingMargin, relatedBy: .equal, toItem: self.barTextInput, attribute: .leadingMargin, multiplier: 1.0, constant: 20)
-//        let horizonalRightContraints = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .trailingMargin, relatedBy: .equal, toItem: self.GoButton, attribute: .leadingMargin, multiplier: 1.0, constant: -30)
-//        let weightEntryTextFieldBottom = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .bottom, relatedBy: .equal, toItem: self.One_One_View, attribute: .top, multiplier: 1, constant: -10)
-//        let platesLabelTextField = NSLayoutConstraint(item: self.platesLabel, attribute: .bottom, relatedBy: NSLayoutRelation.equal, toItem: self.weightEntryTextField, attribute: .top, multiplier: 1, constant: 0)
-//        let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: self.weightEntryTextField.frame.size.width, height: CGFloat(MAXFLOAT)));
-//        weightEntryTextFieldHeight = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: expectSize.height+8)
-//        self.barTextInput.translatesAutoresizingMaskIntoConstraints = false
-//        self.GoButton.translatesAutoresizingMaskIntoConstraints = false
-//        self.platesLabel.translatesAutoresizingMaskIntoConstraints = false
-//        self.weightEntryTextField.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([weightEntryTextFieldHeight,platesLabelTextField,goButtonBottomContraints,horizonalLeftContraints, horizonalRightContraints,weightEntryTextFieldBottom])
-//        self.view.layoutIfNeeded()
+
+
+        self.view.addSubview(weightEntryTextField)
+
+        self.view.addSubview(weightOutputLabel)
+        self.view.bringSubview(toFront: GoButton)
+        let goButtonBottomContraints = NSLayoutConstraint(item: self.GoButton, attribute: .bottom, relatedBy: .equal, toItem: self.weightEntryTextField, attribute: .bottom, multiplier: 1.0, constant: 3)
+        horizonalLeftContraints = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .leadingMargin, relatedBy: .equal, toItem: self.barTextInput, attribute: .leadingMargin, multiplier: 1.0, constant: 20)
+        let horizonalRightContraints = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .trailingMargin, relatedBy: .equal, toItem: self.GoButton, attribute: .leadingMargin, multiplier: 1.0, constant: -30)
+        let weightEntryTextFieldBottom = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .bottom, relatedBy: .equal, toItem: self.One_One_View, attribute: .top, multiplier: 1, constant: -10)
+        let platesLabelTextField = NSLayoutConstraint(item: self.platesLabel, attribute: .bottom, relatedBy: NSLayoutRelation.equal, toItem: self.weightEntryTextField, attribute: .top, multiplier: 1, constant: 0)
+        let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: self.weightEntryTextField.frame.size.width, height: CGFloat(MAXFLOAT)));
+        weightEntryTextFieldHeight = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: expectSize.height+8)
+        self.barTextInput.translatesAutoresizingMaskIntoConstraints = false
+        self.GoButton.translatesAutoresizingMaskIntoConstraints = false
+        self.platesLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.weightEntryTextField.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([weightEntryTextFieldHeight,platesLabelTextField,goButtonBottomContraints,horizonalLeftContraints, horizonalRightContraints,weightEntryTextFieldBottom])
+        self.view.layoutIfNeeded()
     }
 
     func maximizeLabelFonts() {
@@ -640,14 +640,14 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 //                viewToMaximize.titleLabel!.font = Font.systemFont(ofSize: pointSizesFour[viewsToMaximizeBottomFour.index(of: viewToMaximize)!], weight: UIFont.Weight.thin)
 //            }
 //        }
-//        weightEntryTextField.font = appDetails.fontStandard
-//        weightEntryTextField.placeholderFont = appDetails.fontStandard
+//        weightEntryTextField.font = appVisuals.fontStandard
+//        weightEntryTextField.placeholderFont = appVisuals.fontStandard
 //        weightEntryTextField.titleLabel.font = GlobalVariables.sharedInstance.fontTextFieldRiser
 //
 //
 //
 //
-//        hiddenHeightKeepingLabel.titleLabel?.font = appDetails.fontStandard
+//        hiddenHeightKeepingLabel.titleLabel?.font = appVisuals.fontStandard
 //        print(hiddenHeightKeepingLabel.frame.size)
 //
 //        let textViewSize = self.weightEntryTextField.frame.size;

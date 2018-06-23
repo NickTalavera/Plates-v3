@@ -44,11 +44,7 @@
 //    var collarsSetValues: [String: Double] = ["No collar": 0, "Spring collar": 1, "Lock-jaw collar": 0.16]
 //    var collarsSetUnits: [String: String] = ["No collar": "lbs", "Spring collar": "lbs", "Lock-jaw collar": "Kg"]
 //    var currentCollarSet: [String: Double] = [String: Double]()
-//    var convertedUnitsOn: Bool = false
-//    var platesOutputSelectable: Bool = false
-//    var errorState: Bool = false
-//    var keyPadUsedNow: Bool = false
-//    var percentageModeActive: Bool = false
+
 //    var currentCollarWeight: Double = -1000
 //    var currentCollarName: String = "No collar"
 //    var weightToLiftString: String = "Weight to lift"

@@ -176,13 +176,10 @@ class AppProfile {
         currentCollar = self.collarCollection.list.last!
         currentPlateSet = self.plateCollection.list.first!
     }
-    
-    
-    
 }
 
 
-class AppDetails {
+class AppVisuals {
     var textPadColor: UIColor
     var textPadColorDisabled: UIColor
     var secondaryColor: UIColor
@@ -204,6 +201,9 @@ class AppDetails {
     var placeholderColor: UIColor
     var errorColor: UIColor
     var secondaryColorBlend: UIColor
+    var platesFadeDuration: Double
+    var titleVerticalAdjustment: CGFloat
+    
     init() {
         textPadColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
         textPadColorDisabled = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
@@ -228,5 +228,23 @@ class AppDetails {
         placeholderColor = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
         errorColor = UIColor(red: 231/255, green: 41/255, blue: 18/255, alpha: 0.86)
         secondaryColorBlend = UIColor(red: 4/255, green: 180/255, blue: 72/255, alpha: 0.86)
+        platesFadeDuration = 0.3
+        titleVerticalAdjustment = 3.5
+    }
+}
+
+
+class AppStatus {
+    var convertedUnitsOn: Bool
+    var platesOutputSelectable: Bool
+    var errorState: Bool
+    var keyPadUsedNow: Bool
+    var percentageModeActive: Bool
+    init() {
+        convertedUnitsOn = false
+        platesOutputSelectable = false
+        errorState = false
+        keyPadUsedNow = false
+        percentageModeActive = false
     }
 }
