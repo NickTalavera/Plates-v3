@@ -73,9 +73,6 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     var weightOutputLabel: UILabel = UILabel()
     var percentageModeActive: Bool = false
     var keyboardHeight: CGFloat = 0
-    var appVisuals = AppVisuals()
-    var appCalcs = AppCalcs()
-    var appStatus = AppStatus()
     @IBOutlet weak var navigationBar: UINavigationItem!
     
     override func viewDidLoad() {
@@ -191,18 +188,18 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.maximizeLabelFonts()
         self.setupGradientLayer()
         let origText: String = platesLabel.text
-//        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
-//        let fontAttributes = [NSAttributedStringKey.font: appVisuals.fontStandard] // it says name, but a UIFont works
-//        let size = (myText as NSString).size(withAttributes: fontAttributes)
+        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
+        let fontAttributes = [NSAttributedStringKey.font: appVisuals.fontStandard] // it says name, but a UIFont works
+        let size = (myText as NSString).size(withAttributes: fontAttributes)
         if origText == "" {
             platesLabel.text = ""
         }
         else {
             platesLabel.text = origText
         }
-//        platesLabelWidthConstraint.constant = size.width + 20
-//
-//        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: GlobalVariables.sharedInstance.currentMaxFont)
+        platesLabelWidthConstraint.constant = size.width + 20
+
+//        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: appVisuals.currentMaxFont)
 //        PublicClasses.drawPlates(self.platesView)
 
         self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height

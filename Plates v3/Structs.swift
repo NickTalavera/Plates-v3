@@ -240,6 +240,8 @@ class AppStatus {
     var keyPadUsedNow: Bool
     var percentageModeActive: Bool
     var didLoad: Bool
+    var alwaysSort: Bool
+    var currentPageUnit: UnitOfWeight.unitType
     init() {
         convertedUnitsOn = false
         platesOutputSelectable = false
@@ -247,8 +249,9 @@ class AppStatus {
         keyPadUsedNow = false
         percentageModeActive = false
         didLoad = false
+        alwaysSort = false
+        currentPageUnit = UnitOfWeight.unitType.lb
     }
-    
 }
 
 class AppCalcs {

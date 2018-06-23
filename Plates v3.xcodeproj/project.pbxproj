@@ -25,6 +25,9 @@
 		C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
 		C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; };
 		C3CC030E20DE2B3500A113DF /* JVFloatLabeledText.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
+		C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
+		C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +89,6 @@
 		C3CC031020DE3C3500A113DF /* PublicClassesText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesText.swift; sourceTree = "<group>"; };
 		C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesButtons.swift; sourceTree = "<group>"; };
 		C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesUseful.swift; sourceTree = "<group>"; };
-		C3CC031320DE3C3600A113DF /* PublicClassesDataTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesDataTransfer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +151,6 @@
 				C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */,
 				C3CC030F20DE3C3500A113DF /* PublicClasses.swift */,
 				C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */,
-				C3CC031320DE3C3600A113DF /* PublicClassesDataTransfer.swift */,
 				C3CC031020DE3C3500A113DF /* PublicClassesText.swift */,
 				C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */,
 				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
@@ -318,9 +319,12 @@
 				C39ABD2620DDFBCF00DA5BC8 /* Document.swift in Sources */,
 				C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */,
 				C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */,
+				C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */,
 				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewController.swift in Sources */,
+				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
+				C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */,
 				C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */,
 				C39ABD2020DDFBCF00DA5BC8 /* AppDelegate.swift in Sources */,
 				C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */,

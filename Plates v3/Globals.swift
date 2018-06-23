@@ -1,10 +1,10 @@
-////
-////  Global.swift
-////  Barbell Calculator
-////
-////  Created by Nick Talavera on 4/9/16.
-////  Copyright © 2016 Nick Talavera. All rights reserved.
-////
+//
+//  Global.swift
+//  Barbell Calculator
+//
+//  Created by Nick Talavera on 4/9/16.
+//  Copyright © 2016 Nick Talavera. All rights reserved.
+//
 //
 //import Foundation
 //#if os(iOS)

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import JVFloatLabeledText
 
 extension PublicClasses {
     class func wcSendArrayOfStrings(_ dataToSend: [String]) {
