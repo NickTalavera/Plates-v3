@@ -37,10 +37,10 @@
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-Q6-ohR" userLabel="1_1">
-                                <rect key="frame" x="0.0" y="295" width="149.5" height="47"/>
+                                <rect key="frame" x="0.0" y="295" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-BC-8GN">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="55 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,10 +78,10 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6te-Lj-pA8" userLabel="1_2">
-                                <rect key="frame" x="150.5" y="295" width="149" height="47"/>
+                                <rect key="frame" x="150.5" y="295" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN6-SE-s3M">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="45 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -113,10 +113,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RPM-5h-Vku" userLabel="1_3">
-                                <rect key="frame" x="300.5" y="295" width="149.5" height="47"/>
+                                <rect key="frame" x="300.5" y="295" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-F8-eIc">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="35 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,10 +148,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHR-Ko-QZv" userLabel="1_4">
-                                <rect key="frame" x="451" y="295" width="149" height="47"/>
+                                <rect key="frame" x="451" y="295" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFS-OP-F9o">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                         <state key="normal" title="Clear">
@@ -192,10 +192,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMW-iV-gBI" userLabel="2_1">
-                                <rect key="frame" x="0.0" y="343" width="149.5" height="46.5"/>
+                                <rect key="frame" x="0.0" y="356" width="149.5" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giw-Lv-PWA">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="25 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -227,10 +227,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgk-9m-gme" userLabel="2_2">
-                                <rect key="frame" x="150.5" y="343" width="149" height="46.5"/>
+                                <rect key="frame" x="150.5" y="356" width="149" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XId-VN-Pk6">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="15 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -262,10 +262,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g7h-Bt-Ezh" userLabel="2_3">
-                                <rect key="frame" x="300.5" y="343" width="149.5" height="46.5"/>
+                                <rect key="frame" x="300.5" y="356" width="149.5" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK1-SF-srS">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="10 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -297,10 +297,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wd9-RM-lSh" userLabel="2_4">
-                                <rect key="frame" x="451" y="343" width="149" height="46.5"/>
+                                <rect key="frame" x="451" y="356" width="149" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZO-5m-vb1">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Removes the leftmost plate on the bar" label="Remove">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -341,10 +341,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lAU-Oo-jrg" userLabel="3_1">
-                                <rect key="frame" x="0.0" y="390.5" width="149.5" height="47"/>
+                                <rect key="frame" x="0.0" y="416.5" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-Wy-lUm">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="5 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -376,10 +376,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QeV-Qv-VfH" userLabel="3_2">
-                                <rect key="frame" x="150.5" y="390.5" width="149" height="47"/>
+                                <rect key="frame" x="150.5" y="416.5" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-9d-waA">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="2.5 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -413,16 +413,16 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="aSQ-T5-fN6"/>
                                         <exclude reference="Qhx-ca-6ay"/>
+                                        <exclude reference="aSQ-T5-fN6"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-aq-LpD" userLabel="3_3">
-                                <rect key="frame" x="300.5" y="390.5" width="149.5" height="47"/>
+                                <rect key="frame" x="300.5" y="416.5" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTQ-dt-vzF">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="1.25 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -454,10 +454,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ql7-ev-OHD" userLabel="3_4">
-                                <rect key="frame" x="451" y="390.5" width="149" height="47"/>
+                                <rect key="frame" x="451" y="416.5" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXL-Wm-PU7">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="47"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <accessibility key="accessibilityConfiguration" hint="Press to then type a number to multiply your total weight by." label="Percent">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -498,10 +498,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzk-5H-fHd" userLabel="4_4">
-                                <rect key="frame" x="451" y="438.5" width="149" height="46.5"/>
+                                <rect key="frame" x="451" y="477.5" width="149" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zxC-Ec-04u" userLabel="Units">
-                                        <rect key="frame" x="5" y="0.0" width="139" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                         <state key="normal" title="Units">
@@ -540,7 +540,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarbellPro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-NG-fPi">
-                                <rect key="frame" x="20" y="96" width="0.0" height="35"/>
+                                <rect key="frame" x="0.0" y="96" width="0.0" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" id="irk-ym-Zko"/>
                                     <constraint firstAttribute="height" constant="35" id="ntg-R0-vYl"/>
@@ -581,11 +581,11 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THm-NU-E6K">
-                                <rect key="frame" x="600" y="10" width="0.0" height="409.5"/>
+                                <rect key="frame" x="600" y="10" width="0.0" height="378.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-Mg-edq">
-                                <rect key="frame" x="40" y="0.0" width="550" height="419.5"/>
+                                <rect key="frame" x="20" y="0.0" width="570" height="388.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="4hS-bg-fS0"/>
@@ -600,7 +600,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oyk-g0-dAD" userLabel="4_1">
-                                <rect key="frame" x="0.0" y="438.5" width="149.5" height="46.5"/>
+                                <rect key="frame" x="0.0" y="477.5" width="149.5" height="59.5"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4NW-JR-mye">
                                         <rect key="frame" x="75" y="-1" width="0.0" height="0.0"/>
@@ -611,7 +611,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ary-zV-pj9" userLabel="Gym Button">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Select to show a popup of collar choices." label="Gym">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -657,13 +657,13 @@
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="ein-mD-3YT"/>
                                         <exclude reference="1M3-rR-aZI"/>
+                                        <exclude reference="ein-mD-3YT"/>
                                     </mask>
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZq-Qm-Wf4" userLabel="4_2">
-                                <rect key="frame" x="150.5" y="438.5" width="149" height="46.5"/>
+                                <rect key="frame" x="150.5" y="477.5" width="149" height="59.5"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UMl-TL-2um">
                                         <rect key="frame" x="74.5" y="-1" width="0.0" height="0.0"/>
@@ -674,7 +674,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw8-t4-mjJ" userLabel="Barbell Button">
-                                        <rect key="frame" x="1" y="0.0" width="147" height="46.5"/>
+                                        <rect key="frame" x="1" y="0.0" width="147" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Select to show a popup of barbell choices." label="Barbell">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -726,7 +726,7 @@
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UAK-Tp-g5K" userLabel="4_3">
-                                <rect key="frame" x="300.5" y="438.5" width="149.5" height="46.5"/>
+                                <rect key="frame" x="300.5" y="477.5" width="149.5" height="59.5"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulK-Jw-cWJ">
                                         <rect key="frame" x="74" y="-1" width="1" height="1"/>
@@ -737,7 +737,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quJ-zV-FPE" userLabel=" Collars Switch">
-                                        <rect key="frame" x="5" y="0.0" width="139.5" height="46.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Select to show a popup of collar choices." label="Collar">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -832,21 +832,11 @@
                                     <action selector="GoButtonAction:" destination="F0m-cW-QY8" eventType="touchUpInside" id="WUS-Qa-dUs"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCz-r0-wZX" customClass="GADBannerView">
-                                <rect key="frame" x="0.0" y="486" width="600" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="JgN-YB-rRf"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="320" id="PyK-eh-tik"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="XqR-eT-4lr"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.75723573830000002" green="0.0" blue="0.65029886739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Gd-Mg-edq" firstAttribute="top" secondItem="s00-wv-9sp" secondAttribute="bottom" id="0h4-5p-qDu"/>
                             <constraint firstItem="Ql7-ev-OHD" firstAttribute="centerX" secondItem="AHR-Ko-QZv" secondAttribute="centerX" id="0jG-wt-Hi0"/>
-                            <constraint firstItem="fzk-5H-fHd" firstAttribute="bottom" secondItem="VCz-r0-wZX" secondAttribute="top" constant="-1" id="0kp-sI-NTc"/>
                             <constraint firstItem="6Gd-Mg-edq" firstAttribute="leading" secondItem="mq5-0H-Zwb" secondAttribute="leadingMargin" id="1O4-Ab-FGc"/>
                             <constraint firstItem="lAU-Oo-jrg" firstAttribute="centerX" secondItem="5b8-Q6-ohR" secondAttribute="centerX" id="2d9-9d-TXR"/>
                             <constraint firstItem="tgk-9m-gme" firstAttribute="centerY" secondItem="Wd9-RM-lSh" secondAttribute="centerY" id="2sd-uM-NXv"/>
@@ -856,6 +846,7 @@
                             <constraint firstItem="Ql7-ev-OHD" firstAttribute="top" secondItem="Wd9-RM-lSh" secondAttribute="bottom" constant="1" id="4U9-Ln-6jC"/>
                             <constraint firstItem="QeV-Qv-VfH" firstAttribute="leading" secondItem="lAU-Oo-jrg" secondAttribute="trailing" constant="1" id="4t7-ET-ROY"/>
                             <constraint firstItem="fzk-5H-fHd" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="6fM-os-Gb2"/>
+                            <constraint firstItem="3gE-GT-DFJ" firstAttribute="top" secondItem="fzk-5H-fHd" secondAttribute="bottom" constant="-1" id="9Nb-79-XFg"/>
                             <constraint firstItem="kMW-iV-gBI" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="9dU-u9-QvK"/>
                             <constraint firstItem="kMW-iV-gBI" firstAttribute="leading" secondItem="5b8-Q6-ohR" secondAttribute="leading" id="AGI-GE-4cu"/>
                             <constraint firstItem="UzY-Mw-aOS" firstAttribute="top" secondItem="2aY-rF-u1D" secondAttribute="top" id="Bru-GC-W5a"/>
@@ -904,7 +895,6 @@
                             <constraint firstItem="g7h-Bt-Ezh" firstAttribute="centerX" secondItem="RPM-5h-Vku" secondAttribute="centerX" id="Vcm-p9-imw"/>
                             <constraint firstItem="RPM-5h-Vku" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="WRo-dC-EJK"/>
                             <constraint firstAttribute="trailing" secondItem="1un-GV-Pxb" secondAttribute="trailing" id="XBa-fh-xyT"/>
-                            <constraint firstItem="VCz-r0-wZX" firstAttribute="centerX" secondItem="mq5-0H-Zwb" secondAttribute="centerX" id="YGe-A1-Xb5"/>
                             <constraint firstItem="6te-Lj-pA8" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="ZGE-ja-PwS"/>
                             <constraint firstItem="AHR-Ko-QZv" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="Zc2-GM-Y3P"/>
                             <constraint firstItem="THm-NU-E6K" firstAttribute="bottom" secondItem="6Gd-Mg-edq" secondAttribute="bottom" id="b4V-t7-8mS"/>
@@ -922,7 +912,6 @@
                             <constraint firstItem="kMW-iV-gBI" firstAttribute="top" secondItem="5b8-Q6-ohR" secondAttribute="bottom" constant="1" id="ijw-Sm-3fR"/>
                             <constraint firstItem="lAU-Oo-jrg" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="ilV-r5-0UJ"/>
                             <constraint firstItem="Mei-NG-fPi" firstAttribute="top" secondItem="mq5-0H-Zwb" secondAttribute="topMargin" constant="96" id="jOR-34-m6n"/>
-                            <constraint firstAttribute="bottom" secondItem="VCz-r0-wZX" secondAttribute="bottom" id="k2t-oQ-4VX"/>
                             <constraint firstItem="QeV-Qv-VfH" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="kMi-1o-G9E"/>
                             <constraint firstItem="2aY-rF-u1D" firstAttribute="leading" secondItem="mq5-0H-Zwb" secondAttribute="leadingMargin" id="ka6-Vz-Lph"/>
                             <constraint firstItem="fzk-5H-fHd" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="lmm-rZ-lrx"/>
@@ -939,7 +928,6 @@
                             <constraint firstItem="UzY-Mw-aOS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2aY-rF-u1D" secondAttribute="centerX" multiplier="0.5" id="wSe-UK-968"/>
                             <constraint firstItem="fd6-aq-LpD" firstAttribute="centerX" secondItem="RPM-5h-Vku" secondAttribute="centerX" id="xOF-Of-rhU"/>
                             <constraint firstItem="g7h-Bt-Ezh" firstAttribute="top" secondItem="RPM-5h-Vku" secondAttribute="bottom" constant="1" id="xqC-uQ-bnG"/>
-                            <constraint firstItem="VCz-r0-wZX" firstAttribute="width" secondItem="mq5-0H-Zwb" secondAttribute="width" id="yDx-Wr-P3h"/>
                             <constraint firstItem="Ql7-ev-OHD" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="z47-4T-jya"/>
                             <constraint firstItem="5b8-Q6-ohR" firstAttribute="centerY" secondItem="AHR-Ko-QZv" secondAttribute="centerY" id="zLi-3t-tCs"/>
                             <constraint firstItem="UAK-Tp-g5K" firstAttribute="centerX" secondItem="RPM-5h-Vku" secondAttribute="centerX" id="zPz-2k-UD8"/>
@@ -1027,14 +1015,14 @@
         <!--Barbell Options-->
         <scene sceneID="DPs-CF-eDh">
             <objects>
-                <tableViewController storyboardIdentifier="BarbellPopover" id="P35-Oh-UCh" userLabel="Barbell Options" customClass="BarbellQuickSelectTableView" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BarbellPopover" id="P35-Oh-UCh" userLabel="Barbell Options" customClass="BarbellQuickSelectTableView" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="d0v-gh-Pu9">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="54"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="TF8-qo-Eyo" customClass="BarbellQuickSelectTableViewCell" customModule="Plates" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="TF8-qo-Eyo" customClass="BarbellQuickSelectTableViewCell" customModule="Plates_v3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="150" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TF8-qo-Eyo" id="38h-5H-Y6M">
@@ -1110,7 +1098,7 @@
         <!--Item-->
         <scene sceneID="6us-Yi-4DV">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DSp-dP-fbi" customClass="SettingsController" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DSp-dP-fbi" customClass="SettingsController" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rpP-jJ-C4T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1139,13 +1127,13 @@
         <!--Inventory Options-->
         <scene sceneID="Jfo-yR-Es5">
             <objects>
-                <tableViewController storyboardIdentifier="InventoryPopover" title="Gym Options" id="1Lg-wl-jzM" userLabel="Inventory Options" customClass="InventoryQuickSelectTableView" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="InventoryPopover" title="Gym Options" id="1Lg-wl-jzM" userLabel="Inventory Options" customClass="InventoryQuickSelectTableView" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="28A-RH-Yo7">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="54"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="Z4y-rq-QTC" customClass="InventoryQuickSelectTableViewCell" customModule="Plates" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="Z4y-rq-QTC" customClass="InventoryQuickSelectTableViewCell" customModule="Plates_v3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="150" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z4y-rq-QTC" id="vBV-vf-QDf">
@@ -1190,13 +1178,13 @@
         <!--Collars Options-->
         <scene sceneID="DmI-BK-tLS">
             <objects>
-                <tableViewController storyboardIdentifier="CollarsPopover" id="57t-mo-r3e" userLabel="Collars Options" customClass="CollarQuickSelectTableView" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CollarsPopover" id="57t-mo-r3e" userLabel="Collars Options" customClass="CollarQuickSelectTableView" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="jiT-Pp-2DQ">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="54"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="AYD-B3-KAQ" customClass="CollarsQuickSelectTableViewCell" customModule="Plates" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" id="AYD-B3-KAQ" customClass="CollarsQuickSelectTableViewCell" customModule="Plates_v3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="150" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AYD-B3-KAQ" id="wuc-H1-QEP">
@@ -1226,8 +1214,8 @@
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="OhA-ha-p4H"/>
-                                            <exclude reference="uDd-TE-vX8"/>
                                             <exclude reference="M7J-zp-yZ3"/>
+                                            <exclude reference="uDd-TE-vX8"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -1254,7 +1242,7 @@
         <!--Settings Quick Select Table View-->
         <scene sceneID="aM5-ZY-xO2">
             <objects>
-                <tableViewController storyboardIdentifier="settingsPopoverView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fOs-jU-JJy" customClass="SettingsQuickSelectTableView" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="settingsPopoverView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fOs-jU-JJy" customClass="SettingsQuickSelectTableView" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vzr-Zc-uHn">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="352"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1377,9 +1365,9 @@
                                                 <mask key="constraints">
                                                     <exclude reference="J3V-iY-RcN"/>
                                                     <exclude reference="upv-QI-18r"/>
+                                                    <exclude reference="Fpo-0E-3me"/>
                                                     <exclude reference="ljs-8s-fZL"/>
                                                     <exclude reference="n0S-bt-VIQ"/>
-                                                    <exclude reference="Fpo-0E-3me"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1508,10 +1496,10 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="Jkc-0n-tfK"/>
                                                     <exclude reference="1PP-8t-ozJ"/>
-                                                    <exclude reference="V2h-hn-scR"/>
+                                                    <exclude reference="Jkc-0n-tfK"/>
                                                     <exclude reference="SYB-Pu-iV0"/>
+                                                    <exclude reference="V2h-hn-scR"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1564,13 +1552,13 @@
         <!--Barbells-->
         <scene sceneID="UMw-tc-wJI">
             <objects>
-                <tableViewController storyboardIdentifier="BarbellAdvancedSettings" id="ywh-GS-itu" customClass="BarbellAdvancedSettings" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BarbellAdvancedSettings" id="ywh-GS-itu" customClass="BarbellAdvancedSettings" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LPy-E0-KlO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="Z2Z-ds-DUU" customClass="BarbellAdvancedSettingTableViewCell" customModule="Plates" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="Z2Z-ds-DUU" customClass="BarbellAdvancedSettingTableViewCell" customModule="Plates_v3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z2Z-ds-DUU" id="HXt-i2-2lx">
@@ -1609,13 +1597,13 @@
         <!--Collars-->
         <scene sceneID="7dF-rK-cMb">
             <objects>
-                <tableViewController storyboardIdentifier="CollarAdvancedSettings" id="TK2-Ph-ur5" customClass="CollarAdvancedSettings" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CollarAdvancedSettings" id="TK2-Ph-ur5" customClass="CollarAdvancedSettings" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KKn-fb-ru3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="exB-Gp-nU8" customClass="CollarAdvancedSettingTableViewCell" customModule="Plates" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TextCell" rowHeight="44" id="exB-Gp-nU8" customClass="CollarAdvancedSettingTableViewCell" customModule="Plates_v3" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="exB-Gp-nU8" id="kA4-3l-H4h">
@@ -1654,7 +1642,7 @@
         <!--Inventory Advanced Settings-->
         <scene sceneID="7CP-Rz-pme">
             <objects>
-                <viewController storyboardIdentifier="InventoryAdvancedSettings" id="PPt-jR-c8t" customClass="InventoryAdvancedSettings" customModule="Plates" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InventoryAdvancedSettings" id="PPt-jR-c8t" customClass="InventoryAdvancedSettings" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nhj-xR-9iX"/>
                         <viewControllerLayoutGuide type="bottom" id="V3h-1j-iZQ"/>

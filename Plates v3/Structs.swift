@@ -240,11 +240,13 @@ class AppStatus {
     var errorState: Bool
     var keyPadUsedNow: Bool
     var percentageModeActive: Bool
+    var didLoad: Bool
     init() {
         convertedUnitsOn = false
         platesOutputSelectable = false
         errorState = false
         keyPadUsedNow = false
         percentageModeActive = false
+        didLoad = false
     }
 }

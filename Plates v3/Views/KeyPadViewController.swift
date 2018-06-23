@@ -61,7 +61,6 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     @IBOutlet weak var CollarsButton: UIButton!
     @IBOutlet weak var ClearButton: UIButton!
     @IBOutlet weak var UnitsButton: UIButton!
-    @IBOutlet weak var bannerViewHeight: NSLayoutConstraint!
     var weightEntryTextFieldHeight: NSLayoutConstraint = NSLayoutConstraint()
     var horizonalLeftContraints: NSLayoutConstraint = NSLayoutConstraint()
     let keyPadViewIdentifier: String = "keyPadIdentifier"
@@ -80,7 +79,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        GlobalVariables.sharedInstance.didLoad = true
+        appStatus.didLoad = true
 //        DataAccess.sharedInstance.delegate = self
 //        NotificationCenter.default.addObserver(self, selector: #selector(iCloudOverwroteData), name: NSNotification.Name(rawValue: "iCloudOverwroteData"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(iCloudNewDataFetched), name: NSNotification.Name(rawValue: "iCloudNewDataFetched"), object: nil)
@@ -190,23 +189,23 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.dismissPopovers()
         self.maximizeLabelFonts()
         self.setupGradientLayer()
-//        let origText: String = platesLabel.text
+        let origText: String = platesLabel.text
 //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
 //        let fontAttributes = [NSAttributedStringKey.font: appVisuals.fontStandard] // it says name, but a UIFont works
 //        let size = (myText as NSString).size(withAttributes: fontAttributes)
-//        if origText == "" {
-//            platesLabel.text = ""
-//        }
-//        else {
-//            platesLabel.text = origText
-//        }
+        if origText == "" {
+            platesLabel.text = ""
+        }
+        else {
+            platesLabel.text = origText
+        }
 //        platesLabelWidthConstraint.constant = size.width + 20
 //
 //        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: GlobalVariables.sharedInstance.currentMaxFont)
 //        PublicClasses.drawPlates(self.platesView)
-//
-//        self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height
-//        self.GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
+
+        self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height
+        self.GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
     }
 
 
@@ -398,8 +397,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 
         navigationController?.navigationBar.setTitleVerticalPositionAdjustment(appVisuals.titleVerticalAdjustment, for: .default)
 //        self.navigationController?.hidesNavigationBarHairline = true
-//        let tintedImage = UIImage(named: "settingsIcon")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
-//        //        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: GlobalVariables.sharedInstance.secondaryColor, NSFontAttributeName: GlobalVariables.sharedInstance.fontTitle!]
+        let tintedImage = UIImage(named: "settingsIcon")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+//                navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: GlobalVariables.sharedInstance.secondaryColor, NSFontAttributeName: GlobalVariables.sharedInstance.fontTitle!]
         navigationController!.navigationBar.barTintColor = appVisuals.textPadColor
         One_One_View.backgroundColor = appVisuals.textPadColor
         One_Two_View.backgroundColor = appVisuals.textPadColor
@@ -437,8 +436,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         keyPadBackgroundView.backgroundColor = appVisuals.keyPadBackgroundViewColor
         navBarButton.setImage(tintedImage, for: UIControlState.normal)
         navBarButton.tintColor =  appVisuals.secondaryColor
-        navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside)
-        navBarButton.frame = CGRectMake(0, 0, 31, 31)
+//        navBarButton.addTarget(self, action: #selector(KeyPadViewController.rightBarButtonPressed), for: UIControlEvents.touchUpInside)
+        navBarButton.frame = CGRect(x:0, y: 0,width: 31, height: 31)
         navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
         navBarButton.setTitle("", for: .normal)
         barTextInput.backgroundColor = UIColor.white
@@ -448,7 +447,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         platesLabel.font = appVisuals.fontStandard
         platesLabel.textColor = appVisuals.secondaryTextColor
         platesLabel.isUserInteractionEnabled = false
-        hiddenHeightKeepingLabel.titleLabel?.font = appVisuals.fontStandard.withSize(GlobalVariables.sharedInstance.currentMaxFont)
+        hiddenHeightKeepingLabel.titleLabel?.font = appVisuals.fontStandard.withSize(appVisuals.currentMaxFont)
         //        hiddenHeightKeepingLabel.isHidden = true
         GoButton.setTitleColor(appVisuals.secondaryTextColor, for: UIControlState.normal)
         GoButton.backgroundColor = appVisuals.secondaryColor
@@ -576,8 +575,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         weightEntryTextField.tintColor = appVisuals.placeholderColor
         weightEntryTextField.accessibilityLabel = "Weight entry"
         weightEntryTextField.accessibilityHint = "Shows the current weight to lift. Tap to type in another weight to calculate. If the percent button is active, type in the percent you want to multiply the current weight to lift by."
-//        weightEntryTextField.titleColor = GlobalVariables.sharedInstance.secondaryColor
-//        weightEntryTextField.selectedTitleColor = GlobalVariables.sharedInstance.secondaryColor
+        weightEntryTextField.floatingLabelActiveTextColor = appVisuals.secondaryColor
+        weightEntryTextField.floatingLabelTextColor = appVisuals.secondaryColor
 //        weightEntryTextField.selectedLineColor = GlobalVariables.sharedInstance.secondaryTextColor
 //        weightEntryTextField.titleFadeInDuration = GlobalVariables.sharedInstance.animationTime
 //        weightEntryTextField.titleFadeOutDuration = GlobalVariables.sharedInstance.animationTime
