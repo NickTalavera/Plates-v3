@@ -67,5 +67,30 @@ extension KeyPadViewController {
             self.platesView.alpha = 0
         }, completion: nil)
     }
+    
+    
+    @objc func handleDisplayLink(_ displayLink: CADisplayLink) {
+        self.view.endEditing(true)
+        self.dismissPopovers()
+        self.maximizeLabelFonts()
+        self.setupGradientLayer()
+        let origText: String = platesLabel.text
+        //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
+        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard] // it says name, but a UIFont works
+        //        let size = (myText as NSString).size(withAttributes: fontAttributes)
+        if origText == "" {
+            platesLabel.text = ""
+        }
+        else {
+            platesLabel.text = origText
+        }
+        //        platesLabelWidthConstraint.constant = size.width + 20
+        
+        //        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: app.visuals.currentMaxFont)
+        //        PublicClasses.drawPlates(self.platesView)
+        
+        self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height
+        self.GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
+    }
 }
 

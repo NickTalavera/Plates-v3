@@ -278,6 +278,7 @@ class AppData {
         var keypadMovedUp: Bool
         var currentPageUnit: UnitOfWeight.unitType
         var keyboardHeight: CGFloat
+        var preferredLanguage: String
         init() {
             convertedUnitsOn = false
             platesOutputSelectable = false
@@ -289,6 +290,7 @@ class AppData {
             keypadMovedUp = false
             currentPageUnit = UnitOfWeight.unitType.lb
             keyboardHeight = 0
+            preferredLanguage = NSLocale.preferredLanguages[0] as String
         }
     }
     
