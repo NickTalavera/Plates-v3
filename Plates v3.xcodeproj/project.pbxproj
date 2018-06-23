@@ -82,6 +82,11 @@
 		C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
 		C3CC02FC20DE29A000A113DF /* Plates v3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Plates v3-Bridging-Header.h"; sourceTree = "<group>"; };
 		C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
+		C3CC030F20DE3C3500A113DF /* PublicClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClasses.swift; sourceTree = "<group>"; };
+		C3CC031020DE3C3500A113DF /* PublicClassesText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesText.swift; sourceTree = "<group>"; };
+		C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesButtons.swift; sourceTree = "<group>"; };
+		C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesUseful.swift; sourceTree = "<group>"; };
+		C3CC031320DE3C3600A113DF /* PublicClassesDataTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesDataTransfer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +147,11 @@
 				C39ABD5320DDFE8600DA5BC8 /* Globals.swift */,
 				C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */,
 				C39ABD5C20DE221400DA5BC8 /* KeyPadViewController.swift */,
+				C3CC030F20DE3C3500A113DF /* PublicClasses.swift */,
+				C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */,
+				C3CC031320DE3C3600A113DF /* PublicClassesDataTransfer.swift */,
+				C3CC031020DE3C3500A113DF /* PublicClassesText.swift */,
+				C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */,
 				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
 				C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */,
 				C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */,

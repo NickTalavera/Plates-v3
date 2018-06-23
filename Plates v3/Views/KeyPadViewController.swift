@@ -74,6 +74,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     var percentageModeActive: Bool = false
     var keyboardHeight: CGFloat = 0
     var appVisuals = AppVisuals()
+    var appCalcs = AppCalcs()
     var appStatus = AppStatus()
     @IBOutlet weak var navigationBar: UINavigationItem!
     
@@ -214,21 +215,19 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
             self.platesView.alpha = 0
         }, completion: nil)
     }
-//
-//    @IBAction func RemoveButtonAction(_ sender: AnyObject) {
-//        Armchair.userDidSignificantEvent(true)
-//        self.view.endEditing(true)
+
+    @IBAction func RemoveButtonAction(_ sender: AnyObject) {
+        self.view.endEditing(true)
 //        PublicClasses.removeButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil)
-//    }
-//
-//    @IBAction func PercentButtonAction(_ sender: AnyObject) {
-//        Armchair.userDidSignificantEvent(true)
+    }
+
+    @IBAction func PercentButtonAction(_ sender: AnyObject) {
 //        PublicClasses.percentButtonAction(weightEntryTextField, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, UnitsButton: UnitsButton, platesLabel: platesLabel, platesView: platesView, GoButton: GoButton, titleLabel: nil)
-//    }
+    }
 //
     func setToWeightTextField() {
-//        weightEntryTextField.placeholder = GlobalVariables.sharedInstance.weightToLiftString
-//        weightEntryTextField.floatingLabel = NSLocalizedString("Total weight", comment: "")
+//        weightEntryTextField.floatingLabel.attributedText = NSLocalizedString("Total weight", comment: "")
+        weightEntryTextField.placeholder = appCalcs.weightToLiftString
         weightEntryTextField.keyboardType = .decimalPad
     }
 
@@ -237,10 +236,10 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     }
 
     func dismissPopovers() {
-//        if presentedViewController?.isViewLoaded == true {
-//            self.presentedViewController!.dismiss(animated: false, completion: nil)
-//            self.presentedViewController!.navigationController?.popViewController(animated: true)
-//        }
+        if presentedViewController?.isViewLoaded == true {
+            self.presentedViewController!.dismiss(animated: false, completion: nil)
+            self.presentedViewController!.navigationController?.popViewController(animated: true)
+        }
     }
 
     @objc func iCloudOverwroteData() {

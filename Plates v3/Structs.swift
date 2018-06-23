@@ -233,7 +233,6 @@ class AppVisuals {
     }
 }
 
-
 class AppStatus {
     var convertedUnitsOn: Bool
     var platesOutputSelectable: Bool
@@ -248,5 +247,13 @@ class AppStatus {
         keyPadUsedNow = false
         percentageModeActive = false
         didLoad = false
+    }
+    
+}
+
+class AppCalcs {
+    var weightToLiftString: String
+    init() {
+        weightToLiftString = ""
     }
 }
