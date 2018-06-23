@@ -23,6 +23,8 @@
 		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
 		C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 		C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
+		C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; };
+		C3CC030E20DE2B3500A113DF /* JVFloatLabeledText.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,20 @@
 			remoteInfo = "Plates v3";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C3CC030A20DE2A9A00A113DF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C3CC030E20DE2B3500A113DF /* JVFloatLabeledText.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C39ABD1C20DDFBCF00DA5BC8 /* Plates v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plates v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +80,8 @@
 		C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadDumpingGround.swift; sourceTree = "<group>"; };
 		C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddFunctions.swift; sourceTree = "<group>"; };
 		C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataAccess.swift; sourceTree = "<group>"; };
+		C3CC02FC20DE29A000A113DF /* Plates v3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Plates v3-Bridging-Header.h"; sourceTree = "<group>"; };
+		C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JVFloatLabeledText.framework; path = Carthage/Build/iOS/JVFloatLabeledText.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +113,7 @@
 		C39ABD1320DDFBCF00DA5BC8 = {
 			isa = PBXGroup;
 			children = (
+				C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */,
 				C39ABD1E20DDFBCF00DA5BC8 /* Plates v3 */,
 				C39ABD3720DDFBD100DA5BC8 /* Plates v3Tests */,
 				C39ABD4220DDFBD100DA5BC8 /* Plates v3UITests */,
@@ -128,6 +148,7 @@
 				C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */,
 				C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */,
 				C39ABD2F20DDFBD100DA5BC8 /* Info.plist */,
+				C3CC02FC20DE29A000A113DF /* Plates v3-Bridging-Header.h */,
 			);
 			path = "Plates v3";
 			sourceTree = "<group>";
@@ -160,6 +181,7 @@
 				C39ABD1820DDFBCF00DA5BC8 /* Sources */,
 				C39ABD1920DDFBCF00DA5BC8 /* Frameworks */,
 				C39ABD1A20DDFBCF00DA5BC8 /* Resources */,
+				C3CC030A20DE2A9A00A113DF /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +240,7 @@
 				TargetAttributes = {
 					C39ABD1B20DDFBCF00DA5BC8 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					C39ABD3320DDFBD100DA5BC8 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -464,8 +487,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXF6F4R7E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Plates v3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -473,6 +505,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NickTalavera.Plates-v3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Plates v3/Plates v3-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -482,8 +516,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXF6F4R7E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Plates\\ v3",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Plates v3/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,6 +534,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "NickTalavera.Plates-v3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Plates v3/Plates v3-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -503,6 +547,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXF6F4R7E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Plates v3Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -524,6 +572,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LXF6F4R7E9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Plates v3Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

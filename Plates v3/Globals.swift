@@ -103,43 +103,12 @@
 //    //    Color.white]
 //    //    #endif
 //
-//    #if os(iOS) || os(tvOS) || os(watchOS)
-//    var fontStandard: Font = Font.systemFont(ofSize: 26, weight: UIFont.Weight.thin)
-//    var fontStandardBold: Font = Font.systemFont(ofSize: 26, weight: UIFont.Weight.regular)
-//    var fontTextFieldRiser: Font = Font.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
-//    #elseif os(OSX)
-//    var fontStandard: Font = Font.systemFont(ofSize: 26)
-//    //    var fontStandardBold = Font.systemFontOfSize(26, weight: NSFontWeightRegular)
-//    var fontStandardBold: Font = Font.systemFont(ofSize: 26)
-//    //    var fontTextFieldRiser = Font.systemFontOfSize(18, weight: NSFontWeightRegular)
-//    var fontTextFieldRiser: Font = Font.systemFont(ofSize: 18)
-//    #endif
+
+
 //
 //
-//    #if os(iOS) || os(tvOS) || os(OSX)
-//    var fontAddX: Font = Font(name: "StampborLines", size: 60)!
-//    #endif
-//
-//
-//    var fontTitle = Font(name: "StampborLines", size: 28)
-//    var fontSubtitle = Font(name: "StampborRounded", size: 28)
-//    var mainColor = Color(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
-//    var keyPadBackgroundViewColor = Color(red: 142/255, green: 142/255, blue: 142/255, alpha: 1)
-//    var textPadColor = Color(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
-//    var textPadColorDisabled = Color(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
-//    var currentMaxFont: CGFloat = 26
-//    var currentMinFont: CGFloat = 15
-//    var gradientColor1: Color = Color(red: 217/255, green: 85/255, blue: 89/255, alpha: 1)
-//    var gradientColor2: Color = Color(red: 234/255, green: 91/255, blue: 96/255, alpha: 1)
-//    var placeholderColor: Color = Color(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
-//    var secondaryColor: Color = Color(red: 33/255, green: 190/255, blue: 188/255, alpha: 0.86)
-//    let tvOSSegmentedControlColor: Color = Color.init(red: 212/255, green: 212/255, blue: 212/255, alpha: 1)
-//    let tvOSSystemButtonColor: Color = Color.init(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
-//    var errorColor: Color = Color(red: 231/255, green: 41/255, blue: 18/255, alpha: 0.86)
-//    var secondaryColorBlend: Color = Color(red: 4/255, green: 180/255, blue: 72/255, alpha: 0.86)
-//    var defaultTextColor: Color = Color.black
-//    var secondaryTextColor: Color = Color.white
-//    var borderColor: Color = Color.black
+
+
 //    var plateButtonColor: Color = Color(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
 //    var watchToggleButtonColor: Color = Color(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
 //    var watchClearRemoveButtonColor: Color = Color(red: 255/255, green: 97/255, blue: 89/255, alpha: 1)

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 struct Barbell {
     let name: String
@@ -177,18 +177,56 @@ class AppProfile {
         currentPlateSet = self.plateCollection.list.first!
     }
     
-    //Barbell set
-    //Barbell chosen
-    //Name
-    //Weight
-    //Collar set
-    //Collar chosen
-    //Name
-    //Weight
-    //Plate inventory
-    //Weights
-    //Units
-    //Colors
+    
+    
 }
 
 
+class AppDetails {
+    var textPadColor: UIColor
+    var textPadColorDisabled: UIColor
+    var secondaryColor: UIColor
+    var fontTitle: UIFont
+    var fontSubtitle: UIFont
+    var mainColor: UIColor
+    var keyPadBackgroundViewColor: UIColor
+    var currentMaxFont: CGFloat
+    var currentMinFont: CGFloat
+    var gradientColor1: UIColor
+    var gradientColor2: UIColor
+    var defaultTextColor: UIColor
+    var secondaryTextColor: UIColor
+    var borderColor: UIColor
+    var fontStandard: UIFont
+    var fontStandardBold: UIFont
+    var fontTextFieldRiser: UIFont
+    var fontAddX: UIFont
+    var placeholderColor: UIColor
+    var errorColor: UIColor
+    var secondaryColorBlend: UIColor
+    init() {
+        textPadColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
+        textPadColorDisabled = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
+        secondaryColor = UIColor(red: 33/255, green: 190/255, blue: 188/255, alpha: 0.86)
+        fontTitle = UIFont(name: "Helvetica", size: 28)!
+        fontSubtitle = UIFont(name: "Helvetica", size: 28)!
+        mainColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
+        keyPadBackgroundViewColor = UIColor(red: 142/255, green: 142/255, blue: 142/255, alpha: 1)
+        textPadColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
+        textPadColorDisabled = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
+        currentMaxFont = 26
+        currentMinFont = 15
+        gradientColor1 = UIColor(red: 217/255, green: 85/255, blue: 89/255, alpha: 1)
+        gradientColor2 = UIColor(red: 234/255, green: 91/255, blue: 96/255, alpha: 1)
+        defaultTextColor = UIColor.black
+        secondaryTextColor = UIColor.white
+        borderColor = UIColor.black
+        fontStandard = UIFont.systemFont(ofSize: 26, weight: UIFont.Weight.thin)
+        fontStandardBold = UIFont.systemFont(ofSize: 26, weight: UIFont.Weight.regular)
+        fontTextFieldRiser = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
+        fontAddX = UIFont(name: "Helvetica", size: 60)!
+        placeholderColor = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
+        errorColor = UIColor(red: 231/255, green: 41/255, blue: 18/255, alpha: 0.86)
+        secondaryColorBlend = UIColor(red: 4/255, green: 180/255, blue: 72/255, alpha: 0.86)
+    }
+}
