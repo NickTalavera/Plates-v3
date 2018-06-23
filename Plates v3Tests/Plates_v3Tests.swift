@@ -31,15 +31,14 @@ class Plates_v3Tests: XCTestCase {
         XCTAssert(kgUnit.formatter == MassFormatter.Unit.kilogram)
         XCTAssert(kgUnit.decimalPlaces == 2)
     }
-
+    
     func testAppProfile() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         var app = AppData()
-//        app.calc.currentPlatesInUse = []
-//        print(app.calc.currentPlatesInUse)
-//        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() == 0)
-//        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 0)
+        print(app.calc.currentPlatesInUse)
+        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() == 0)
+        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 0)
         app.calc.currentPlatesInUse = app.profile.currentPlateSet
         print(app.calc.currentPlatesInUse)
         print(app.calc.currentPlatesInUse.sumOfPlates())
@@ -52,15 +51,68 @@ class Plates_v3Tests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         var app = AppData()
-//        app.calc.currentPlatesInUse = []
-//        print(app.calc.weightToLift)
-//        XCTAssert(app.calc.weightToLift == 0)
-//        app.calc.currentPlatesInUse = app.profile.currentPlateSet
-//        print(app.calc.weightToLift)
-//        app.updateWeightToLift()
-//        print(app.calc.weightToLift)
-//        XCTAssert(app.calc.weightToLift != 0)
+        print(app.calc.weightToLift)
+        XCTAssert(app.calc.weightToLift == 0)
+        app.calc.currentPlatesInUse = app.profile.currentPlateSet
+        print(app.calc.weightToLift)
+        app.updateWeightToLift()
+        print(app.calc.weightToLift)
+        XCTAssert(app.calc.weightToLift != 0)
     }
+    
+    func flipUnits() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var app = AppData()
+        XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb)
+        XCTAssert(app.profile.chosenUnit.decimalPlaces == 1)
+        app.switchUnits()
+        XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.kg)
+        XCTAssert(app.profile.chosenUnit.decimalPlaces == 2)
+        print(app.profile.chosenUnit.unit)
+        app.switchUnits()
+        print(app.profile.chosenUnit.unit)
+        XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb)
+        XCTAssert(app.profile.chosenUnit.decimalPlaces == 1)
+        app.switchUnits(toUnit: UnitOfWeight.unitType.lb)
+        XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb)
+        XCTAssert(app.profile.chosenUnit.decimalPlaces == 1)
+        app.switchUnits(toUnit: UnitOfWeight.unitType.kg)
+        XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.kg)
+        XCTAssert(app.profile.chosenUnit.decimalPlaces == 2)
+    }
+    
+    func testAppendToCurrent() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var app = AppData()
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 45)
+        app.appendCurrentPlate(weight: 22)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 33)
+        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 5)
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 45)
+        app.appendCurrentPlate(weight: 22)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 33)
+        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 10)
+    }
+    
+    func testSortPlates() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        var app = AppData()
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 45)
+        app.appendCurrentPlate(weight: 22)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 33)
+        app.calc.currentPlatesInUse.sortPlates()
+        print(app.calc.currentPlatesInUse.list)
+    }
+    
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

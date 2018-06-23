@@ -188,16 +188,16 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.maximizeLabelFonts()
         self.setupGradientLayer()
         let origText: String = platesLabel.text
-        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
+//        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
         let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard] // it says name, but a UIFont works
-        let size = (myText as NSString).size(withAttributes: fontAttributes)
+//        let size = (myText as NSString).size(withAttributes: fontAttributes)
         if origText == "" {
             platesLabel.text = ""
         }
         else {
             platesLabel.text = origText
         }
-        platesLabelWidthConstraint.constant = size.width + 20
+//        platesLabelWidthConstraint.constant = size.width + 20
 
 //        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: app.visuals.currentMaxFont)
 //        PublicClasses.drawPlates(self.platesView)
@@ -552,7 +552,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
 //        weightEntryTextField.errorColor = app.visuals.errorColor
         weightEntryTextField.delegate = self
         weightEntryTextField.tag = 1
-        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+//        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         weightEntryTextField.font =  app.visuals.fontStandard
 //        weightEntryTextField.placeholderFont =  app.visuals.fontStandard
         //        weightEntryTextField.iconFont =  app.visuals.fontStandard
@@ -593,7 +593,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         let weightEntryTextFieldBottom = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .bottom, relatedBy: .equal, toItem: self.One_One_View, attribute: .top, multiplier: 1, constant: -10)
         let platesLabelTextField = NSLayoutConstraint(item: self.platesLabel, attribute: .bottom, relatedBy: NSLayoutRelation.equal, toItem: self.weightEntryTextField, attribute: .top, multiplier: 1, constant: 0)
         let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: self.weightEntryTextField.frame.size.width, height: CGFloat(MAXFLOAT)));
-        weightEntryTextFieldHeight = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: expectSize.height+8)
+//        weightEntryTextFieldHeight = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: expectSize.height+8)
+         weightEntryTextFieldHeight = NSLayoutConstraint(item: self.weightEntryTextField, attribute: .height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: expectSize.height*2)
         self.barTextInput.translatesAutoresizingMaskIntoConstraints = false
         self.GoButton.translatesAutoresizingMaskIntoConstraints = false
         self.platesLabel.translatesAutoresizingMaskIntoConstraints = false

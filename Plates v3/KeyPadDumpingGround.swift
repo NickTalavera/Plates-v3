@@ -17,7 +17,7 @@ extension KeyPadViewController {
     }
     
     @IBAction func ClearButtonAction(_ sender: AnyObject) {
-        //        PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, titleLabel: nil, animate: true)
+                PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, animate: true)
         //        DataAccess.sharedInstance.saveEverything()
     }
     
@@ -133,6 +133,8 @@ extension KeyPadViewController {
     @IBAction func FiftyFiveLbsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         var button = 0
+        //        appProfile.chosenUnit
+        //        AppProfile.plateCollection
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             button += 9
         }

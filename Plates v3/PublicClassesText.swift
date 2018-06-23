@@ -81,15 +81,16 @@ extension PublicClasses {
     //    }
     //    #endif
     //
-    class func labelPlateOutputFromCurrentPlatesInUse(_ currentPlatesInUse: [String]) -> String {
-        var counts: [String:Int] = [:]
-        for item in currentPlatesInUse {
-            counts[item] = (counts[item] ?? 0) + 1
+    class func labelPlateOutputFromCurrentPlatesInUse(_ currentPlatesInUse: [AppData.Plates]) -> String {
+        var counts: [AnyHashable: Int] = [:]
+        for (index, element) in app.calc.currentPlatesInUse.list.enumerated() {
+            counts[element.weight] = counts[element.weight]! + (element.count ?? 0)
         }
+        print(counts)
         return PublicClasses.formatLabel(counts)
     }
     
-    class func formatLabel(_ currentPlatesInUse: [String:Int]) -> String {
+    class func formatLabel(_ currentPlatesInUse: [AnyHashable:Int]) -> String {
         var labelOut: String = ""
         //        if currentPlatesInUse.count > 0 {
         //            labelOut = "\(NSLocalizedString("On each side", comment: ""))\n"

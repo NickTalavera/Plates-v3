@@ -14,7 +14,7 @@ struct UnitOfWeight {
         case lb, kg
     }
     //Unit property and methods
-    let unit: unitType
+    var unit: unitType
     var formatter: MassFormatter.Unit {
         if unit == unitType.lb {
             return MassFormatter.Unit.pound
@@ -61,13 +61,13 @@ class AppData {
     }
     
     struct Plate {
-        let count: Int?
+        var count: Int?
         let weight: Double
         let unitType: UnitOfWeight.unitType
-        let positionOnBar: Int?
+        var positionOnBar: Int?
     }
     
-    struct Plates {
+    public struct Plates {
         var name: String
         var list: [Plate]
         
@@ -84,6 +84,14 @@ class AppData {
                 count += element.count!
             }
             return count
+        }
+        
+        mutating func sortPlates()  {
+            var combined = zip(self.list.map {$0.weight}, self.list).sorted(by: {$0.0 < $1.0}).map {$0.1}
+            for (index, element) in combined.enumerated() {
+                combined[index].positionOnBar = index
+            }
+            self.list = combined
         }
     }
     
@@ -249,7 +257,7 @@ class AppData {
             placeholderColor = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
             errorColor = UIColor(red: 231/255, green: 41/255, blue: 18/255, alpha: 0.86)
             secondaryColorBlend = UIColor(red: 4/255, green: 180/255, blue: 72/255, alpha: 0.86)
-            platesFadeDuration = 0.3
+            platesFadeDuration = 0.6
             titleVerticalAdjustment = 3.5
         }
     }
@@ -298,7 +306,30 @@ class AppData {
         profile = Profile()
     }
     
+    func switchUnits(toUnit: UnitOfWeight.unitType?=nil) {
+        if self.profile.chosenUnit.unit == UnitOfWeight.unitType.kg || (toUnit == UnitOfWeight.unitType.lb && toUnit != nil) {
+            self.profile.chosenUnit.unit = UnitOfWeight.unitType.lb
+        }
+        else {
+            self.profile.chosenUnit.unit = UnitOfWeight.unitType.kg
+        }
+    }
+    
     func updateWeightToLift(){
         self.calc.weightToLift = self.calc.currentPlatesInUse.sumOfPlates() + self.profile.currentBarbellAndCollarSum
+    }
+    
+
+    
+    func appendCurrentPlate(weight: Double) {
+        var maxPositionOnBar = 0
+        for (index, element) in self.calc.currentPlatesInUse.list.enumerated() {
+            maxPositionOnBar = max(element.positionOnBar!, maxPositionOnBar)
+        }
+        let nextBarPosition = maxPositionOnBar + 1
+        self.calc.currentPlatesInUse.list += [Plate(count: 1, weight: weight, unitType: self.profile.chosenUnit.unit, positionOnBar: nextBarPosition)]
+//        if app.status.alwaysSort == true {
+//            self.calc.currentPlatesInUse.sortPlates()
+//        }
     }
 }
