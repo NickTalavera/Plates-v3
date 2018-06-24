@@ -65,40 +65,24 @@ extension PublicClasses {
         return result
     }
 
-    class func labelPlateOutputFromCurrentPlatesInUse(_ currentPlatesInUse: [AppData.Plates]) -> String {
-        var counts: [AnyHashable: Int] = [:]
-        for (index, element) in app.calc.currentPlatesInUse.list.enumerated() {
-            counts[element.weight] = counts[element.weight]! + (element.count ?? 0)
-        }
-        print(counts)
-        return PublicClasses.formatLabel(counts)
-    }
     
-    class func formatLabel(_ currentPlatesInUse: [AnyHashable:Int]) -> String {
+    class func formatLabel(_ currentPlatesInUse: AppData.Plates) -> String {
         var labelOut: String = ""
-        //        if currentPlatesInUse.count > 0 {
-        //            labelOut = "\(NSLocalizedString("On each side", comment: ""))\n"
-        //            let currentPlatesWithUnits = Array(currentPlatesInUse.keys)
-        //            var valDict = [Double]()
-        //            var stringDict = [String]()
-        //            var unitDict = [String]()
-        //            for i in currentPlatesWithUnits.map({$0.components(separatedBy: " ")}) {
-        //                let origString = i[0] + " " + i[1]
-        //                var value: Double = Double(i[0])!
-        //                let unit: String = i[1]
-        //                if unit == "lbs" {
-        //                    value = value * 0.453592
-        //                }
-        //                valDict.append(value)
-        //                stringDict.append(origString)
-        //                unitDict.append(unit)
-        //            }
-        //            stringDict = zip(valDict, stringDict).sorted {$0.0 > $1.0}.map {$0.1}
-        //            unitDict = zip(valDict, unitDict).sorted {$0.0 > $1.0}.map {$0.1}
-        //            for i in 0...stringDict.count-1 {
-        //                labelOut += "\(PublicClasses.massFormatter.string(fromValue: Double(stringDict[i].components(separatedBy: " ")[0])!, unit: PublicClasses.unitToFormatter(unitDict[i]))) × \(currentPlatesInUse[stringDict[i]]!)\n"
-        //            }
-        //        }
+        if currentPlatesInUse.list.count > 0 {
+            labelOut = "\(NSLocalizedString("On each side", comment: ""))\n"
+            
+            var counts: Dictionary<Double, Int> = [:]
+            var units: Dictionary<Double, MassFormatter.Unit> = [:]
+            for (_, element) in currentPlatesInUse.list.enumerated() {
+                counts[element.weight] = (counts[element.weight] ?? 0) + (element.count ?? 0)
+                units[element.weight] = UnitOfWeight(unit: element.unitType).formatter
+            }
+            let weights = counts.keys.sorted(by: >)
+            for i in 0...weights.count-1 {
+                var weight_key = weights[i]
+                labelOut += "\(PublicClasses.massFormatter.string(fromValue: weight_key, unit: units[weight_key]!)) × \(counts[weight_key]!)\n"
+            }
+        }
         return labelOut.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
     

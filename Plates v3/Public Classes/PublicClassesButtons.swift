@@ -189,14 +189,14 @@ extension PublicClasses {
         app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)
         app.updateWeightToLift()
         }
-        //                    platesLabel.text = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
+        platesLabel.textInputView.fadeTransition(app.visuals.platesFadeDuration)
+        platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false
-        //        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
+        //                        weightEntryTextField.errorMessage = ""
         PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
         PublicClasses.drawPlates(platesView)
         weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        //                        weightEntryTextField.errorMessage = ""
         weightEntryTextField.isHighlighted = true
         weightEntryTextField.resignFirstResponder()
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {

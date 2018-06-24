@@ -6,6 +6,7 @@
 //  Copyright © 2018 Nicholas Talavera. All rights reserved.
 //
 import Foundation
+import UIKit
 
 extension Double {
     /// Rounds the double to decimal places value
@@ -16,3 +17,13 @@ extension Double {
 }
 
 
+extension UIView {
+    func fadeTransition(_ duration:CFTimeInterval) {
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name:
+            kCAMediaTimingFunctionEaseInEaseOut)
+        animation.type = kCATransitionFade
+        animation.duration = duration
+        layer.add(animation, forKey: kCATransitionFade)
+    }
+}

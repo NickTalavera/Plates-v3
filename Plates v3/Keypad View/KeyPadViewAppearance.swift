@@ -74,6 +74,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     let gradientLayer: CAGradientLayer = CAGradientLayer()
     
     func setupInitialViews() {
+        
         //KEYBOARD SETUP
         //                        self.hideKeyboardWhenTappedAround()//CHECK
         NotificationCenter.default.addObserver(self, selector: #selector(KeyPadViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
