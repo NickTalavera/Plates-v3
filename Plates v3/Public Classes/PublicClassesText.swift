@@ -224,13 +224,13 @@ extension PublicClasses {
     
     
     
-    class func setToWeightTextField(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
-        PublicClasses.drawPlates(platesView)
-        app.status.percentageModeActive = false
-        weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
-        weightEntryTextField.keyboardType = .decimalPad
-    }
+//    class func setToWeightTextField(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
+//        PublicClasses.drawPlates(platesView)
+//        app.status.percentageModeActive = false
+////        weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
+//        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+//        weightEntryTextField.keyboardType = .decimalPad
+//    }
     
     class func updateTextViewFont(_ textView: UITextView, maxTextSize: CGFloat) {
         if (textView.text.isEmpty || textView.bounds.size.equalTo(CGSize.zero)) {

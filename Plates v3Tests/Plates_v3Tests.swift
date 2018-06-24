@@ -37,13 +37,13 @@ class Plates_v3Tests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct results.
         var app = AppData()
         print(app.calc.currentPlatesInUse)
-        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() == 0)
-        XCTAssert(app.calc.currentPlatesInUse.countPlates() == 0)
+        XCTAssert(app.sumOfCurrentPlatesInUse() == 0)
+        XCTAssert(app.sumOfCurrentPlatesInUse() == 0)
         app.calc.currentPlatesInUse = app.profile.currentPlateSet
         print(app.calc.currentPlatesInUse)
-        print(app.calc.currentPlatesInUse.sumOfPlates())
+        print(app.sumOfCurrentPlatesInUse())
         print(app.calc.currentPlatesInUse.countPlates())
-        XCTAssert(app.calc.currentPlatesInUse.sumOfPlates() > 0)
+        XCTAssert(app.sumOfCurrentPlatesInUse() > 0)
         XCTAssert(app.calc.currentPlatesInUse.countPlates() > 0)
     }
     
@@ -113,6 +113,21 @@ class Plates_v3Tests: XCTestCase {
         print(app.calc.currentPlatesInUse.list)
     }
     
+    func testRemoveLast() {
+        // This is an example of a functional test case.
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let app = AppData()
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 45)
+        app.appendCurrentPlate(weight: 22)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 33)
+        app.calc.currentPlatesInUse.list = zip(app.calc.currentPlatesInUse.list.map {$0.weight}, app.calc.currentPlatesInUse.list).sorted(by: {$0.0 < $1.0}).map {$0.1}
+        var combined = zip(app.calc.currentPlatesInUse.list.map {$0.positionOnBar}, app.calc.currentPlatesInUse.list).sorted(by: {$0.0! < $1.0!}).map {$0.1}
+        combined.removeLast()
+        app.calc.currentPlatesInUse.removeOuterPlate()
+//        XCTAssert(app.calc.currentPlatesInUse.list.map {($0.positionOnBar!,$0.weight)} == combined.map {($0.positionOnBar!,$0.weight)})
+    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.

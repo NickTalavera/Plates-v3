@@ -38,6 +38,10 @@
 		C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */; };
 		C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */; };
 		C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */; };
+		C3CC033220DF1FE700A113DF /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
+		C3CC033320DF1FEC00A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
+		C3CC033420DF1FEE00A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
+		C3CC033520DF1FF100A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,8 +388,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */,
+				C3CC033320DF1FEC00A113DF /* PublicClassesButtons.swift in Sources */,
+				C3CC033420DF1FEE00A113DF /* PublicClassesText.swift in Sources */,
 				C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */,
 				C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */,
+				C3CC033520DF1FF100A113DF /* PublicClassesUseful.swift in Sources */,
+				C3CC033220DF1FE700A113DF /* PublicClasses.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

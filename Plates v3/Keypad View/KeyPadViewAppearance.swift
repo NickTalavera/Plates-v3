@@ -106,7 +106,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.weightEntryTextField.keyboardType = .decimalPad
         self.weightEntryTextField.delegate = self
         self.weightEntryTextField.tag = 1 //CHECK
-        PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: platesView)
+//        PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: platesView)
         self.weightEntryTextField.font =  app.visuals.fontStandard
         self.weightEntryTextField.floatingLabelFont = app.visuals.fontTextFieldRiser
         self.weightEntryTextField.floatingLabel.adjustsFontSizeToFitWidth = true

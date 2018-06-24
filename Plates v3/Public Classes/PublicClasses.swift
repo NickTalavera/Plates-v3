@@ -20,7 +20,7 @@ class PublicClasses {
         app.switchUnits()
         app.status.convertedUnitsOn = false
         app.status.percentageModeActive = false
-        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
+//        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
         if app.calc.currentPlatesInUse.countPlates() > 0 || (weightEntryTextField.text?.characters.count)! > 0 {
             app.updateWeightToLift()
             weightEntryTextField.text = app.calc.weightToLiftString
@@ -44,9 +44,6 @@ class PublicClasses {
         GoButton?.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView!)
-        //        if overwriteValues == true || app.profile.currentPlateSet.listInUse.count == 0  {
-        //            PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton, titleLabel: titleLabel)
-        //        }
     }
     
     
@@ -218,14 +215,13 @@ class PublicClasses {
         platesLabel.alpha = min(1,platesLabel.alpha)
         platesView.alpha = min(1,platesView.alpha)
         app.calc.currentPlatesInUse.list = []
-        app.switchUnits()
         app.updateWeightToLift()
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         
         PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        //        weightEntryTextField.errorMessage = ""
+//                weightEntryTextField.errorMessage = ""
         //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
-        //                PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+//                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         //        //        })
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
             weightEntryTextField.alpha = 0
@@ -236,7 +232,7 @@ class PublicClasses {
             weightEntryTextField.text = ""
             platesLabel.text = ""
             PublicClasses.drawPlates(platesView)
-            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+//            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         })
         
     }

@@ -82,15 +82,21 @@ class AppData {
         
         func countPlates() -> Int {
             var count: Int = 0
-            for (index, element) in self.list.enumerated() {
+            for (_, element) in self.list.enumerated() {
                 count += element.count!
             }
             return count
         }
         
+        mutating func removeOuterPlate()  {
+            var combined = zip(self.list.map {$0.positionOnBar}, self.list).sorted(by: {$0.0! < $1.0!}).map {$0.1}
+            combined.removeLast()
+            self.list = combined
+        }
+        
         mutating func sortPlates()  {
             var combined = zip(self.list.map {$0.weight}, self.list).sorted(by: {$0.0 < $1.0}).map {$0.1}
-            for (index, element) in combined.enumerated() {
+            for (index, _) in combined.enumerated() {
                 combined[index].positionOnBar = index
             }
             self.list = combined
@@ -298,10 +304,12 @@ class AppData {
         var weightToLift: Double
         var currentPlatesInUse: Plates
         var weightToLiftString: String
+        var weightToLiftNoUnitsString: String
         init() {
             weightToLift = 0
             currentPlatesInUse = Plates.init(name: "Active", list: [])
             weightToLiftString = ""
+            weightToLiftNoUnitsString = ""
         }
     }
     
@@ -347,7 +355,7 @@ class AppData {
     
     func sumOfCurrentPlatesInUse() -> Double {
         var sum: Double = 0
-        for (index, element) in self.calc.currentPlatesInUse.list.enumerated() {
+        for (_, element) in self.calc.currentPlatesInUse.list.enumerated() {
             sum += Double(element.count!) * convertedWeight(weight: element.weight, unitOfObject: element.unitType)
         }
         return sum
@@ -356,12 +364,13 @@ class AppData {
     func updateWeightToLift(){
         self.calc.weightToLift = self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum()
         self.calc.weightToLiftString = PublicClasses.massFormatter.string(fromValue: self.calc.weightToLift, unit: self.profile.chosenUnit.formatter)
+        self.calc.weightToLiftNoUnitsString = PublicClasses.numberFormatterDecimal.string(from: self.calc.weightToLift as NSNumber)!
     }
     
     
     func appendCurrentPlate(weight: Double) {
         var maxPositionOnBar = 0
-        for (index, element) in self.calc.currentPlatesInUse.list.enumerated() {
+        for (_, element) in self.calc.currentPlatesInUse.list.enumerated() {
             maxPositionOnBar = max(element.positionOnBar!, maxPositionOnBar)
         }
         let nextBarPosition = maxPositionOnBar + 1
