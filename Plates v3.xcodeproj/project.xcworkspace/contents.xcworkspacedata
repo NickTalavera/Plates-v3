@@ -2,6 +2,171 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Plates v3.xcodeproj">
+      location = "group:AccordionHeaderView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:AccordionHeaderView.xib">
+   </FileRef>
+   <FileRef
+      location = "group:advancedSettingTableViewCellAddSubtract.swift">
+   </FileRef>
+   <FileRef
+      location = "group:AppDelegate.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellAdvancedSettings.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellAdvancedSettingTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellAdvancedSettingTableViewCellTvOS.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellCreatorSetting.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellQuickSelectTableView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:BarbellQuickSelectTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Base.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:CollarAdvancedSettings.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarAdvancedSettingsOSX.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarAdvancedSettingTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarCreatorSetting.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarQuickSelectTableView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarsAdvancedSettingTableViewCelTtvOS.swift">
+   </FileRef>
+   <FileRef
+      location = "group:CollarsQuickSelectTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Device.swift">
+   </FileRef>
+   <FileRef
+      location = "group:DoneTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:en.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:es.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:Exo2-ExtraBold.ttf">
+   </FileRef>
+   <FileRef
+      location = "group:Extensions.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ExtensionsPhoneOnly.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GradientExtension.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GymAdvancedSettingTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:GymCreatorSetting.swift">
+   </FileRef>
+   <FileRef
+      location = "group:IAPHelper.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Info.plist">
+   </FileRef>
+   <FileRef
+      location = "group:InventoryAdvancedSettings.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InventoryAdvancedSettingsBackup.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InventoryQuickSelectTableView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:InventoryQuickSelectTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:it.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:KeyPadDumpingGround.swift">
+   </FileRef>
+   <FileRef
+      location = "group:KeyPadViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ko.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:LabelWithAdaptiveTextHeight.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Protocols.swift">
+   </FileRef>
+   <FileRef
+      location = "group:pt-BR.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:PublicClasses.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PublicClassesButtons.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PublicClassesDataTransfer.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PublicClassesText.swift">
+   </FileRef>
+   <FileRef
+      location = "group:PublicClassesUseful.swift">
+   </FileRef>
+   <FileRef
+      location = "group:RemoveButtonTableViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:ru.lproj">
+   </FileRef>
+   <FileRef
+      location = "group:SettingsQuickSelectTableView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Stampbor-Dotted.otf">
+   </FileRef>
+   <FileRef
+      location = "group:Stampbor-Grunge.otf">
+   </FileRef>
+   <FileRef
+      location = "group:Stampbor-Lines.otf">
+   </FileRef>
+   <FileRef
+      location = "group:Stampbor-Rounded.otf">
+   </FileRef>
+   <FileRef
+      location = "group:zh-Hans.lproj">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

@@ -33,9 +33,7 @@ extension KeyPadViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        platesLabel.backgroundColor = UIColor.red
-        platesView.backgroundColor = UIColor.green
+
 //        platesLabel.frame = CGRect(x: platesLabel.frame.minX, y: platesLabel.frame.minY, width: 200, height: platesLabel.frame.height) //CHECK
 //        weightEntryTextFinder()
         

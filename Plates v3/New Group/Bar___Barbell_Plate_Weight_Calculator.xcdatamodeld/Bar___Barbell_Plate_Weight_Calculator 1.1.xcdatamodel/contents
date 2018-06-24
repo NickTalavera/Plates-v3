@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F60a" minimumToolsVersion="Xcode 7.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="AppData" representedClassName="AppData" syncable="YES">
+        <attribute name="alwaysSort" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="barbellsList" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="barbellsListUnits" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="collarsSetUnits" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="collarsSetValues" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="convertGymUnits" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="currentBarbellSet" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentBarName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentBarWeight" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="currentCollarName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentCollarSet" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentCollarWeight" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentInventoryList" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentInventoryName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="currentInventorySet" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentInventoryUnits" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentPlates" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="currentPlatesInUse" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="firstTime" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="gymsChosen" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="iPhoneReviewPrompted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="osxReviewPrompted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="paidToRemoveAds" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="platesOutputSelectable" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="tvOSReviewPrompted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="units" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="watchOSReviewPrompted" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weightStep" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="weightToLift" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AppData" positionX="-63" positionY="-18" width="128" height="480"/>
+    </elements>
+</model>
