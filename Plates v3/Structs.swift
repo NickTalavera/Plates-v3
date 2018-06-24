@@ -330,6 +330,7 @@ class AppData {
             var percentageModeActive: Bool
             var didLoad: Bool
             var alwaysSort: Bool
+            var convertGymUnits: Bool
             var keypadMovedUp: Bool
             var currentPageUnit: UnitOfWeight.unitType
             var keyboardHeight: CGFloat
@@ -340,6 +341,7 @@ class AppData {
                 errorState = false
                 keyPadUsedNow = false
                 percentageModeActive = false
+                convertGymUnits = false
                 didLoad = false
                 alwaysSort = false
                 keypadMovedUp = false

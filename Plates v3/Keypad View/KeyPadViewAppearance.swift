@@ -220,7 +220,6 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         titleLabelView.sizeToFit()
         self.navigationItem.titleView = titleLabelView
         //                        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: app.visuals.secondaryColor, NSFontAttributeName: app.visuals.fontTitle!] //CHECK
-        //                navBarButton.setImage(tintedImage, for: UIControlState.normal) //CHECK
         navBarButton.addTarget(self, action: #selector(self.rightBarButtonPressed), for: UIControlEvents.touchUpInside) //CHECK
         navigationController!.navigationBar.barTintColor = app.visuals.textPadColor
         keyPadBackgroundView.backgroundColor = app.visuals.keyPadBackgroundViewColor

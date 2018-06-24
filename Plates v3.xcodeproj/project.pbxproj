@@ -66,6 +66,7 @@
 		C3E0901820DF875100407D8E /* BarbellAdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */; };
 		C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */; };
 		C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */; };
+		C3E0901B20DF923A00407D8E /* SettingsQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */; };
 		E39E58286B4BC089E2BD1B62 /* Pods_Plates_v3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -249,6 +250,7 @@
 				C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */,
 				C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */,
 				C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */,
+				C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */,
 			);
 			path = Keep;
 			sourceTree = "<group>";
@@ -285,7 +287,6 @@
 				C343D58320DF7B37000CBC83 /* pt-BR.lproj */,
 				C343D57A20DF7B36000CBC83 /* RemoveButtonTableViewCell.swift */,
 				C343D57D20DF7B36000CBC83 /* ru.lproj */,
-				C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */,
 				C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */,
 				C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */,
 				C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */,
@@ -627,6 +628,7 @@
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */,
 				C307668920DF7CBC001E0281 /* PublicClasses.swift in Sources */,
 				C307669520DF7CCE001E0281 /* Globals.swift in Sources */,
+				C3E0901B20DF923A00407D8E /* SettingsQuickSelectTableView.swift in Sources */,
 				C307668620DF7CB3001E0281 /* OddFunctions.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
 				C307668D20DF7CC6001E0281 /* KeyPadiCloud.swift in Sources */,

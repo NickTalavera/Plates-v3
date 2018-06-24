@@ -38,15 +38,15 @@ extension KeyPadViewController {
     @IBAction func settingsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "settingsPopoverView") as! SettingsQuickSelectTableView
-        //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        vc.delegate = self
-        //        vc.popoverPresentationController?.barButtonItem = self.barbuttonitem
-        //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
-        //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
-        //        vc.preferredContentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height*0.7)
-        //        self.present(vc, animated: true, completion:nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "settingsPopoverView") as! SettingsQuickSelectTableView
+                vc.modalPresentationStyle = UIModalPresentationStyle.popover
+                vc.delegate = self
+                vc.popoverPresentationController?.barButtonItem = self.barbuttonitem
+                vc.popoverPresentationController!.delegate = self
+                vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
+                vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.up
+                vc.preferredContentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height*0.7)
+                self.present(vc, animated: true, completion:nil)
     }
     
     @IBAction func InventoryButtonAction(_ sender: AnyObject) {
@@ -57,7 +57,7 @@ extension KeyPadViewController {
         //        vc.delegate = self
         //        vc.popoverPresentationController?.sourceView = gymButtonAnchor
         //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
+        //        vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
         //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
         //        self.present(vc, animated: true, completion:nil)
     }
@@ -70,7 +70,7 @@ extension KeyPadViewController {
         //        vc.delegate = self
         //        vc.popoverPresentationController?.sourceView = collarButtonAnchor
         //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
+        //        vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
         //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
         //        self.present(vc, animated: true, completion:nil)
     }
@@ -83,7 +83,7 @@ extension KeyPadViewController {
                 vc.delegate = self
                 vc.popoverPresentationController?.sourceView = barbellButtonAnchor
                 vc.popoverPresentationController!.delegate = self
-//                vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
+                vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
                 vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
                 self.present(vc, animated: true, completion:nil)
     }

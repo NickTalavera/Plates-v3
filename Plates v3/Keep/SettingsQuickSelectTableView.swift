@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import Armchair
-import StoreKit
-import SwiftyStoreKit
 
 class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentationControllerDelegate {
 
@@ -17,7 +14,7 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
     weak var delegate: MainDelegate?
     @IBOutlet weak var upgradeTitleLabel: UILabel!
     @IBOutlet weak var gymLabel: UILabel!
-    @IBOutlet weak var doneLabel: UILabel!
+//    @IBOutlet weak var doneLabel: UILabel!
     @IBOutlet weak var barbellLabel: UILabel!
     @IBOutlet weak var alwaysSortLabel: UILabel!
     @IBOutlet weak var removeAdsLabel: UILabel!
@@ -37,17 +34,15 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
 @IBOutlet weak var restorePurchasesCell: UITableViewCell!
     var changedValue = false
     @IBAction func convertGymUnitsSwitchAction(_ sender: UISwitch) {
-        Armchair.userDidSignificantEvent(true)
-        GlobalVariables.sharedInstance.convertGymUnits = sender.isOn
+        app.status.convertGymUnits = sender.isOn
         changedValue = true
     }
 
 
     @IBAction func alwaysSortSwitchAction(_ sender: UISwitch) {
-        Armchair.userDidSignificantEvent(true)
-        GlobalVariables.sharedInstance.alwaysSort = sender.isOn
+        app.status.alwaysSort = sender.isOn
         if sender.isOn == true {
-            GlobalVariables.sharedInstance.currentPlatesInUse = PublicClasses.sortCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
+            app.calc.currentPlatesInUse.sortPlates()
             delegate?.drawPlatesProtocol()
         }
         changedValue = true
@@ -56,7 +51,7 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         //Create label and autoresize it
         let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.sectionHeaderHeight))
-        headerLabel.font = GlobalVariables.sharedInstance.fontStandard.withSize( (GlobalVariables.sharedInstance.fontStandard.pointSize) * 0.75)
+        headerLabel.font = app.visuals.fontStandard.withSize( (app.visuals.fontStandard.pointSize) * 0.75)
         headerLabel.text = NSLocalizedString(self.tableView(self.tableView, titleForHeaderInSection: section)!, comment: "")
         headerLabel.sizeToFit()
         headerLabel.adjustsFontSizeToFitWidth = true
@@ -74,14 +69,11 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
     override func viewWillDisappear(_ animated: Bool) {
         if changedValue == true {
             DataAccess.sharedInstance.saveEverything()
-            DataAccess.sharedInstance.iCloudSave()
+//            DataAccess.sharedInstance.iCloudSave()
         }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        if changedValue == true {
-            delegate!.presentCustomizedPrompt()
-        }
     }
 
 
@@ -89,13 +81,13 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.definesPresentationContext = true
-        barbellLabel.font = GlobalVariables.sharedInstance.fontStandard
-        gymLabel.font = GlobalVariables.sharedInstance.fontStandard
-        collarLabel.font = GlobalVariables.sharedInstance.fontStandard
-        alwaysSortLabel.font = GlobalVariables.sharedInstance.fontStandard
-        convertGymUnitsLabel.font = GlobalVariables.sharedInstance.fontStandard
-        removeAdsLabel.font = GlobalVariables.sharedInstance.fontStandard
-        restorePurchasesLabel.font = GlobalVariables.sharedInstance.fontStandard
+        barbellLabel.font = app.visuals.fontStandard
+        gymLabel.font = app.visuals.fontStandard
+        collarLabel.font = app.visuals.fontStandard
+        alwaysSortLabel.font = app.visuals.fontStandard
+        convertGymUnitsLabel.font = app.visuals.fontStandard
+        removeAdsLabel.font = app.visuals.fontStandard
+        restorePurchasesLabel.font = app.visuals.fontStandard
         barbellLabel.adjustsFontSizeToFitWidth = true
         gymLabel.adjustsFontSizeToFitWidth = true
         collarLabel.adjustsFontSizeToFitWidth = true
@@ -110,17 +102,17 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
         convertGymUnitsLabel.allowsDefaultTighteningForTruncation = true
         removeAdsLabel.allowsDefaultTighteningForTruncation = true
         restorePurchasesLabel.allowsDefaultTighteningForTruncation = true
-        alwaysSortSwitch.tintColor = GlobalVariables.sharedInstance.secondaryColor
-        alwaysSortSwitch.onTintColor = GlobalVariables.sharedInstance.secondaryColor
-        convertGymUnitsSwitch.tintColor = GlobalVariables.sharedInstance.secondaryColor
-        convertGymUnitsSwitch.onTintColor = GlobalVariables.sharedInstance.secondaryColor
-        upgradeTitleLabel.font = GlobalVariables.sharedInstance.fontTitle
+        alwaysSortSwitch.tintColor = app.visuals.secondaryColor
+        alwaysSortSwitch.onTintColor = app.visuals.secondaryColor
+        convertGymUnitsSwitch.tintColor = app.visuals.secondaryColor
+        convertGymUnitsSwitch.onTintColor = app.visuals.secondaryColor
+        upgradeTitleLabel.font = app.visuals.fontTitle
         upgradeTitleLabel.text = NSLocalizedString("Upgrade", comment: "")
         upgradeTitleLabel.baselineAdjustment = .alignCenters
-        settingsTitle.font = GlobalVariables.sharedInstance.fontTitle
+        settingsTitle.font = app.visuals.fontTitle
         settingsTitle.text = NSLocalizedString("Settings", comment: "")
         settingsTitle.baselineAdjustment = .alignCenters
-        settingsVerticalAdjustConstraint.constant += GlobalVariables.sharedInstance.titleVerticalAdjustment
+        settingsVerticalAdjustConstraint.constant += app.visuals.titleVerticalAdjustment
         barbellLabel.text = NSLocalizedString("Edit barbells", comment: "")
         gymLabel.text = NSLocalizedString("Edit gyms", comment: "")
         collarLabel.text = NSLocalizedString("Edit collars", comment: "")
@@ -130,20 +122,15 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
         restorePurchasesLabel.text = NSLocalizedString("Already purchased?", comment: "")
         tableView.delegate = self
         tableView.dataSource = self
-        alwaysSortSwitch.setOn(GlobalVariables.sharedInstance.alwaysSort, animated: false)
-        convertGymUnitsSwitch.setOn(GlobalVariables.sharedInstance.convertGymUnits, animated: false)
-        var cellsCount = 8
-        if SKPaymentQueue.canMakePayments() == false || GlobalVariables.sharedInstance.paidToRemoveAds == true {
-            removeAdsCell.selectionStyle = .none
-            removeAdsLabel.textColor = GlobalVariables.sharedInstance.placeholderColor
-            cellsCount = 5
-        }
+        alwaysSortSwitch.setOn(app.status.alwaysSort, animated: false)
+        convertGymUnitsSwitch.setOn(app.status.convertGymUnits, animated: false)
+            let cellsCount = 5
         var textToTest = [barbellLabel.text, gymLabel.text, collarLabel.text, alwaysSortLabel.text, removeAdsLabel.text, restorePurchasesLabel.text]
         var maxWidth = alwaysSortSwitch.frame.width
         var textLabel = ""
             for row in 0...textToTest.count-1{
                 textLabel = NSLocalizedString(textToTest[row]!, comment: "")
-                let stringBoundingBoxTextLabel: CGSize = (textLabel as NSString).size(withAttributes: [NSAttributedStringKey.font: GlobalVariables.sharedInstance.fontStandard])
+                let stringBoundingBoxTextLabel: CGSize = (textLabel as NSString).size(withAttributes: [NSAttributedStringKey.font: app.visuals.fontStandard])
                 if alwaysSortLabel.text == textToTest[row]! {
                     let stringBoundingBoxDetailTextLabel: CGSize = CGSize(width: alwaysSortSwitch.bounds.width, height: alwaysSortSwitch.bounds.height)
                     maxWidth = max(stringBoundingBoxTextLabel.width + stringBoundingBoxDetailTextLabel.width + 60, maxWidth)
@@ -213,17 +200,11 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
 
         if tableView.cellForRow(at: indexPath)?.reuseIdentifier == "removeAdsCell" {
             self.presentingViewController!.dismiss(animated: true, completion: nil)
-            delegate?.buyIAP()
         }
         if tableView.cellForRow(at: indexPath)?.reuseIdentifier == "restorePurchasesCell" {
             self.presentingViewController!.dismiss(animated: true, completion: nil)
-            delegate?.restorePurchases()
         }
     }
-
-
-    
-    
     
 }
 
