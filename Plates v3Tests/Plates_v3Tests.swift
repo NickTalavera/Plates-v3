@@ -129,6 +129,10 @@ class Plates_v3Tests: XCTestCase {
 //        XCTAssert(app.calc.currentPlatesInUse.list.map {($0.positionOnBar!,$0.weight)} == combined.map {($0.positionOnBar!,$0.weight)})
     }
     
+    func testDrawPlate() {
+    PublicClasses.drawPlates(UIView(frame: CGRect(x: 100, y: 100, width: 400, height: 300)))
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

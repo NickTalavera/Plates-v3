@@ -13,7 +13,6 @@
 		C39ABD2620DDFBCF00DA5BC8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2520DDFBCF00DA5BC8 /* Document.swift */; };
 		C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */; };
 		C39ABD2B20DDFBD100DA5BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */; };
-		C39ABD2E20DDFBD100DA5BC8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */; };
 		C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD3820DDFBD100DA5BC8 /* Plates_v3Tests.swift */; };
 		C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */; };
 		C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
@@ -31,7 +30,6 @@
 		C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
 		C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 		C3CC031F20DEB63300A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
-		C3CC032120DEF1F700A113DF /* Plates-Imported in Resources */ = {isa = PBXBuildFile; fileRef = C3CC032020DEF1F700A113DF /* Plates-Imported */; };
 		C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */; };
 		C3CC032720DEF2DF00A113DF /* KeyPadPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */; };
 		C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
@@ -103,7 +101,6 @@
 		C3CC031020DE3C3500A113DF /* PublicClassesText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesText.swift; sourceTree = "<group>"; };
 		C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesButtons.swift; sourceTree = "<group>"; };
 		C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesUseful.swift; sourceTree = "<group>"; };
-		C3CC032020DEF1F700A113DF /* Plates-Imported */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Plates-Imported"; sourceTree = "<group>"; };
 		C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadButtons.swift; sourceTree = "<group>"; };
 		C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadPopovers.swift; sourceTree = "<group>"; };
 		C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadDelegate.swift; sourceTree = "<group>"; };
@@ -170,7 +167,6 @@
 				C39ABD5320DDFE8600DA5BC8 /* Globals.swift */,
 				C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */,
 				C3CC032320DEF28A00A113DF /* Keypad View */,
-				C3CC032020DEF1F700A113DF /* Plates-Imported */,
 				C3CC032220DEF21D00A113DF /* Public Classes */,
 				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
 				C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */,
@@ -332,9 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39ABD2E20DDFBD100DA5BC8 /* LaunchScreen.storyboard in Resources */,
 				C39ABD2B20DDFBD100DA5BC8 /* Assets.xcassets in Resources */,
-				C3CC032120DEF1F700A113DF /* Plates-Imported in Resources */,
 				C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

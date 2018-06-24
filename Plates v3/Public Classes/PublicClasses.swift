@@ -20,7 +20,7 @@ class PublicClasses {
         app.switchUnits()
         app.status.convertedUnitsOn = false
         app.status.percentageModeActive = false
-//        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
+        //        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView!)
         if app.calc.currentPlatesInUse.countPlates() > 0 || (weightEntryTextField.text?.characters.count)! > 0 {
             app.updateWeightToLift()
             weightEntryTextField.text = app.calc.weightToLiftString
@@ -149,58 +149,56 @@ class PublicClasses {
             //                    currentPlatesWithUnits += app.profile.currentPlateSet.list[9...17].map({String($0) + " lbs"})
             var xPos = platesView.bounds.maxX
             var totalPlateWidth: CGFloat = 0
-            //                    for i in 0...platesInUse.countPlates()-1 {
-            //                        totalPlateWidth += CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
+            for i in 0...platesInUse.countPlates()-1 {
+                //                        totalPlateWidth += CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
+            }
+            totalPlateWidth += 30
+            totalPlateWidth = max(totalPlateWidth, 415)
+            var newWidthTotal: CGFloat = 0
+            for i in 0...platesInUse.countPlates()-1 {
+                var heightNotNormalized: CGFloat = 78
+                var widthNotNormalized: CGFloat = 30
+                if i != -2 && i != -1 {
+                    //                            heightNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateHeights[currentPlatesWithUnits.index(of: platesInUse[i])!])
+                    //                            widthNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
+                }
+                else if i == -2 {
+                    heightNotNormalized = 50
+                    widthNotNormalized = 415
+                }
+                var heightNormalized: CGFloat = CGFloat()
+                var widthNormalized: CGFloat = CGFloat()
+                //                                        if (platesView.bounds.width / totalPlateWidth * CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)) > platesView.bounds.height {
+                //                            let scale = platesView.bounds.height / CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)
+                //                                            heightNormalized = scale * heightNotNormalized
+                //                                            widthNormalized = scale * widthNotNormalized
+                //                                        }
+                //                                        else {
+                //                                            heightNormalized = platesView.bounds.width / totalPlateWidth * heightNotNormalized
+                //                                            widthNormalized = platesView.bounds.width / totalPlateWidth * widthNotNormalized
+                //                //                        }
+                newWidthTotal += widthNormalized
+                let imageSize: CGSize = CGSize(width: widthNormalized, height: heightNormalized)
+                xPos = xPos - widthNormalized
+                if i == -1 {
+                    xPos = platesView.bounds.maxX - widthNormalized
+                }
+                let plateImageView: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: xPos, y: platesView.bounds.midY-heightNormalized/2), size: imageSize))
+                plateImageView.tag = 752837 //CHECK
+                plateImageView.cornerRadius = 5/292*plateImageView.frame.height
+                var plateColor: Color = Color.gray
+                if i != -2 && i != -1 {
+                    //                            plateColor = GlobalVariables.sharedInstance.plateColors[currentPlatesWithUnits.index(of: platesInUse[i])!]
+                }
+                plateImageView.backgroundColor = plateColor
+                plateImageView.borderWidth = 0.5
+                plateImageView.borderColor = GlobalVariables.sharedInstance.borderColor
+                platesView.addSubview(plateImageView)
+            }
         }
-//        totalPlateWidth += 30
-//        totalPlateWidth = max(totalPlateWidth, 415)
-//        print(platesView.frame.width)
-        //                    var newWidthTotal: CGFloat = 0
-        //                    for i in 0...platesInUse.countPlates()-1 {
-        //                        var heightNotNormalized: CGFloat = 78
-        //                        var widthNotNormalized: CGFloat = 30
-        //                        if i != -2 && i != -1 {
-        //                            heightNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateHeights[currentPlatesWithUnits.index(of: platesInUse[i])!])
-        //                            widthNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
-        //                        }
-        //                        else if i == -2 {
-        //                            heightNotNormalized = 50
-        //                            widthNotNormalized = 415
-        //                        }
-        //                        var heightNormalized: CGFloat = CGFloat()
-        //                        var widthNormalized: CGFloat = CGFloat()
-        //                        if (platesView.bounds.width / totalPlateWidth * CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)) > platesView.bounds.height {
-        //                            let scale = platesView.bounds.height / CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)
-        //                            heightNormalized = scale * heightNotNormalized
-        //                            widthNormalized = scale * widthNotNormalized
-        //                        }
-        //                        else {
-        //                            heightNormalized = platesView.bounds.width / totalPlateWidth * heightNotNormalized
-        //                            widthNormalized = platesView.bounds.width / totalPlateWidth * widthNotNormalized
-        //                        }
-        //                        newWidthTotal += widthNormalized
-        //                        let imageSize: CGSize = CGSize(width: widthNormalized, height: heightNormalized)
-        //                        xPos = xPos - widthNormalized
-        //                        if i == -1 {
-        //                            xPos = platesView.bounds.maxX - widthNormalized
-        //                        }
-        //                        let plateImageView: ImageView = ImageView(frame: CGRect(origin: CGPoint(x: xPos, y: platesView.bounds.midY-heightNormalized/2), size: imageSize))
-        //                        plateImageView.tag = 752837
-        //                        #if os(iOS) || os(tvOS)
-        //                        plateImageView.cornerRadius = 5/292*plateImageView.frame.height
-        //                        var plateColor: Color = Color.gray
-        //                        if i != -2 && i != -1 {
-        //                            plateColor = GlobalVariables.sharedInstance.plateColors[currentPlatesWithUnits.index(of: platesInUse[i])!]
-        //                        }
-        //                        plateImageView.backgroundColor = plateColor
-        //                        plateImageView.borderWidth = 0.5
-        //                        plateImageView.borderColor = GlobalVariables.sharedInstance.borderColor
-        //                        platesView.addSubview(plateImageView)
-        //                    }
-        //                }
-        //                if UIView.userInterfaceLayoutDirection(for: platesView.semanticContentAttribute) == UIUserInterfaceLayoutDirection.rightToLeft {
-        //                    platesView.transform = CGAffineTransform(scaleX: -1, y: 1)
-        //                }
+        if UIView.userInterfaceLayoutDirection(for: platesView.semanticContentAttribute) == UIUserInterfaceLayoutDirection.rightToLeft {
+            platesView.transform = CGAffineTransform(scaleX: -1, y: 1)
+        }
     }
     
     
@@ -217,14 +215,14 @@ class PublicClasses {
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         
         PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-//                weightEntryTextField.errorMessage = ""
+        //                weightEntryTextField.errorMessage = ""
         //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
-//                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+        //                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         //        //        })
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
             platesLabel.alpha = 0
             if weightEntryTextField.text != "" {
-            weightEntryTextField.alpha = 0
+                weightEntryTextField.alpha = 0
             }
             platesView.alpha = 0
         }, completion: { (finished: Bool) -> () in
