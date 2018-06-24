@@ -13,7 +13,7 @@ import JVFloatLabeledText
 
 extension PublicClasses {
     class func goButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
-        app.calc.currentPlatesInUse.sortPlates()
+//        app.calc.currentPlatesInUse.sortPlates()
         GoButton.isEnabled = false
         weightEntryTextField.keyboardType = .decimalPad
         weightEntryTextField.resignFirstResponder()
@@ -104,6 +104,7 @@ extension PublicClasses {
         weightEntryTextField.text = app.calc.weightToLiftString
         app.calc.currentPlatesInUse.sortPlates()
         PublicClasses.drawPlates(platesView)
+        platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
     }
     
     
@@ -144,6 +145,7 @@ extension PublicClasses {
                 weightEntryTextField.text = app.calc.weightToLiftString
                 PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
                 PublicClasses.drawPlates(platesView)
+                platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
             }
             else {
                 PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -191,11 +193,11 @@ extension PublicClasses {
         }
         platesLabel.textInputView.fadeTransition(app.visuals.platesFadeDuration)
         platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
+        PublicClasses.drawPlates(platesView)
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false
         //                        weightEntryTextField.errorMessage = ""
         PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
-        PublicClasses.drawPlates(platesView)
         weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
         weightEntryTextField.isHighlighted = true
         weightEntryTextField.resignFirstResponder()

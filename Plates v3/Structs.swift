@@ -144,7 +144,7 @@ class AppData {
             }
             
             mutating func sortPlates()  {
-                var combined = zip(self.list.map {$0.weight}, self.list).sorted(by: {$0.0 < $1.0}).map {$0.1}
+                var combined = zip(self.list.map {$0.weight}, self.list).sorted(by: {$0.0 > $1.0}).map {$0.1}
                 for (index, _) in combined.enumerated() {
                     combined[index].positionOnBar = index
                 }
