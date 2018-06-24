@@ -185,6 +185,7 @@ extension PublicClasses {
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             buttonSpot += 9
         }
+        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         GoButton.isEnabled = true
         if weightEntryTextField.text!.count == 0 || app.calc.weightToLift == app.profile.currentBarbell.weight + app.profile.currentCollar.weight {
             platesLabel.alpha = 0
