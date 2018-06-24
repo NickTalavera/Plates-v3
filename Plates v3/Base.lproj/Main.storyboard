@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="295" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TFg-BC-8GN">
-                                        <rect key="frame" x="39.5" y="0.0" width="71" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="55 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,8 +55,8 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstItem="TFg-BC-8GN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5b8-Q6-ohR" secondAttribute="leading" id="0J7-HB-Akp"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="TFg-BC-8GN" secondAttribute="trailing" id="3Vk-HP-5tu"/>
+                                    <constraint firstItem="TFg-BC-8GN" firstAttribute="leading" secondItem="5b8-Q6-ohR" secondAttribute="leading" constant="5" id="0J7-HB-Akp"/>
+                                    <constraint firstAttribute="trailing" secondItem="TFg-BC-8GN" secondAttribute="trailing" constant="5" id="3Vk-HP-5tu"/>
                                     <constraint firstItem="TFg-BC-8GN" firstAttribute="top" secondItem="5b8-Q6-ohR" secondAttribute="top" id="CeI-tK-ayd"/>
                                     <constraint firstItem="TFg-BC-8GN" firstAttribute="centerX" secondItem="5b8-Q6-ohR" secondAttribute="centerX" id="NCM-VU-owZ"/>
                                     <constraint firstItem="TFg-BC-8GN" firstAttribute="centerY" secondItem="5b8-Q6-ohR" secondAttribute="centerY" id="dP3-LL-ulp"/>
@@ -81,7 +81,7 @@
                                 <rect key="frame" x="150.5" y="295" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MN6-SE-s3M">
-                                        <rect key="frame" x="39" y="0.0" width="71" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="45 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,8 +96,10 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstItem="MN6-SE-s3M" firstAttribute="leading" secondItem="6te-Lj-pA8" secondAttribute="leading" constant="5" id="7Jz-o3-hB6"/>
                                     <constraint firstItem="MN6-SE-s3M" firstAttribute="centerX" secondItem="6te-Lj-pA8" secondAttribute="centerX" id="DGs-2G-kNf"/>
                                     <constraint firstAttribute="bottom" secondItem="MN6-SE-s3M" secondAttribute="bottom" id="NRz-XQ-DwZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="MN6-SE-s3M" secondAttribute="trailing" constant="5" id="Oj2-90-qoM"/>
                                     <constraint firstItem="MN6-SE-s3M" firstAttribute="centerY" secondItem="6te-Lj-pA8" secondAttribute="centerY" id="dN5-IV-66X"/>
                                     <constraint firstItem="MN6-SE-s3M" firstAttribute="top" secondItem="6te-Lj-pA8" secondAttribute="top" id="qGi-ys-obr"/>
                                 </constraints>
@@ -114,7 +116,7 @@
                                 <rect key="frame" x="300.5" y="295" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-F8-eIc">
-                                        <rect key="frame" x="39.5" y="0.0" width="71" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="35 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -129,9 +131,11 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstItem="b8y-F8-eIc" firstAttribute="leading" secondItem="RPM-5h-Vku" secondAttribute="leading" constant="5" id="5Mu-O3-2gB"/>
                                     <constraint firstItem="b8y-F8-eIc" firstAttribute="centerY" secondItem="RPM-5h-Vku" secondAttribute="centerY" id="J6r-Oc-4dS"/>
                                     <constraint firstItem="b8y-F8-eIc" firstAttribute="centerX" secondItem="RPM-5h-Vku" secondAttribute="centerX" id="Oz3-kv-aC2"/>
                                     <constraint firstItem="b8y-F8-eIc" firstAttribute="top" secondItem="RPM-5h-Vku" secondAttribute="top" id="Uc4-6t-61q"/>
+                                    <constraint firstAttribute="trailing" secondItem="b8y-F8-eIc" secondAttribute="trailing" constant="5" id="uNa-4u-CEq"/>
                                     <constraint firstAttribute="bottom" secondItem="b8y-F8-eIc" secondAttribute="bottom" id="wpW-Mg-aBG"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -147,7 +151,7 @@
                                 <rect key="frame" x="451" y="295" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFS-OP-F9o">
-                                        <rect key="frame" x="43.5" y="0.0" width="62" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <inset key="contentEdgeInsets" minX="0.0" minY="5" maxX="0.0" maxY="5"/>
                                         <state key="normal" title="Clear">
@@ -173,7 +177,9 @@
                                 <constraints>
                                     <constraint firstItem="vFS-OP-F9o" firstAttribute="top" secondItem="AHR-Ko-QZv" secondAttribute="top" id="1qB-wk-o9T"/>
                                     <constraint firstItem="vFS-OP-F9o" firstAttribute="centerY" secondItem="AHR-Ko-QZv" secondAttribute="centerY" id="C2r-fR-fE4"/>
+                                    <constraint firstItem="vFS-OP-F9o" firstAttribute="leading" secondItem="AHR-Ko-QZv" secondAttribute="leading" constant="5" id="NxT-nl-QUR"/>
                                     <constraint firstAttribute="bottom" secondItem="vFS-OP-F9o" secondAttribute="bottom" id="ULr-GE-xXT"/>
+                                    <constraint firstAttribute="trailing" secondItem="vFS-OP-F9o" secondAttribute="trailing" constant="5" id="Xh1-aJ-wmv"/>
                                     <constraint firstItem="vFS-OP-F9o" firstAttribute="centerX" secondItem="AHR-Ko-QZv" secondAttribute="centerX" id="rs0-1R-zSN"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -189,7 +195,7 @@
                                 <rect key="frame" x="0.0" y="356" width="149.5" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giw-Lv-PWA">
-                                        <rect key="frame" x="39.5" y="0.0" width="71" height="59.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="25 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,11 +210,11 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstItem="giw-Lv-PWA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kMW-iV-gBI" secondAttribute="leading" id="0Lh-6L-zhz"/>
+                                    <constraint firstItem="giw-Lv-PWA" firstAttribute="leading" secondItem="kMW-iV-gBI" secondAttribute="leading" constant="5" id="0Lh-6L-zhz"/>
                                     <constraint firstItem="giw-Lv-PWA" firstAttribute="top" secondItem="kMW-iV-gBI" secondAttribute="top" id="9to-fc-tvK"/>
                                     <constraint firstItem="giw-Lv-PWA" firstAttribute="centerX" secondItem="kMW-iV-gBI" secondAttribute="centerX" id="FeQ-mR-Ose"/>
                                     <constraint firstItem="giw-Lv-PWA" firstAttribute="centerY" secondItem="kMW-iV-gBI" secondAttribute="centerY" id="d6U-FS-AlB"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="giw-Lv-PWA" secondAttribute="trailing" id="ibW-8l-X3t"/>
+                                    <constraint firstAttribute="trailing" secondItem="giw-Lv-PWA" secondAttribute="trailing" constant="5" id="ibW-8l-X3t"/>
                                     <constraint firstAttribute="bottom" secondItem="giw-Lv-PWA" secondAttribute="bottom" id="v8z-OL-ejI"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -224,7 +230,7 @@
                                 <rect key="frame" x="150.5" y="356" width="149" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XId-VN-Pk6">
-                                        <rect key="frame" x="39" y="0.0" width="71" height="59.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="15 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -241,8 +247,10 @@
                                 <constraints>
                                     <constraint firstItem="XId-VN-Pk6" firstAttribute="centerX" secondItem="tgk-9m-gme" secondAttribute="centerX" id="Jca-Ss-tmA"/>
                                     <constraint firstItem="XId-VN-Pk6" firstAttribute="centerY" secondItem="tgk-9m-gme" secondAttribute="centerY" id="RIf-lF-MdL"/>
+                                    <constraint firstAttribute="trailing" secondItem="XId-VN-Pk6" secondAttribute="trailing" constant="5" id="hgn-A3-YHG"/>
                                     <constraint firstAttribute="bottom" secondItem="XId-VN-Pk6" secondAttribute="bottom" id="mkX-Wd-znL"/>
                                     <constraint firstItem="XId-VN-Pk6" firstAttribute="top" secondItem="tgk-9m-gme" secondAttribute="top" id="ra2-NB-tak"/>
+                                    <constraint firstItem="XId-VN-Pk6" firstAttribute="leading" secondItem="tgk-9m-gme" secondAttribute="leading" constant="5" id="wiN-YF-itu"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -257,7 +265,7 @@
                                 <rect key="frame" x="300.5" y="356" width="149.5" height="59.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK1-SF-srS">
-                                        <rect key="frame" x="39.5" y="0.0" width="71" height="59.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="10 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -272,11 +280,11 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstItem="NK1-SF-srS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g7h-Bt-Ezh" secondAttribute="leading" id="KOV-07-ISJ"/>
+                                    <constraint firstItem="NK1-SF-srS" firstAttribute="leading" secondItem="g7h-Bt-Ezh" secondAttribute="leading" constant="5" id="KOV-07-ISJ"/>
                                     <constraint firstItem="NK1-SF-srS" firstAttribute="top" secondItem="g7h-Bt-Ezh" secondAttribute="top" id="KhP-pD-THN"/>
                                     <constraint firstItem="NK1-SF-srS" firstAttribute="centerY" secondItem="g7h-Bt-Ezh" secondAttribute="centerY" id="S1T-FT-JNg"/>
                                     <constraint firstItem="NK1-SF-srS" firstAttribute="centerX" secondItem="g7h-Bt-Ezh" secondAttribute="centerX" id="aSS-G6-ffu"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NK1-SF-srS" secondAttribute="trailing" id="kL7-xK-vHL"/>
+                                    <constraint firstAttribute="trailing" secondItem="NK1-SF-srS" secondAttribute="trailing" constant="5" id="kL7-xK-vHL"/>
                                     <constraint firstAttribute="bottom" secondItem="NK1-SF-srS" secondAttribute="bottom" id="yMn-BA-YEs"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -336,7 +344,7 @@
                                 <rect key="frame" x="0.0" y="416.5" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kDZ-Wy-lUm">
-                                        <rect key="frame" x="47" y="0.0" width="56" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="5 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -351,10 +359,12 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstItem="kDZ-Wy-lUm" firstAttribute="leading" secondItem="lAU-Oo-jrg" secondAttribute="leading" constant="5" id="00c-AX-db6"/>
                                     <constraint firstItem="kDZ-Wy-lUm" firstAttribute="centerY" secondItem="lAU-Oo-jrg" secondAttribute="centerY" id="Npe-Fr-2a6"/>
                                     <constraint firstItem="kDZ-Wy-lUm" firstAttribute="top" secondItem="lAU-Oo-jrg" secondAttribute="top" id="d4G-kI-Iih"/>
                                     <constraint firstAttribute="bottom" secondItem="kDZ-Wy-lUm" secondAttribute="bottom" id="iJ0-kL-njA"/>
                                     <constraint firstItem="kDZ-Wy-lUm" firstAttribute="centerX" secondItem="lAU-Oo-jrg" secondAttribute="centerX" id="jvq-HS-rRp"/>
+                                    <constraint firstAttribute="trailing" secondItem="kDZ-Wy-lUm" secondAttribute="trailing" constant="5" id="lvp-jm-uzH"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -369,7 +379,7 @@
                                 <rect key="frame" x="150.5" y="416.5" width="149" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6d-9d-waA">
-                                        <rect key="frame" x="35.5" y="0.0" width="78" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="2.5 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -384,14 +394,14 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="s6d-9d-waA" secondAttribute="trailing" id="AQS-ry-vld"/>
+                                    <constraint firstAttribute="trailing" secondItem="s6d-9d-waA" secondAttribute="trailing" constant="5" id="AQS-ry-vld"/>
                                     <constraint firstItem="s6d-9d-waA" firstAttribute="top" secondItem="QeV-Qv-VfH" secondAttribute="top" id="KRZ-Ly-8FB"/>
                                     <constraint firstAttribute="bottom" secondItem="s6d-9d-waA" secondAttribute="bottom" id="NKL-jo-jcR"/>
                                     <constraint firstAttribute="trailing" secondItem="s6d-9d-waA" secondAttribute="trailing" constant="5" id="Qhx-ca-6ay"/>
                                     <constraint firstItem="s6d-9d-waA" firstAttribute="leading" secondItem="QeV-Qv-VfH" secondAttribute="leading" constant="5" id="aSQ-T5-fN6"/>
                                     <constraint firstItem="s6d-9d-waA" firstAttribute="centerY" secondItem="QeV-Qv-VfH" secondAttribute="centerY" id="gQN-6G-yg3"/>
                                     <constraint firstItem="s6d-9d-waA" firstAttribute="centerX" secondItem="QeV-Qv-VfH" secondAttribute="centerX" id="mS3-FK-ofu"/>
-                                    <constraint firstItem="s6d-9d-waA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QeV-Qv-VfH" secondAttribute="leading" id="nBS-wJ-aVM"/>
+                                    <constraint firstItem="s6d-9d-waA" firstAttribute="leading" secondItem="QeV-Qv-VfH" secondAttribute="leading" constant="5" id="nBS-wJ-aVM"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -412,7 +422,7 @@
                                 <rect key="frame" x="300.5" y="416.5" width="149.5" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTQ-dt-vzF">
-                                        <rect key="frame" x="28.5" y="0.0" width="93" height="60"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="60"/>
                                         <fontDescription key="fontDescription" name="DodecaBasic-Regular" family="DodecaBasic" pointSize="26"/>
                                         <state key="normal" title="1.25 lbs">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -427,7 +437,9 @@
                                     <accessibilityTraits key="traits" image="YES"/>
                                 </accessibility>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KTQ-dt-vzF" secondAttribute="trailing" constant="5" id="9lI-Po-TLQ"/>
                                     <constraint firstItem="KTQ-dt-vzF" firstAttribute="top" secondItem="fd6-aq-LpD" secondAttribute="top" id="AnG-ug-JS5"/>
+                                    <constraint firstItem="KTQ-dt-vzF" firstAttribute="leading" secondItem="fd6-aq-LpD" secondAttribute="leading" constant="5" id="Lv0-Un-sLf"/>
                                     <constraint firstItem="KTQ-dt-vzF" firstAttribute="centerY" secondItem="fd6-aq-LpD" secondAttribute="centerY" id="QlE-KB-uLD"/>
                                     <constraint firstAttribute="bottom" secondItem="KTQ-dt-vzF" secondAttribute="bottom" id="Y2c-o1-Nda"/>
                                     <constraint firstItem="KTQ-dt-vzF" firstAttribute="centerX" secondItem="fd6-aq-LpD" secondAttribute="centerX" id="veR-cZ-Zec"/>
@@ -528,8 +540,9 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BarbellPro" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Mei-NG-fPi">
-                                <rect key="frame" x="24.5" y="96" width="7" height="35"/>
+                                <rect key="frame" x="20" y="96" width="0.0" height="35"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" id="irk-ym-Zko"/>
                                     <constraint firstAttribute="height" constant="35" id="ntg-R0-vYl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="StampborLines" family="Stampbor Lines" pointSize="1"/>
@@ -545,11 +558,14 @@
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkD-mP-gNA" userLabel="Hidden">
-                                <rect key="frame" x="608" y="246.5" width="84" height="43"/>
+                                <rect key="frame" x="608" y="246.5" width="112" height="43"/>
                                 <color key="backgroundColor" red="0.12941176469999999" green="0.74509803919999995" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" label="Calculate Button">
                                     <accessibilityTraits key="traits" button="YES" keyboardKey="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="8dD-8M-pmJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
                                 <state key="normal" title="Hidden">
@@ -658,7 +674,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw8-t4-mjJ" userLabel="Barbell Button">
-                                        <rect key="frame" x="33.5" y="0.0" width="82" height="59.5"/>
+                                        <rect key="frame" x="1" y="0.0" width="147" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Select to show a popup of barbell choices." label="Barbell">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -688,10 +704,12 @@
                                     <constraint firstItem="Sw8-t4-mjJ" firstAttribute="top" secondItem="UZq-Qm-Wf4" secondAttribute="top" id="1YI-EV-NZD"/>
                                     <constraint firstItem="UMl-TL-2um" firstAttribute="top" secondItem="UZq-Qm-Wf4" secondAttribute="top" constant="-1" id="2PU-8r-oZg"/>
                                     <constraint firstItem="Sw8-t4-mjJ" firstAttribute="centerX" secondItem="UZq-Qm-Wf4" secondAttribute="centerX" id="5ex-3p-vwf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sw8-t4-mjJ" secondAttribute="trailing" constant="1" id="C1E-PT-4l5"/>
                                     <constraint firstItem="UMl-TL-2um" firstAttribute="centerX" secondItem="UZq-Qm-Wf4" secondAttribute="centerX" id="WNT-7e-a61"/>
                                     <constraint firstItem="Sw8-t4-mjJ" firstAttribute="centerY" secondItem="UZq-Qm-Wf4" secondAttribute="centerY" id="Wt1-AL-meW"/>
                                     <constraint firstAttribute="bottom" secondItem="Sw8-t4-mjJ" secondAttribute="bottom" id="XvX-da-rhv"/>
                                     <constraint firstAttribute="width" id="pS5-45-GZi"/>
+                                    <constraint firstItem="Sw8-t4-mjJ" firstAttribute="leading" secondItem="UZq-Qm-Wf4" secondAttribute="leading" constant="1" id="tzR-yH-l6p"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -719,7 +737,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="quJ-zV-FPE" userLabel=" Collars Switch">
-                                        <rect key="frame" x="41" y="0.0" width="68" height="59.5"/>
+                                        <rect key="frame" x="5" y="0.0" width="139.5" height="59.5"/>
                                         <accessibility key="accessibilityConfiguration" hint="Select to show a popup of collar choices." label="Collar">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -748,8 +766,10 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="quJ-zV-FPE" secondAttribute="bottom" id="CoU-aM-sd7"/>
                                     <constraint firstItem="quJ-zV-FPE" firstAttribute="centerY" secondItem="UAK-Tp-g5K" secondAttribute="centerY" id="IEq-Uz-Soa"/>
+                                    <constraint firstItem="quJ-zV-FPE" firstAttribute="leading" secondItem="UAK-Tp-g5K" secondAttribute="leading" constant="5" id="ONF-10-wIB"/>
                                     <constraint firstItem="quJ-zV-FPE" firstAttribute="top" secondItem="UAK-Tp-g5K" secondAttribute="top" id="TPP-3p-dXk"/>
                                     <constraint firstItem="ulK-Jw-cWJ" firstAttribute="top" secondItem="UAK-Tp-g5K" secondAttribute="top" constant="-1" id="YXt-hh-QHh"/>
+                                    <constraint firstAttribute="trailing" secondItem="quJ-zV-FPE" secondAttribute="trailing" constant="5" id="hCJ-4B-R0s"/>
                                     <constraint firstItem="quJ-zV-FPE" firstAttribute="centerX" secondItem="UAK-Tp-g5K" secondAttribute="centerX" id="mkT-Cm-LHG"/>
                                     <constraint firstItem="ulK-Jw-cWJ" firstAttribute="centerX" secondItem="UAK-Tp-g5K" secondAttribute="centerX" id="p5t-W0-Dqo"/>
                                 </constraints>
@@ -821,10 +841,8 @@
                             <constraint firstItem="lAU-Oo-jrg" firstAttribute="centerX" secondItem="5b8-Q6-ohR" secondAttribute="centerX" id="2d9-9d-TXR"/>
                             <constraint firstItem="tgk-9m-gme" firstAttribute="centerY" secondItem="Wd9-RM-lSh" secondAttribute="centerY" id="2sd-uM-NXv"/>
                             <constraint firstItem="AHR-Ko-QZv" firstAttribute="top" secondItem="mq5-0H-Zwb" secondAttribute="bottom" multiplier="0.55" id="2tV-sJ-hLB"/>
-                            <constraint firstItem="Mei-NG-fPi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mq5-0H-Zwb" secondAttribute="leadingMargin" id="363-z5-AA2"/>
-                            <constraint firstItem="UzY-Mw-aOS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="mq5-0H-Zwb" secondAttribute="leading" constant="20" symbolic="YES" id="3Oq-It-tI9"/>
+                            <constraint firstItem="Mei-NG-fPi" firstAttribute="leading" secondItem="mq5-0H-Zwb" secondAttribute="leadingMargin" id="363-z5-AA2"/>
                             <constraint firstItem="fd6-aq-LpD" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="3la-Dn-dWp"/>
-                            <constraint firstAttribute="trailing" secondItem="zkD-mP-gNA" secondAttribute="trailing" constant="-92" id="3wC-Uj-3MC"/>
                             <constraint firstItem="Ql7-ev-OHD" firstAttribute="top" secondItem="Wd9-RM-lSh" secondAttribute="bottom" constant="1" id="4U9-Ln-6jC"/>
                             <constraint firstItem="QeV-Qv-VfH" firstAttribute="leading" secondItem="lAU-Oo-jrg" secondAttribute="trailing" constant="1" id="4t7-ET-ROY"/>
                             <constraint firstItem="fzk-5H-fHd" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="6fM-os-Gb2"/>
@@ -847,7 +865,7 @@
                             <constraint firstItem="UAK-Tp-g5K" firstAttribute="leading" secondItem="UZq-Qm-Wf4" secondAttribute="trailing" constant="1" id="Gtq-sn-j9q"/>
                             <constraint firstItem="UZq-Qm-Wf4" firstAttribute="top" secondItem="QeV-Qv-VfH" secondAttribute="bottom" constant="1" id="HTN-ug-PCt"/>
                             <constraint firstItem="kMW-iV-gBI" firstAttribute="centerY" secondItem="Wd9-RM-lSh" secondAttribute="centerY" id="HdI-Lr-OgF"/>
-                            <constraint firstItem="zkD-mP-gNA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="THm-NU-E6K" secondAttribute="trailing" symbolic="YES" id="HxG-Xu-Q3Q"/>
+                            <constraint firstItem="zkD-mP-gNA" firstAttribute="leading" secondItem="THm-NU-E6K" secondAttribute="trailing" constant="8" symbolic="YES" id="HxG-Xu-Q3Q"/>
                             <constraint firstItem="lAU-Oo-jrg" firstAttribute="top" secondItem="kMW-iV-gBI" secondAttribute="bottom" constant="1" id="I1H-t2-eXg"/>
                             <constraint firstItem="fd6-aq-LpD" firstAttribute="leading" secondItem="QeV-Qv-VfH" secondAttribute="trailing" constant="1" id="IH6-mT-BcM"/>
                             <constraint firstItem="UAK-Tp-g5K" firstAttribute="height" secondItem="5b8-Q6-ohR" secondAttribute="height" id="Ide-H6-pGP"/>
@@ -902,7 +920,6 @@
                             <constraint firstItem="UAK-Tp-g5K" firstAttribute="width" secondItem="5b8-Q6-ohR" secondAttribute="width" id="oJZ-4G-1lI"/>
                             <constraint firstItem="6te-Lj-pA8" firstAttribute="centerY" secondItem="AHR-Ko-QZv" secondAttribute="centerY" id="pCb-BB-tj0"/>
                             <constraint firstAttribute="trailing" secondItem="fzk-5H-fHd" secondAttribute="trailing" id="qFt-dc-TbF"/>
-                            <constraint firstAttribute="trailing" secondItem="Mei-NG-fPi" secondAttribute="trailingMargin" constant="576.5" id="qsd-Vq-Ocy"/>
                             <constraint firstItem="Wd9-RM-lSh" firstAttribute="centerX" secondItem="AHR-Ko-QZv" secondAttribute="centerX" id="sji-e7-XyX"/>
                             <constraint firstItem="HYo-bK-exe" firstAttribute="top" secondItem="mq5-0H-Zwb" secondAttribute="top" id="vWr-zj-XKA"/>
                             <constraint firstItem="lAU-Oo-jrg" firstAttribute="leading" secondItem="5b8-Q6-ohR" secondAttribute="leading" id="vaZ-hV-gav"/>
