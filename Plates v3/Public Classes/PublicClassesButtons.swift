@@ -18,11 +18,11 @@ extension PublicClasses {
         weightEntryTextField.keyboardType = .decimalPad
         weightEntryTextField.resignFirstResponder()
         if app.status.percentageModeActive == true {
-            //            var originalWeight = app.calc.weightToLift
-            //            if placeholderText.count == 0 {
-            //                placeholderText = "0"
-            //            }
-            //            let percentageTemp: Double = (PublicClasses.numberFormatterDecimal.number(from: placeholderText)?.doubleValue)!/100
+            var originalWeight = app.calc.weightToLift
+//                        if placeholderText.count == 0 {
+//                            placeholderText = "0"
+//                        }
+//                        let percentageTemp: Double = (PublicClasses.numberFormatterDecimal.number(from: placeholderText)?.doubleValue)!/100
             //            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
             //            app.calc.weightToLift = (app.calc.weightToLift * percentageTemp).roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces)
             //            let weightsPreviousOutPut = PublicClasses.labelOutputText(app.calc.weightToLift)
@@ -100,15 +100,9 @@ extension PublicClasses {
             //
             //            }
             
-            //            if weightTest.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces) != app.calc.weightToLift.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces) {
-            //            }
         }
-        //        if weightEntryTextField.text!.count > 0 {
-        //            placeholderText = PublicClasses.removeUnitsFromText(weightEntryTextField.text!)
-        //            let placeholderDouble = PublicClasses.numberFormatterDecimal.number(from: placeholderText)?.doubleValue
-        //            weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: placeholderDouble!, unit: GlobalVariables.sharedInstance.unitsFormatter)
-        //        }
-        //        GlobalVariables.sharedInstance.currentPlatesInUse = PublicClasses.sortCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
+        weightEntryTextField.text = app.calc.weightToLiftString
+        app.calc.currentPlatesInUse.sortPlates()
         PublicClasses.drawPlates(platesView)
     }
     
@@ -116,6 +110,7 @@ extension PublicClasses {
     class func percentButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
         app.status.percentageModeActive = true
         app.status.keyPadUsedNow = false
+        app.updateWeightToLift()
         weightEntryTextField.becomeFirstResponder()
         weightEntryTextField.keyboardType = .numberPad
         weightEntryTextField.placeholder = NSLocalizedString("Percent", comment: "")
@@ -190,8 +185,10 @@ extension PublicClasses {
             weightEntryTextField.text = placeholderText
         }
         app.status.keyPadUsedNow = true
+        if app.calc.currentPlatesInUse.widthOfPlates + app.profile.currentPlateSet.list[buttonSpot].getDimensions().width <= 406 {
         app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)
         app.updateWeightToLift()
+        }
         //                    platesLabel.text = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(GlobalVariables.sharedInstance.currentPlatesInUse)
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false

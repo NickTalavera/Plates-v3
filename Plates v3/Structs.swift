@@ -125,6 +125,9 @@ class AppData {
             var name: String
             var list: [Plate]
             
+            var widthOfPlates: Double {
+                return self.list.map({$0.getDimensions()}).map({$0.width}).reduce(0, +)
+            }
             
             func countPlates() -> Int {
                 var count: Int = 0

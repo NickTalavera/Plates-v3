@@ -32,6 +32,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THm-NU-E6K">
+                                <rect key="frame" x="600" y="10" width="0.0" height="378.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1un-GV-Pxb">
                                 <rect key="frame" x="0.0" y="294" width="600" height="242"/>
                                 <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -580,10 +584,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THm-NU-E6K">
-                                <rect key="frame" x="600" y="10" width="0.0" height="378.5"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
                             <textView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-Mg-edq">
                                 <rect key="frame" x="20" y="0.0" width="570" height="388.5"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1005,6 +1005,7 @@
                         <outlet property="platesLabel" destination="6Gd-Mg-edq" id="PiO-Em-eTX"/>
                         <outlet property="platesLabelWidthConstraint" destination="4hS-bg-fS0" id="tmR-Ib-Yor"/>
                         <outlet property="platesView" destination="THm-NU-E6K" id="W9L-0u-281"/>
+                        <outlet property="platesViewLabelBottomAlignmentConstraint" destination="b4V-t7-8mS" id="Cqq-2Q-Z2s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTd-yP-3Mq" userLabel="First Responder" sceneMemberID="firstResponder"/>

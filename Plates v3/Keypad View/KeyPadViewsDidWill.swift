@@ -44,6 +44,12 @@ extension KeyPadViewController {
         super.viewDidAppear(animated)
 //        platesLabel.frame = CGRect(x: platesLabel.frame.minX, y: platesLabel.frame.minY, width: 200, height: platesLabel.frame.height) //CHECK
 //        weightEntryTextFinder()
+        
+//        NSLayoutConstraint.deactivate([self.platesViewLabelBottomAlignmentConstraint!])
+//        print(platesViewLabelBottomAlignmentConstraint.isActive)
+//        self.platesView.backgroundColor = UIColor.green
+//        let platesToBottomConstraint = NSLayoutConstraint(item: self.platesView, attribute: .bottom, relatedBy: .equal, toItem: super.view, attribute: .bottom, multiplier: 1, constant: 0)
+//        NSLayoutConstraint.activate([platesToBottomConstraint])
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -54,6 +60,8 @@ extension KeyPadViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
                 super.viewWillTransition(to: size, with: coordinator)
         self.platesView.alpha = 0
+        
+        self.dismissPopovers()
         coordinator.animate(alongsideTransition: { context in
             if app.status.keypadMovedUp == true {
                 self.view.frame.origin.y += app.status.keyboardHeight - self.weightEntryTextField.frame.minY
@@ -66,6 +74,8 @@ extension KeyPadViewController {
             UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
                 self.platesView.alpha = 1
             }, completion: nil)
+            
+            self.setupGradientLayer()
             print("rotated")
         })
     }
@@ -73,28 +83,5 @@ extension KeyPadViewController {
     
 
     
-    @objc func handleDisplayLink(_ displayLink: CADisplayLink) {
-        self.view.endEditing(true)
-        self.dismissPopovers()
-        self.maximizeLabelFonts()
-        self.setupGradientLayer()
-        let origText: String = platesLabel.text
-        //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
-//        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard] // it says name, but a UIFont works
-        //        let size = (myText as NSString).size(withAttributes: fontAttributes)
-        if origText == "" {
-            platesLabel.text = ""
-        }
-        else {
-            platesLabel.text = origText
-        }
-//                platesLabelWidthConstraint.constant = size.width + 20 //CHECK
-        
-                PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: app.visuals.currentMaxFont)
-                PublicClasses.drawPlates(self.platesView)
-        
-        self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height
-        self.GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
-    }
 }
 

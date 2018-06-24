@@ -40,22 +40,19 @@ extension KeyPadViewController {
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //        var placeholderText: String = textField.text!
-        //        placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
-        //        if placeholderText.characters.count > 0 {
-        //            if app.status.percentageModeActive == true {
-        //                //                textField.text = PublicClasses.numberFormatterDecimal.string(from: (PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue/100).roundToPlaces(2) as NSNumber)
-        //            }
-        //            else {
-        //                //                textField.text = PublicClasses.massFormatter.string(fromValue: PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces), unit: GlobalVariables.sharedInstance.unitsFormatter)
-        //            }
-        //        }
-        //        else {
-        //            weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        //            //            weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (Bool) in
-        //            //                PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: self.platesView)
-        //            //            })
-        //        }
+        let placeholderValue = PublicClasses.numberFormatterDecimal.number(from: textField.text!)?.doubleValue.rounded(toPlaces: app.profile.chosenUnit.decimalPlaces)
+        if textField.text!.count > 0 {
+            if app.status.percentageModeActive == true {
+                app.calc.percentage = (placeholderValue?.rounded(toPlaces: 1))!
+                textField.text = PublicClasses.numberFormatterDecimal.string(from: NSNumber(value: app.calc.percentage))
+            }
+            else {
+                weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: placeholderValue!, unit: app.profile.chosenUnit.formatter)
+            }
+        }
+        else {
+            textField.text = ""
+        }
         self.weightEntryTextField.alwaysShowFloatingLabel  = false
     }
     
