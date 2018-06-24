@@ -35,7 +35,7 @@ class Plates_v3Tests: XCTestCase {
     func testAppProfile() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var app = AppData()
+        let app = AppData()
         print(app.calc.currentPlatesInUse)
         XCTAssert(app.sumOfCurrentPlatesInUse() == 0)
         XCTAssert(app.sumOfCurrentPlatesInUse() == 0)
@@ -50,7 +50,7 @@ class Plates_v3Tests: XCTestCase {
     func testWeightToLiftSum() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var app = AppData()
+        let app = AppData()
         print(app.calc.weightToLift)
         XCTAssert(app.calc.weightToLift == 0)
         app.calc.currentPlatesInUse = app.profile.currentPlateSet
@@ -63,7 +63,7 @@ class Plates_v3Tests: XCTestCase {
     func flipUnits() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var app = AppData()
+        let app = AppData()
         XCTAssert(app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb)
         XCTAssert(app.profile.chosenUnit.decimalPlaces == 1)
         app.switchUnits()
@@ -85,7 +85,7 @@ class Plates_v3Tests: XCTestCase {
     func testAppendToCurrent() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var app = AppData()
+        let app = AppData()
         app.appendCurrentPlate(weight: 10)
         app.appendCurrentPlate(weight: 45)
         app.appendCurrentPlate(weight: 22)
@@ -103,7 +103,7 @@ class Plates_v3Tests: XCTestCase {
     func testSortPlates() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-        var app = AppData()
+        let app = AppData()
         app.appendCurrentPlate(weight: 10)
         app.appendCurrentPlate(weight: 45)
         app.appendCurrentPlate(weight: 22)

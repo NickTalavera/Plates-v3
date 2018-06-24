@@ -79,7 +79,7 @@ extension KeyPadViewController {
         self.setupGradientLayer()
         let origText: String = platesLabel.text
         //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
-        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard] // it says name, but a UIFont works
+//        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard] // it says name, but a UIFont works
         //        let size = (myText as NSString).size(withAttributes: fontAttributes)
         if origText == "" {
             platesLabel.text = ""
