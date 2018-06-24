@@ -37,7 +37,6 @@
 		C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
 		C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */; };
 		C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */; };
-		C3CC032F20DEFCE400A113DF /* KeyPadXXX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */; };
 		C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */; };
 /* End PBXBuildFile section */
 
@@ -106,7 +105,6 @@
 		C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadDelegate.swift; sourceTree = "<group>"; };
 		C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadiCloud.swift; sourceTree = "<group>"; };
 		C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadViewsDidWill.swift; sourceTree = "<group>"; };
-		C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadXXX.swift; sourceTree = "<group>"; };
 		C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadKeyboard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -214,7 +212,6 @@
 			children = (
 				C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */,
 				C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */,
-				C3CC032E20DEFCE400A113DF /* KeyPadXXX.swift */,
 				C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */,
 				C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */,
 				C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */,
@@ -368,7 +365,6 @@
 				C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */,
 				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
 				C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */,
-				C3CC032F20DEFCE400A113DF /* KeyPadXXX.swift in Sources */,
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,

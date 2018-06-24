@@ -12,7 +12,7 @@ import CoreData
 
 extension KeyPadViewController {
     func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-        //        presentCustomizedPrompt()
+
     }
     
     func presentInventoryAdvancedSettingsPopover() {

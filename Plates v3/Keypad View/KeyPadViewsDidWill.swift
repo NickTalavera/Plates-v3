@@ -83,10 +83,10 @@ extension KeyPadViewController {
         else {
             platesLabel.text = origText
         }
-        //        platesLabelWidthConstraint.constant = size.width + 20
+//                platesLabelWidthConstraint.constant = size.width + 20 //CHECK
         
-        //        PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: app.visuals.currentMaxFont)
-        //        PublicClasses.drawPlates(self.platesView)
+                PublicClasses.updateTextViewFont(self.platesLabel, maxTextSize: app.visuals.currentMaxFont)
+                PublicClasses.drawPlates(self.platesView)
         
         self.barTextInput.layer.cornerRadius = 0.5 * barTextInput.bounds.size.height
         self.GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height

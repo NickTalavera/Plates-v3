@@ -27,60 +27,44 @@ extension PublicClasses {
         //                }
         return text
     }
-    //
-    //    #if os(iOS) || os(tvOS) || os(OSX)
-    //    class func textFieldDecimalVerification(_ textField: TextField, range: NSRange, string: String, GoButton: Button=Button(), maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=GlobalVariables.sharedInstance.unitsFormatter, percentageMode: Bool) -> Bool {
-    //    var result = true
-    //    GlobalVariables.sharedInstance.keyPadUsedNow = false
-    //        #if os(iOS) || os(tvOS)
-    //            let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
-    //        #elseif os(OSX)
-    //    let prospectiveText = (textField.stringValue as NSString).replacingCharacters(in: range, with: string)
-    //            #endif
-    //    if string.characters.count > 0 {
-    //    GoButton.isEnabled = true
-    //    let decimalSeperator: String = PublicClasses.numberFormatterDecimal.decimalSeparator
-    //    var disallowedCharacterSet = CharacterSet(charactersIn: "0123456789\(decimalSeperator)").inverted
-    //    if percentageMode == true {
-    //    disallowedCharacterSet = CharacterSet(charactersIn: "0123456789").inverted
-    //    }
-    //    let replacementStringIsLegal = string.rangeOfCharacter(from: disallowedCharacterSet) == nil
-    //    let resultingStringLengthIsLegal = prospectiveText.characters.count <= maxDecimalPlaces + maxIntegerPlaces + 1
-    //    let split = prospectiveText.components(separatedBy: decimalSeperator)
-    //    var resultingDecimalPlaceStringLengthIsLegal = true
-    //    var resultingIntegerPlaceStringLengthIsLegal = true
-    //    var noDecimalLengthisLegal = true
-    //    if split.count == 1 {
-    //    noDecimalLengthisLegal = split[0].characters.count <= maxIntegerPlaces
-    //    }
-    //    if split.count >= 1 {
-    //    resultingIntegerPlaceStringLengthIsLegal = split[0].characters.count <= maxIntegerPlaces
-    //    }
-    //    if split.count >= 2 {
-    //    resultingDecimalPlaceStringLengthIsLegal = split[1].characters.count <= maxDecimalPlaces
-    //    }
-    //    let resultingTextIsNumeric = PublicClasses.numberFormatterDecimal.number(from: prospectiveText) != nil
-    //    result = replacementStringIsLegal && resultingStringLengthIsLegal && resultingTextIsNumeric && resultingIntegerPlaceStringLengthIsLegal && resultingDecimalPlaceStringLengthIsLegal && noDecimalLengthisLegal
-    //    }
-    //
-    //
-    //    if result == true {
-    //            #if os(iOS) || os(tvOS)
-    //    View.transition(with: GoButton, duration: GlobalVariables.sharedInstance.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
-    //    GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-    //    }, completion: nil)
-    //            #elseif os(OSX)
-    //        NSAnimationContext.runAnimationGroup({ (context) -> Void in
-    //            context.duration = GlobalVariables.sharedInstance.animationTime
-    //            GoButton.title = NSLocalizedString("Calculate", comment: "")
-    //            }, completionHandler: { () -> Void in
-    //        })
-    //                #endif
-    //    }
-    //    return result
-    //    }
-    //    #endif
-    //
+    
+    
+    class func textFieldDecimalVerification(_ textField: UITextField, range: NSRange, string: String, GoButton: UIButton, maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=app.profile.chosenUnit.formatter, percentageMode: Bool) -> Bool {
+        var result = true
+        let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+        if string.count > 0 {
+            let decimalSeperator: String = PublicClasses.numberFormatterDecimal.decimalSeparator
+            var disallowedCharacterSet = CharacterSet(charactersIn: "0123456789\(decimalSeperator)").inverted
+            if percentageMode == true {
+                disallowedCharacterSet = CharacterSet(charactersIn: "0123456789").inverted
+            }
+            let replacementStringIsLegal = string.rangeOfCharacter(from: disallowedCharacterSet) == nil
+            let resultingStringLengthIsLegal = prospectiveText.count <= maxDecimalPlaces + maxIntegerPlaces + 1
+            let split = prospectiveText.components(separatedBy: decimalSeperator)
+            var resultingDecimalPlaceStringLengthIsLegal = true
+            var resultingIntegerPlaceStringLengthIsLegal = true
+            var noDecimalLengthisLegal = true
+            if split.count == 1 {
+                noDecimalLengthisLegal = split[0].count <= maxIntegerPlaces
+            }
+            if split.count >= 1 {
+                resultingIntegerPlaceStringLengthIsLegal = split[0].count <= maxIntegerPlaces
+            }
+            if split.count >= 2 {
+                resultingDecimalPlaceStringLengthIsLegal = split[1].count <= maxDecimalPlaces
+            }
+            let resultingTextIsNumeric = PublicClasses.numberFormatterDecimal.number(from: prospectiveText) != nil
+            result = replacementStringIsLegal && resultingStringLengthIsLegal && resultingTextIsNumeric && resultingIntegerPlaceStringLengthIsLegal && resultingDecimalPlaceStringLengthIsLegal && noDecimalLengthisLegal
+        }
+        if result == true {
+            GoButton.isEnabled = true
+            UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
+                GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+            }, completion: nil)
+        }
+        return result
+    }
+
     class func labelPlateOutputFromCurrentPlatesInUse(_ currentPlatesInUse: [AppData.Plates]) -> String {
         var counts: [AnyHashable: Int] = [:]
         for (index, element) in app.calc.currentPlatesInUse.list.enumerated() {

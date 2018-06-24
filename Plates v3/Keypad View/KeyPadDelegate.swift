@@ -44,7 +44,7 @@ extension KeyPadViewController {
     }
     
     func setToWeightTextField() {
-        1==1
+        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
     }
     
     func updateButtonsEnabledProtocol() {

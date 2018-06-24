@@ -246,13 +246,12 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         else {
             GoButtonTemp.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         }
-        
         let viewsToMaximizeBottomFour: [UIButton] = [InventoryButton, BarbellButton, CollarsButton, ClearButton]
         var pointSizesFour: [CGFloat] = [app.visuals.defaultFontSize,app.visuals.defaultFontSize,app.visuals.defaultFontSize,app.visuals.defaultFontSize]
         for viewToMaximize in viewsToMaximizeBottomFour {
             let frameToUse = CGRect(x: viewToMaximize.frame.minX, y: viewToMaximize.frame.minY, width: self.view.frame.width/4-10, height: min(viewToMaximize.frame.height,44))
             let pointSizeTest = PublicClasses.getFontSizeToFitFrameOfLabel(viewToMaximize, maxTextSize: pointSizeTotal, frameToFit: frameToUse)
-            if pointSizeTest >= min(pointSizeTotal * 0.9, pointSizeTotal - 2)  {
+            if pointSizeTest >= min(pointSizeTotal * 0.9, pointSizeTotal - 2)  {//CHECK
             }
             else {
                 let minPointSize = min(pointSizesFour.min()!, pointSizeTest)
@@ -268,20 +267,17 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         weightEntryTextField.font = app.visuals.fontStandard
         weightEntryTextField.floatingLabelFont = app.visuals.fontTextFieldRiser
         hiddenHeightKeepingLabel.titleLabel?.font = app.visuals.fontStandard //CHECK
-        
         let textViewSize = self.weightEntryTextField.frame.size;
         let expectSize = self.weightEntryTextField.sizeThatFits(CGSize(width: textViewSize.width, height: CGFloat(MAXFLOAT)));
         weightEntryTextFieldHeight.constant = expectSize.height+8
         self.view.layoutIfNeeded()
         let expectSizeGoButton = GoButtonTemp.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: GoButtonTemp.frame.size.height));
         goButtonWidthConstraint.constant = min(max(expectSizeGoButton.width + 20, UIScreen.main.bounds.width/4),UIScreen.main.bounds.width/2-20)
-                        horizonalLeftContraints.constant = 0.5 * GoButton.bounds.size.height
+        horizonalLeftContraints.constant = 0.5 * GoButton.bounds.size.height
         weightEntryTextFinder()
         barTextInput.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
         GoButton.layer.cornerRadius = 0.5 * GoButton.bounds.size.height
     }
-    
-    
     
 }
 
