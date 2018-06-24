@@ -33,18 +33,18 @@ extension KeyPadViewController {
     
     func presentBarbellAdvancedSettingsPopover() {
         self.view.endEditing(true)
-        //        let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "BarbellAdvancedSettings"))! as! BarbellAdvancedSettings
-        //        popoverContent.delegate = self
-        //        let nav = UINavigationController(rootViewController: popoverContent)
-        //        nav.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        let popover = nav.popoverPresentationController
-        //        popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
-        //        popover!.delegate = self
-        //        popover!.sourceView = self.view
-        //        popover?.backgroundColor = UIColor.white
-        //        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-        //        popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
-        //        self.present(nav, animated: true, completion: nil)
+                let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "BarbellAdvancedSettings"))! as! BarbellAdvancedSettings
+                popoverContent.delegate = self
+                let nav = UINavigationController(rootViewController: popoverContent)
+                nav.modalPresentationStyle = UIModalPresentationStyle.popover
+                let popover = nav.popoverPresentationController
+                popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
+                popover!.delegate = self
+                popover!.sourceView = self.view
+                popover?.backgroundColor = UIColor.white
+                popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
+                self.present(nav, animated: true, completion: nil)
     }
     
     func presentCollarAdvancedSettingsPopover() {

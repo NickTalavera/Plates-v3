@@ -231,7 +231,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     }
     
     @objc func rightBarButtonPressed() {
-        
+     print("rightBarButtonPressed")
     }
     
     func setupGradientLayer() {
@@ -270,7 +270,6 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
             }
         }
         if viewsToMaximizeBottomFour.count >= 0 {
-            print("smallerThanCount test success")
             for viewToMaximize in viewsToMaximizeBottomFour {
                 viewToMaximize.titleLabel!.font = UIFont.systemFont(ofSize: pointSizesFour[viewsToMaximizeBottomFour.index(of: viewToMaximize)!], weight: UIFont.Weight.thin)
             }

@@ -205,23 +205,12 @@ extension PublicClasses {
             }
         return (expectFont!.pointSize)
         }
-    
-    
-    
-//    class func setToWeightTextField(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
-//        PublicClasses.drawPlates(platesView)
-//        app.status.percentageModeActive = false
-////        weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-//        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
-//        weightEntryTextField.keyboardType = .decimalPad
-//    }
+
     
     class func updateTextViewFont(_ textView: UITextView, maxTextSize: CGFloat) {
         if (textView.text.isEmpty || textView.bounds.size.equalTo(CGSize.zero)) {
             return;
         }
-        print(Calendar.current.component(.second, from: Date()))
-        print("?")
         let textViewSize = textView.frame.size;
         let fixedWidth = textViewSize.width;
         let fixedHeight = textViewSize.height;
@@ -232,16 +221,12 @@ extension PublicClasses {
             while (textView.sizeThatFits(CGSize.init(width: fixedWidth, height: fixedHeight)).height > textViewSize.height) {
                 expectFont = UIFont.systemFont(ofSize: textView.font!.pointSize - 1, weight: UIFont.Weight.thin)
                 textView.font = UIFont.systemFont(ofSize: min(maxTextSize,expectFont.pointSize), weight: UIFont.Weight.thin)
-                
-                print("smaller")
             }
         }
         else {
             while (textView.sizeThatFits(CGSize.init(width: fixedWidth, height: fixedHeight)).height < textViewSize.height) {
                 expectFont = textView.font!;
                 textView.font = UIFont.systemFont(ofSize: textView.font!.pointSize + 1, weight: UIFont.Weight.thin)
-                
-                print("larger")
             }
             textView.font = UIFont.systemFont(ofSize: min(maxTextSize,expectFont.pointSize), weight: UIFont.Weight.thin)
         }

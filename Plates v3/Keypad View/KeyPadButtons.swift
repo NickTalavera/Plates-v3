@@ -78,14 +78,14 @@ extension KeyPadViewController {
     @IBAction func BarbellButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //                let vc = storyboard.instantiateViewController(withIdentifier: "BarbellPopover") as! BarbellQuickSelectTableView
-        //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        vc.delegate = self
-        //        vc.popoverPresentationController?.sourceView = barbellButtonAnchor
-        //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
-        //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
-        //        self.present(vc, animated: true, completion:nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: "BarbellPopover") as! BarbellQuickSelectTableView
+                vc.modalPresentationStyle = UIModalPresentationStyle.popover
+                vc.delegate = self
+                vc.popoverPresentationController?.sourceView = barbellButtonAnchor
+                vc.popoverPresentationController!.delegate = self
+//                vc.popoverPresentationController?.backgroundColor = GlobalVariables.sharedInstance.secondaryColor
+                vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
+                self.present(vc, animated: true, completion:nil)
     }
     
     

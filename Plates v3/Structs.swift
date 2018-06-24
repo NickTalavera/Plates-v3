@@ -45,9 +45,9 @@ struct UnitOfWeight {
 
 class AppData {
     struct Barbell {
-        let name: String
-        let unitType: UnitOfWeight.unitType
-        let weight: Double
+        var name: String
+        var unitType: UnitOfWeight.unitType
+        var weight: Double
     }
     
     struct BarbellCollection {

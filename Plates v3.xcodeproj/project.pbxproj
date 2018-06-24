@@ -7,95 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C343D58520DF7B37000CBC83 /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D54B20DF7B2C000CBC83 /* PublicClassesUseful.swift */; };
-		C343D58620DF7B37000CBC83 /* GradientExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D54C20DF7B2C000CBC83 /* GradientExtension.swift */; };
-		C343D58720DF7B37000CBC83 /* GymAdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D54D20DF7B2C000CBC83 /* GymAdvancedSettingTableViewCell.swift */; };
+		03B8AD4DA34A693CA89FAC05 /* Pods_Plates_v3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6226A942A63E3496583A1A7F /* Pods_Plates_v3.framework */; };
+		9A55137F1E00A5C04C7D2865 /* Pods_Plates_v3Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7D00CE1935AA9B1476F7F9 /* Pods_Plates_v3Tests.framework */; };
+		C307668320DF7CA0001E0281 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2F20DDFBD100DA5BC8 /* Info.plist */; };
+		C307668420DF7CA3001E0281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */; };
+		C307668520DF7CB3001E0281 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
+		C307668620DF7CB3001E0281 /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
+		C307668720DF7CB4001E0281 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
+		C307668820DF7CB5001E0281 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
+		C307668920DF7CBC001E0281 /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
+		C307668A20DF7CBC001E0281 /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
+		C307668B20DF7CC6001E0281 /* KeyPadViewsDidWill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */; };
+		C307668C20DF7CC6001E0281 /* KeyPadKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */; };
+		C307668D20DF7CC6001E0281 /* KeyPadiCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */; };
+		C307668E20DF7CC6001E0281 /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
+		C307668F20DF7CC6001E0281 /* KeyPadPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */; };
+		C307669020DF7CCE001E0281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */; };
+		C307669120DF7CCE001E0281 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */; };
+		C307669220DF7CCE001E0281 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */; };
+		C307669320DF7CCE001E0281 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2520DDFBCF00DA5BC8 /* Document.swift */; };
+		C307669420DF7CCE001E0281 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
+		C307669520DF7CCE001E0281 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
+		C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */; };
+		C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */; };
+		C307669920DF7DE1001E0281 /* InventoryAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */; };
 		C343D58820DF7B37000CBC83 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D54E20DF7B2C000CBC83 /* it.lproj */; };
-		C343D58920DF7B37000CBC83 /* InventoryQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */; };
 		C343D58A20DF7B37000CBC83 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = C343D55020DF7B2C000CBC83 /* Main.strings */; };
-		C343D58B20DF7B37000CBC83 /* KeyPadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55120DF7B2D000CBC83 /* KeyPadViewController.swift */; };
-		C343D58C20DF7B37000CBC83 /* BarbellAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */; };
-		C343D58D20DF7B37000CBC83 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55320DF7B2D000CBC83 /* IAPHelper.swift */; };
-		C343D58E20DF7B37000CBC83 /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55420DF7B2D000CBC83 /* PublicClassesButtons.swift */; };
-		C343D58F20DF7B37000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C343D55520DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld */; };
-		C343D59020DF7B37000CBC83 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55820DF7B2D000CBC83 /* Protocols.swift */; };
-		C343D59120DF7B37000CBC83 /* PublicClassesDataTransfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55920DF7B2D000CBC83 /* PublicClassesDataTransfer.swift */; };
-		C343D59220DF7B37000CBC83 /* InventoryQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */; };
 		C343D59320DF7B37000CBC83 /* Exo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */; };
-		C343D59420DF7B37000CBC83 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55C20DF7B31000CBC83 /* KeyPadDumpingGround.swift */; };
 		C343D59520DF7B37000CBC83 /* Stampbor-Grunge.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */; };
 		C343D59620DF7B37000CBC83 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D55E20DF7B32000CBC83 /* Base.lproj */; };
 		C343D59720DF7B37000CBC83 /* Stampbor-Lines.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */; };
-		C343D59820DF7B37000CBC83 /* InventoryAdvancedSettingsBackup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56020DF7B32000CBC83 /* InventoryAdvancedSettingsBackup.swift */; };
-		C343D59920DF7B37000CBC83 /* CollarQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */; };
 		C343D59A20DF7B37000CBC83 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56220DF7B32000CBC83 /* zh-Hans.lproj */; };
-		C343D59B20DF7B37000CBC83 /* CollarAdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56320DF7B32000CBC83 /* CollarAdvancedSettingTableViewCell.swift */; };
-		C343D59C20DF7B37000CBC83 /* advancedSettingTableViewCellAddSubtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */; };
-		C343D59D20DF7B37000CBC83 /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56520DF7B32000CBC83 /* PublicClasses.swift */; };
 		C343D59E20DF7B37000CBC83 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56620DF7B32000CBC83 /* en.lproj */; };
-		C343D59F20DF7B37000CBC83 /* BarbellQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */; };
-		C343D5A020DF7B37000CBC83 /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56820DF7B33000CBC83 /* PublicClassesText.swift */; };
-		C343D5A120DF7B37000CBC83 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56920DF7B33000CBC83 /* Extensions.swift */; };
-		C343D5A220DF7B37000CBC83 /* SettingsQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */; };
-		C343D5A320DF7B37000CBC83 /* BarbellAdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */; };
-		C343D5A420DF7B37000CBC83 /* BarbellAdvancedSettingTableViewCellTvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56C20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCellTvOS.swift */; };
 		C343D5A520DF7B37000CBC83 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56D20DF7B33000CBC83 /* es.lproj */; };
-		C343D5A620DF7B37000CBC83 /* ExtensionsPhoneOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56E20DF7B33000CBC83 /* ExtensionsPhoneOnly.swift */; };
-		C343D5A720DF7B37000CBC83 /* AccordionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C343D56F20DF7B34000CBC83 /* AccordionHeaderView.xib */; };
-		C343D5A820DF7B37000CBC83 /* GymCreatorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57020DF7B34000CBC83 /* GymCreatorSetting.swift */; };
-		C343D5A920DF7B37000CBC83 /* CollarCreatorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57120DF7B34000CBC83 /* CollarCreatorSetting.swift */; };
 		C343D5AA20DF7B37000CBC83 /* Stampbor-Dotted.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */; };
-		C343D5AB20DF7B37000CBC83 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C343D57320DF7B34000CBC83 /* Info.plist */; };
-		C343D5AC20DF7B37000CBC83 /* AccordionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57420DF7B34000CBC83 /* AccordionHeaderView.swift */; };
-		C343D5AD20DF7B37000CBC83 /* CollarsAdvancedSettingTableViewCelTtvOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57520DF7B35000CBC83 /* CollarsAdvancedSettingTableViewCelTtvOS.swift */; };
-		C343D5AE20DF7B37000CBC83 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57620DF7B35000CBC83 /* Device.swift */; };
-		C343D5AF20DF7B37000CBC83 /* InventoryAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */; };
-		C343D5B020DF7B37000CBC83 /* CollarAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */; };
 		C343D5B120DF7B37000CBC83 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D57920DF7B35000CBC83 /* ko.lproj */; };
-		C343D5B220DF7B37000CBC83 /* RemoveButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57A20DF7B36000CBC83 /* RemoveButtonTableViewCell.swift */; };
-		C343D5B320DF7B37000CBC83 /* BarbellCreatorSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57B20DF7B36000CBC83 /* BarbellCreatorSetting.swift */; };
-		C343D5B420DF7B37000CBC83 /* CollarsQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */; };
 		C343D5B520DF7B37000CBC83 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D57D20DF7B36000CBC83 /* ru.lproj */; };
-		C343D5B620DF7B37000CBC83 /* BarbellQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */; };
-		C343D5B720DF7B37000CBC83 /* LabelWithAdaptiveTextHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57F20DF7B36000CBC83 /* LabelWithAdaptiveTextHeight.swift */; };
-		C343D5B820DF7B37000CBC83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D58020DF7B36000CBC83 /* AppDelegate.swift */; };
-		C343D5B920DF7B37000CBC83 /* CollarAdvancedSettingsOSX.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D58120DF7B36000CBC83 /* CollarAdvancedSettingsOSX.swift */; };
-		C343D5BA20DF7B37000CBC83 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D58220DF7B37000CBC83 /* DoneTableViewCell.swift */; };
 		C343D5BB20DF7B37000CBC83 /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D58320DF7B37000CBC83 /* pt-BR.lproj */; };
 		C343D5BC20DF7B37000CBC83 /* Stampbor-Rounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */; };
-		C39ABD2020DDFBCF00DA5BC8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */; };
-		C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */; };
-		C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */; };
-		C39ABD2620DDFBCF00DA5BC8 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2520DDFBCF00DA5BC8 /* Document.swift */; };
 		C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */; };
 		C39ABD2B20DDFBD100DA5BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */; };
 		C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD3820DDFBD100DA5BC8 /* Plates_v3Tests.swift */; };
 		C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */; };
-		C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
-		C39ABD5620DE016000DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
 		C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
 		C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */; };
 		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
-		C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
-		C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */; };
 		C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; };
 		C3CC030E20DE2B3500A113DF /* JVFloatLabeledText.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
 		C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
 		C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
-		C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
 		C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 		C3CC031F20DEB63300A113DF /* OddFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */; };
 		C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032420DEF2B300A113DF /* KeyPadButtons.swift */; };
-		C3CC032720DEF2DF00A113DF /* KeyPadPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */; };
-		C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
-		C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */; };
-		C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */; };
-		C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */; };
 		C3CC033220DF1FE700A113DF /* PublicClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC030F20DE3C3500A113DF /* PublicClasses.swift */; };
 		C3CC033320DF1FEC00A113DF /* PublicClassesButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031120DE3C3600A113DF /* PublicClassesButtons.swift */; };
 		C3CC033420DF1FEE00A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
 		C3CC033520DF1FF100A113DF /* PublicClassesUseful.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031220DE3C3600A113DF /* PublicClassesUseful.swift */; };
+		C3E0901820DF875100407D8E /* BarbellAdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */; };
+		C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */; };
+		C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */; };
+		E39E58286B4BC089E2BD1B62 /* Pods_Plates_v3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,23 +101,26 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C343D54B20DF7B2C000CBC83 /* PublicClassesUseful.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesUseful.swift; sourceTree = "<group>"; };
+		146584DB0FE48B6AF04076F1 /* Pods-Plates v3Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3Tests/Pods-Plates v3Tests.release.xcconfig"; sourceTree = "<group>"; };
+		14707F0E06F6E8AAE39EECB1 /* Pods-Plates v3UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3UITests/Pods-Plates v3UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		35FB17A6AF69D7AEDB8EB3BC /* Pods-Plates v3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3/Pods-Plates v3.debug.xcconfig"; sourceTree = "<group>"; };
+		4B7D00CE1935AA9B1476F7F9 /* Pods_Plates_v3Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plates_v3Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6226A942A63E3496583A1A7F /* Pods_Plates_v3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plates_v3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6EA650C393DEDEAC4B4C771E /* Pods-Plates v3Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3Tests/Pods-Plates v3Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FC4575FB606BF99291C0E25 /* Pods-Plates v3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3UITests/Pods-Plates v3UITests.release.xcconfig"; sourceTree = "<group>"; };
+		BDB93434AA8D72ED93F06A23 /* Pods-Plates v3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3/Pods-Plates v3.release.xcconfig"; sourceTree = "<group>"; };
 		C343D54C20DF7B2C000CBC83 /* GradientExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientExtension.swift; sourceTree = "<group>"; };
 		C343D54D20DF7B2C000CBC83 /* GymAdvancedSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymAdvancedSettingTableViewCell.swift; sourceTree = "<group>"; };
 		C343D54E20DF7B2C000CBC83 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
 		C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryQuickSelectTableViewCell.swift; sourceTree = "<group>"; };
 		C343D55020DF7B2C000CBC83 /* Main.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
-		C343D55120DF7B2D000CBC83 /* KeyPadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadViewController.swift; sourceTree = "<group>"; };
 		C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellAdvancedSettings.swift; sourceTree = "<group>"; };
 		C343D55320DF7B2D000CBC83 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
-		C343D55420DF7B2D000CBC83 /* PublicClassesButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesButtons.swift; sourceTree = "<group>"; };
 		C343D55620DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bar___Barbell_Plate_Weight_Calculator.xcdatamodel"; sourceTree = "<group>"; };
 		C343D55720DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator 1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bar___Barbell_Plate_Weight_Calculator 1.1.xcdatamodel"; sourceTree = "<group>"; };
 		C343D55820DF7B2D000CBC83 /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		C343D55920DF7B2D000CBC83 /* PublicClassesDataTransfer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesDataTransfer.swift; sourceTree = "<group>"; };
 		C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryQuickSelectTableView.swift; sourceTree = "<group>"; };
 		C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBold.ttf"; sourceTree = "<group>"; };
-		C343D55C20DF7B31000CBC83 /* KeyPadDumpingGround.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadDumpingGround.swift; sourceTree = "<group>"; };
 		C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Grunge.otf"; sourceTree = "<group>"; };
 		C343D55E20DF7B32000CBC83 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Lines.otf"; sourceTree = "<group>"; };
@@ -155,23 +129,16 @@
 		C343D56220DF7B32000CBC83 /* zh-Hans.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
 		C343D56320DF7B32000CBC83 /* CollarAdvancedSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarAdvancedSettingTableViewCell.swift; sourceTree = "<group>"; };
 		C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = advancedSettingTableViewCellAddSubtract.swift; sourceTree = "<group>"; };
-		C343D56520DF7B32000CBC83 /* PublicClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClasses.swift; sourceTree = "<group>"; };
 		C343D56620DF7B32000CBC83 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellQuickSelectTableViewCell.swift; sourceTree = "<group>"; };
-		C343D56820DF7B33000CBC83 /* PublicClassesText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicClassesText.swift; sourceTree = "<group>"; };
-		C343D56920DF7B33000CBC83 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsQuickSelectTableView.swift; sourceTree = "<group>"; };
 		C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellAdvancedSettingTableViewCell.swift; sourceTree = "<group>"; };
-		C343D56C20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCellTvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellAdvancedSettingTableViewCellTvOS.swift; sourceTree = "<group>"; };
 		C343D56D20DF7B33000CBC83 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		C343D56E20DF7B33000CBC83 /* ExtensionsPhoneOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionsPhoneOnly.swift; sourceTree = "<group>"; };
-		C343D56F20DF7B34000CBC83 /* AccordionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccordionHeaderView.xib; sourceTree = "<group>"; };
 		C343D57020DF7B34000CBC83 /* GymCreatorSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymCreatorSetting.swift; sourceTree = "<group>"; };
 		C343D57120DF7B34000CBC83 /* CollarCreatorSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarCreatorSetting.swift; sourceTree = "<group>"; };
 		C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Dotted.otf"; sourceTree = "<group>"; };
-		C343D57320DF7B34000CBC83 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C343D57420DF7B34000CBC83 /* AccordionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionHeaderView.swift; sourceTree = "<group>"; };
-		C343D57520DF7B35000CBC83 /* CollarsAdvancedSettingTableViewCelTtvOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarsAdvancedSettingTableViewCelTtvOS.swift; sourceTree = "<group>"; };
 		C343D57620DF7B35000CBC83 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAdvancedSettings.swift; sourceTree = "<group>"; };
 		C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarAdvancedSettings.swift; sourceTree = "<group>"; };
@@ -182,8 +149,6 @@
 		C343D57D20DF7B36000CBC83 /* ru.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
 		C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellQuickSelectTableView.swift; sourceTree = "<group>"; };
 		C343D57F20DF7B36000CBC83 /* LabelWithAdaptiveTextHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithAdaptiveTextHeight.swift; sourceTree = "<group>"; };
-		C343D58020DF7B36000CBC83 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C343D58120DF7B36000CBC83 /* CollarAdvancedSettingsOSX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarAdvancedSettingsOSX.swift; sourceTree = "<group>"; };
 		C343D58220DF7B37000CBC83 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 		C343D58320DF7B37000CBC83 /* pt-BR.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pt-BR.lproj"; sourceTree = "<group>"; };
 		C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Rounded.otf"; sourceTree = "<group>"; };
@@ -220,6 +185,7 @@
 		C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadiCloud.swift; sourceTree = "<group>"; };
 		C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadViewsDidWill.swift; sourceTree = "<group>"; };
 		C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadKeyboard.swift; sourceTree = "<group>"; };
+		F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plates_v3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */,
+				03B8AD4DA34A693CA89FAC05 /* Pods_Plates_v3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A55137F1E00A5C04C7D2865 /* Pods_Plates_v3Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,62 +210,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E39E58286B4BC089E2BD1B62 /* Pods_Plates_v3UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C343D54A20DF7B21000CBC83 /* New Group */ = {
+		6A79D1AF235FEED2345C40D0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				C343D57420DF7B34000CBC83 /* AccordionHeaderView.swift */,
-				C343D56F20DF7B34000CBC83 /* AccordionHeaderView.xib */,
-				C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */,
-				C343D58020DF7B36000CBC83 /* AppDelegate.swift */,
-				C343D55520DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld */,
-				C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */,
-				C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */,
-				C343D56C20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCellTvOS.swift */,
-				C343D57B20DF7B36000CBC83 /* BarbellCreatorSetting.swift */,
+				35FB17A6AF69D7AEDB8EB3BC /* Pods-Plates v3.debug.xcconfig */,
+				BDB93434AA8D72ED93F06A23 /* Pods-Plates v3.release.xcconfig */,
+				6EA650C393DEDEAC4B4C771E /* Pods-Plates v3Tests.debug.xcconfig */,
+				146584DB0FE48B6AF04076F1 /* Pods-Plates v3Tests.release.xcconfig */,
+				14707F0E06F6E8AAE39EECB1 /* Pods-Plates v3UITests.debug.xcconfig */,
+				7FC4575FB606BF99291C0E25 /* Pods-Plates v3UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C26F1835ABDEEF5EA1671B26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6226A942A63E3496583A1A7F /* Pods_Plates_v3.framework */,
+				4B7D00CE1935AA9B1476F7F9 /* Pods_Plates_v3Tests.framework */,
+				F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C307669620DF7D7B001E0281 /* Keep */ = {
+			isa = PBXGroup;
+			children = (
 				C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */,
-				C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */,
-				C343D55E20DF7B32000CBC83 /* Base.lproj */,
+				C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */,
+				C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */,
 				C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */,
-				C343D58120DF7B36000CBC83 /* CollarAdvancedSettingsOSX.swift */,
+				C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */,
+				C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */,
+			);
+			path = Keep;
+			sourceTree = "<group>";
+		};
+		C343D54A20DF7B21000CBC83 /* Imports */ = {
+			isa = PBXGroup;
+			children = (
+				C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */,
+				C343D55520DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld */,
+				C343D57420DF7B34000CBC83 /* AccordionHeaderView.swift */,
+				C343D57B20DF7B36000CBC83 /* BarbellCreatorSetting.swift */,
+				C343D55E20DF7B32000CBC83 /* Base.lproj */,
 				C343D56320DF7B32000CBC83 /* CollarAdvancedSettingTableViewCell.swift */,
 				C343D57120DF7B34000CBC83 /* CollarCreatorSetting.swift */,
 				C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */,
-				C343D57520DF7B35000CBC83 /* CollarsAdvancedSettingTableViewCelTtvOS.swift */,
 				C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */,
 				C343D57620DF7B35000CBC83 /* Device.swift */,
 				C343D58220DF7B37000CBC83 /* DoneTableViewCell.swift */,
 				C343D56620DF7B32000CBC83 /* en.lproj */,
 				C343D56D20DF7B33000CBC83 /* es.lproj */,
 				C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */,
-				C343D56920DF7B33000CBC83 /* Extensions.swift */,
 				C343D56E20DF7B33000CBC83 /* ExtensionsPhoneOnly.swift */,
 				C343D54C20DF7B2C000CBC83 /* GradientExtension.swift */,
 				C343D54D20DF7B2C000CBC83 /* GymAdvancedSettingTableViewCell.swift */,
 				C343D57020DF7B34000CBC83 /* GymCreatorSetting.swift */,
 				C343D55320DF7B2D000CBC83 /* IAPHelper.swift */,
-				C343D57320DF7B34000CBC83 /* Info.plist */,
-				C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */,
 				C343D56020DF7B32000CBC83 /* InventoryAdvancedSettingsBackup.swift */,
 				C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */,
 				C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */,
 				C343D54E20DF7B2C000CBC83 /* it.lproj */,
-				C343D55C20DF7B31000CBC83 /* KeyPadDumpingGround.swift */,
-				C343D55120DF7B2D000CBC83 /* KeyPadViewController.swift */,
 				C343D57920DF7B35000CBC83 /* ko.lproj */,
 				C343D57F20DF7B36000CBC83 /* LabelWithAdaptiveTextHeight.swift */,
 				C343D55820DF7B2D000CBC83 /* Protocols.swift */,
 				C343D58320DF7B37000CBC83 /* pt-BR.lproj */,
-				C343D56520DF7B32000CBC83 /* PublicClasses.swift */,
-				C343D55420DF7B2D000CBC83 /* PublicClassesButtons.swift */,
-				C343D55920DF7B2D000CBC83 /* PublicClassesDataTransfer.swift */,
-				C343D56820DF7B33000CBC83 /* PublicClassesText.swift */,
-				C343D54B20DF7B2C000CBC83 /* PublicClassesUseful.swift */,
 				C343D57A20DF7B36000CBC83 /* RemoveButtonTableViewCell.swift */,
 				C343D57D20DF7B36000CBC83 /* ru.lproj */,
 				C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */,
@@ -308,7 +293,7 @@
 				C343D56220DF7B32000CBC83 /* zh-Hans.lproj */,
 				C343D55020DF7B2C000CBC83 /* Main.strings */,
 			);
-			path = "New Group";
+			path = Imports;
 			sourceTree = "<group>";
 		};
 		C39ABD1320DDFBCF00DA5BC8 = {
@@ -319,6 +304,8 @@
 				C39ABD3720DDFBD100DA5BC8 /* Plates v3Tests */,
 				C39ABD4220DDFBD100DA5BC8 /* Plates v3UITests */,
 				C39ABD1D20DDFBCF00DA5BC8 /* Products */,
+				6A79D1AF235FEED2345C40D0 /* Pods */,
+				C26F1835ABDEEF5EA1671B26 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,7 +322,8 @@
 		C39ABD1E20DDFBCF00DA5BC8 /* Plates v3 */ = {
 			isa = PBXGroup;
 			children = (
-				C343D54A20DF7B21000CBC83 /* New Group */,
+				C307669620DF7D7B001E0281 /* Keep */,
+				C343D54A20DF7B21000CBC83 /* Imports */,
 				C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */,
 				C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */,
 				C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */,
@@ -406,10 +394,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C39ABD4820DDFBD100DA5BC8 /* Build configuration list for PBXNativeTarget "Plates v3" */;
 			buildPhases = (
+				4B5B169FF8721E8FDE19ECB5 /* [CP] Check Pods Manifest.lock */,
 				C39ABD1820DDFBCF00DA5BC8 /* Sources */,
 				C39ABD1920DDFBCF00DA5BC8 /* Frameworks */,
 				C39ABD1A20DDFBCF00DA5BC8 /* Resources */,
 				C3CC030A20DE2A9A00A113DF /* Embed Frameworks */,
+				0C1DCA5D198656F5E37A6005 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -424,6 +414,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C39ABD4B20DDFBD100DA5BC8 /* Build configuration list for PBXNativeTarget "Plates v3Tests" */;
 			buildPhases = (
+				C6E3CD787E650C6812B34EEA /* [CP] Check Pods Manifest.lock */,
 				C39ABD3020DDFBD100DA5BC8 /* Sources */,
 				C39ABD3120DDFBD100DA5BC8 /* Frameworks */,
 				C39ABD3220DDFBD100DA5BC8 /* Resources */,
@@ -442,6 +433,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C39ABD4E20DDFBD100DA5BC8 /* Build configuration list for PBXNativeTarget "Plates v3UITests" */;
 			buildPhases = (
+				B0918A7A95A3F96EAB01FA1D /* [CP] Check Pods Manifest.lock */,
 				C39ABD3B20DDFBD100DA5BC8 /* Sources */,
 				C39ABD3C20DDFBD100DA5BC8 /* Frameworks */,
 				C39ABD3D20DDFBD100DA5BC8 /* Resources */,
@@ -513,14 +505,14 @@
 				C343D5B520DF7B37000CBC83 /* ru.lproj in Resources */,
 				C343D59720DF7B37000CBC83 /* Stampbor-Lines.otf in Resources */,
 				C343D59620DF7B37000CBC83 /* Base.lproj in Resources */,
-				C343D5AB20DF7B37000CBC83 /* Info.plist in Resources */,
 				C343D59520DF7B37000CBC83 /* Stampbor-Grunge.otf in Resources */,
+				C307668420DF7CA3001E0281 /* LaunchScreen.storyboard in Resources */,
 				C343D58A20DF7B37000CBC83 /* Main.strings in Resources */,
+				C307668320DF7CA0001E0281 /* Info.plist in Resources */,
 				C343D5BC20DF7B37000CBC83 /* Stampbor-Rounded.otf in Resources */,
 				C343D59320DF7B37000CBC83 /* Exo2-ExtraBold.ttf in Resources */,
 				C343D58820DF7B37000CBC83 /* it.lproj in Resources */,
 				C343D59E20DF7B37000CBC83 /* en.lproj in Resources */,
-				C343D5A720DF7B37000CBC83 /* AccordionHeaderView.xib in Resources */,
 				C343D5B120DF7B37000CBC83 /* ko.lproj in Resources */,
 				C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */,
 			);
@@ -542,71 +534,114 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C1DCA5D198656F5E37A6005 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Plates v3/Pods-Plates v3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FZAccordionTableView/FZAccordionTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/SkyFloatingLabelTextField/SkyFloatingLabelTextField.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FZAccordionTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkyFloatingLabelTextField.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Plates v3/Pods-Plates v3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B5B169FF8721E8FDE19ECB5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plates v3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0918A7A95A3F96EAB01FA1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plates v3UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6E3CD787E650C6812B34EEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Plates v3Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C39ABD1820DDFBCF00DA5BC8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39ABD5620DE016000DA5BC8 /* Structs.swift in Sources */,
-				C39ABD2620DDFBCF00DA5BC8 /* Document.swift in Sources */,
-				C343D58B20DF7B37000CBC83 /* KeyPadViewController.swift in Sources */,
-				C343D59B20DF7B37000CBC83 /* CollarAdvancedSettingTableViewCell.swift in Sources */,
-				C343D5B820DF7B37000CBC83 /* AppDelegate.swift in Sources */,
-				C343D5A020DF7B37000CBC83 /* PublicClassesText.swift in Sources */,
-				C343D58720DF7B37000CBC83 /* GymAdvancedSettingTableViewCell.swift in Sources */,
-				C39ABD2420DDFBCF00DA5BC8 /* DocumentViewController.swift in Sources */,
-				C343D58F20DF7B37000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld in Sources */,
-				C343D5B320DF7B37000CBC83 /* BarbellCreatorSetting.swift in Sources */,
-				C39ABD2220DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift in Sources */,
-				C3CC031920DE3E8F00A113DF /* PublicClasses.swift in Sources */,
-				C343D5A320DF7B37000CBC83 /* BarbellAdvancedSettingTableViewCell.swift in Sources */,
-				C343D58520DF7B37000CBC83 /* PublicClassesUseful.swift in Sources */,
-				C343D5A620DF7B37000CBC83 /* ExtensionsPhoneOnly.swift in Sources */,
-				C3CC033120DEFD0F00A113DF /* KeyPadKeyboard.swift in Sources */,
-				C3CC031C20DE533800A113DF /* PublicClassesUseful.swift in Sources */,
-				C343D5B620DF7B37000CBC83 /* BarbellQuickSelectTableView.swift in Sources */,
-				C39ABD6120DE237E00DA5BC8 /* OddFunctions.swift in Sources */,
-				C343D5A220DF7B37000CBC83 /* SettingsQuickSelectTableView.swift in Sources */,
-				C343D5A820DF7B37000CBC83 /* GymCreatorSetting.swift in Sources */,
-				C343D59F20DF7B37000CBC83 /* BarbellQuickSelectTableViewCell.swift in Sources */,
-				C343D59220DF7B37000CBC83 /* InventoryQuickSelectTableView.swift in Sources */,
+				C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */,
+				C307669220DF7CCE001E0281 /* DocumentViewController.swift in Sources */,
+				C307669120DF7CCE001E0281 /* DocumentBrowserViewController.swift in Sources */,
+				C307668B20DF7CC6001E0281 /* KeyPadViewsDidWill.swift in Sources */,
+				C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */,
 				C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */,
+				C307668520DF7CB3001E0281 /* DataAccess.swift in Sources */,
+				C307669020DF7CCE001E0281 /* AppDelegate.swift in Sources */,
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */,
+				C307668920DF7CBC001E0281 /* PublicClasses.swift in Sources */,
+				C307669520DF7CCE001E0281 /* Globals.swift in Sources */,
+				C307668620DF7CB3001E0281 /* OddFunctions.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
-				C343D5B020DF7B37000CBC83 /* CollarAdvancedSettings.swift in Sources */,
-				C343D59120DF7B37000CBC83 /* PublicClassesDataTransfer.swift in Sources */,
-				C343D59020DF7B37000CBC83 /* Protocols.swift in Sources */,
+				C307668D20DF7CC6001E0281 /* KeyPadiCloud.swift in Sources */,
+				C307669420DF7CCE001E0281 /* Structs.swift in Sources */,
+				C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */,
+				C307668C20DF7CC6001E0281 /* KeyPadKeyboard.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
-				C343D5AC20DF7B37000CBC83 /* AccordionHeaderView.swift in Sources */,
-				C343D59C20DF7B37000CBC83 /* advancedSettingTableViewCellAddSubtract.swift in Sources */,
-				C343D58620DF7B37000CBC83 /* GradientExtension.swift in Sources */,
-				C343D5B720DF7B37000CBC83 /* LabelWithAdaptiveTextHeight.swift in Sources */,
-				C343D5A120DF7B37000CBC83 /* Extensions.swift in Sources */,
-				C3CC032720DEF2DF00A113DF /* KeyPadPopovers.swift in Sources */,
-				C343D58E20DF7B37000CBC83 /* PublicClassesButtons.swift in Sources */,
-				C343D58920DF7B37000CBC83 /* InventoryQuickSelectTableViewCell.swift in Sources */,
-				C343D5A920DF7B37000CBC83 /* CollarCreatorSetting.swift in Sources */,
+				C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */,
 				C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */,
-				C343D5B920DF7B37000CBC83 /* CollarAdvancedSettingsOSX.swift in Sources */,
-				C3CC032B20DEF99700A113DF /* KeyPadiCloud.swift in Sources */,
-				C343D59420DF7B37000CBC83 /* KeyPadDumpingGround.swift in Sources */,
-				C343D5BA20DF7B37000CBC83 /* DoneTableViewCell.swift in Sources */,
-				C3CC032D20DEFCCE00A113DF /* KeyPadViewsDidWill.swift in Sources */,
-				C343D5B220DF7B37000CBC83 /* RemoveButtonTableViewCell.swift in Sources */,
-				C39ABD5420DDFE8600DA5BC8 /* Globals.swift in Sources */,
-				C343D5AD20DF7B37000CBC83 /* CollarsAdvancedSettingTableViewCelTtvOS.swift in Sources */,
-				C343D58D20DF7B37000CBC83 /* IAPHelper.swift in Sources */,
-				C343D59820DF7B37000CBC83 /* InventoryAdvancedSettingsBackup.swift in Sources */,
-				C3CC032920DEF8CF00A113DF /* KeyPadDelegate.swift in Sources */,
-				C39ABD2020DDFBCF00DA5BC8 /* AppDelegate.swift in Sources */,
-				C343D5AF20DF7B37000CBC83 /* InventoryAdvancedSettings.swift in Sources */,
-				C343D59920DF7B37000CBC83 /* CollarQuickSelectTableView.swift in Sources */,
-				C39ABD6320DE253D00DA5BC8 /* DataAccess.swift in Sources */,
-				C343D58C20DF7B37000CBC83 /* BarbellAdvancedSettings.swift in Sources */,
-				C343D59D20DF7B37000CBC83 /* PublicClasses.swift in Sources */,
-				C343D5A420DF7B37000CBC83 /* BarbellAdvancedSettingTableViewCellTvOS.swift in Sources */,
-				C343D5B420DF7B37000CBC83 /* CollarsQuickSelectTableViewCell.swift in Sources */,
-				C343D5AE20DF7B37000CBC83 /* Device.swift in Sources */,
+				C307669920DF7DE1001E0281 /* InventoryAdvancedSettings.swift in Sources */,
+				C307669320DF7CCE001E0281 /* Document.swift in Sources */,
+				C307668A20DF7CBC001E0281 /* PublicClassesUseful.swift in Sources */,
+				C307668E20DF7CC6001E0281 /* KeyPadDelegate.swift in Sources */,
+				C307668F20DF7CC6001E0281 /* KeyPadPopovers.swift in Sources */,
+				C3E0901820DF875100407D8E /* BarbellAdvancedSettingTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +656,7 @@
 				C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */,
 				C3CC033520DF1FF100A113DF /* PublicClassesUseful.swift in Sources */,
 				C3CC033220DF1FE700A113DF /* PublicClasses.swift in Sources */,
+				C307668720DF7CB4001E0281 /* DataAccess.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,6 +665,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */,
+				C307668820DF7CB5001E0281 /* DataAccess.swift in Sources */,
 				C3CC031F20DEB63300A113DF /* OddFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -784,6 +821,7 @@
 		};
 		C39ABD4920DDFBD100DA5BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35FB17A6AF69D7AEDB8EB3BC /* Pods-Plates v3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -813,6 +851,7 @@
 		};
 		C39ABD4A20DDFBD100DA5BC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDB93434AA8D72ED93F06A23 /* Pods-Plates v3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -841,6 +880,7 @@
 		};
 		C39ABD4C20DDFBD100DA5BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6EA650C393DEDEAC4B4C771E /* Pods-Plates v3Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -866,6 +906,7 @@
 		};
 		C39ABD4D20DDFBD100DA5BC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 146584DB0FE48B6AF04076F1 /* Pods-Plates v3Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -891,6 +932,7 @@
 		};
 		C39ABD4F20DDFBD100DA5BC8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14707F0E06F6E8AAE39EECB1 /* Pods-Plates v3UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -911,6 +953,7 @@
 		};
 		C39ABD5020DDFBD100DA5BC8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC4575FB606BF99291C0E25 /* Pods-Plates v3UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
