@@ -53,6 +53,10 @@ extension KeyPadViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
                 super.viewWillTransition(to: size, with: coordinator)
+        if app.status.keypadMovedUp == true {
+            self.view.frame.origin.y += app.status.keyboardHeight - weightEntryTextField.frame.minY
+            app.status.keypadMovedUp = false
+        }
         //        let displayLink = CADisplayLink(target: self, selector: #selector(KeyPadViewController.handleDisplayLink(_:)))
         //        displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
         //        coordinator.animate(alongsideTransition: nil, completion: {

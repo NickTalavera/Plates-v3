@@ -211,9 +211,7 @@ class PublicClasses {
         GoButton.isEnabled = false
         app.status.errorState=false
         app.status.keyPadUsedNow = false
-        weightEntryTextField.alpha = min(1,weightEntryTextField.alpha)
-        platesLabel.alpha = min(1,platesLabel.alpha)
-        platesView.alpha = min(1,platesView.alpha)
+        app.status.percentageModeActive = false
         app.calc.currentPlatesInUse.list = []
         app.updateWeightToLift()
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
@@ -223,16 +221,24 @@ class PublicClasses {
         //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
 //                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
         //        //        })
-        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
-            weightEntryTextField.alpha = 0
+        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
             platesLabel.alpha = 0
+            if weightEntryTextField.text != "" {
+            weightEntryTextField.alpha = 0
+            }
             platesView.alpha = 0
         }, completion: { (finished: Bool) -> () in
-            weightEntryTextField.placeholder = " "
-            weightEntryTextField.text = ""
             platesLabel.text = ""
+            weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")
+            weightEntryTextField.text = ""
+            weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
             PublicClasses.drawPlates(platesView)
-//            PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+            UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
+                platesLabel.alpha = 1
+                weightEntryTextField.alpha = 1
+                platesView.alpha = 1
+            }, completion: { (finished: Bool) -> () in
+            })
         })
         
     }

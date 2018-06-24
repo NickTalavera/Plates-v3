@@ -107,6 +107,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.weightEntryTextField.delegate = self
         self.weightEntryTextField.tag = 1 //CHECK
         weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+        weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")
+        self.weightEntryTextField.floatingLabelHideAnimationDuration = app.visuals.platesFadeDuration/2
 //        PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: platesView)
         self.weightEntryTextField.font =  app.visuals.fontStandard
         self.weightEntryTextField.floatingLabelFont = app.visuals.fontTextFieldRiser

@@ -17,17 +17,6 @@ extension PublicClasses {
         GoButton.isEnabled = false
         weightEntryTextField.keyboardType = .decimalPad
         weightEntryTextField.resignFirstResponder()
-        weightEntryTextField.text = app.calc.weightToLiftNoUnitsString
-        if weightEntryTextField.text!.count == 0 {
-            platesLabel.alpha = 0
-            platesView.alpha = 0
-            weightEntryTextField.alpha = 0
-        }
-        //        UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
-        //            platesLabel.alpha = 1
-        //            platesView.alpha = 1
-        //            weightEntryTextField.alpha = 1
-        //        }, completion: nil)
         if app.status.percentageModeActive == true {
             //            var originalWeight = app.calc.weightToLift
             //            if placeholderText.count == 0 {
@@ -125,6 +114,16 @@ extension PublicClasses {
     
     
     class func percentButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
+        app.status.percentageModeActive = true
+        app.status.keyPadUsedNow = false
+        weightEntryTextField.becomeFirstResponder()
+        weightEntryTextField.keyboardType = .numberPad
+        weightEntryTextField.placeholder = NSLocalizedString("Percent", comment: "")
+        weightEntryTextField.floatingLabel.text = "\(app.calc.weightToLiftString) ×"
+        weightEntryTextField.text = ""
+        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [UIViewAnimationOptions.transitionCrossDissolve], animations:  {
+            GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+        }, completion: nil)
         //                            let platesLabelText = platesLabel.text
         //                            let weightEntryTextFieldText = weightEntryTextField.text
         //
@@ -137,20 +136,6 @@ extension PublicClasses {
         //                                    let numberNow = PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue
         //                                    app.calc.weightToLift = numberNow
         //                                }
-        //                        }
-        //        //
-        //                            weightEntryTextField.keyboardType = .numberPad
-        //                        weightEntryTextField.placeholder = NSLocalizedString("Percent", comment: "")
-        //                    weightEntryTextField.title = "\(PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: GlobalVariables.sharedInstance.unitsFormatter)) ×"
-        //                    weightEntryTextField.setTitleVisible(true, animated: true)
-        //                    weightEntryTextField.text = ""
-        //                    View.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [UIViewAnimationOptions.transitionCrossDissolve], animations:  {
-        //                                        GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-        //                                        }, completion: nil)
-        //                weightEntryTextField.becomeFirstResponder()
-        app.status.percentageModeActive = true
-        //                GlobalVariables.sharedInstance.keyPadUsedNow = false
-        //        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
     }
     
     class func removeButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton?=nil, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
@@ -187,7 +172,7 @@ extension PublicClasses {
         }
         weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         GoButton.isEnabled = true
-        if weightEntryTextField.text!.count == 0 || app.calc.weightToLift == app.profile.currentBarbell.weight + app.profile.currentCollar.weight {
+        if weightEntryTextField.text!.count == 0 && app.calc.currentPlatesInUse.countPlates() == 0 {
             platesLabel.alpha = 0
             platesView.alpha = 0
             weightEntryTextField.alpha = 0

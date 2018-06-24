@@ -305,11 +305,13 @@ class AppData {
         var currentPlatesInUse: Plates
         var weightToLiftString: String
         var weightToLiftNoUnitsString: String
+        var percentage: Double
         init() {
             weightToLift = 0
             currentPlatesInUse = Plates.init(name: "Active", list: [])
             weightToLiftString = ""
             weightToLiftNoUnitsString = ""
+            percentage = 0
         }
     }
     

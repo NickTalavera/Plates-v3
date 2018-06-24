@@ -1078,10 +1078,10 @@
             </objects>
             <point key="canvasLocation" x="1007" y="-527"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Opening nav controller-->
         <scene sceneID="J2r-bY-G8C">
             <objects>
-                <navigationController storyboardIdentifier="keypadNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7u7-yH-FkX" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="openingNavController" title="Entry navigation controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7u7-yH-FkX" userLabel="Opening nav controller" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3Ei-C5-mDs">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

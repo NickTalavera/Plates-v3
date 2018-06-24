@@ -13,21 +13,21 @@ import CoreData
 extension KeyPadViewController {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        //        if self.view.isTopViewInWindow() == true {
-        //            if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-        //                //            self.view.frame.origin.y -= keyboardSize.height
-        //                if keyboardSize.height >= weightEntryTextField.frame.minY {
-        //                    app.status.keypadMovedUp = true
-        //                    self.view.frame.origin.y -= keyboardSize.height - weightEntryTextField.frame.minY
-        //                }
-        //                self.keyboardHeight = keyboardSize.height
-        //            }
-        //        }
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if keyboardSize.height >= weightEntryTextField.frame.minY {
+                app.status.keypadMovedUp = true
+                self.view.frame.origin.y -= keyboardSize.height - weightEntryTextField.frame.minY
+            }
+            app.status.keyboardHeight = keyboardSize.height
+        }
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            print("HELP2")
+            print(app.status.keypadMovedUp)
             if app.status.keypadMovedUp == true {
+                print("HELP")
                 var keyBoardHeightT: CGFloat = keyboardSize.height
                 if keyboardSize.height == 0 {
                     keyBoardHeightT = app.status.keyboardHeight
@@ -40,55 +40,61 @@ extension KeyPadViewController {
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        var placeholderText: String = textField.text!
-//        placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
-//        if placeholderText.characters.count > 0 {
-//            if app.status.percentageModeActive == true {
-//                //                textField.text = PublicClasses.numberFormatterDecimal.string(from: (PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue/100).roundToPlaces(2) as NSNumber)
-//            }
-//            else {
-//                //                textField.text = PublicClasses.massFormatter.string(fromValue: PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces), unit: GlobalVariables.sharedInstance.unitsFormatter)
-//            }
-//        }
-//        else {
-//            weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-//            //            weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (Bool) in
-//            //                PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: self.platesView)
-//            //            })
-//        }
+        //        var placeholderText: String = textField.text!
+        //        placeholderText = PublicClasses.removeUnitsFromText(placeholderText)
+        //        if placeholderText.characters.count > 0 {
+        //            if app.status.percentageModeActive == true {
+        //                //                textField.text = PublicClasses.numberFormatterDecimal.string(from: (PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue/100).roundToPlaces(2) as NSNumber)
+        //            }
+        //            else {
+        //                //                textField.text = PublicClasses.massFormatter.string(fromValue: PublicClasses.numberFormatterDecimal.number(from: placeholderText)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.currentDecimalPlaces), unit: GlobalVariables.sharedInstance.unitsFormatter)
+        //            }
+        //        }
+        //        else {
+        //            weightEntryTextField.placeholder = PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
+        //            //            weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (Bool) in
+        //            //                PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: self.platesView)
+        //            //            })
+        //        }
+        self.weightEntryTextField.alwaysShowFloatingLabel  = false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//                weightEntryTextField.setTitleVisible(true, animated: true)
-        textField.text = PublicClasses.numberFormatterDecimal.string(from: app.calc.weightToLift as NSNumber)
+        self.weightEntryTextField.alwaysShowFloatingLabel  = true
+        if app.calc.weightToLift != 0 {
+            textField.text = PublicClasses.numberFormatterDecimal.string(from: app.calc.weightToLift as NSNumber)
+        }
+        else {
+            textField.text = ""
+        }
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var result: Bool = false
         if app.status.percentageModeActive == true {
             result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: app.status.percentageModeActive)
         }
         else {
             result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
-//            //            self.weightEntryTextField.title = NSLocalizedString("Total weight", comment: "")
-//            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
-//            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()
-//            //            PublicClasses.drawPlates(self.platesView)
+            //            //            self.weightEntryTextField.title = NSLocalizedString("Total weight", comment: "")
+            //            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
+            //            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()
+            //            //            PublicClasses.drawPlates(self.platesView)
         }
         if result == true && self.platesLabel.alpha != 0 {
-//            self.platesLabel.alpha = 1
-//            self.platesView.alpha = 1
-//            UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
-//                self.platesLabel.alpha = 0
-//                self.platesView.alpha = 0
-//            }, completion: {
-//                (value: Bool) in
-//                self.platesLabel.text = ""
-//            })
-//
-//            app.status.errorState = false
-//            //            self.weightEntryTextField.errorMessage = ""
-//            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+            //            self.platesLabel.alpha = 1
+            //            self.platesView.alpha = 1
+            //            UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
+            //                self.platesLabel.alpha = 0
+            //                self.platesView.alpha = 0
+            //            }, completion: {
+            //                (value: Bool) in
+            //                self.platesLabel.text = ""
+            //            })
+            //
+            //            app.status.errorState = false
+            //            //            self.weightEntryTextField.errorMessage = ""
+            //            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
         }
         return result
     }
