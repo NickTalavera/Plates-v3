@@ -220,21 +220,28 @@ extension PublicClasses {
         if (textView.text.isEmpty || textView.bounds.size.equalTo(CGSize.zero)) {
             return;
         }
+        print(Calendar.current.component(.second, from: Date()))
+        print("?")
         let textViewSize = textView.frame.size;
         let fixedWidth = textViewSize.width;
         let fixedHeight = textViewSize.height;
         var expectFont = app.visuals.fontStandard
+        textView.font = UIFont.systemFont(ofSize: maxTextSize + 1, weight: UIFont.Weight.thin)
         let expectSize = textView.sizeThatFits(CGSize.init(width: fixedWidth, height: fixedHeight));
         if (expectSize.height > textViewSize.height) {
             while (textView.sizeThatFits(CGSize.init(width: fixedWidth, height: fixedHeight)).height > textViewSize.height) {
                 expectFont = UIFont.systemFont(ofSize: textView.font!.pointSize - 1, weight: UIFont.Weight.thin)
                 textView.font = UIFont.systemFont(ofSize: min(maxTextSize,expectFont.pointSize), weight: UIFont.Weight.thin)
+                
+                print("smaller")
             }
         }
         else {
             while (textView.sizeThatFits(CGSize.init(width: fixedWidth, height: fixedHeight)).height < textViewSize.height) {
                 expectFont = textView.font!;
                 textView.font = UIFont.systemFont(ofSize: textView.font!.pointSize + 1, weight: UIFont.Weight.thin)
+                
+                print("larger")
             }
             textView.font = UIFont.systemFont(ofSize: min(maxTextSize,expectFont.pointSize), weight: UIFont.Weight.thin)
         }

@@ -28,20 +28,14 @@ extension KeyPadViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//
-//        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard]
-//        //        let myText = PublicClasses.labelPlateOutputFromCurrentPlatesInUse(["25.0 Kg", "55.0 lbs", "45.0 lbs", "20.0 Kg", "1.5 Kg", "2.5 lbs", "1.25 lbs", "2.5 Kg"])
-//        //        print("myText")
-//        //        print(myText)
-//        //        let size = (myText as NSString).size(withAttributes: fontAttributes)
-//
-//        //        platesLabelWidthConstraint.constant = size.width + 20
-//        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
 //        weightEntryTextFinder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        platesLabel.backgroundColor = UIColor.red
+        platesView.backgroundColor = UIColor.green
 //        platesLabel.frame = CGRect(x: platesLabel.frame.minX, y: platesLabel.frame.minY, width: 200, height: platesLabel.frame.height) //CHECK
 //        weightEntryTextFinder()
         
@@ -70,12 +64,14 @@ extension KeyPadViewController {
             }
         }, completion: { context in
             // This is called after the rotation is finished. Equal to deprecated `didRotate`
-            PublicClasses.drawPlates(self.platesView)
+            
             UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
                 self.platesView.alpha = 1
             }, completion: nil)
-            
             self.setupGradientLayer()
+            self.fixPlatesView()
+            self.maximizeLabelFonts()
+            PublicClasses.drawPlates(self.platesView)
             print("rotated")
         })
     }

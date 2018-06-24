@@ -74,9 +74,8 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
     let gradientLayer: CAGradientLayer = CAGradientLayer()
     
     func setupInitialViews() {
-        
         //KEYBOARD SETUP
-        //                        self.hideKeyboardWhenTappedAround()//CHECK
+        self.hideKeyboardWhenTappedAround()
         NotificationCenter.default.addObserver(self, selector: #selector(KeyPadViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(KeyPadViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         //VIEW SETUP
@@ -112,7 +111,7 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")
         self.weightEntryTextField.floatingLabelHideAnimationDuration = app.visuals.platesFadeDuration/2
-//        PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: platesView)
+        //        PublicClasses.setToWeightTextField(self.weightEntryTextField, platesView: platesView)
         self.weightEntryTextField.font =  app.visuals.fontStandard
         self.weightEntryTextField.floatingLabelFont = app.visuals.fontTextFieldRiser
         self.weightEntryTextField.floatingLabel.adjustsFontSizeToFitWidth = true
@@ -147,10 +146,11 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.GoButton.translatesAutoresizingMaskIntoConstraints = false
         self.platesLabel.translatesAutoresizingMaskIntoConstraints = false
         self.weightEntryTextField.translatesAutoresizingMaskIntoConstraints = false
-       
+        
         
         NSLayoutConstraint.activate([platesViewLabelBottomAlignmentConstraint, weightEntryTextFieldHeight,platesLabelTextField,goButtonBottomContraints,horizonalLeftContraints, horizonalRightContraints,weightEntryTextFieldBottom])
         
+        self.fixPlatesView()
         self.maximizeLabelFonts()
         self.view.layoutIfNeeded()
     }
@@ -219,9 +219,9 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         titleLabelView.adjustsFontSizeToFitWidth = true
         titleLabelView.sizeToFit()
         self.navigationItem.titleView = titleLabelView
-//                        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: app.visuals.secondaryColor, NSFontAttributeName: app.visuals.fontTitle!] //CHECK
+        //                        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: app.visuals.secondaryColor, NSFontAttributeName: app.visuals.fontTitle!] //CHECK
         //                navBarButton.setImage(tintedImage, for: UIControlState.normal) //CHECK
-                        navBarButton.addTarget(self, action: #selector(self.rightBarButtonPressed), for: UIControlEvents.touchUpInside) //CHECK
+        navBarButton.addTarget(self, action: #selector(self.rightBarButtonPressed), for: UIControlEvents.touchUpInside) //CHECK
         navigationController!.navigationBar.barTintColor = app.visuals.textPadColor
         keyPadBackgroundView.backgroundColor = app.visuals.keyPadBackgroundViewColor
         navBarButton.tintColor =  app.visuals.secondaryColor
@@ -290,5 +290,19 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.GoButton.layer.cornerRadius = 0.5 * self.GoButton.bounds.size.height
     }
     
+    func fixPlatesView() {
+        let tempPlates = AppData.Plates(name: "Temp", list: [
+            AppData.Plate(count: 8, weight: 25, unitType: UnitOfWeight.unitType.kg, positionOnBar: 0),
+            AppData.Plate(count: 4, weight: 20, unitType: UnitOfWeight.unitType.kg, positionOnBar: 0),
+            AppData.Plate(count: 2, weight: 1.5, unitType: UnitOfWeight.unitType.kg, positionOnBar: 0),
+            AppData.Plate(count: 8, weight: 55, unitType: UnitOfWeight.unitType.lb, positionOnBar: 0),
+            AppData.Plate(count: 4, weight: 45, unitType: UnitOfWeight.unitType.lb, positionOnBar: 0),
+            AppData.Plate(count: 2, weight: 2.5, unitType: UnitOfWeight.unitType.lb, positionOnBar: 0),
+            AppData.Plate(count: 2, weight: 1.25, unitType: UnitOfWeight.unitType.lb, positionOnBar: 0)
+            ])
+        let fontAttributes = [NSAttributedStringKey.font: app.visuals.fontStandard]
+        let myText = PublicClasses.formatLabel(tempPlates)
+        let size = (myText as NSString).size(withAttributes: fontAttributes)
+        platesLabelWidthConstraint.constant = min(size.width + 20, super.view.frame.width*0.55)
+    }
 }
-

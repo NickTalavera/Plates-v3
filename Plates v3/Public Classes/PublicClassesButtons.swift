@@ -144,8 +144,9 @@ extension PublicClasses {
                 GoButton.isEnabled = true
                 weightEntryTextField.text = app.calc.weightToLiftString
                 PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
-                PublicClasses.drawPlates(platesView)
                 platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
+                PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
+                PublicClasses.drawPlates(platesView)
             }
             else {
                 PublicClasses.resetEverything(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView, GoButton: GoButton)
@@ -197,6 +198,7 @@ extension PublicClasses {
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false
         //                        weightEntryTextField.errorMessage = ""
+        
         PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
         weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
         weightEntryTextField.isHighlighted = true
