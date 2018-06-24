@@ -98,9 +98,9 @@ class PublicClasses {
         //                }
         //            }
     }
-    //
-    //
-    //
+    
+    
+    
     class func setPlatesButtonsEnabledStatus(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
         //        var counts:[String:Int] = [:]
         //        for item in app.profile.currentPlateSet.listInUse {
@@ -143,56 +143,34 @@ class PublicClasses {
                 view.removeFromSuperview()
             }
         }
-        var platesInUse = app.calc.currentPlatesInUse
+        let platesInUse = app.calc.currentPlatesInUse
         if platesInUse.countPlates() > 0 {
-            //                    var currentPlatesWithUnits = app.profile.currentPlateSet.list[0...8].map({String($0) + " Kg"})
-            //                    currentPlatesWithUnits += app.profile.currentPlateSet.list[9...17].map({String($0) + " lbs"})
+            print()
+            let platesInUseDetails = app.calc.currentPlatesInUse.list.map ({$0.getDimensions()})
             var xPos = platesView.bounds.maxX
-            var totalPlateWidth: CGFloat = 0
-            for i in 0...platesInUse.countPlates()-1 {
-                //                        totalPlateWidth += CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
-            }
-            totalPlateWidth += 30
-            totalPlateWidth = max(totalPlateWidth, 415)
-            var newWidthTotal: CGFloat = 0
-            for i in 0...platesInUse.countPlates()-1 {
-                var heightNotNormalized: CGFloat = 78
-                var widthNotNormalized: CGFloat = 30
-                if i != -2 && i != -1 {
-                    //                            heightNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateHeights[currentPlatesWithUnits.index(of: platesInUse[i])!])
-                    //                            widthNotNormalized = CGFloat(GlobalVariables.sharedInstance.currentPlateWidths[currentPlatesWithUnits.index(of: platesInUse[i])!])
-                }
-                else if i == -2 {
-                    heightNotNormalized = 50
-                    widthNotNormalized = 415
-                }
+            let totalPlateWidth: CGFloat = CGFloat(platesInUseDetails.map({Double($0.width)}).reduce(0, +)) + 30
+            for i in 0...platesInUseDetails.count-1 {
+                let heightNotNormalized: CGFloat = CGFloat(platesInUseDetails[i].height)
+                let widthNotNormalized: CGFloat = CGFloat(platesInUseDetails[i].width)
                 var heightNormalized: CGFloat = CGFloat()
                 var widthNormalized: CGFloat = CGFloat()
-                //                                        if (platesView.bounds.width / totalPlateWidth * CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)) > platesView.bounds.height {
-                //                            let scale = platesView.bounds.height / CGFloat(GlobalVariables.sharedInstance.currentPlateHeights.max()!)
-                //                                            heightNormalized = scale * heightNotNormalized
-                //                                            widthNormalized = scale * widthNotNormalized
-                //                                        }
-                //                                        else {
-                //                                            heightNormalized = platesView.bounds.width / totalPlateWidth * heightNotNormalized
-                //                                            widthNormalized = platesView.bounds.width / totalPlateWidth * widthNotNormalized
-                //                //                        }
-                newWidthTotal += widthNormalized
+                if (platesView.bounds.width / totalPlateWidth * CGFloat(platesInUseDetails.map({Double($0.height)}).max()!) ) > platesView.bounds.height {
+                    let scale = platesView.bounds.height / CGFloat(platesInUseDetails.map({Double($0.height)}).max()!)
+                    heightNormalized = scale * heightNotNormalized
+                    widthNormalized = scale * widthNotNormalized
+                }
+                else {
+                    heightNormalized = platesView.bounds.width / totalPlateWidth * heightNotNormalized
+                    widthNormalized = platesView.bounds.width / totalPlateWidth * widthNotNormalized
+                }
                 let imageSize: CGSize = CGSize(width: widthNormalized, height: heightNormalized)
                 xPos = xPos - widthNormalized
-                if i == -1 {
-                    xPos = platesView.bounds.maxX - widthNormalized
-                }
                 let plateImageView: UIImageView = UIImageView(frame: CGRect(origin: CGPoint(x: xPos, y: platesView.bounds.midY-heightNormalized/2), size: imageSize))
                 plateImageView.tag = 752837 //CHECK
-                plateImageView.cornerRadius = 5/292*plateImageView.frame.height
-                var plateColor: Color = Color.gray
-                if i != -2 && i != -1 {
-                    //                            plateColor = GlobalVariables.sharedInstance.plateColors[currentPlatesWithUnits.index(of: platesInUse[i])!]
-                }
-                plateImageView.backgroundColor = plateColor
-                plateImageView.borderWidth = 0.5
-                plateImageView.borderColor = GlobalVariables.sharedInstance.borderColor
+                plateImageView.layer.cornerRadius = 5/292*plateImageView.frame.height
+                plateImageView.backgroundColor = platesInUseDetails[i].color
+                plateImageView.layer.borderWidth = 0.5
+                plateImageView.layer.borderColor = app.visuals.borderColor.cgColor
                 platesView.addSubview(plateImageView)
             }
         }
@@ -204,40 +182,40 @@ class PublicClasses {
     
     
     
-    class func resetEverything(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton, animate: Bool = false) {
-        weightEntryTextField.resignFirstResponder()
-        GoButton.isEnabled = false
-        app.status.errorState=false
-        app.status.keyPadUsedNow = false
-        app.status.percentageModeActive = false
-        app.calc.currentPlatesInUse.list = []
-        app.updateWeightToLift()
-        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
-        
-        PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        //                weightEntryTextField.errorMessage = ""
-        //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
-        //                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
-        //        //        })
-        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
-            platesLabel.alpha = 0
-            if weightEntryTextField.text != "" {
-                weightEntryTextField.alpha = 0
-            }
-            platesView.alpha = 0
-        }, completion: { (finished: Bool) -> () in
-            platesLabel.text = ""
-            weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")
-            weightEntryTextField.text = ""
-            weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
-            PublicClasses.drawPlates(platesView)
+        class func resetEverything(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton, animate: Bool = false) {
+            weightEntryTextField.resignFirstResponder()
+            GoButton.isEnabled = false
+            app.status.errorState=false
+            app.status.keyPadUsedNow = false
+            app.status.percentageModeActive = false
+            app.calc.currentPlatesInUse.list = []
+            app.updateWeightToLift()
+            PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
+            
+            PublicClasses.massFormatter.string(fromValue: app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
+            //                weightEntryTextField.errorMessage = ""
+            //        weightEntryTextField.setTitleVisible(false, animated: true, animationCompletion: { (finished: Bool) -> Void in
+            //                        PublicClasses.setToWeightTextField(weightEntryTextField, platesView: platesView)
+            //        //        })
             UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
-                platesLabel.alpha = 1
-                weightEntryTextField.alpha = 1
-                platesView.alpha = 1
+                platesLabel.alpha = 0
+                if weightEntryTextField.text != "" {
+                    weightEntryTextField.alpha = 0
+                }
+                platesView.alpha = 0
             }, completion: { (finished: Bool) -> () in
+                platesLabel.text = ""
+                weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")
+                weightEntryTextField.text = ""
+                weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+                PublicClasses.drawPlates(platesView)
+                UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration/2, options: [.transitionCrossDissolve], animations: {
+                    platesLabel.alpha = 1
+                    weightEntryTextField.alpha = 1
+                    platesView.alpha = 1
+                }, completion: { (finished: Bool) -> () in
+                })
             })
-        })
-        
-    }
+            
+        }
 }
