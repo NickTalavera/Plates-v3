@@ -53,24 +53,25 @@ extension KeyPadViewController {
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
                 super.viewWillTransition(to: size, with: coordinator)
-        if app.status.keypadMovedUp == true {
-            self.view.frame.origin.y += app.status.keyboardHeight - weightEntryTextField.frame.minY
-            app.status.keypadMovedUp = false
-        }
-        //        let displayLink = CADisplayLink(target: self, selector: #selector(KeyPadViewController.handleDisplayLink(_:)))
-        //        displayLink.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
-        //        coordinator.animate(alongsideTransition: nil, completion: {
-        //            _ in
-        //            displayLink.invalidate()
-        //        })
+        self.platesView.alpha = 0
+        coordinator.animate(alongsideTransition: { context in
+            if app.status.keypadMovedUp == true {
+                self.view.frame.origin.y += app.status.keyboardHeight - self.weightEntryTextField.frame.minY
+                app.status.keypadMovedUp = false
+                print("A")
+            }
+        }, completion: { context in
+            // This is called after the rotation is finished. Equal to deprecated `didRotate`
+            PublicClasses.drawPlates(self.platesView)
+            UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
+                self.platesView.alpha = 1
+            }, completion: nil)
+            print("rotated")
+        })
     }
+        
     
-    override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
-        UIView.animate(withDuration: 0.1, delay: 0, options: UIViewAnimationOptions.curveLinear, animations: {
-            self.platesView.alpha = 0
-        }, completion: nil)
-    }
-    
+
     
     @objc func handleDisplayLink(_ displayLink: CADisplayLink) {
         self.view.endEditing(true)

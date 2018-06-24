@@ -71,46 +71,49 @@ class AppData {
         var positionOnBar: Int?
         
         func getDimensions()  -> (height: Double, width: Double, color: UIColor) {
+            let red = UIColor(red: 255/255, green: 65/255, blue: 50/255, alpha: 1)
+            let blue = UIColor(red: 62/255, green: 150/255, blue: 250/255, alpha: 1)
+            let yellow = UIColor(red: 253/255, green: 189/255, blue: 64/255, alpha: 1)
+            let white = UIColor.white
+            let green = UIColor(red: 29/255, green: 194/255, blue: 74/255, alpha: 1)
+            
             switch (self.weight, self.unitType) {
             case (25, UnitOfWeight.unitType.kg):
-                return((height: 450,width: 64, color: UIColor.red))
+                return((height: 450,width: 64, color: red))
             case (20, UnitOfWeight.unitType.kg):
-                return((height: 450,width: 54, color: UIColor.red))
+                return((height: 450,width: 54, color: blue))
             case (15, UnitOfWeight.unitType.kg):
-                return((height: 450,width: 44, color: UIColor.red))
+                return((height: 450,width: 44, color: yellow))
             case (10, UnitOfWeight.unitType.kg):
-                return((height: 450,width: 32, color: UIColor.red))
+                return((height: 450,width: 32, color: green))
             case (5, UnitOfWeight.unitType.kg):
-                return((height: 450,width: 26, color: UIColor.red))
+                return((height: 450,width: 26, color: white))
             case (2.5, UnitOfWeight.unitType.kg):
-                return((height: 210,width: 19, color: UIColor.red))
+                return((height: 210,width: 19, color: red))
             case (2, UnitOfWeight.unitType.kg):
-                return((height: 190,width: 19, color: UIColor.red))
+                return((height: 190,width: 19, color: blue))
             case (1.5, UnitOfWeight.unitType.kg):
-                return((height: 170,width: 18, color: UIColor.red))
+                return((height: 170,width: 18, color: yellow))
             case (1, UnitOfWeight.unitType.kg):
-                return((height: 160,width: 15, color: UIColor.red))
-                
-                //            //            var platesList: [Double] = 55,45,35,25,15,10,5,2.5,1.25]
-            //            //            var currentPlateWidths: [Double] = 82.5,71.11,63.5,44.45,31.75
+                return((height: 160,width: 15, color: green))
             case (55, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 82.5, color: UIColor.red))
+                return((height: 450,width: 82.5, color: red))
             case (45, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 71.11, color: UIColor.red))
+                return((height: 450,width: 71.11, color: blue))
             case (35, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 63.5, color: UIColor.red))
+                return((height: 450,width: 63.5, color: yellow))
             case (25, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 44.45, color: UIColor.red))
+                return((height: 450,width: 44.45, color: green))
             case (15, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 31.75, color: UIColor.red))
+                return((height: 450,width: 31.75, color: yellow))
             case (10, UnitOfWeight.unitType.lb):
-                return((height: 450,width: 25.4, color: UIColor.red))
+                return((height: 450,width: 25.4, color: white))
             case (5, UnitOfWeight.unitType.lb):
-                return((height: 190,width: 19, color: UIColor.red))
+                return((height: 190,width: 19, color: blue))
             case (2.5, UnitOfWeight.unitType.lb):
-                return((height: 162,width: 15, color: UIColor.red))
+                return((height: 162,width: 15, color: green))
             case (1.25, UnitOfWeight.unitType.lb):
-                return((height: 133.33,width: 10, color: UIColor.red))
+                return((height: 133.33,width: 10, color: white))
             default:
                 return((height: 450,width: 45, color: UIColor.red))
             }
