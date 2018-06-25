@@ -18,6 +18,8 @@ class PublicClasses {
     
     class func switchUnitsTo(_ unit: UnitOfWeight.unitType, weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton?, platesLabel: UITextView, platesView: UIView?, GoButton: UIButton?, overwriteValues: Bool? = true) {
         app.switchUnits()
+        self.numberFormatterDecimal.maximumFractionDigits = app.profile.chosenUnit.decimalPlaces
+        self.massFormatter.numberFormatter = self.numberFormatterDecimal
         app.status.convertedUnitsOn = false
         app.status.percentageModeActive = false
         weightEntryTextField.placeholder = NSLocalizedString("Enter a weight", comment: "")

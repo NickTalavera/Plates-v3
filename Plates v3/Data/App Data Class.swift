@@ -175,8 +175,7 @@ class AppData {
             let unitType: UnitOfWeight.unitType
             let weights: Double
         }
-        
-        
+    
         
         
         class Profile {
@@ -192,16 +191,18 @@ class AppData {
             
             init() {
                 chosenUnit = UnitOfWeight(unit: UnitOfWeight.unitType.lb)
-//                print(PublicClasses.massFormatter.string(fromValue: 1, unit: MassFormatter.Unit.kilogram))
+                func barbellName(weight: Double, unit: UnitOfWeight.unitType ) -> String {
+                    var weight = PublicClasses.massFormatter.string(fromValue: weight, unit: UnitOfWeight(unit: unit).formatter)
+                    return NSLocalizedString("%@ barbell", comment: "").replacingOccurrences(of: "%@", with: weight)
+                }
                 barbellCollection = BarbellCollection( list: [
-                    Barbell(name: NSLocalizedString("%@ barbell", comment: "").replacingOccurrences(of: "%@", with: 1.3.clean),
-                            unitType: UnitOfWeight.unitType.kg, weight: 25.0),
-//                    Barbell(name: "Olympic barbell", unitType: UnitOfWeight.unitType.kg, weight: 20.0),
-//                    Barbell(name: NSLocalizedString("%@ barbell", comment: "").replacingOccurrences(of: "%@", with: PublicClasses.massFormatter.string(fromValue: 15, unit: UnitOfWeight(unit: UnitOfWeight.unitType.kg).formatter)), unitType: UnitOfWeight.unitType.kg, weight: 15.0),
-//                    Barbell(name: NSLocalizedString("%@ barbell", comment: "").replacingOccurrences(of: "%@", with: PublicClasses.massFormatter.string(fromValue: 15, unit: UnitOfWeight(unit: UnitOfWeight.unitType.kg).formatter)), unitType: UnitOfWeight.unitType.kg, weight: 10.0),
-//                    Barbell(name: NSLocalizedString("%@ barbell", comment: "").replacingOccurrences(of: "%@", with: PublicClasses.massFormatter.string(fromValue: 45, unit: UnitOfWeight(unit: UnitOfWeight.unitType.lb).formatter)), unitType: UnitOfWeight.unitType.lb, weight: 45.0),
-                    Barbell(name: NSLocalizedString("Curl barbell", comment: ""), unitType: UnitOfWeight.unitType.lb, weight: 20.0),
-                    Barbell(name: NSLocalizedString("No barbell", comment: ""), unitType: chosenUnit.unit, weight: 0.0)
+                    Barbell(name: barbellName(weight: 25, unit:  UnitOfWeight.unitType.kg), unitType: UnitOfWeight.unitType.kg, weight: 25.0),
+                    Barbell(name: NSLocalizedString("Olympic barbell", comment: ""), unitType: UnitOfWeight.unitType.kg, weight: 20.0),
+                    Barbell(name: barbellName(weight: 15, unit:  UnitOfWeight.unitType.kg), unitType: UnitOfWeight.unitType.kg, weight: 15.0),
+                    Barbell(name: barbellName(weight: 10, unit:  UnitOfWeight.unitType.kg), unitType: UnitOfWeight.unitType.kg, weight: 10.0),
+                    Barbell(name: barbellName(weight: 45, unit:  UnitOfWeight.unitType.lb), unitType: UnitOfWeight.unitType.lb, weight: 45.0),
+                        Barbell(name: NSLocalizedString("Curl barbell", comment: ""), unitType: UnitOfWeight.unitType.lb, weight: 20.0),
+                        Barbell(name: NSLocalizedString("No barbell", comment: ""), unitType: chosenUnit.unit, weight: 0.0)
                     ])
                 
                 collarCollection = CollarCollection( list: [

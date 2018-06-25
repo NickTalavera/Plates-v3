@@ -48,7 +48,7 @@ extension PublicClasses {
     class var numberFormatterDecimal: NumberFormatter {
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
-        numberFormatter.maximumFractionDigits = app.profile.chosenUnit.decimalPlaces
+        numberFormatter.maximumFractionDigits = 2
         numberFormatter.maximumIntegerDigits = 4
         numberFormatter.minimumFractionDigits = 0
         numberFormatter.groupingSeparator = ""        

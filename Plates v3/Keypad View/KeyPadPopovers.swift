@@ -49,9 +49,7 @@ extension KeyPadViewController {
     
     func presentCollarAdvancedSettingsPopover() {
         self.view.endEditing(true)
-        print("HELP1")
                         let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "CollarAdvancedSettings"))! as! CollarAdvancedSettings
-        print("HELP2")
                         popoverContent.delegate = self
                         let nav = UINavigationController(rootViewController: popoverContent)
                         nav.modalPresentationStyle = UIModalPresentationStyle.popover
@@ -63,7 +61,6 @@ extension KeyPadViewController {
                         popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
                         popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
                         self.present(nav, animated: true, completion: nil)
-        print("HELP3")
     }
     
     
