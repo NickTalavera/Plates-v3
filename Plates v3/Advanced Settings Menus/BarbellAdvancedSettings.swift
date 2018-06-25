@@ -21,13 +21,14 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     var currentBarbellIndex = Int()
     
     @IBAction func addButtonAction(_ sender: AnyObject) {
-        if app.profile.barbellCollection.list.count < 8 {
+        if app.profile.barbellCollection.list.count <= 8 {
             let newBarbell = AppData.Barbell(name: findNextName(), unitType:
                 PublicClasses.currentLocaleUnit.unit, weight: 0)
-            app.profile.barbellCollection.list.append(newBarbell)
+            app.profile.barbellCollection.list.insert(newBarbell, at: 0)
             self.tableView.reloadData()
         }
-        updateGlobals()
+        madeChanges = true
+        DataAccess.sharedInstance.saveEverything()
     }
     
     @objc func segmentValueChanged(_ sender: UISegmentedControl) {
@@ -72,7 +73,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([ NSAttributedStringKey.font: app.visuals.fontStandard], for: UIControlState.normal)
         navigationItem.rightBarButtonItem?.tintColor = app.visuals.mainColor
         navigationItem.leftBarButtonItem?.tintColor = app.visuals.mainColor
-        navigationController!.navigationBar.barTintColor = app.visuals.mainColor
+        navigationController!.navigationBar.barTintColor = app.visuals.secondaryColor
         self.tableView.tableFooterView = UIView(frame: CGRect.zero)
         self.tableView.rowHeight = 88
         tableView.delegate = self
@@ -140,13 +141,6 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //            for keys in app.profile.barbellsList.keys.sorted(by: {$0 < $1}) {
-        //                if keys != "No barbell" {
-        //                    currentBarNames += [keys]
-        //                    currentBarValues += [GlobalVariables.sharedInstance.barbellsList[keys]!]
-        //                    currentBarUnits += [GlobalVariables.sharedInstance.barbellsListUnits[keys]!]
-        //                }
-        //            }
         if app.profile.barbellCollection.list.count == 0 {
             self.tableView.isScrollEnabled = false
             addLabel = UILabel(frame: self.view.bounds)
@@ -329,6 +323,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         }
         else {
             cell.isHidden = true
+            cell.heightAnchor.constraint(equalToConstant: 0)
         }
         return cell
     }

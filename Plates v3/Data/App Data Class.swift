@@ -209,7 +209,7 @@ class AppData {
                     Collar(name: "%3 barbell", unitType: UnitOfWeight.unitType.kg, weight: 10.0),
                     Collar(name: "%4 barbell", unitType: UnitOfWeight.unitType.lb, weight: 45.0),
                     Collar(name: "Curl barbell", unitType: UnitOfWeight.unitType.lb, weight: 20.0),
-                    Collar(name: "No barbell", unitType: chosenUnit.unit, weight: 0.0)
+                    Collar(name: "No collar", unitType: chosenUnit.unit, weight: 0.0)
                     ])
                 
                 plateCollection = PlateCollection( list: [
