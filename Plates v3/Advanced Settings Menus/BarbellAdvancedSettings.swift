@@ -216,7 +216,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let cell = textField.superview?.superview as! BarbellAdvancedSettingTableViewCell
+        let cell = textField.superview?.superview as! advancedSettingTableViewCell
         let row = cell.tag
         if textField.tag == 1 { //Name textfield
             textField.text! = textField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
@@ -252,7 +252,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         }
         else if textField.tag == 2 {
             var maxDecimalPlaces = 2
-            let cell = textField.superview?.superview as! BarbellAdvancedSettingTableViewCell
+            let cell = textField.superview?.superview as! advancedSettingTableViewCell
             let unitSelected = cell.segmentedControl.titleForSegment(at: cell.segmentedControl.selectedSegmentIndex)!
             let unitToPass: MassFormatter.Unit = MassFormatter.Unit.kilogram
             if unitSelected == PublicClasses.massFormatter.unitString(fromValue: 0, unit: MassFormatter.Unit.pound) {
@@ -268,7 +268,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = (indexPath as NSIndexPath).row
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! BarbellAdvancedSettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! advancedSettingTableViewCell
         if app.profile.barbellCollection.list[row].name != "No barbell" {
             cell.tag = row
             cell.nameTextField.text = NSLocalizedString(app.profile.barbellCollection.list[row].name, comment: "")
