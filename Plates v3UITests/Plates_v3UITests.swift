@@ -38,4 +38,22 @@ class Plates_v3UITests: XCTestCase {
         
     }
     
+    func testBarbellAdvancedSettings() {
+                let app = XCUIApplication()
+        app/*@START_MENU_TOKEN@*/.buttons["Barbell"]/*[[".images.buttons[\"Barbell\"]",".buttons[\"Barbell\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["%2 barbell"]/*[[".cells.staticTexts[\"%2 barbell\"]",".staticTexts[\"%2 barbell\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Plates"].buttons["Item"].tap()
+        var tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Edit barbells"]/*[[".cells.staticTexts[\"Edit barbells\"]",".staticTexts[\"Edit barbells\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element(boundBy: 0).swipeLeft()
+        
+        
+        app/*@START_MENU_TOKEN@*/.buttons["Barbell"]/*[[".images.buttons[\"Barbell\"]",".buttons[\"Barbell\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+
+         tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["%1 barbell"]/*[[".cells.staticTexts[\"%1 barbell\"]",".staticTexts[\"%1 barbell\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        app.navigationBars["Plates"].buttons["Item"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["Edit barbells"]/*[[".cells.staticTexts[\"Edit barbells\"]",".staticTexts[\"Edit barbells\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        tablesQuery.children(matching: .cell).element(boundBy: 0).children(matching: .textField).element(boundBy: 0).swipeLeft()
+    }
 }

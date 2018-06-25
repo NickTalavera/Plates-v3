@@ -128,8 +128,13 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     
     func updateGlobals() {
         if (app.profile.barbellCollection.list.index(where: {$0.equals(compareTo: app.profile.currentBarbell)})) == nil {
-            app.profile.currentBarbell = app.profile.barbellCollection.list[currentBarbellIndex]
-            app.profile.chosenUnit.unit = app.profile.barbellCollection.list[currentBarbellIndex].unitType
+            if !(app.profile.barbellCollection.list[currentBarbellIndex].name == app.profile.currentBarbell.name ||
+                app.profile.barbellCollection.list[currentBarbellIndex].weight == app.profile.currentBarbell.weight) {
+                self.currentBarbellIndex = app.profile.barbellCollection.list.endIndex-1
+            }
+        print(self.currentBarbellIndex)
+            app.profile.currentBarbell = app.profile.barbellCollection.list[self.currentBarbellIndex]
+            app.profile.chosenUnit.unit = app.profile.barbellCollection.list[self.currentBarbellIndex].unitType
             app.updateWeightToLift()
             self.delegate?.updatePageProtocol()
         }
@@ -199,21 +204,9 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         }
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            app.profile.barbellCollection.list.remove(at: (indexPath as NSIndexPath).row)
-            updateGlobals()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            self.tableView.reloadData()
-        }
-    }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        if app.profile.currentBarbell.name != "No barbell"  {
-            return UITableViewCellEditingStyle.delete
-        }
-        return UITableViewCellEditingStyle.none
-    }
+    
+    
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -319,6 +312,10 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
             cell.nameTextField.sizeToFit()
             cell.valueTextField.sizeToFit()
             cell.segmentedControl.sizeToFit()
+            
+//            cell.nameTextField.isUserInteractionEnabled = false
+//            cell.valueTextField.isUserInteractionEnabled = false
+//            cell.segmentedControl.isUserInteractionEnabled = false
             cell.setNeedsLayout()
         }
         else {
@@ -336,4 +333,25 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("You tapped cell number \(indexPath.row).")
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if app.profile.currentBarbell.name != "No barbell"  {
+            return UITableViewCellEditingStyle.delete
+        }
+        return UITableViewCellEditingStyle.none
+    }
+  
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "delete") { (action, indexPath) in
+            app.profile.barbellCollection.list.remove(at: (indexPath as NSIndexPath).row)
+            self.updateGlobals()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.reloadData()
+        }
+        return [delete]
+    }
 }

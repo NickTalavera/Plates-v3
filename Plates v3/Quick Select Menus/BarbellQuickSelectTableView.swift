@@ -93,6 +93,10 @@ class BarbellQuickSelectTableView: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
     override func willRotate(to toInterfaceOrientation: UIInterfaceOrientation, duration: TimeInterval) {
         //        var detailTextLabel = ""
         //
