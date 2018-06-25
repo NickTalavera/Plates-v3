@@ -11,11 +11,9 @@
 ////    }
 ////    func addButtonRunner() {
 ////        if currentCollarNames.count < 8 {
-////            currentCollarNames += [findNextName()]
 ////            currentCollarValues += [0]
 ////            let isMetric = Locale.current.usesMetricSystem
 ////            if isMetric == true {
-////                currentCollarUnits += ["Kg"]
 ////            }
 ////            else if isMetric == false {
 ////                currentCollarUnits += ["lbs"]

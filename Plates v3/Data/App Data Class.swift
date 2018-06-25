@@ -309,7 +309,7 @@ class AppData {
                 textPadColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.86)
                 textPadColorDisabled = UIColor(red: 148/255, green: 151/255, blue: 161/255, alpha: 0.86)
                 secondaryColor = UIColor(red: 33/255, green: 190/255, blue: 188/255, alpha: 0.86)
-                fontTitle = UIFont(name: "Helvetica", size: 28)!
+                fontTitle = UIFont(name: "StampborLines", size: 28)!
                 fontSubtitle = UIFont(name: "Helvetica", size: 28)!
                 mainColor = UIColor(red: 224/255, green: 224/255, blue: 224/255, alpha: 1)
                 keyPadBackgroundViewColor = UIColor(red: 142/255, green: 142/255, blue: 142/255, alpha: 1)
@@ -429,9 +429,10 @@ class AppData {
         
         func updateWeightToLift(){
             self.calc.weightToLift = (self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum())
-            let testPt1 = self.calc.currentPlatesInUse.list.map({String($0.weight).components(separatedBy: PublicClasses.numberFormatterDecimal.decimalSeparator)})
-            let testPt2 = testPt1.filter({$0.count == 2  && $0[1] != "0"}).map({$0[1].count}).max()
-            if testPt2! < 2 {
+//            let testPt1 = self.calc.currentPlatesInUse.list.map({String($0.weight).components(separatedBy: PublicClasses.numberFormatterDecimal.decimalSeparator)})
+//            let testPt2 = testPt1.filter({$0.count == 2  && $0[1] != "0"}).map({$0[1].count}).max()
+            let testPt2 = 1
+            if testPt2 < 2 {
                 self.calc.weightToLift = self.calc.weightToLift.rounded(toPlaces: self.profile.chosenUnit.decimalPlaces)
             }
             else {

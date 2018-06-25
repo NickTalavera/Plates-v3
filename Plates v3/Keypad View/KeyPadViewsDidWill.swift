@@ -13,6 +13,15 @@ import CoreData
 extension KeyPadViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        for family: String in UIFont.familyNames
+        {
+            print("\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family)
+            {
+                print("== \(names)")
+            }
+        }
+        
         //SETUP
         app.status.didLoad = true
         //        DataAccess.sharedInstance.release = self
