@@ -96,34 +96,37 @@ class PublicClasses {
     
     
     class func setPlatesButtonsEnabledStatus(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView) {
-        //        var counts:[String:Int] = [:]
-        //        for item in app.profile.currentPlateSet.listInUse {
-        //            if item.contains(GlobalVariables.sharedInstance.units) {
-        //                counts[item] = (counts[item] ?? 0) + 1
-        //            }
-        //        }
-        //        let currentPlatesInUseTuples = Array(counts).sorted(by: >)
-        //        var currentPlatesUnitsOnly = Array(app.profile.currentPlateSet.list[0...8])
-        //        var currentInventorySetUnitsOnly = Array(GlobalVariables.sharedInstance.currentInventorySet[0...8])
-        //        if GlobalVariables.sharedInstance.units == "lbs" {
-        //            currentPlatesUnitsOnly = Array(app.profile.currentPlateSet.list[9...17])
-        //            currentInventorySetUnitsOnly = Array(GlobalVariables.sharedInstance.currentInventorySet[9...17])
-        //        }
-        //        print(currentInventorySetUnitsOnly)
-        //        for i in 0...8 {
-        //            PublicClasses.enableCertainPlateButtons(i, TF: true, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
-        //            print(currentPlatesUnitsOnly[i])
-        //            if currentInventorySetUnitsOnly[i] == 0 {
-        //                PublicClasses.enableCertainPlateButtons(i, TF: false, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
-        //            }
-        //        }
-        //        for (key,value) in currentPlatesInUseTuples {
-        //            let valueNew = Double(key.components(separatedBy: " ")[0])!
-        //            let differenceValue = currentInventorySetUnitsOnly[currentPlatesUnitsOnly.index(of: valueNew)!]/2 - value
-        //            if differenceValue <= 0 {
-        //                PublicClasses.enableCertainPlateButtons(currentPlatesUnitsOnly.index(of: valueNew)!, TF: false, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
-        //            }
-        //        }
+        for (index,_) in app.profile.currentPlateSet.list.enumerated() {
+        PublicClasses.enableCertainPlateButtons(index, TF: true, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+        }
+        for (_,currentWeight) in app.calc.currentPlatesInUse.countPerWeight.enumerated() {
+            let foundIndex = app.profile.currentPlateSet.list.index(where: {$0.weight == currentWeight.weight && $0.unitType == app.profile.chosenUnit.unit})
+            let weightCountLimit = app.profile.currentPlateSet.list[foundIndex!].count!
+                PublicClasses.enableCertainPlateButtons(foundIndex! % 9, TF: currentWeight.count! < weightCountLimit, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+        }
+        
+//        let currentPlatesInUseTuples = Array(counts).sorted(by: >)
+//        var currentPlatesUnitsOnly = Array(app.profile.currentPlateSet.list[0...8])
+////        var currentInventorySetUnitsOnly = Array(GlobalVariables.sharedInstance.currentInventorySet[0...8])
+////        if GlobalVariables.sharedInstance.units == "lbs" {
+////            currentPlatesUnitsOnly = Array(app.profile.currentPlateSet.list[9...17])
+////            currentInventorySetUnitsOnly = Array(GlobalVariables.sharedInstance.currentInventorySet[9...17])
+////        }
+//        print(currentInventorySetUnitsOnly)
+            
+//            PublicClasses.enableCertainPlateButtons(i, TF: true, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+//            print(currentPlatesUnitsOnly[i])
+//            if currentInventorySetUnitsOnly[i] == 0 {
+//                PublicClasses.enableCertainPlateButtons(i, TF: false, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+//            }
+//        }
+//        for (key,value) in currentPlatesInUseTuples {
+//            let valueNew = Double(key.components(separatedBy: " ")[0])!
+//            let differenceValue = currentInventorySetUnitsOnly[currentPlatesUnitsOnly.index(of: valueNew)!]/2 - value
+//            if differenceValue <= 0 {
+////                PublicClasses.enableCertainPlateButtons(currentPlatesUnitsOnly.index(of: valueNew)!, TF: false, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+//            }
+//        }
     }
     
     

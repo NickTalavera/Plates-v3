@@ -139,6 +139,20 @@ class AppData {
             var name: String
             var list: [Plate]
             
+            var countPerWeight: [Plate] {
+                var counts: Dictionary<Double, Int> = [:]
+                var units: Dictionary<Double, UnitOfWeight.unitType> = [:]
+                for (_, element) in app.calc.currentPlatesInUse.list.enumerated() {
+                    counts[element.weight] = (counts[element.weight] ?? 0) + (element.count ?? 0)
+                    units[element.weight] = UnitOfWeight(unit: element.unitType).unit
+                }
+                var plateLit: [Plate] = []
+                for (_, element) in counts.keys.enumerated() {
+                    plateLit.append(AppData.Plate(count: counts[element], weight: element, unitType:  UnitOfWeight(unit: units[element]!).unit, positionOnBar: 0))
+                }
+                return plateLit
+            }
+            
             var widthOfPlates: Double {
                 return self.list.map({$0.getDimensions()}).map({$0.width}).reduce(0, +)
             }
