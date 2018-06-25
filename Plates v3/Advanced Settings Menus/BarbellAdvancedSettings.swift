@@ -220,7 +220,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         let row = cell.tag
         if textField.tag == 1 { //Name textfield
             textField.text! = textField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
-            if textField.text!.count == 0 {
+            if textField.text!.count == 0 || textField.text == NSLocalizedString("No barbell", comment: "") {
                 textField.text! = findNextName()
             }
             app.profile.barbellCollection.list[row].name = textField.text!
@@ -269,7 +269,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = (indexPath as NSIndexPath).row
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! advancedSettingTableViewCell
-        if app.profile.barbellCollection.list[row].name != "No barbell" {
+        if app.profile.barbellCollection.list[row].name != NSLocalizedString("No barbell", comment: "") {
             cell.tag = row
             cell.nameTextField.text = NSLocalizedString(app.profile.barbellCollection.list[row].name, comment: "")
             cell.nameTextField.placeholder = NSLocalizedString("Barbell name", comment: "")
@@ -338,7 +338,7 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        if app.profile.currentBarbell.name != "No barbell"  {
+        if app.profile.currentBarbell.name != NSLocalizedString("No barbell", comment: "")  {
             return UITableViewCellEditingStyle.delete
         }
         return UITableViewCellEditingStyle.none

@@ -17,18 +17,18 @@ extension KeyPadViewController {
     
     func presentInventoryAdvancedSettingsPopover() {
         self.view.endEditing(true)
-        //        let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "InventoryAdvancedSettings"))! as! InventoryAdvancedSettings
-        //        popoverContent.delegate = self
-        //        let nav = UINavigationController(rootViewController: popoverContent)
-        //        nav.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        let popover = nav.popoverPresentationController
-        //        popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
-        //        popover!.delegate = self
-        //        popover?.backgroundColor = UIColor.white
-        //        popover!.sourceView = self.view
-        //        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-        //        popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
-        //        self.present(nav, animated: true, completion: nil)
+//                let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "InventoryAdvancedSettings"))! as! InventoryAdvancedSettings
+//                popoverContent.delegate = self
+//                let nav = UINavigationController(rootViewController: popoverContent)
+//                nav.modalPresentationStyle = UIModalPresentationStyle.popover
+//                let popover = nav.popoverPresentationController
+//                popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
+//                popover!.delegate = self
+//                popover?.backgroundColor = UIColor.white
+//                popover!.sourceView = self.view
+//                popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+//                popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
+//                self.present(nav, animated: true, completion: nil)
     }
     
     func presentBarbellAdvancedSettingsPopover() {
@@ -49,18 +49,21 @@ extension KeyPadViewController {
     
     func presentCollarAdvancedSettingsPopover() {
         self.view.endEditing(true)
-        //                let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "CollarAdvancedSettings"))! as! CollarAdvancedSettings
-        //                popoverContent.delegate = self
-        //                let nav = UINavigationController(rootViewController: popoverContent)
-        //                nav.modalPresentationStyle = UIModalPresentationStyle.popover
-        //                let popover = nav.popoverPresentationController
-        //                popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
-        //                popover!.delegate = self
-        //                popover!.sourceView = self.view
-        //                popover?.backgroundColor = UIColor.white
-        //                popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
-        //                popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
-        //                self.present(nav, animated: true, completion: nil)
+        print("HELP1")
+                        let popoverContent = (self.storyboard?.instantiateViewController(withIdentifier: "CollarAdvancedSettings"))! as! CollarAdvancedSettings
+        print("HELP2")
+                        popoverContent.delegate = self
+                        let nav = UINavigationController(rootViewController: popoverContent)
+                        nav.modalPresentationStyle = UIModalPresentationStyle.popover
+                        let popover = nav.popoverPresentationController
+                        popoverContent.preferredContentSize = CGSize(width: self.view.bounds.width*0.8,height: self.view.bounds.height*0.85)
+                        popover!.delegate = self
+                        popover!.sourceView = self.view
+                        popover?.backgroundColor = UIColor.white
+                        popover?.permittedArrowDirections = UIPopoverArrowDirection(rawValue: 0)
+                        popover!.sourceRect = CGRectMake(self.view.bounds.midX, self.view.bounds.midY,0,0)
+                        self.present(nav, animated: true, completion: nil)
+        print("HELP3")
     }
     
     

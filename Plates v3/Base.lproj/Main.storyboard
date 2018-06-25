@@ -1474,7 +1474,7 @@
         <!--Collars-->
         <scene sceneID="7dF-rK-cMb">
             <objects>
-                <tableViewController storyboardIdentifier="CollarAdvancedSettings" id="TK2-Ph-ur5" customClass="CollarQuickSelectTableView" customModule="Plates_v3" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CollarAdvancedSettings" id="TK2-Ph-ur5" customClass="CollarAdvancedSettings" customModule="Plates_v3" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="KKn-fb-ru3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

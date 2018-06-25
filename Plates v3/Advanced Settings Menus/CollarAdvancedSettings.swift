@@ -1,100 +1,10 @@
-////
-////  BarbellAdvancedSettings.swift
-////  Bar - Barbell Plate Weight Calculator
-////
-////  Created by Nick Talavera on 4/29/16.
-////  Copyright © 2016 Nick Talavera. All rights reserved.
-////
-//    import UIKit
-//fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-//  switch (lhs, rhs) {
-//  case let (l?, r?):
-//    return l < r
-//  case (nil, _?):
-//    return true
-//  default:
-//    return false
-//  }
-//}
 //
-//fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-//  switch (lhs, rhs) {
-//  case let (l?, r?):
-//    return l > r
-//  default:
-//    return rhs < lhs
-//  }
-//}
+//  collarAdvancedSettings.swift
+//  Bar - collar Plate Weight Calculator
 //
+//  Created by Nick Talavera on 6/20/16.
+//  Copyright © 2016 Nick Talavera. All rights reserved.
 //
-//class CollarAdvancedSettings: AdvancedSettingViewController, TextFieldDelegate  {
-//    let textCellIdentifier = "TextCell"
-//    weak var delegate: MainDelegate?
-//    var sortedAlready = false
-//    var currentCollarNames: [String] = [String]()
-//    var currentCollarUnits: [String] = [String]()
-//    var currentCollarValues: [Double] = [Double]()
-//    var needToUploadChanges = false
-//    var cellHeight: CGFloat = 88
-//
-//    @IBOutlet weak var navigationBar: UINavigationItem!
-//    @IBOutlet weak var doneButton: UIBarButtonItem!
-//    @IBOutlet weak var addButton: UIBarButtonItem!
-//    var addLabel = Label()
-//    func segmentedControlSwitched(_ index: Int, tag: Int) {
-//        self.view.endEditing(true)
-//        let row = tag
-//        let cell = tableView(self.tableView, cellForRowAt: IndexPath(row: row, section: 0)) as! CollarAdvancedSettingTableViewCell
-//        var placeholderText =  cell.valueTextField.text
-//        placeholderText = PublicClasses.removeUnitsFromText(placeholderText!)
-//        if index == 0 {
-//            currentCollarUnits[row] = "Kg"
-//            currentCollarValues[row] = PublicClasses.numberFormatterDecimal.number(from: placeholderText!)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.kgDecimalPlaces)
-//            cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: currentCollarValues[row], unit: MassFormatter.Unit.kilogram)
-//        }
-//        else if index == 1 {
-//            currentCollarUnits[row] = "lbs"
-//            currentCollarValues[row] = PublicClasses.numberFormatterDecimal.number(from: placeholderText!)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.lbDecimalPlaces)
-//            cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: currentCollarValues[row], unit: MassFormatter.Unit.pound)
-//        }
-//        GlobalVariables.sharedInstance.collarsSetUnits[currentCollarNames[row]] = currentCollarUnits[row]
-//        updateGlobals()
-//        self.tableView.reloadData()
-//    }
-//
-////
-////    @IBAction func doneButtonAction(_ sender: AnyObject) {
-////        self.presentingViewController!.dismiss(animated: true, completion: nil)
-////    }
-////
-////    func findNextName() -> String {
-////        var minNum = 1
-////        var numArray: [Int] = [Int]()
-////        if currentCollarNames.count > 0 {
-////            for i in 0...currentCollarNames.count-1 {
-////                let collarNameToSplit: String = currentCollarNames[i]
-////                let collarSubstring = NSLocalizedString("Collar", comment: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-////                if collarNameToSplit.count >= collarSubstring.count {
-////                    let substringTest = "\(collarNameToSplit.substring(with: collarSubstring.startIndex..<collarSubstring.endIndex))".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-////                    let index = currentCollarNames[i].replacingOccurrences(of: collarSubstring, with: "", options: NSString.CompareOptions.literal, range: nil).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-////                    if substringTest == collarSubstring && Int(index) != nil {
-////                        numArray += [(PublicClasses.numberFormatterDecimal.number(from: index)?.intValue)!]
-////                    }
-////                }
-////            }
-////        }
-////
-////        if numArray.count == 0 {
-////            numArray = [0]
-////        }
-////        for i in 1...numArray.max()!+1 {
-////            if numArray.contains(i) == false {
-////                minNum = i
-////                break
-////            }
-////        }
-////        return "\(NSLocalizedString("Collar", comment: "")) \(minNum)"
-////    }
 ////
 ////    @IBAction func addButtonAction(_ sender: AnyObject) {
 ////        addButtonRunner()
@@ -575,3 +485,10 @@
 ////    }
 ////
 //}
+            self.updateGlobals()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            self.tableView.reloadData()
+        }
+        return [delete]
+    }
+}

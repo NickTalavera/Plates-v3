@@ -1,7 +1,10 @@
-Can't drag barbell advanced view on text field
-Nav button looks off
-Barbell names aren't fixed
-No Core Data
+Glitches:
 Go button not functional
+Typing doesnt set weight
 Quick switching of between same units results in switch of units
-delete current barbell
+Barbell fill in blanks
+
+Nice to add:
+Drag barbells/collars
+Core Data
+Prevent no barbell as typed option
