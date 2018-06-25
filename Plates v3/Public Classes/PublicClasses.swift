@@ -17,7 +17,9 @@ class PublicClasses {
     weak var delegate:MainDelegate?
     
     class func switchUnitsTo(_ unit: UnitOfWeight.unitType, weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton?, platesLabel: UITextView, platesView: UIView?, GoButton: UIButton?, overwriteValues: Bool? = true) {
+        if unit != app.profile.chosenUnit.unit {
         app.switchUnits()
+        }
         self.numberFormatterDecimal.maximumFractionDigits = app.profile.chosenUnit.decimalPlaces
         self.massFormatter.numberFormatter = self.numberFormatterDecimal
         app.status.convertedUnitsOn = false
@@ -79,29 +81,16 @@ class PublicClasses {
     
     
     class func updatePage(_ weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, platesLabel: UITextView) {
-        //        UIView.animate(withDuration: GlobalVariables.sharedInstance.platesFadeDuration, delay: 0.0,
-        //                       options: [],
-        //                       animations: {
+                UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0,
+                               options: [],
+                               animations: {
         weightEntryTextField.alpha = 1
-        //        }, completion: nil)
+                }, completion: nil)
         app.updateWeightToLift()
         weightEntryTextField.text! = app.calc.weightToLiftString
         if app.status.alwaysSort == true {
             PublicClasses.drawPlates(platesView)
         }
-        //    }
-        //
-        //        class func platesInUseFinder(_ labelOutputTextOutput: [String: Int]) {
-        //            if GlobalVariables.sharedInstance.keyPadUsedNow == true && GlobalVariables.sharedInstance.errorState == false {
-        //                if labelOutputTextOutput.count > 0 {
-        //                    let keys = Array(labelOutputTextOutput.keys).sorted()
-        //                    for i in 0...keys.count-1 {
-        //                        for _ in 1...labelOutputTextOutput[keys[i]]! {
-        //                            app.profile.currentPlateSet.listInUse += [keys[i]]
-        //                        }
-        //                    }
-        //                }
-        //            }
     }
     
     

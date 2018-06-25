@@ -1,5 +1,5 @@
 //
-//  InventoryQuickSelectTableViewCell.swift
+//  CollarsQuickSelectTableViewCell.swift
 //  Bar - Barbell Plate Weight Calculator
 //
 //  Created by Nick Talavera on 4/28/16.
@@ -8,19 +8,21 @@
 
 import UIKit
 
-class InventoryQuickSelectTableViewCell: UITableViewCell {
+class CollarsQuickSelectTableViewCell: UITableViewCell {
+    
     
     @IBOutlet weak var leftLabel: UILabel!
-    
-//    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+
+
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        leftLabel.font = GlobalVariables.sharedInstance.fontStandard
-//        detailLabel.font = GlobalVariables.sharedInstance.fontStandard
+        leftLabel.font = app.visuals.fontStandard
+        detailLabel.font = app.visuals.fontStandard
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
 }
-

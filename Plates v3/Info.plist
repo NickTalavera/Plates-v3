@@ -5,8 +5,10 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Stampbor-Lines.otf</string>
+		<string>Stampbor-Rounded.otf</string>
 		<string>Stampbor-Grunge.otf</string>
 		<string>Stampbor-Dotted.otf</string>
+		<string>Exo2-ExtraBold.ttf</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>

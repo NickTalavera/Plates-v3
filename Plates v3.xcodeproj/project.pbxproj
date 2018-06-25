@@ -27,19 +27,10 @@
 		C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */; };
 		C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */; };
 		C307669920DF7DE1001E0281 /* InventoryAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */; };
-		C343D58820DF7B37000CBC83 /* it.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D54E20DF7B2C000CBC83 /* it.lproj */; };
-		C343D58A20DF7B37000CBC83 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = C343D55020DF7B2C000CBC83 /* Main.strings */; };
 		C343D59320DF7B37000CBC83 /* Exo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */; };
 		C343D59520DF7B37000CBC83 /* Stampbor-Grunge.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */; };
-		C343D59620DF7B37000CBC83 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D55E20DF7B32000CBC83 /* Base.lproj */; };
 		C343D59720DF7B37000CBC83 /* Stampbor-Lines.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */; };
-		C343D59A20DF7B37000CBC83 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56220DF7B32000CBC83 /* zh-Hans.lproj */; };
-		C343D59E20DF7B37000CBC83 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56620DF7B32000CBC83 /* en.lproj */; };
-		C343D5A520DF7B37000CBC83 /* es.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D56D20DF7B33000CBC83 /* es.lproj */; };
 		C343D5AA20DF7B37000CBC83 /* Stampbor-Dotted.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */; };
-		C343D5B120DF7B37000CBC83 /* ko.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D57920DF7B35000CBC83 /* ko.lproj */; };
-		C343D5B520DF7B37000CBC83 /* ru.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D57D20DF7B36000CBC83 /* ru.lproj */; };
-		C343D5BB20DF7B37000CBC83 /* pt-BR.lproj in Resources */ = {isa = PBXBuildFile; fileRef = C343D58320DF7B37000CBC83 /* pt-BR.lproj */; };
 		C343D5BC20DF7B37000CBC83 /* Stampbor-Rounded.otf in Resources */ = {isa = PBXBuildFile; fileRef = C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */; };
 		C37A1D2120E0CC5B00D20279 /* AdvancedSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56320DF7B32000CBC83 /* AdvancedSettingTableViewCell.swift */; };
 		C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */; };
@@ -50,6 +41,10 @@
 		C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */; };
 		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
 		C3C3EA6520E0CD4300D8434F /* advancedSettingTableViewCellAddSubtract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */; };
+		C3C3EA6720E0EC4E00D8434F /* InventoryQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */; };
+		C3C3EA6820E0EC4E00D8434F /* InventoryQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */; };
+		C3C3EA6920E0EC6B00D8434F /* CollarQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */; };
+		C3C3EA6A20E0EC6B00D8434F /* CollarsQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */; };
 		C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; };
 		C3CC030E20DE2B3500A113DF /* JVFloatLabeledText.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC031020DE3C3500A113DF /* PublicClassesText.swift */; };
@@ -110,9 +105,7 @@
 		7FC4575FB606BF99291C0E25 /* Pods-Plates v3UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3UITests/Pods-Plates v3UITests.release.xcconfig"; sourceTree = "<group>"; };
 		BDB93434AA8D72ED93F06A23 /* Pods-Plates v3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plates v3.release.xcconfig"; path = "Pods/Target Support Files/Pods-Plates v3/Pods-Plates v3.release.xcconfig"; sourceTree = "<group>"; };
 		C343D54D20DF7B2C000CBC83 /* GymAdvancedSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymAdvancedSettingTableViewCell.swift; sourceTree = "<group>"; };
-		C343D54E20DF7B2C000CBC83 /* it.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = it.lproj; sourceTree = "<group>"; };
 		C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryQuickSelectTableViewCell.swift; sourceTree = "<group>"; };
-		C343D55020DF7B2C000CBC83 /* Main.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
 		C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellAdvancedSettings.swift; sourceTree = "<group>"; };
 		C343D55320DF7B2D000CBC83 /* IAPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
 		C343D55620DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Bar___Barbell_Plate_Weight_Calculator.xcdatamodel"; sourceTree = "<group>"; };
@@ -120,17 +113,13 @@
 		C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryQuickSelectTableView.swift; sourceTree = "<group>"; };
 		C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Exo2-ExtraBold.ttf"; sourceTree = "<group>"; };
 		C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Grunge.otf"; sourceTree = "<group>"; };
-		C343D55E20DF7B32000CBC83 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Lines.otf"; sourceTree = "<group>"; };
 		C343D56020DF7B32000CBC83 /* InventoryAdvancedSettingsBackup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAdvancedSettingsBackup.swift; sourceTree = "<group>"; };
 		C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarQuickSelectTableView.swift; sourceTree = "<group>"; };
-		C343D56220DF7B32000CBC83 /* zh-Hans.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
 		C343D56320DF7B32000CBC83 /* AdvancedSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedSettingTableViewCell.swift; sourceTree = "<group>"; };
 		C343D56420DF7B32000CBC83 /* advancedSettingTableViewCellAddSubtract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = advancedSettingTableViewCellAddSubtract.swift; sourceTree = "<group>"; };
-		C343D56620DF7B32000CBC83 /* en.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = en.lproj; sourceTree = "<group>"; };
 		C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellQuickSelectTableViewCell.swift; sourceTree = "<group>"; };
 		C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsQuickSelectTableView.swift; sourceTree = "<group>"; };
-		C343D56D20DF7B33000CBC83 /* es.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = es.lproj; sourceTree = "<group>"; };
 		C343D57020DF7B34000CBC83 /* GymCreatorSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GymCreatorSetting.swift; sourceTree = "<group>"; };
 		C343D57120DF7B34000CBC83 /* CollarCreatorSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarCreatorSetting.swift; sourceTree = "<group>"; };
 		C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Dotted.otf"; sourceTree = "<group>"; };
@@ -138,15 +127,12 @@
 		C343D57620DF7B35000CBC83 /* Device.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InventoryAdvancedSettings.swift; sourceTree = "<group>"; };
 		C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarAdvancedSettings.swift; sourceTree = "<group>"; };
-		C343D57920DF7B35000CBC83 /* ko.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ko.lproj; sourceTree = "<group>"; };
 		C343D57A20DF7B36000CBC83 /* RemoveButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoveButtonTableViewCell.swift; sourceTree = "<group>"; };
 		C343D57B20DF7B36000CBC83 /* BarbellCreatorSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellCreatorSetting.swift; sourceTree = "<group>"; };
 		C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollarsQuickSelectTableViewCell.swift; sourceTree = "<group>"; };
-		C343D57D20DF7B36000CBC83 /* ru.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ru.lproj; sourceTree = "<group>"; };
 		C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarbellQuickSelectTableView.swift; sourceTree = "<group>"; };
 		C343D57F20DF7B36000CBC83 /* LabelWithAdaptiveTextHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelWithAdaptiveTextHeight.swift; sourceTree = "<group>"; };
 		C343D58220DF7B37000CBC83 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
-		C343D58320DF7B37000CBC83 /* pt-BR.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "pt-BR.lproj"; sourceTree = "<group>"; };
 		C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Rounded.otf"; sourceTree = "<group>"; };
 		C39ABD1C20DDFBCF00DA5BC8 /* Plates v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plates v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -237,6 +223,10 @@
 		C307669620DF7D7B001E0281 /* Quick Select Menus */ = {
 			isa = PBXGroup;
 			children = (
+				C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */,
+				C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */,
+				C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */,
+				C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */,
 				C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */,
 				C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */,
 				C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */,
@@ -250,30 +240,15 @@
 				C343D55520DF7B2D000CBC83 /* Bar___Barbell_Plate_Weight_Calculator.xcdatamodeld */,
 				C343D57420DF7B34000CBC83 /* AccordionHeaderView.swift */,
 				C343D57B20DF7B36000CBC83 /* BarbellCreatorSetting.swift */,
-				C343D55E20DF7B32000CBC83 /* Base.lproj */,
 				C343D57120DF7B34000CBC83 /* CollarCreatorSetting.swift */,
-				C343D56120DF7B32000CBC83 /* CollarQuickSelectTableView.swift */,
-				C343D57C20DF7B36000CBC83 /* CollarsQuickSelectTableViewCell.swift */,
 				C343D57620DF7B35000CBC83 /* Device.swift */,
 				C343D58220DF7B37000CBC83 /* DoneTableViewCell.swift */,
-				C343D56620DF7B32000CBC83 /* en.lproj */,
-				C343D56D20DF7B33000CBC83 /* es.lproj */,
-				C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */,
 				C343D54D20DF7B2C000CBC83 /* GymAdvancedSettingTableViewCell.swift */,
 				C343D57020DF7B34000CBC83 /* GymCreatorSetting.swift */,
 				C343D55320DF7B2D000CBC83 /* IAPHelper.swift */,
 				C343D56020DF7B32000CBC83 /* InventoryAdvancedSettingsBackup.swift */,
-				C343D55A20DF7B2D000CBC83 /* InventoryQuickSelectTableView.swift */,
-				C343D54F20DF7B2C000CBC83 /* InventoryQuickSelectTableViewCell.swift */,
-				C343D54E20DF7B2C000CBC83 /* it.lproj */,
-				C343D57920DF7B35000CBC83 /* ko.lproj */,
 				C343D57F20DF7B36000CBC83 /* LabelWithAdaptiveTextHeight.swift */,
-				C343D58320DF7B37000CBC83 /* pt-BR.lproj */,
 				C343D57A20DF7B36000CBC83 /* RemoveButtonTableViewCell.swift */,
-				C343D57D20DF7B36000CBC83 /* ru.lproj */,
-				C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */,
-				C343D56220DF7B32000CBC83 /* zh-Hans.lproj */,
-				C343D55020DF7B2C000CBC83 /* Main.strings */,
 			);
 			path = Imports;
 			sourceTree = "<group>";
@@ -281,6 +256,8 @@
 		C37A1D2020E0CC3400D20279 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C343D55B20DF7B2D000CBC83 /* Exo2-ExtraBold.ttf */,
+				C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */,
 				C343D57220DF7B34000CBC83 /* Stampbor-Dotted.otf */,
 				C343D55D20DF7B31000CBC83 /* Stampbor-Grunge.otf */,
 				C343D55F20DF7B32000CBC83 /* Stampbor-Lines.otf */,
@@ -517,24 +494,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C343D5A520DF7B37000CBC83 /* es.lproj in Resources */,
 				C39ABD2B20DDFBD100DA5BC8 /* Assets.xcassets in Resources */,
-				C343D59A20DF7B37000CBC83 /* zh-Hans.lproj in Resources */,
 				C343D5AA20DF7B37000CBC83 /* Stampbor-Dotted.otf in Resources */,
-				C343D5BB20DF7B37000CBC83 /* pt-BR.lproj in Resources */,
-				C343D5B520DF7B37000CBC83 /* ru.lproj in Resources */,
 				C343D59720DF7B37000CBC83 /* Stampbor-Lines.otf in Resources */,
-				C343D59620DF7B37000CBC83 /* Base.lproj in Resources */,
 				C343D59520DF7B37000CBC83 /* Stampbor-Grunge.otf in Resources */,
 				C307668420DF7CA3001E0281 /* LaunchScreen.storyboard in Resources */,
-				C343D58A20DF7B37000CBC83 /* Main.strings in Resources */,
 				C307668320DF7CA0001E0281 /* Info.plist in Resources */,
 				C3E0901F20E0914000407D8E /* Notes in Resources */,
 				C343D5BC20DF7B37000CBC83 /* Stampbor-Rounded.otf in Resources */,
 				C343D59320DF7B37000CBC83 /* Exo2-ExtraBold.ttf in Resources */,
-				C343D58820DF7B37000CBC83 /* it.lproj in Resources */,
-				C343D59E20DF7B37000CBC83 /* en.lproj in Resources */,
-				C343D5B120DF7B37000CBC83 /* ko.lproj in Resources */,
 				C39ABD2920DDFBCF00DA5BC8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,8 +607,11 @@
 			files = (
 				C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */,
 				C3C3EA6520E0CD4300D8434F /* advancedSettingTableViewCellAddSubtract.swift in Sources */,
+				C3C3EA6A20E0EC6B00D8434F /* CollarsQuickSelectTableViewCell.swift in Sources */,
 				C307668B20DF7CC6001E0281 /* KeyPadViewsDidWill.swift in Sources */,
 				C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */,
+				C3C3EA6920E0EC6B00D8434F /* CollarQuickSelectTableView.swift in Sources */,
+				C3C3EA6820E0EC4E00D8434F /* InventoryQuickSelectTableView.swift in Sources */,
 				C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */,
 				C3E0901D20E08DD300407D8E /* DataManagement.swift in Sources */,
 				C307668520DF7CB3001E0281 /* DataAccess.swift in Sources */,
@@ -655,6 +626,7 @@
 				C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */,
 				C307668C20DF7CC6001E0281 /* KeyPadKeyboard.swift in Sources */,
 				C37A1D2120E0CC5B00D20279 /* AdvancedSettingTableViewCell.swift in Sources */,
+				C3C3EA6720E0EC4E00D8434F /* InventoryQuickSelectTableViewCell.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
 				C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */,
 				C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */,

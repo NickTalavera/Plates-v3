@@ -52,27 +52,27 @@ extension KeyPadViewController {
     @IBAction func InventoryButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "InventoryPopover") as! InventoryQuickSelectTableView
-        //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        vc.delegate = self
-        //        vc.popoverPresentationController?.sourceView = gymButtonAnchor
-        //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
-        //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
-        //        self.present(vc, animated: true, completion:nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "InventoryPopover") as! InventoryQuickSelectTableView
+                vc.modalPresentationStyle = UIModalPresentationStyle.popover
+                vc.delegate = self
+                vc.popoverPresentationController?.sourceView = gymButtonAnchor
+                vc.popoverPresentationController!.delegate = self
+                vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
+                vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
+                self.present(vc, animated: true, completion:nil)
     }
     
     @IBAction func CollarsButtonAction(_ sender: AnyObject) {
         self.view.endEditing(true)
         let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        //        let vc = storyboard.instantiateViewController(withIdentifier: "CollarsPopover") as! CollarQuickSelectTableView
-        //        vc.modalPresentationStyle = UIModalPresentationStyle.popover
-        //        vc.delegate = self
-        //        vc.popoverPresentationController?.sourceView = collarButtonAnchor
-        //        vc.popoverPresentationController!.delegate = self
-        //        vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
-        //        vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
-        //        self.present(vc, animated: true, completion:nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "CollarsPopover") as! CollarQuickSelectTableView
+                vc.modalPresentationStyle = UIModalPresentationStyle.popover
+                vc.delegate = self
+                vc.popoverPresentationController?.sourceView = collarButtonAnchor
+                vc.popoverPresentationController!.delegate = self
+                vc.popoverPresentationController?.backgroundColor = app.visuals.secondaryColor
+                vc.popoverPresentationController!.permittedArrowDirections = UIPopoverArrowDirection.down
+                self.present(vc, animated: true, completion:nil)
     }
     
     @IBAction func BarbellButtonAction(_ sender: AnyObject) {

@@ -1,6 +1,6 @@
 //
-//  BarbellQuickSelectTableView.swift
-//  Bar - Barbell Plate Weight Calculator
+//  collarQuickSelectTableView.swift
+//  Bar - collar Plate Weight Calculator
 //
 //  Created by Nick Talavera on 4/28/16.
 //  Copyright © 2016 Nick Talavera. All rights reserved.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BarbellQuickSelectTableView: UITableViewController {
+class CollarQuickSelectTableView: UITableViewController {
     let textCellIdentifier = "TextCell"
     var currentSelectedIndexPath = IndexPath()
     weak var delegate: MainDelegate?
-    var currentBarbellNames: [String] = [String]()
-    var currentBarbellValues: [Double] = [Double]()
+    var currentcollarNames: [String] = [String]()
+    var currentcollarValues: [Double] = [Double]()
     var maxWidth: CGFloat = 70
     
     override func viewDidLoad() {
@@ -30,16 +30,16 @@ class BarbellQuickSelectTableView: UITableViewController {
         self.view.layoutSubviews()
         var detailTextLabel = ""
         var textLabel = ""
-        if app.profile.barbellCollection.list.count > 0 {
-            for row in 0...app.profile.barbellCollection.list.count-1{
-                textLabel = NSLocalizedString(app.profile.barbellCollection.list[row].name, comment: "")
-                detailTextLabel = PublicClasses.massFormatter.string(fromValue: app.profile.barbellCollection.list[row].weight, unit: UnitOfWeight(unit: app.profile.barbellCollection.list[row].unitType).formatter)
+        if app.profile.collarCollection.list.count > 0 {
+            for row in 0...app.profile.collarCollection.list.count-1{
+                textLabel = NSLocalizedString(app.profile.collarCollection.list[row].name, comment: "")
+                detailTextLabel = PublicClasses.massFormatter.string(fromValue: app.profile.collarCollection.list[row].weight, unit: UnitOfWeight(unit: app.profile.collarCollection.list[row].unitType).formatter)
                 let stringBoundingBoxTextLabel: CGSize = (textLabel as NSString).size(withAttributes: [NSAttributedStringKey.font: app.visuals.fontStandard])
                 let stringBoundingBoxDetailTextLabel: CGSize = (detailTextLabel as NSString).size(withAttributes: [NSAttributedStringKey.font: app.visuals.fontStandard])
                 maxWidth = max(stringBoundingBoxTextLabel.width + stringBoundingBoxDetailTextLabel.width + 60, maxWidth)
             }
         }
-        let height = CGFloat(app.profile.barbellCollection.list.count)*44
+        let height = CGFloat(app.profile.collarCollection.list.count)*44
         self.preferredContentSize = CGSize(width: maxWidth, height: height)
     }
     
@@ -53,16 +53,16 @@ class BarbellQuickSelectTableView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return app.profile.barbellCollection.list.count
+        return app.profile.collarCollection.list.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath) as! BarbellQuickSelectTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath as IndexPath) as! CollarsQuickSelectTableViewCell
         let row = (indexPath as NSIndexPath).row
-        cell.leftLabel?.text = NSLocalizedString(app.profile.barbellCollection.list[row].name, comment: "")
+        cell.leftLabel?.text = NSLocalizedString(app.profile.collarCollection.list[row].name, comment: "")
         cell.detailLabel!.text = PublicClasses.massFormatter.string(fromValue:
-            app.profile.barbellCollection.list[row].weight, unit:
-            UnitOfWeight(unit: app.profile.barbellCollection.list[row].unitType).formatter)
+            app.profile.collarCollection.list[row].weight, unit:
+            UnitOfWeight(unit: app.profile.collarCollection.list[row].unitType).formatter)
         cell.leftLabel!.font = app.visuals.fontStandard
         cell.detailLabel!.font = app.visuals.fontStandard
         cell.detailLabel!.textColor = app.visuals.placeholderColor
@@ -75,7 +75,7 @@ class BarbellQuickSelectTableView: UITableViewController {
         cell.leftLabel?.minimumScaleFactor = 0.01
         cell.leftLabel!.adjustsFontSizeToFitWidth = true
         cell.leftLabel!.allowsDefaultTighteningForTruncation = true
-        if app.profile.currentBarbell.name == app.profile.barbellCollection.list.map({$0.name})[row] {
+        if app.profile.currentCollar.name == app.profile.collarCollection.list.map({$0.name})[row] {
             cell.contentView.backgroundColor = app.visuals.secondaryColor
             currentSelectedIndexPath = indexPath
         }
@@ -101,11 +101,11 @@ class BarbellQuickSelectTableView: UITableViewController {
         //        var detailTextLabel = ""
         //
         //        var textLabel = ""
-        //        if currentBarbellNames.count > 0 {
-        //            for row in 0...currentBarbellNames.count-1{
+        //        if currentcollarNames.count > 0 {
+        //            for row in 0...currentcollarNames.count-1{
         //                let add: CGFloat = 40
-        //                textLabel = NSLocalizedString(currentBarbellNames[row], comment: "")
-        //                //                detailTextLabel = PublicClasses.massFormatter.unitString(fromValue: currentBarbellValues[row], unit: GlobalVariables.sharedInstance.unitsFormatter)
+        //                textLabel = NSLocalizedString(currentcollarNames[row], comment: "")
+        //                //                detailTextLabel = PublicClasses.massFormatter.unitString(fromValue: currentcollarValues[row], unit: GlobalVariables.sharedInstance.unitsFormatter)
         //                //                let stringBoundingBoxTextLabel: CGSize = ((textLabel as NSString)).size(withAttributes: [NSAttributedStringKey.font: GlobalVariables.sharedInstance.fontStandard])
         //                //                let stringBoundingBoxDetailTextLabel: CGSize = ((detailTextLabel as NSString)).size(withAttributes: [NSAttributedStringKey.font: GlobalVariables.sharedInstance.fontStandard])
         //                //                maxWidth = max(stringBoundingBoxTextLabel.width + stringBoundingBoxDetailTextLabel.width + add, maxWidth)
@@ -120,7 +120,8 @@ class BarbellQuickSelectTableView: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let row = (indexPath as NSIndexPath).row
-        app.profile.currentBarbell = app.profile.barbellCollection.list[row]
+        app.profile.currentCollar = app.profile.collarCollection.list[row]
+        app.updateWeightToLift()
         tableView.cellForRow(at: indexPath as IndexPath)?.contentView.backgroundColor = app.visuals.secondaryColor
         tableView.cellForRow(at: currentSelectedIndexPath as IndexPath)?.contentView.backgroundColor = UIColor.clear
         self.delegate?.updatePageProtocol()
