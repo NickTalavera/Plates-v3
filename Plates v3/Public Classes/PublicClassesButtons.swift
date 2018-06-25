@@ -168,7 +168,8 @@ extension PublicClasses {
         if app.profile.chosenUnit.unit == UnitOfWeight.unitType.lb {
             buttonSpot += 9
         }
-        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+        weightEntryTextField.isHighlighted = true
+        weightEntryTextField.resignFirstResponder()
         GoButton.isEnabled = true
         if weightEntryTextField.text!.count == 0 && app.calc.currentPlatesInUse.countPlates() == 0 {
             platesLabel.alpha = 0
@@ -182,11 +183,6 @@ extension PublicClasses {
                         platesView.alpha = 1
                         weightEntryTextField.alpha = 1
         }, completion: nil)
-        var placeholderText = weightEntryTextField.text
-        if (placeholderText?.count)! > 0 {
-            placeholderText = PublicClasses.removeUnitsFromText(placeholderText!)
-            weightEntryTextField.text = placeholderText
-        }
         app.status.keyPadUsedNow = true
         if app.calc.currentPlatesInUse.widthOfPlates + app.profile.currentPlateSet.list[buttonSpot].getDimensions().width <= 406 {
         app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)
@@ -197,11 +193,9 @@ extension PublicClasses {
         PublicClasses.drawPlates(platesView)
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false
-        
         PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
-        weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue:  app.calc.weightToLift, unit: app.profile.chosenUnit.formatter)
-        weightEntryTextField.isHighlighted = true
-        weightEntryTextField.resignFirstResponder()
+        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+        weightEntryTextField.text = app.calc.weightToLiftString
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
             GoButton.setTitle(NSLocalizedString("Optimize", comment: ""), for: .normal)
         }, completion: nil)

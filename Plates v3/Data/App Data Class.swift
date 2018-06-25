@@ -25,10 +25,10 @@ struct UnitOfWeight {
     }
     var decimalPlaces: Int {
         if unit == unitType.lb {
-            return 2
+            return 1
         }
         else {
-            return 2
+            return 1
         }
     }
     var opposite: unitType {
@@ -428,7 +428,15 @@ class AppData {
         }
         
         func updateWeightToLift(){
-            self.calc.weightToLift = self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum()
+            self.calc.weightToLift = (self.sumOfCurrentPlatesInUse() + self.currentBarbellAndCollarSum())
+            let testPt1 = self.calc.currentPlatesInUse.list.map({String($0.weight).components(separatedBy: PublicClasses.numberFormatterDecimal.decimalSeparator)})
+            let testPt2 = testPt1.filter({$0.count == 2  && $0[1] != "0"}).map({$0[1].count}).max()
+            if testPt2! < 2 {
+                self.calc.weightToLift = self.calc.weightToLift.rounded(toPlaces: self.profile.chosenUnit.decimalPlaces)
+            }
+            else {
+                self.calc.weightToLift = self.calc.weightToLift.rounded(toPlaces: 2)
+            }
             self.calc.weightToLiftString = PublicClasses.massFormatter.string(fromValue: self.calc.weightToLift, unit: self.profile.chosenUnit.formatter)
             self.calc.weightToLiftNoUnitsString = PublicClasses.numberFormatterDecimal.string(from: self.calc.weightToLift as NSNumber)!
         }
