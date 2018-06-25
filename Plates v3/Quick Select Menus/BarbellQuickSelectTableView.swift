@@ -12,10 +12,10 @@ class BarbellQuickSelectTableView: UITableViewController {
     let textCellIdentifier = "TextCell"
     var currentSelectedIndexPath = IndexPath()
     weak var delegate: MainDelegate?
-    var sortedAlready = false
     var currentBarbellNames: [String] = [String]()
     var currentBarbellValues: [Double] = [Double]()
     var maxWidth: CGFloat = 70
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -117,6 +117,7 @@ class BarbellQuickSelectTableView: UITableViewController {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         let row = (indexPath as NSIndexPath).row
         app.profile.currentBarbell = app.profile.barbellCollection.list[row]
+        app.profile.chosenUnit.unit = app.profile.barbellCollection.list[row].unitType
         app.updateWeightToLift()
         tableView.cellForRow(at: indexPath as IndexPath)?.contentView.backgroundColor = app.visuals.secondaryColor
         tableView.cellForRow(at: currentSelectedIndexPath as IndexPath)?.contentView.backgroundColor = UIColor.clear

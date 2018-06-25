@@ -12,17 +12,26 @@ import JVFloatLabeledText
 import UIKit
 
 extension PublicClasses {
+    class var currentLocaleUnit: UnitOfWeight {
+        let isMetric: Bool = Locale.current.usesMetricSystem
+        if isMetric == true {
+            return(UnitOfWeight(unit: UnitOfWeight.unitType.kg))
+        }
+        else {
+            return(UnitOfWeight(unit: UnitOfWeight.unitType.lb))
+        }
+    }
+    
     class var numberFormatterDecimal: NumberFormatter {
         let numberFormatter: NumberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.decimal
         numberFormatter.maximumFractionDigits = app.profile.chosenUnit.decimalPlaces
         numberFormatter.maximumIntegerDigits = 4
         numberFormatter.minimumFractionDigits = 0
-        numberFormatter.groupingSeparator = ""
-        
+        numberFormatter.groupingSeparator = ""        
         return numberFormatter
     }
-//
+
     class var massFormatter: MassFormatter {
         let massFormatter: MassFormatter = MassFormatter()
         massFormatter.unitStyle = .medium

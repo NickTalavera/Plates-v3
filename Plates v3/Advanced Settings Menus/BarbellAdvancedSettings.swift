@@ -7,25 +7,6 @@
 //
 
 import UIKit
-//fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-//    switch (lhs, rhs) {
-//    case let (l?, r?):
-//        return l < r
-//    case (nil, _?):
-//        return true
-//    default:
-//        return false
-//    }
-//}
-//
-//fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
-//    switch (lhs, rhs) {
-//    case let (l?, r?):
-//        return l > r
-//    default:
-//        return rhs < lhs
-//    }
-//}
 
 
 class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
@@ -35,23 +16,15 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var addButton: UIBarButtonItem!
     let textCellIdentifier = "TextCell"
     weak var delegate: MainDelegate?
-    var needToUploadChanges = false
-//    var currentBarNames: [String] = [String]()
-//    var currentBarUnits: [String] = [String]()
-//    var currentBarValues: [Double] = [Double]()
+    var madeChanges = false
     var addLabel = UILabel()
+    var currentBarbellIndex = Int()
     
     @IBAction func addButtonAction(_ sender: AnyObject) {
         if app.profile.barbellCollection.list.count < 8 {
-            //            currentBarNames += [findNextName()]
-            //            currentBarValues += [0]
-            //            let isMetric: Bool = Locale.current.usesMetricSystem
-            //            if isMetric == true {
-            //                currentBarUnits += ["Kg"]
-            //            }
-            //            else if isMetric == false {
-            //                currentBarUnits += ["lbs"]
-            //            }
+            let newBarbell = AppData.Barbell(name: findNextName(), unitType:
+                PublicClasses.currentLocaleUnit.unit, weight: 0)
+            app.profile.barbellCollection.list.append(newBarbell)
             self.tableView.reloadData()
         }
         updateGlobals()
@@ -74,109 +47,14 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         self.presentingViewController!.dismiss(animated: true, completion: nil)
     }
     
-    
-    func findNextName() -> String {
-        var minNum = 1
-        var numArray: [Int] = [Int]()
-        if app.profile.barbellCollection.list.count > 0 {
-            for i in 0...app.profile.barbellCollection.list.count-1 {
-                let barbellNameToSplit: String = app.profile.barbellCollection.list[i].name
-                let barbellSubstring = NSLocalizedString("Barbell", comment: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-                if barbellNameToSplit.count >= barbellSubstring.count {
-                    let substringTest = "\(barbellNameToSplit.substring(with: barbellSubstring.startIndex..<barbellSubstring.endIndex))".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-//                    let index = currentBarNames[i].replacingOccurrences(of: barbellSubstring, with: "", options: NSString.CompareOptions.literal, range: nil).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
-//                    if substringTest == barbellSubstring && Int(index) != nil {
-//                        numArray += [(PublicClasses.numberFormatterDecimal.number(from: index)?.intValue)!]
-//                    }
-                }
-            }
-        }
-        if numArray.count == 0 {
-            numArray = [0]
-        }
-        for i in 1...numArray.max()!+1 {
-            if numArray.contains(i) == false {
-                minNum = i
-                break
-            }
-        }
-        return "\(NSLocalizedString("Barbell", comment: "")) \(minNum)"
-    }
-    
-   
-    
-    
-    func updateGlobals() {
-        //        needToUploadChanges = true
-        //        let oldBarName = app.profile.currentBarName
-        //        let oldBarbellWeight = app.profile.currentBarWeight
-        //
-        //        var newBarbellSet: [String: Double] = [String: Double]()
-        //        var newBarbellSetUnits: [String: String] = [String: String]()
-        //        var newBarbellSetValue: [String: Double] = [String: Double]()
-        //        if currentBarNames.count > 0 {
-        //            for i in 0...currentBarNames.count-1 {
-        //                newBarbellSet[currentBarNames[i]] = currentBarValues[i]
-        //                newBarbellSetUnits[currentBarNames[i]] = currentBarUnits[i]
-        //            }
-        //        }
-        //        newBarbellSet["No barbell"] = 0
-        //        newBarbellSetUnits["No barbell"] = "lbs"
-        //        newBarbellSetValue["No barbell"] = 0
-        //        if newBarbellSet.count <= 1 || newBarbellSet[oldBarName] == nil {
-        //            app.profile.currentBarName = "No barbell"
-        //            app.profile.currentBarWeight = newBarbellSet["No barbell"]!
-        //        }
-        //        for i in currentBarNames {
-        //            newBarbellSetValue[i] = newBarbellSet[i]!
-        //        }
-        //        app.profile.currentBarbellSet = newBarbellSet
-        //        app.profile.barbellsList = newBarbellSetValue
-        //        app.profile.barbellsListUnits = newBarbellSetUnits
-        //        if app.profile.units == "Kg" {
-        //            var barbellsNew: [String: Double] = [String: Double]()
-        //            for (key,value) in app.profile.barbellsList {
-        //                if app.profile.barbellsListUnits[key] == "Kg" {
-        //                    barbellsNew[key] = value.roundToPlaces(app.profile.kgDecimalPlaces)
-        //                }
-        //                else {
-        //                    barbellsNew[key] = (value * 0.453592).roundToPlaces(app.profile.kgDecimalPlaces)
-        //                }
-        //            }
-        //            app.profile.currentBarbellSet = barbellsNew
-        //        }
-        //        else {
-        //            var barbellsNew: [String: Double] = [String: Double]()
-        //            for (key,value) in app.profile.barbellsList {
-        //                if app.profile.barbellsListUnits[key] == "Kg" {
-        //                    barbellsNew[key] = (value / 0.453592).roundToPlaces(app.profile.lbDecimalPlaces)
-        //                }
-        //                else {
-        //                    barbellsNew[key] = value.roundToPlaces(app.profile.lbDecimalPlaces)
-        //                }
-        //            }
-        //            app.profile.currentBarbellSet = barbellsNew
-        //        }
-        //        app.profile.currentBarWeight = app.profile.currentBarbellSet[app.profile.currentBarName]!
-        //        app.profile.weightToLift = app.profile.weightToLift - oldBarbellWeight + app.profile.currentBarWeight
-        //        self.delegate?.updatePageProtocol()
-        //        DataAccess.sharedInstance.saveEverything()
-        //        #if os(iOS)
-        //            PublicClasses.wcSendArrayOfStrings(["currentBarName","currentBarbellSet","currentBarWeight","barbellsList","barbellsListUnits","units"])
-        //        #endif
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.resignFirstResponder()
-        return false
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currentBarbellIndex = app.profile.barbellCollection.list.index(where: {$0.equals(compareTo: app.profile.currentBarbell)})!
+        print("Current Barbell Index: \(currentBarbellIndex)")
         self.hideKeyboardWhenTappedAround()
         let bigLabel: UILabel = UILabel()
         bigLabel.text = NSLocalizedString("Barbells", comment: "")
@@ -202,13 +80,64 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(dismissHere), name: NSNotification.Name(rawValue: "Reset Pages"), object: nil)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.resignFirstResponder()
+        return false
+    }
+    
     
     @objc func dismissHere() {
         dismiss(animated: true, completion: nil)
     }
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
+    
+    func findNextName() -> String {
+        var minNum = 1
+        var numArray: [Int] = [Int]()
+        if app.profile.barbellCollection.list.count > 0 {
+            for i in 0...app.profile.barbellCollection.list.count-1 {
+                let barbellNameToSplit: String = app.profile.barbellCollection.list[i].name
+                let barbellSubstring = NSLocalizedString("Barbell", comment: "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                if barbellNameToSplit.count >= barbellSubstring.count {
+                    let substringTest = "\(barbellNameToSplit.substring(with: barbellSubstring.startIndex..<barbellSubstring.endIndex))".trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    let index = app.profile.barbellCollection.list[i].name.replacingOccurrences(of: barbellSubstring, with: "", options: NSString.CompareOptions.literal, range: nil).trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+                    if substringTest == barbellSubstring && Int(index) != nil {
+                        numArray += [(PublicClasses.numberFormatterDecimal.number(from: index)?.intValue)!]
+                    }
+                }
+            }
+        }
+        if numArray.count == 0 {
+            numArray = [0]
+        }
+        for i in 1...numArray.max()!+1 {
+            if numArray.contains(i) == false {
+                minNum = i
+                break
+            }
+        }
+        return "\(NSLocalizedString("Barbell", comment: "")) \(minNum)"
+    }
+    
+    
+    func updateGlobals() {
+        if (app.profile.barbellCollection.list.index(where: {$0.equals(compareTo: app.profile.currentBarbell)})) == nil {
+            app.profile.currentBarbell = app.profile.barbellCollection.list[currentBarbellIndex]
+            app.profile.chosenUnit.unit = app.profile.barbellCollection.list[currentBarbellIndex].unitType
+            app.updateWeightToLift()
+            self.delegate?.updatePageProtocol()
+        }
+        madeChanges = true
+        DataAccess.sharedInstance.saveEverything()
+    }
+    
+    
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //            for keys in app.profile.barbellsList.keys.sorted(by: {$0 < $1}) {
@@ -286,13 +215,10 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
             updateGlobals()
             tableView.deleteRows(at: [indexPath], with: .fade)
             self.tableView.reloadData()
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
-        let row = (indexPath as NSIndexPath).row
         if app.profile.currentBarbell.name != "No barbell"  {
             return UITableViewCellEditingStyle.delete
         }
@@ -301,71 +227,35 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        if textField.tag == 1 {
-        }
-        else if textField.tag == 2 {
-            let placeholderText = textField.text
-            if (placeholderText?.count)! > 0 {
-                textField.text = PublicClasses.removeUnitsFromText(placeholderText!)
-            }
+        if (textField.tag == 2) && ((textField.text?.count)! > 0) {
+            textField.text = app.profile.barbellCollection.list[(textField.superview?.superview?.tag)!].weight.clean
         }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        var placeholderText = textField.text
         let cell = textField.superview?.superview as! BarbellAdvancedSettingTableViewCell
         let row = cell.tag
-        let oldBarName = app.profile.barbellCollection.list[row].name
-        //        let currentBarIndexFromGlobal = currentBarNames.index(of: GlobalVariables.sharedInstance.currentBarName)
-        //        if textField.tag == 1 {
-        //            placeholderText = placeholderText!.trimmingCharacters(in: CharacterSet.whitespaces)
-        //            if placeholderText?.count == 0 {
-        //                placeholderText = findNextName()
-        //            }
-        //            if placeholderText == "No barbell" {
-        //                placeholderText = "No barbells"
-        //            }
-        //            if row == currentBarIndexFromGlobal {
-        //                let oldCurrentBarbellSetSpot = GlobalVariables.sharedInstance.currentBarbellSet[oldBarName]
-        //                let oldBarbellsListSpot = GlobalVariables.sharedInstance.barbellsList[oldBarName]
-        //                let oldBarbellsListUnitsSpot = GlobalVariables.sharedInstance.barbellsListUnits[oldBarName]
-        //                GlobalVariables.sharedInstance.currentBarbellSet.removeValue(forKey: oldBarName)
-        //                GlobalVariables.sharedInstance.barbellsList.removeValue(forKey: oldBarName)
-        //                GlobalVariables.sharedInstance.barbellsListUnits.removeValue(forKey: oldBarName)
-        //                GlobalVariables.sharedInstance.currentBarName = placeholderText!
-        //                GlobalVariables.sharedInstance.currentBarbellSet[GlobalVariables.sharedInstance.currentBarName] = oldCurrentBarbellSetSpot
-        //                GlobalVariables.sharedInstance.barbellsList[GlobalVariables.sharedInstance.currentBarName] = oldBarbellsListSpot
-        //                GlobalVariables.sharedInstance.barbellsListUnits[GlobalVariables.sharedInstance.currentBarName] = oldBarbellsListUnitsSpot
-        //            }
-        //            currentBarNames[row] = placeholderText!
-        //            textField.text = placeholderText
-        //        }
-        //        else if textField.tag == 2 {
-        //            if placeholderText?.count > 0 {
-        //                currentBarValues[row] = PublicClasses.numberFormatterDecimal.number(from: textField.text!)!.doubleValue
-        //                placeholderText = PublicClasses.removeUnitsFromText(placeholderText!)
-        //                let index = cell.segmentedControl.selectedSegmentIndex
-        //                if index == 0 {
-        //                    currentBarUnits[row] = "Kg"
-        //                    currentBarValues[row] = PublicClasses.numberFormatterDecimal.number(from: placeholderText!)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.kgDecimalPlaces)
-        //                    cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: currentBarValues[cell.tag], unit: MassFormatter.Unit.kilogram)
-        //                }
-        //                else if index == 1 {
-        //                    currentBarUnits[row] = "lbs"
-        //                    currentBarValues[row] = PublicClasses.numberFormatterDecimal.number(from: placeholderText!)!.doubleValue.roundToPlaces(GlobalVariables.sharedInstance.lbDecimalPlaces)
-        //                    cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: currentBarValues[cell.tag], unit: MassFormatter.Unit.pound)
-        //                }
-        //            }
-        //            else {
-        //                textField.text = "0"
-        //                currentBarValues[row] = 0
-        //            }
-        //        }
+        if textField.tag == 1 { //Name textfield
+            textField.text! = textField.text!.trimmingCharacters(in: CharacterSet.whitespaces)
+            if textField.text!.count == 0 {
+                textField.text! = findNextName()
+            }
+            app.profile.barbellCollection.list[row].name = textField.text!
+            textField.text = app.profile.barbellCollection.list[row].name
+        }
+        else if textField.tag == 2 { //Weight textfield
+            var newWeight: Double = 0
+            if textField.text!.count != 0 {
+                newWeight = PublicClasses.numberFormatterDecimal.number(from: textField.text!)!.doubleValue
+            }
+            textField.text = PublicClasses.massFormatter.string(fromValue: newWeight, unit: UnitOfWeight(unit:  app.profile.barbellCollection.list[row].unitType).formatter)
+            app.profile.barbellCollection.list[row].weight = newWeight
+        }
         self.updateGlobals()
     }
     
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { // return NO to not change text
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var result = true
         if textField.tag == 1 {
             app.status.keyPadUsedNow = false
@@ -393,18 +283,12 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
         return result
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-    }
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = (indexPath as NSIndexPath).row
-        print(row)
-        if row <= app.profile.barbellCollection.list.count-1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! BarbellAdvancedSettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath) as! BarbellAdvancedSettingTableViewCell
+        if app.profile.barbellCollection.list[row].name != "No barbell" {
             cell.tag = row
-            //            cell.valueTextField.hidden = true
             cell.nameTextField.text = NSLocalizedString(app.profile.barbellCollection.list[row].name, comment: "")
-            cell.valueTextField.text = PublicClasses.numberFormatterDecimal.string(from: app.profile.barbellCollection.list[row].weight as NSNumber)
             cell.nameTextField.placeholder = NSLocalizedString("Barbell name", comment: "")
             cell.valueTextField.placeholder = NSLocalizedString("Barbell weight", comment: "")
             cell.nameTextField.placeholderFont = app.visuals.fontStandard
@@ -425,6 +309,8 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
             else {
                 cell.segmentedControl.selectedSegmentIndex = 1
             }
+            cell.segmentedControl.addTarget(self, action: #selector(BarbellAdvancedSettings.segmentValueChanged(_:)), for: .valueChanged)
+            
             let unitSelected = cell.segmentedControl.titleForSegment(at: cell.segmentedControl.selectedSegmentIndex)!
             var unitToPass: MassFormatter.Unit = MassFormatter.Unit.kilogram
             if unitSelected == PublicClasses.massFormatter.unitString(fromValue: 0, unit: MassFormatter.Unit.pound) {
@@ -433,11 +319,8 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
             else if unitSelected == PublicClasses.massFormatter.unitString(fromValue: 0, unit: MassFormatter.Unit.kilogram) {
                 unitToPass = MassFormatter.Unit.kilogram
             }
-            var placeholderText =  cell.valueTextField.text
-            placeholderText = PublicClasses.removeUnitsFromText(placeholderText!)
-            cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: PublicClasses.numberFormatterDecimal.number(from: placeholderText!)!.doubleValue, unit: unitToPass)
+            cell.valueTextField.text = PublicClasses.massFormatter.string(fromValue: app.profile.barbellCollection.list[row].weight, unit: unitToPass)
             
-            cell.segmentedControl.addTarget(self, action: #selector(BarbellAdvancedSettings.segmentValueChanged(_:)), for: .valueChanged)
             cell.nameTextField.tag = 1
             cell.valueTextField.tag = 2
             cell.nameTextField.delegate = self
@@ -447,18 +330,18 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
             cell.valueTextField.sizeToFit()
             cell.segmentedControl.sizeToFit()
             cell.setNeedsLayout()
-            return cell
         }
         else {
-            return UITableViewCell()
+            cell.isHidden = true
         }
+        return cell
     }
     
     
     override func viewWillDisappear(_ animated: Bool) {
-        if needToUploadChanges == true {
+        if madeChanges == true {
             DataAccess.sharedInstance.saveEverything()
-            //        DataAccess.sharedInstance.iCloudSave()
+            //                    DataAccess.sharedInstance.iCloudSave()
         }
     }
     

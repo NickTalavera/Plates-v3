@@ -48,6 +48,13 @@ class AppData {
         var name: String
         var unitType: UnitOfWeight.unitType
         var weight: Double
+        
+        func equals (compareTo:Barbell) -> Bool {
+            return
+                self.name == compareTo.name &&
+                    self.unitType == compareTo.unitType &&
+                    self.weight == compareTo.weight
+        }
     }
     
     struct BarbellCollection {
@@ -58,6 +65,13 @@ class AppData {
         var name: String
         var unitType: UnitOfWeight.unitType
         var weight: Double
+        
+        func equals (compareTo:Barbell) -> Bool {
+            return
+                self.name == compareTo.name &&
+                    self.unitType == compareTo.unitType &&
+                    self.weight == compareTo.weight
+        }
     }
     
     struct CollarCollection {

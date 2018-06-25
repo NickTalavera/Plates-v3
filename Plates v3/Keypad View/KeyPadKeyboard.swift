@@ -24,10 +24,7 @@ extension KeyPadViewController {
     
     @objc func keyboardWillHide(_ notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            print("HELP2")
-            print(app.status.keypadMovedUp)
             if app.status.keypadMovedUp == true {
-                print("HELP")
                 var keyBoardHeightT: CGFloat = keyboardSize.height
                 if keyboardSize.height == 0 {
                     keyBoardHeightT = app.status.keyboardHeight
@@ -59,7 +56,7 @@ extension KeyPadViewController {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.weightEntryTextField.alwaysShowFloatingLabel  = true
         if app.calc.weightToLift != 0 {
-            textField.text = PublicClasses.numberFormatterDecimal.string(from: app.calc.weightToLift as NSNumber)
+            textField.text = app.calc.weightToLift.clean
         }
         else {
             textField.text = ""
