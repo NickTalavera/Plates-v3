@@ -69,10 +69,22 @@ extension KeyPadViewController {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var result: Bool = false
         if app.status.percentageModeActive == true {
-            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: app.status.percentageModeActive)
+            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: app.status.percentageModeActive)
+            if result == true {
+                GoButton.isEnabled = true
+                UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
+                    self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+                }, completion: nil)
+            }
         }
         else {
-            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, GoButton: GoButton, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
+            result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
+            if result == true {
+                GoButton.isEnabled = true
+                UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
+                    self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+                }, completion: nil)
+            }
             //            //            self.weightEntryTextField.title = NSLocalizedString("Total weight", comment: "")
             //            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
             //            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()

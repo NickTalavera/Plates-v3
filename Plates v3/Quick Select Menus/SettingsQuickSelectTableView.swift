@@ -12,26 +12,20 @@ class SettingsQuickSelectTableView: UITableViewController, UIPopoverPresentation
     
     let textCellIdentifier = "TextCell"
     weak var delegate: MainDelegate?
-    @IBOutlet weak var upgradeTitleLabel: UILabel!
     @IBOutlet weak var gymLabel: UILabel!
-    //    @IBOutlet weak var doneLabel: UILabel!
     @IBOutlet weak var barbellLabel: UILabel!
     @IBOutlet weak var alwaysSortLabel: UILabel!
-    @IBOutlet weak var removeAdsLabel: UILabel!
     @IBOutlet weak var collarLabel: UILabel!
     @IBOutlet weak var inventoriesCell: UITableViewCell!
     @IBOutlet weak var barbellsCell: UITableViewCell!
     @IBOutlet weak var collarsCell: UITableViewCell!
-    @IBOutlet weak var removeAdsCell: UITableViewCell!
     @IBOutlet weak var alwaysSortSwitch: UISwitch!
     @IBOutlet weak var alwaysSortCell: UITableViewCell!
     @IBOutlet weak var convertGymUnitsLabel: UILabel!
     @IBOutlet weak var convertGymUnitsSwitch: UISwitch!
     @IBOutlet weak var convertGymUnitsCell: UITableViewCell!
     @IBOutlet weak var settingsTitle: UILabel!
-    @IBOutlet weak var restorePurchasesLabel: UILabel!
     @IBOutlet weak var settingsVerticalAdjustConstraint: NSLayoutConstraint!
-    @IBOutlet weak var restorePurchasesCell: UITableViewCell!
     var changedValue = false
     @IBAction func convertGymUnitsSwitchAction(_ sender: UISwitch) {
         app.status.convertGymUnits = sender.isOn

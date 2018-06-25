@@ -23,11 +23,7 @@
 		C307668E20DF7CC6001E0281 /* KeyPadDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032820DEF8CF00A113DF /* KeyPadDelegate.swift */; };
 		C307668F20DF7CC6001E0281 /* KeyPadPopovers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC032620DEF2DF00A113DF /* KeyPadPopovers.swift */; };
 		C307669020DF7CCE001E0281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */; };
-		C307669120DF7CCE001E0281 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */; };
-		C307669220DF7CCE001E0281 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */; };
-		C307669320DF7CCE001E0281 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD2520DDFBCF00DA5BC8 /* Document.swift */; };
-		C307669420DF7CCE001E0281 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
-		C307669520DF7CCE001E0281 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5320DDFE8600DA5BC8 /* Globals.swift */; };
+		C307669420DF7CCE001E0281 /* App Data Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* App Data Class.swift */; };
 		C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */; };
 		C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */; };
 		C307669920DF7DE1001E0281 /* InventoryAdvancedSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */; };
@@ -49,7 +45,7 @@
 		C39ABD2B20DDFBD100DA5BC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */; };
 		C39ABD3920DDFBD100DA5BC8 /* Plates_v3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD3820DDFBD100DA5BC8 /* Plates_v3Tests.swift */; };
 		C39ABD4420DDFBD100DA5BC8 /* Plates_v3UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */; };
-		C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* Structs.swift */; };
+		C39ABD5B20DE118A00DA5BC8 /* App Data Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5520DE016000DA5BC8 /* App Data Class.swift */; };
 		C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */; };
 		C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */; };
 		C3CC030C20DE2B3200A113DF /* JVFloatLabeledText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3CC030B20DE2B3100A113DF /* JVFloatLabeledText.framework */; };
@@ -67,6 +63,8 @@
 		C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */; };
 		C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */; };
 		C3E0901B20DF923A00407D8E /* SettingsQuickSelectTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */; };
+		C3E0901D20E08DD300407D8E /* DataManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E0901C20E08DD300407D8E /* DataManagement.swift */; };
+		C3E0901F20E0914000407D8E /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = C3E0901E20E0914000407D8E /* Notes */; };
 		E39E58286B4BC089E2BD1B62 /* Pods_Plates_v3UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -155,9 +153,6 @@
 		C343D58420DF7B37000CBC83 /* Stampbor-Rounded.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Stampbor-Rounded.otf"; sourceTree = "<group>"; };
 		C39ABD1C20DDFBCF00DA5BC8 /* Plates v3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plates v3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
-		C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
-		C39ABD2520DDFBCF00DA5BC8 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		C39ABD2820DDFBCF00DA5BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C39ABD2D20DDFBD100DA5BC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -168,8 +163,7 @@
 		C39ABD3F20DDFBD100DA5BC8 /* Plates v3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Plates v3UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39ABD4320DDFBD100DA5BC8 /* Plates_v3UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plates_v3UITests.swift; sourceTree = "<group>"; };
 		C39ABD4520DDFBD100DA5BC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C39ABD5320DDFE8600DA5BC8 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
-		C39ABD5520DE016000DA5BC8 /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
+		C39ABD5520DE016000DA5BC8 /* App Data Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Data Class.swift"; sourceTree = "<group>"; };
 		C39ABD5C20DE221400DA5BC8 /* KeyPadViewAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadViewAppearance.swift; sourceTree = "<group>"; };
 		C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadDumpingGround.swift; sourceTree = "<group>"; };
 		C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OddFunctions.swift; sourceTree = "<group>"; };
@@ -186,6 +180,8 @@
 		C3CC032A20DEF99700A113DF /* KeyPadiCloud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadiCloud.swift; sourceTree = "<group>"; };
 		C3CC032C20DEFCCE00A113DF /* KeyPadViewsDidWill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadViewsDidWill.swift; sourceTree = "<group>"; };
 		C3CC033020DEFD0F00A113DF /* KeyPadKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyPadKeyboard.swift; sourceTree = "<group>"; };
+		C3E0901C20E08DD300407D8E /* DataManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManagement.swift; sourceTree = "<group>"; };
+		C3E0901E20E0914000407D8E /* Notes */ = {isa = PBXFileReference; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 		F943F56A0AFA42D0E861F464 /* Pods_Plates_v3UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plates_v3UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,18 +237,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C307669620DF7D7B001E0281 /* Keep */ = {
+		C307669620DF7D7B001E0281 /* Quick Select Menus */ = {
 			isa = PBXGroup;
 			children = (
 				C343D57E20DF7B36000CBC83 /* BarbellQuickSelectTableView.swift */,
-				C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */,
-				C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */,
-				C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */,
-				C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */,
 				C343D56720DF7B32000CBC83 /* BarbellQuickSelectTableViewCell.swift */,
 				C343D56A20DF7B33000CBC83 /* SettingsQuickSelectTableView.swift */,
 			);
-			path = Keep;
+			path = "Quick Select Menus";
 			sourceTree = "<group>";
 		};
 		C343D54A20DF7B21000CBC83 /* Imports */ = {
@@ -323,18 +315,15 @@
 		C39ABD1E20DDFBCF00DA5BC8 /* Plates v3 */ = {
 			isa = PBXGroup;
 			children = (
-				C307669620DF7D7B001E0281 /* Keep */,
 				C343D54A20DF7B21000CBC83 /* Imports */,
 				C39ABD1F20DDFBCF00DA5BC8 /* AppDelegate.swift */,
-				C39ABD2120DDFBCF00DA5BC8 /* DocumentBrowserViewController.swift */,
-				C39ABD2320DDFBCF00DA5BC8 /* DocumentViewController.swift */,
-				C39ABD2520DDFBCF00DA5BC8 /* Document.swift */,
-				C39ABD5520DE016000DA5BC8 /* Structs.swift */,
-				C39ABD5320DDFE8600DA5BC8 /* Globals.swift */,
+				C3E0901E20E0914000407D8E /* Notes */,
 				C39ABD2720DDFBCF00DA5BC8 /* Main.storyboard */,
+				C307669620DF7D7B001E0281 /* Quick Select Menus */,
+				C3E0902120E092A100407D8E /* Advanced Settings Menus */,
 				C3CC032320DEF28A00A113DF /* Keypad View */,
 				C3CC032220DEF21D00A113DF /* Public Classes */,
-				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
+				C3E0902020E0924E00407D8E /* Data */,
 				C39ABD6020DE237E00DA5BC8 /* OddFunctions.swift */,
 				C39ABD2A20DDFBD100DA5BC8 /* Assets.xcassets */,
 				C39ABD2C20DDFBD100DA5BC8 /* LaunchScreen.storyboard */,
@@ -386,6 +375,27 @@
 				C39ABD5E20DE232700DA5BC8 /* KeyPadDumpingGround.swift */,
 			);
 			path = "Keypad View";
+			sourceTree = "<group>";
+		};
+		C3E0902020E0924E00407D8E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				C39ABD5520DE016000DA5BC8 /* App Data Class.swift */,
+				C39ABD6220DE253D00DA5BC8 /* DataAccess.swift */,
+				C3E0901C20E08DD300407D8E /* DataManagement.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		C3E0902120E092A100407D8E /* Advanced Settings Menus */ = {
+			isa = PBXGroup;
+			children = (
+				C343D55220DF7B2D000CBC83 /* BarbellAdvancedSettings.swift */,
+				C343D56B20DF7B33000CBC83 /* BarbellAdvancedSettingTableViewCell.swift */,
+				C343D57720DF7B35000CBC83 /* InventoryAdvancedSettings.swift */,
+				C343D57820DF7B35000CBC83 /* CollarAdvancedSettings.swift */,
+			);
+			path = "Advanced Settings Menus";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -510,6 +520,7 @@
 				C307668420DF7CA3001E0281 /* LaunchScreen.storyboard in Resources */,
 				C343D58A20DF7B37000CBC83 /* Main.strings in Resources */,
 				C307668320DF7CA0001E0281 /* Info.plist in Resources */,
+				C3E0901F20E0914000407D8E /* Notes in Resources */,
 				C343D5BC20DF7B37000CBC83 /* Stampbor-Rounded.otf in Resources */,
 				C343D59320DF7B37000CBC83 /* Exo2-ExtraBold.ttf in Resources */,
 				C343D58820DF7B37000CBC83 /* it.lproj in Resources */,
@@ -618,28 +629,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E0901A20DF896900407D8E /* BarbellQuickSelectTableViewCell.swift in Sources */,
-				C307669220DF7CCE001E0281 /* DocumentViewController.swift in Sources */,
-				C307669120DF7CCE001E0281 /* DocumentBrowserViewController.swift in Sources */,
 				C307668B20DF7CC6001E0281 /* KeyPadViewsDidWill.swift in Sources */,
 				C3E0901920DF896400407D8E /* BarbellQuickSelectTableView.swift in Sources */,
 				C3CC032520DEF2B300A113DF /* KeyPadButtons.swift in Sources */,
+				C3E0901D20E08DD300407D8E /* DataManagement.swift in Sources */,
 				C307668520DF7CB3001E0281 /* DataAccess.swift in Sources */,
 				C307669020DF7CCE001E0281 /* AppDelegate.swift in Sources */,
 				C39ABD5D20DE221400DA5BC8 /* KeyPadViewAppearance.swift in Sources */,
 				C307668920DF7CBC001E0281 /* PublicClasses.swift in Sources */,
-				C307669520DF7CCE001E0281 /* Globals.swift in Sources */,
 				C3E0901B20DF923A00407D8E /* SettingsQuickSelectTableView.swift in Sources */,
 				C307668620DF7CB3001E0281 /* OddFunctions.swift in Sources */,
 				C3CC031B20DE46D300A113DF /* PublicClassesButtons.swift in Sources */,
 				C307668D20DF7CC6001E0281 /* KeyPadiCloud.swift in Sources */,
-				C307669420DF7CCE001E0281 /* Structs.swift in Sources */,
+				C307669420DF7CCE001E0281 /* App Data Class.swift in Sources */,
 				C307669820DF7DD5001E0281 /* CollarAdvancedSettings.swift in Sources */,
 				C307668C20DF7CC6001E0281 /* KeyPadKeyboard.swift in Sources */,
 				C39ABD5F20DE232700DA5BC8 /* KeyPadDumpingGround.swift in Sources */,
 				C307669720DF7D83001E0281 /* BarbellAdvancedSettings.swift in Sources */,
 				C3CC031A20DE3EA800A113DF /* PublicClassesText.swift in Sources */,
 				C307669920DF7DE1001E0281 /* InventoryAdvancedSettings.swift in Sources */,
-				C307669320DF7CCE001E0281 /* Document.swift in Sources */,
 				C307668A20DF7CBC001E0281 /* PublicClassesUseful.swift in Sources */,
 				C307668E20DF7CC6001E0281 /* KeyPadDelegate.swift in Sources */,
 				C307668F20DF7CC6001E0281 /* KeyPadPopovers.swift in Sources */,
@@ -651,7 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C39ABD5B20DE118A00DA5BC8 /* Structs.swift in Sources */,
+				C39ABD5B20DE118A00DA5BC8 /* App Data Class.swift in Sources */,
 				C3CC033320DF1FEC00A113DF /* PublicClassesButtons.swift in Sources */,
 				C3CC033420DF1FEE00A113DF /* PublicClassesText.swift in Sources */,
 				C3CC031E20DEB63000A113DF /* OddFunctions.swift in Sources */,

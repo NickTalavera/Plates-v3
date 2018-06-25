@@ -209,8 +209,10 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         self.GoButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.center
         self.GoButton.contentVerticalAlignment = UIControlContentVerticalAlignment.center
     }
+    
     func navBarSetup() {
         self.navigationController?.navigationBar.setTitleVerticalPositionAdjustment(app.visuals.titleVerticalAdjustment, for: .default)
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: app.visuals.fontTitle, NSAttributedStringKey.foregroundColor: app.visuals.secondaryColor]
         let titleLabelView: UILabel = UILabel() //CHECK
         titleLabelView.text = NSLocalizedString("Plates", comment: "")
         titleLabelView.backgroundColor = UIColor.clear
@@ -219,19 +221,19 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         titleLabelView.adjustsFontSizeToFitWidth = true
         titleLabelView.sizeToFit()
         self.navigationItem.titleView = titleLabelView
-        //                        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: app.visuals.secondaryColor, NSFontAttributeName: app.visuals.fontTitle!] //CHECK
-        navBarButton.addTarget(self, action: #selector(self.rightBarButtonPressed), for: UIControlEvents.touchUpInside) //CHECK
+        
+        let navBarDimension: CGFloat = 31
+        navBarButton.frame = CGRect(x:0, y: 0,width: navBarDimension, height: navBarDimension)
+        navBarButton.widthAnchor.constraint(equalToConstant: navBarDimension).isActive = true
+        navBarButton.heightAnchor.constraint(equalToConstant: navBarDimension).isActive = true
+        let settingsImage = UIImage.init(named: "Settings Gear")?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        navBarButton.tintColor =  app.visuals.secondaryColor
+        navBarButton.setImage(settingsImage, for: UIControlState.normal)
+        
         navigationController!.navigationBar.barTintColor = app.visuals.textPadColor
         keyPadBackgroundView.backgroundColor = app.visuals.keyPadBackgroundViewColor
-        navBarButton.tintColor =  app.visuals.secondaryColor
-        navBarButton.frame = CGRect(x:0, y: 0,width: 31, height: 31)
-        navBarButton.titleLabel?.adjustsFontSizeToFitWidth = true
-        navBarButton.setTitle("", for: .normal)
     }
     
-    @objc func rightBarButtonPressed() {
-     print("rightBarButtonPressed")
-    }
     
     func setupGradientLayer() {
         gradientLayer.removeFromSuperlayer()

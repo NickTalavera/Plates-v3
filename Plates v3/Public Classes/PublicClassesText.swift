@@ -29,7 +29,7 @@ extension PublicClasses {
     }
     
     
-    class func textFieldDecimalVerification(_ textField: UITextField, range: NSRange, string: String, GoButton: UIButton, maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=app.profile.chosenUnit.formatter, percentageMode: Bool) -> Bool {
+    class func textFieldDecimalVerification(_ textField: UITextField, range: NSRange, string: String, maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=app.profile.chosenUnit.formatter, percentageMode: Bool) -> Bool {
         var result = true
         let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         if string.count > 0 {
@@ -55,12 +55,6 @@ extension PublicClasses {
             }
             let resultingTextIsNumeric = PublicClasses.numberFormatterDecimal.number(from: prospectiveText) != nil
             result = replacementStringIsLegal && resultingStringLengthIsLegal && resultingTextIsNumeric && resultingIntegerPlaceStringLengthIsLegal && resultingDecimalPlaceStringLengthIsLegal && noDecimalLengthisLegal
-        }
-        if result == true {
-            GoButton.isEnabled = true
-            UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
-                GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-            }, completion: nil)
         }
         return result
     }

@@ -51,17 +51,17 @@ class AppData {
     }
     
     struct BarbellCollection {
-        let list: [Barbell]
+        var list: [Barbell]
     }
     
     struct Collar {
-        let name: String
-        let unitType: UnitOfWeight.unitType
-        let weight: Double
+        var name: String
+        var unitType: UnitOfWeight.unitType
+        var weight: Double
     }
     
     struct CollarCollection {
-        let list: [Collar]
+        var list: [Collar]
     }
     
     struct Plate {

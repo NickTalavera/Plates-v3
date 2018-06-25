@@ -605,32 +605,32 @@ open class DataAccess: NSObject {
 //
 //        return coordinator!
 //    }()
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //
 //
 //
 //    // MARK: - Core Data Saving support
 //
 //    open func saveContext () {
-//        if managedObjectContext.hasChanges {
+//        if NSManagedObjectContext.hasChanges {
 //            do {
-//                try managedObjectContext.save()
+//                try NSManagedObjectContext.save()
 //            } catch {
 //                // Replace this implementation with code to handle the error appropriately.
 //                // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
@@ -640,5 +640,5 @@ open class DataAccess: NSObject {
 //            }
 //        }
 //    }
-
+//
 }
