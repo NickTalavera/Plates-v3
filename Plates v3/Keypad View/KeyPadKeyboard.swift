@@ -13,26 +13,11 @@ import CoreData
 extension KeyPadViewController {
     
     @objc func keyboardWillShow(_ notification: NSNotification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if keyboardSize.height >= weightEntryTextField.frame.minY {
-                app.status.keypadMovedUp = true
-                self.view.frame.origin.y -= keyboardSize.height - weightEntryTextField.frame.minY
-            }
-            app.status.keyboardHeight = keyboardSize.height
-        }
+        PublicClasses.keyboardWillShow(notification: notification, textFieldFrame: weightEntryTextField.frame, pageView: self.view)
     }
     
     @objc func keyboardWillHide(_ notification: Notification) {
-        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            if app.status.keypadMovedUp == true {
-                var keyBoardHeightT: CGFloat = keyboardSize.height
-                if keyboardSize.height == 0 {
-                    keyBoardHeightT = app.status.keyboardHeight
-                }
-                self.view.frame.origin.y += keyBoardHeightT - weightEntryTextField.frame.minY
-                app.status.keypadMovedUp = false
-            }
-        }
+        PublicClasses.keyboardWillHide(notification: notification, textFieldFrame: weightEntryTextField.frame, pageView: self.view)
     }
     
     

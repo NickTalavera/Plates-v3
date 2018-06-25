@@ -187,25 +187,21 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     
     func keyboardWillShow(_ notification: Notification) {
         if let userInfo = (notification as NSNotification).userInfo {
-            if let keyboardSize: CGSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size {
-                let contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height,  0.0);
-                self.tableView.contentInset = contentInset
-                self.tableView.scrollIndicatorInsets = contentInset
-                
-                self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: 0 + keyboardSize.height) //set zero instead self.scrollView.contentOffset.y
-                
-            }
+            let keyboardSize: CGSize = (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+            let contentInset = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height,  0.0);
+            self.tableView.contentInset = contentInset
+            self.tableView.scrollIndicatorInsets = contentInset
+            self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: 0 + keyboardSize.height) //set zero instead self.scrollView.contentOffset.y
         }
     }
     
     func keyboardWillHide(_ notification: Notification) {
         if let userInfo = (notification as NSNotification).userInfo {
-            if let _: CGSize =  (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size {
-                let contentInset = UIEdgeInsets.zero;
-                self.tableView.contentInset = contentInset
-                self.tableView.scrollIndicatorInsets = contentInset
-                self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: self.tableView.contentOffset.y)
-            }
+            let _: CGSize =  (userInfo[UIKeyboardFrameEndUserInfoKey] as AnyObject).cgRectValue.size
+            let contentInset = UIEdgeInsets.zero;
+            self.tableView.contentInset = contentInset
+            self.tableView.scrollIndicatorInsets = contentInset
+            self.tableView.contentOffset = CGPoint(x: self.tableView.contentOffset.x, y: self.tableView.contentOffset.y)
         }
     }
     

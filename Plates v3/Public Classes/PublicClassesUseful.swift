@@ -12,6 +12,29 @@ import JVFloatLabeledText
 import UIKit
 
 extension PublicClasses {
+    class func keyboardWillShow(notification: NSNotification, textFieldFrame: CGRect, pageView: UIView) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if keyboardSize.height >= textFieldFrame.minY {
+                app.status.keypadMovedUp = true
+                pageView.frame.origin.y -= keyboardSize.height - textFieldFrame.minY
+            }
+            app.status.keyboardHeight = keyboardSize.height
+        }
+    }
+    
+    class func keyboardWillHide(notification: Notification, textFieldFrame: CGRect, pageView: UIView) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            if app.status.keypadMovedUp == true {
+                var keyBoardHeightT: CGFloat = keyboardSize.height
+                if keyboardSize.height == 0 {
+                    keyBoardHeightT = app.status.keyboardHeight
+                }
+                pageView.frame.origin.y += keyBoardHeightT - textFieldFrame.minY
+                app.status.keypadMovedUp = false
+            }
+        }
+    }
+    
     class var currentLocaleUnit: UnitOfWeight {
         let isMetric: Bool = Locale.current.usesMetricSystem
         if isMetric == true {
