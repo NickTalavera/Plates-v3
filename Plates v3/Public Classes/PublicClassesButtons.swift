@@ -171,6 +171,9 @@ extension PublicClasses {
         weightEntryTextField.isHighlighted = true
         weightEntryTextField.resignFirstResponder()
         GoButton.isEnabled = true
+        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
+            GoButton.setTitle(NSLocalizedString("Optimize", comment: ""), for: .normal)
+        }, completion: nil)
         if weightEntryTextField.text!.count == 0 && app.calc.currentPlatesInUse.countPlates() == 0 {
             platesLabel.alpha = 0
             platesView.alpha = 0
@@ -184,21 +187,23 @@ extension PublicClasses {
                         weightEntryTextField.alpha = 1
         }, completion: nil)
         app.status.keyPadUsedNow = true
-        if app.calc.currentPlatesInUse.widthOfPlates + app.profile.currentPlateSet.list[buttonSpot].getDimensions().width <= 406 {
-        app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)
-        app.updateWeightToLift()
-        }
-        platesLabel.textInputView.fadeTransition(app.visuals.platesFadeDuration)
-        platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
-        PublicClasses.drawPlates(platesView)
-        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
         app.status.percentageModeActive = false
-        PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
+        if app.calc.currentPlatesInUse.widthOfPlates + app.profile.currentPlateSet.list[buttonSpot].getDimensions().width <= 406 {
+            app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)
+            app.updateWeightToLift()
+            PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
+            platesLabel.textInputView.fadeTransition(app.visuals.platesFadeDuration)
+            platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
+            PublicClasses.drawPlates(platesView)
+            PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
+            weightEntryTextField.text = app.calc.weightToLiftString
+        }
+        else {
+            for (index,_) in app.profile.currentPlateSet.list.enumerated() {
+                PublicClasses.enableCertainPlateButtons(index, TF: false, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+            }
+        }
         weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
-        weightEntryTextField.text = app.calc.weightToLiftString
-        UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
-            GoButton.setTitle(NSLocalizedString("Optimize", comment: ""), for: .normal)
-        }, completion: nil)
     }
     
 }

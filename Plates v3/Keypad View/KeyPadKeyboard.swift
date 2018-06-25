@@ -22,20 +22,24 @@ extension KeyPadViewController {
     
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        let placeholderValue = PublicClasses.numberFormatterDecimal.number(from: textField.text!)?.doubleValue.rounded(toPlaces: app.profile.chosenUnit.decimalPlaces)
+        self.weightEntryTextField.alwaysShowFloatingLabel  = false
+        var placeholderValue: Double = 0
         if textField.text!.count > 0 {
-            if app.status.percentageModeActive == true {
-                app.calc.percentage = (placeholderValue?.rounded(toPlaces: 1))!
-                textField.text = PublicClasses.numberFormatterDecimal.string(from: NSNumber(value: app.calc.percentage))
-            }
-            else {
-                weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: placeholderValue!, unit: app.profile.chosenUnit.formatter)
-            }
+            placeholderValue = (PublicClasses.numberFormatterDecimal.number(from: textField.text!)?.doubleValue.rounded(toPlaces: app.profile.chosenUnit.decimalPlaces))!
+        }
+        if app.status.percentageModeActive == true {
+            app.calc.percentage = (placeholderValue.rounded(toPlaces: 1))
+            textField.text = PublicClasses.numberFormatterDecimal.string(from: NSNumber(value: app.calc.percentage))
         }
         else {
-            textField.text = ""
+            app.calc.weightToLift = placeholderValue
+            if placeholderValue != 0 {
+            weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: placeholderValue, unit: app.profile.chosenUnit.formatter)
+            }
+            else {
+                weightEntryTextField.text = ""
+            }
         }
-        self.weightEntryTextField.alwaysShowFloatingLabel  = false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
