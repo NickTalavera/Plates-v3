@@ -12,23 +12,6 @@ import UIKit
 import JVFloatLabeledText
 
 extension PublicClasses {
-    class func removeUnitsFromText(_ placeholderText: String) -> String {
-        var text: String = placeholderText
-        //                text = text.replace(PublicClasses.massFormatter.unitString(fromValue: GlobalVariables.sharedInstance.weightToLift, unit: GlobalVariables.sharedInstance.unitsFormatter), withString: "")
-        //                text = text.replace(PublicClasses.massFormatter.unitString(fromValue: 0, unit: GlobalVariables.sharedInstance.unitsFormatter), withString: "")
-        //                let decimalSeperator: String = PublicClasses.numberFormatterDecimal.decimalSeparator
-        //                do {
-        //                    let regex = try NSRegularExpression(pattern: "[^0-9\(decimalSeperator)]", options: NSRegularExpression.Options.caseInsensitive)
-        //
-        //                    //replace all not required characters with empty string ""
-        //                    text = regex.stringByReplacingMatches(in: text, options: NSRegularExpression.MatchingOptions.withTransparentBounds, range: NSMakeRange(0, text.characters.count), withTemplate: "")
-        //                } catch {
-        //                    print("Cant convert")
-        //                }
-        return text
-    }
-    
-    
     class func textFieldDecimalVerification(_ textField: UITextField, range: NSRange, string: String, maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=app.profile.chosenUnit.formatter, percentageMode: Bool) -> Bool {
         var result = true
         let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)

@@ -32,9 +32,8 @@ extension KeyPadViewController {
             textField.text = PublicClasses.numberFormatterDecimal.string(from: NSNumber(value: app.calc.percentage))
         }
         else {
-            app.calc.weightToLift = placeholderValue
-            if placeholderValue != 0 {
-            weightEntryTextField.text = PublicClasses.massFormatter.string(fromValue: placeholderValue, unit: app.profile.chosenUnit.formatter)
+            if textField.text != "" {
+                app.calc.fieldNumber = PublicClasses.numberFormatterDecimal.number(from: textField.text!) as! Double
             }
             else {
                 weightEntryTextField.text = ""
@@ -44,12 +43,13 @@ extension KeyPadViewController {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         self.weightEntryTextField.alwaysShowFloatingLabel  = true
-        if app.calc.weightToLift != 0 {
+        if app.calc.weightToLift != 0 && textField.text != "" {
             textField.text = app.calc.weightToLift.clean
         }
         else {
             textField.text = ""
         }
+        print(app.calc.weightToLift)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -65,47 +65,29 @@ extension KeyPadViewController {
         }
         else {
             result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
-            if result == true {
+            if result == true  {
                 GoButton.isEnabled = true
-                UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [.transitionCrossDissolve], animations: {
-                    self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-                }, completion: nil)
+                app.status.keyPadUsedNow = false
+                app.calc.currentPlatesInUse.list = []
+                self.weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+                if textField.text != "" {
+                    app.calc.fieldNumber = PublicClasses.numberFormatterDecimal.number(from: textField.text!) as! Double
+                }
             }
-            //            //            self.weightEntryTextField.title = NSLocalizedString("Total weight", comment: "")
-            //            //            GlobalVariables.sharedInstance.weightToLift = GlobalVariables.sharedInstance.currentBarWeight + GlobalVariables.sharedInstance.currentCollarWeight
-            //            //            GlobalVariables.sharedInstance.currentPlatesInUse = [Double]()
-            //            //            PublicClasses.drawPlates(self.platesView)
         }
         if result == true && self.platesLabel.alpha != 0 {
-            //            self.platesLabel.alpha = 1
-            //            self.platesView.alpha = 1
-            //            UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
-            //                self.platesLabel.alpha = 0
-            //                self.platesView.alpha = 0
-            //            }, completion: {
-            //                (value: Bool) in
-            //                self.platesLabel.text = ""
-            //            })
-            //
-            //            app.status.errorState = false
-            //            //            self.weightEntryTextField.errorMessage = ""
-            //            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+            UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
+                self.platesLabel.alpha = 0
+                self.platesView.alpha = 0
+                self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+            }, completion: {
+                (value: Bool) in
+                PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+                self.platesLabel.text = ""
+                PublicClasses.drawPlates(self.platesView)
+            })
         }
         return result
-    }
-    
-    func weightEntryTextFinder() {
-        //        let weightEntryTextFieldButtonTemp = UIButton(frame: weightEntryTextField.frame)
-        //        weightEntryTextFieldButtonTemp.setTitle(NSLocalizedString("Weight to lift", comment: ""), for: .normal)
-        //        weightEntryTextFieldButtonTemp.titleLabel?.font = Font.systemFont(ofSize: GlobalVariables.sharedInstance.currentMaxFont, weight: UIFont.Weight.thin)
-        //        let pointSizeWeightEntryTextField = PublicClasses.getFontSizeToFitFrameOfLabel(weightEntryTextFieldButtonTemp, maxTextSize: GlobalVariables.sharedInstance.currentMaxFont, frameToFit: weightEntryTextField.frame)
-        //        if pointSizeWeightEntryTextField < GlobalVariables.sharedInstance.currentMaxFont {
-        //            GlobalVariables.sharedInstance.weightToLiftString = NSLocalizedString("Weight", comment: "")
-        //        }
-        //        else {
-        //            GlobalVariables.sharedInstance.weightToLiftString = NSLocalizedString("Weight to lift", comment: "")
-        //        }
-        //        weightEntryTextField.placeholder = GlobalVariables.sharedInstance.weightToLiftString
     }
 }
 

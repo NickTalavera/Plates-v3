@@ -108,7 +108,7 @@ class PublicClasses {
             if currentWeight.unitType == app.profile.chosenUnit.unit {
             let foundIndex = app.profile.currentPlateSet.list.index(where: {$0.weight == currentWeight.weight && $0.unitType == currentWeight.unitType})
             let weightCountLimit = app.profile.currentPlateSet.list[foundIndex!].count!
-                PublicClasses.enableCertainPlateButtons(foundIndex! % 9, TF: currentWeight.count! < weightCountLimit, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
+                PublicClasses.enableCertainPlateButtons(foundIndex! % 9, TF: currentWeight.count! < weightCountLimit , FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton)
             }
         }
     }
@@ -159,8 +159,6 @@ class PublicClasses {
             platesView.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
     }
-    
-    
     
     
     class func resetEverything(_ platesLabel: UITextView, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, weightEntryTextField: JVFloatLabeledTextField, platesView: UIView, GoButton: UIButton, animate: Bool = false) {

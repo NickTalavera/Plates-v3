@@ -285,7 +285,6 @@ class KeyPadViewController: UIViewController, UITextFieldDelegate, UIPopoverPres
         let expectSizeGoButton = GoButtonTemp.sizeThatFits(CGSize(width: CGFloat(MAXFLOAT), height: GoButtonTemp.frame.size.height));
         self.goButtonWidthConstraint.constant = min(max(expectSizeGoButton.width + 20, UIScreen.main.bounds.width/4),UIScreen.main.bounds.width/2-20)
         self.horizonalLeftContraints.constant = 0.5 * self.GoButton.bounds.size.height
-        self.weightEntryTextFinder()
         self.barTextInput.layer.cornerRadius = 0.5 * self.GoButton.bounds.size.height
         self.GoButton.layer.cornerRadius = 0.5 * self.GoButton.bounds.size.height
     }
