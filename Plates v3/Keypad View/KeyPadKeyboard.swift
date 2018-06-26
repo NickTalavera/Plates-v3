@@ -64,7 +64,7 @@ func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.text = app.calc.percentage.clean
     }
     else if app.status.percentageModeActive == true && app.status.manualTextEntry == true && textField.text != "" && app.calc.percentage != 0  {
-        textField.text = app.calc.percentage.clean
+        textField.text = String(Int((app.calc.percentage*100.0).rounded(toPlaces: 0)))
     }
     else if app.status.percentageModeActive == false && app.status.manualTextEntry == true && textField.text != "" {
         textField.text = app.calc.fieldNumber.clean
@@ -80,13 +80,14 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     if app.status.percentageModeActive == true {
         result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: 0, maxIntegerPlaces: 3, percentageMode: app.status.percentageModeActive)
         if result == true {
-            app.calc.percentage = PublicClasses.numberFormatterDecimal.number(from: textField.text!+string) as! Double
+            app.calc.percentage = (PublicClasses.numberFormatterDecimal.number(from: textField.text!+string) as! Double)/100
         }
     }
     else {
         result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
         if result == true  {
             app.status.manualTextEntry = true
+            app.status.percentageModeActive = false
             self.weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
                 app.calc.fieldNumber = PublicClasses.numberFormatterDecimal.number(from: textField.text!+string) as! Double
         }
