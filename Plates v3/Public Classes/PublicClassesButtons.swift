@@ -13,22 +13,28 @@ import JVFloatLabeledText
 
 extension PublicClasses {
     class func goButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
+        weightEntryTextField.alwaysShowFloatingLabel  = false
         app.calc.currentPlatesInUse.sortPlates()
+        app.status.manualTextEntry = false
         app.updateWeightToLift()
         GoButton.isEnabled = false
         weightEntryTextField.keyboardType = .decimalPad
         weightEntryTextField.resignFirstResponder()
+        print(app.calc.fieldNumber)
+        print(app.calc.percentage)
         if app.status.percentageModeActive == true {
             let newWeight: Double = {
-                switch (app.status.keyPadUsedNow) {
+                switch (app.status.manualTextEntry) {
                 case true:
                     return app.calc.percentage/100*app.calc.fieldNumber
                 case false:
                     return app.calc.percentage/100*app.calc.weightToLift
                 }}()
+            print(newWeight)
             app.calc.currentPlatesInUse = self.weightReducer(weightToReduce: newWeight)
-            weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
             app.updateWeightToLift()
+            weightEntryTextField.text = app.calc.weightToLiftString
+            weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         }
     }
     
@@ -38,12 +44,21 @@ extension PublicClasses {
     
     class func percentButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
         app.status.percentageModeActive = true
-        app.status.keyPadUsedNow = false
+        app.status.manualTextEntry = true
         app.updateWeightToLift()
+        print(app.calc.fieldNumber)
+        weightEntryTextField.resignFirstResponder()
         weightEntryTextField.becomeFirstResponder()
         weightEntryTextField.keyboardType = .numberPad
         weightEntryTextField.placeholder = NSLocalizedString("Percent", comment: "")
-        weightEntryTextField.floatingLabel.text = "\(app.calc.weightToLiftString) ×"
+        let valueToMultiplyBy: Double = {
+            switch (app.status.manualTextEntry) {
+            case true:
+                return app.calc.percentage/100*app.calc.fieldNumber
+            case false:
+                return app.calc.percentage/100*app.calc.weightToLift
+            }}()
+        weightEntryTextField.floatingLabel.text = "\(app.calc.fieldNumber) ×"
         weightEntryTextField.text = ""
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [UIViewAnimationOptions.transitionCrossDissolve], animations:  {
             GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
@@ -102,7 +117,7 @@ extension PublicClasses {
                         platesView.alpha = 1
                         weightEntryTextField.alpha = 1
         }, completion: nil)
-        app.status.keyPadUsedNow = true
+        app.status.manualTextEntry = false
         app.status.percentageModeActive = false
         if app.calc.currentPlatesInUse.widthOfPlates + app.profile.currentPlateSet.list[buttonSpot].getDimensions().width < 406 {
             app.appendCurrentPlate(weight: app.profile.currentPlateSet.list[buttonSpot].weight)

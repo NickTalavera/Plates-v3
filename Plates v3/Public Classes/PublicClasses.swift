@@ -165,8 +165,10 @@ class PublicClasses {
         weightEntryTextField.resignFirstResponder()
         GoButton.isEnabled = false
         app.status.errorState=false
-        app.status.keyPadUsedNow = false
+        app.status.manualTextEntry = false
         app.status.percentageModeActive = false
+        app.calc.fieldNumber = 0
+        app.calc.percentage = 0
         app.calc.currentPlatesInUse.list = []
         app.updateWeightToLift()
         PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)

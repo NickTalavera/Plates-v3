@@ -12,6 +12,8 @@ import UIKit
 import JVFloatLabeledText
 
 extension PublicClasses {
+    
+    
     class func textFieldDecimalVerification(_ textField: UITextField, range: NSRange, string: String, maxDecimalPlaces: Int, maxIntegerPlaces: Int, unit: MassFormatter.Unit=app.profile.chosenUnit.formatter, percentageMode: Bool) -> Bool {
         var result = true
         let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
@@ -39,6 +41,7 @@ extension PublicClasses {
             let resultingTextIsNumeric = PublicClasses.numberFormatterDecimal.number(from: prospectiveText) != nil
             result = replacementStringIsLegal && resultingStringLengthIsLegal && resultingTextIsNumeric && resultingIntegerPlaceStringLengthIsLegal && resultingDecimalPlaceStringLengthIsLegal && noDecimalLengthisLegal
         }
+        print("HERE")
         return result
     }
 

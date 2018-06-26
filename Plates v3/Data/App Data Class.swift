@@ -353,7 +353,7 @@ class AppData {
             var convertedUnitsOn: Bool
             var platesOutputSelectable: Bool
             var errorState: Bool
-            var keyPadUsedNow: Bool
+            var manualTextEntry: Bool
             var percentageModeActive: Bool
             var didLoad: Bool
             var alwaysSort: Bool
@@ -366,7 +366,7 @@ class AppData {
                 convertedUnitsOn = false
                 platesOutputSelectable = false
                 errorState = false
-                keyPadUsedNow = false
+                manualTextEntry = false
                 percentageModeActive = false
                 convertGymUnits = false
                 didLoad = false

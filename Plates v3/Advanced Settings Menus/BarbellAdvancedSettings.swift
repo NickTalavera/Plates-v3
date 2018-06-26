@@ -241,7 +241,6 @@ class BarbellAdvancedSettings: UITableViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var result = true
         if textField.tag == 1 {
-            app.status.keyPadUsedNow = false
             let prospectiveText = (textField.text! as NSString).replacingCharacters(in: range, with: string)
             if string.count > 0 {
                 let disallowedCharacterSet = CharacterSet(charactersIn: "%")
