@@ -56,7 +56,6 @@ extension KeyPadViewController {
 
 func textFieldDidBeginEditing(_ textField: UITextField) {
     self.weightEntryTextField.alwaysShowFloatingLabel  = true
-    print("percentageModeActive: \(app.status.percentageModeActive)  manualTextEntry: \(app.status.manualTextEntry)")
     if app.status.percentageModeActive == false && app.status.manualTextEntry == false && textField.text != "" {
         textField.text = app.calc.weightToLift.clean
     }
@@ -86,6 +85,9 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     else {
         result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
         if result == true  {
+            app.calc.currentPlatesInUse.list = []
+            app.updateWeightToLift()
+            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
             app.status.manualTextEntry = true
             app.status.percentageModeActive = false
             self.weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
@@ -105,9 +107,6 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         }, completion: {
             (value: Bool) in
-            app.calc.currentPlatesInUse.list = []
-            app.updateWeightToLift()
-            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
             self.platesLabel.text = ""
             PublicClasses.drawPlates(self.platesView)
         })

@@ -20,6 +20,9 @@ class PublicClasses {
         if unit != app.profile.chosenUnit.unit {
         app.switchUnits()
         }
+        app.calc.percentage = 0
+        app.calc.fieldNumber = 0
+        app.status.manualTextEntry = false
         self.numberFormatterDecimal.maximumFractionDigits = app.profile.chosenUnit.decimalPlaces
         self.massFormatter.numberFormatter = self.numberFormatterDecimal
         app.status.convertedUnitsOn = false

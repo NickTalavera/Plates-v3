@@ -13,55 +13,75 @@ import JVFloatLabeledText
 
 extension PublicClasses {
     class func goButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
+        
+        print("percentageModeActive: \(app.status.percentageModeActive)  manualTextEntry: \(app.status.manualTextEntry)")
         weightEntryTextField.alwaysShowFloatingLabel  = false
         app.calc.currentPlatesInUse.sortPlates()
-        app.status.manualTextEntry = false
         app.updateWeightToLift()
         GoButton.isEnabled = false
         weightEntryTextField.keyboardType = .decimalPad
         weightEntryTextField.resignFirstResponder()
         print(app.calc.fieldNumber)
         print(app.calc.percentage)
+        var newWeight: Double = 0
         if app.status.percentageModeActive == true {
             let newWeight: Double = {
                 switch (app.status.manualTextEntry) {
                 case true:
-                    return app.calc.percentage/100*app.calc.fieldNumber
+                    print(app.calc.fieldNumber)
+                    return app.calc.percentage*app.calc.fieldNumber
                 case false:
-                    return app.calc.percentage/100*app.calc.weightToLift
+                    print(app.calc.weightToLift)
+                    return app.calc.percentage*app.calc.weightToLift
                 }}()
             print(newWeight)
-            app.calc.currentPlatesInUse = self.weightReducer(weightToReduce: newWeight)
-            app.updateWeightToLift()
-            weightEntryTextField.text = app.calc.weightToLiftString
-            weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
         }
+        else if app.status.manualTextEntry ==  true {
+            newWeight = app.calc.fieldNumber
+        }
+        else  {
+            newWeight = app.calc.weightToLift
+        }
+        app.calc.currentPlatesInUse.list = self.weightReducer(weightToReduce: newWeight)
+        app.updateWeightToLift()
+        
+        weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+        PublicClasses.setPlatesButtonsEnabledStatus(platesLabel, FiftyFiveLbsButton: FiftyFiveLbsButton, FortyFiveLbsButton: FortyFiveLbsButton, ThirtyFiveLbsButton: ThirtyFiveLbsButton, TwentyFiveLbsButton: TwentyFiveLbsButton, FifteenLbsButton: FifteenLbsButton, TenLbsButton: TenLbsButton, FiveLbsButton: FiveLbsButton, TwoPointFiveLbsButton: TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: OnePointTwoFiveLbsButton, weightEntryTextField: weightEntryTextField, platesView: platesView)
+        platesLabel.textInputView.fadeTransition(app.visuals.platesFadeDuration)
+        platesLabel.text = PublicClasses.formatLabel(app.calc.currentPlatesInUse)
+        PublicClasses.drawPlates(platesView)
+        PublicClasses.updateTextViewFont(platesLabel, maxTextSize: app.visuals.currentMaxFont)
+        weightEntryTextField.text = app.calc.weightToLiftString
+        
+        app.calc.percentage = 0
+        app.calc.fieldNumber = 0
+        app.status.manualTextEntry = false
     }
     
-    class func weightReducer(weightToReduce: Double) -> AppData.Plates {
-        return AppData.Plates(name: "reduced plactes", list: [])
+    class func weightReducer(weightToReduce: Double) -> [AppData.Plate] {
+        var newPlates: [AppData.Plate] = []
+        return newPlates
     }
     
     class func percentButtonAction(_ weightEntryTextField: JVFloatLabeledTextField, FiftyFiveLbsButton: UIButton, FortyFiveLbsButton: UIButton, ThirtyFiveLbsButton: UIButton, TwentyFiveLbsButton: UIButton, FifteenLbsButton: UIButton, TenLbsButton: UIButton, FiveLbsButton: UIButton, TwoPointFiveLbsButton: UIButton, OnePointTwoFiveLbsButton: UIButton, UnitsButton: UIButton, platesLabel: UITextView, platesView: UIView, GoButton: UIButton) {
         app.status.percentageModeActive = true
-        app.status.manualTextEntry = true
         app.updateWeightToLift()
+        print(app.status.manualTextEntry)
         print(app.calc.fieldNumber)
+        print(app.calc.weightToLiftString)
         weightEntryTextField.resignFirstResponder()
         weightEntryTextField.becomeFirstResponder()
         weightEntryTextField.keyboardType = .numberPad
         weightEntryTextField.placeholder = NSLocalizedString("Percent", comment: "")
-        let valueToMultiplyBy: Double = {
-            switch (app.status.manualTextEntry) {
-            case true:
-                return app.calc.percentage/100*app.calc.fieldNumber
-            case false:
-                return app.calc.percentage/100*app.calc.weightToLift
-            }}()
-        weightEntryTextField.floatingLabel.text = "\(app.calc.fieldNumber) ×"
-        weightEntryTextField.text = ""
         UIView.transition(with: GoButton, duration: app.visuals.platesFadeDuration, options: [UIViewAnimationOptions.transitionCrossDissolve], animations:  {
             GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+            switch (app.status.manualTextEntry) {
+            case true:
+                weightEntryTextField.floatingLabel.text = "\(app.calc.fieldNumber) ×"
+            case false:
+                weightEntryTextField.floatingLabel.text = "\(app.calc.weightToLift) ×"
+            }
+            weightEntryTextField.text = ""
         }, completion: nil)
     }
     
