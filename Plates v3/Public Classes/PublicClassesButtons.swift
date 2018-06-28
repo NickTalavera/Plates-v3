@@ -56,10 +56,14 @@ extension PublicClasses {
         app.calc.percentage = 0
         app.calc.fieldNumber = 0
         app.status.manualTextEntry = false
+        app.status.percentageModeActive = false
     }
     
     class func weightReducer(weightToReduce: Double) -> [AppData.Plate] {
         var newPlates: [AppData.Plate] = []
+        let weightsToCombine = app.calc.currentPlatesInUse.list.map({$0.weight})
+        print(weightsToCombine)
+//        print(weightsToCombine.subsets(to: Int(weightToReduce)))
         return newPlates
     }
     

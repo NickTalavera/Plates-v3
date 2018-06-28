@@ -502,3 +502,52 @@ extension UITextView {
         layer.backgroundColor =  backgroundCGColor
     }
 }
+
+protocol _IntType { }
+extension Int: _IntType {}
+
+
+extension Array where Element: _IntType {
+    
+    func subsets(to: Int) -> [[Element]]? {
+        
+        func sum_up_recursive(_ numbers: [Element], _ target: Int, _ partial: [Element], _ solution: inout [[Element]]) {
+            
+            var sum: Int = 0
+            for x in partial {
+                sum += x as! Int
+            }
+            
+            if sum == target {
+                solution.append(partial)
+            }
+            
+            guard sum < target else {
+                return
+            }
+            
+            for i in stride(from: 0, to: numbers.count, by: 1) {
+                
+                var remaining = [Element]()
+                
+                for j in stride(from: i + 1, to: numbers.count, by: 1) {
+                    remaining.append(numbers[j])
+                }
+                
+                var partial_rec = [Element](partial)
+                partial_rec.append(numbers[i])
+                
+                sum_up_recursive(remaining, target, partial_rec, &solution)
+            }
+        }
+        
+        var solutions = [[Element]]()
+        sum_up_recursive(self, to, [Element](), &solutions)
+        
+        return solutions.count > 0 ? solutions : nil
+    }
+    
+}
+
+
+

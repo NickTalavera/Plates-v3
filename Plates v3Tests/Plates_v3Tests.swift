@@ -133,6 +133,33 @@ class Plates_v3Tests: XCTestCase {
     PublicClasses.drawPlates(UIView(frame: CGRect(x: 100, y: 100, width: 400, height: 300)))
     }
     
+    
+    func testOptimize() {
+        let app = AppData()
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 10)
+        app.appendCurrentPlate(weight: 40)
+        app.appendCurrentPlate(weight: 20)
+        app.appendCurrentPlate(weight: 25)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 55)
+        app.appendCurrentPlate(weight: 30)
+        print("Weight: \(100)")
+        var newPlates: [AppData.Plate] = []
+        let weightsToCombine = app.calc.currentPlatesInUse.list.filter({$0.unitType == app.profile.chosenUnit.unit}).map({Int($0.weight)}).sorted(by: >)
+        print(weightsToCombine)
+        let goal = 100
+        var diff = goal
+        while diff > 10 {
+            print(weightsToCombine[0])
+        }
+        
+        
+    }
+    
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

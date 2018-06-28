@@ -85,13 +85,13 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
     else {
         result = PublicClasses.textFieldDecimalVerification(textField, range: range, string: string, maxDecimalPlaces: app.profile.chosenUnit.decimalPlaces, maxIntegerPlaces: 4, percentageMode: app.status.percentageModeActive)
         if result == true  {
-            app.calc.currentPlatesInUse.list = []
-            app.updateWeightToLift()
-            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
+//            app.calc.currentPlatesInUse.list = []
+//            app.updateWeightToLift()
+//            PublicClasses.setPlatesButtonsEnabledStatus(self.platesLabel, FiftyFiveLbsButton: self.FiftyFiveLbsButton, FortyFiveLbsButton: self.FortyFiveLbsButton, ThirtyFiveLbsButton: self.ThirtyFiveLbsButton, TwentyFiveLbsButton: self.TwentyFiveLbsButton, FifteenLbsButton: self.FifteenLbsButton, TenLbsButton: self.TenLbsButton, FiveLbsButton: self.FiveLbsButton, TwoPointFiveLbsButton: self.TwoPointFiveLbsButton, OnePointTwoFiveLbsButton: self.OnePointTwoFiveLbsButton, weightEntryTextField: self.weightEntryTextField, platesView: self.platesView)
             app.status.manualTextEntry = true
             app.status.percentageModeActive = false
-            self.weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
-                app.calc.fieldNumber = PublicClasses.numberFormatterDecimal.number(from: textField.text!+string) as! Double
+//            self.weightEntryTextField.floatingLabel.text = NSLocalizedString("Total weight", comment: "")
+//                app.calc.fieldNumber = PublicClasses.numberFormatterDecimal.number(from: textField.text!+string) as! Double
         }
     }
     if result == true {
@@ -100,17 +100,17 @@ func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange
             self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
         }, completion: nil)
     }
-    if result == true && self.platesLabel.alpha != 0 {
-        UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
-            self.platesLabel.alpha = 0
-            self.platesView.alpha = 0
-            self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
-        }, completion: {
-            (value: Bool) in
-            self.platesLabel.text = ""
-            PublicClasses.drawPlates(self.platesView)
-        })
-    }
+//    if result == true && self.platesLabel.alpha != 0 {
+//        UIView.animate(withDuration: app.visuals.platesFadeDuration, delay: 0.0, options: [], animations: {
+//            self.platesLabel.alpha = 0
+//            self.platesView.alpha = 0
+//            self.GoButton.setTitle(NSLocalizedString("Calculate", comment: ""), for: .normal)
+//        }, completion: {
+//            (value: Bool) in
+//            self.platesLabel.text = ""
+//            PublicClasses.drawPlates(self.platesView)
+//        })
+//    }
     print(textField.text!+string)
     print(string)
     return result
